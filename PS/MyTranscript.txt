@@ -172,3 +172,17 @@ computerName                   AMPHITRITE
 instanceId                     18edeaef-85d8-41c0-abeb-6515c3cb7d22
 processId                      6636
 
+PS C:\> Remove-AzResourceGroup -Name myResourceGroup -Force
+True
+PS C:\> @{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
+
+Name                           Value
+----                           -----
+computerName                   AMPHITRITE
+instanceId                     18edeaef-85d8-41c0-abeb-6515c3cb7d22
+processId                      6636
+
+PS C:\> CommandInvocation(Get-Help): "Get-Help"
+>> ParameterBinding(Get-Help): name="Name"; value="Connect-AzAccount"
+>> ParameterBinding(Get-Help): name="Online"; value="False"
+>> ParameterBinding(Get-Help): name="ErrorAction"; value="Ignore"

@@ -21,3 +21,5 @@ New-AzResourceGroupDeployment `
 # cleanup
 
 Remove-AzResourceGroup -Name myResourceGroup -Force
+
+#  https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/bicep-tutorial-create-first-bicep?tabs=azure-powershell
