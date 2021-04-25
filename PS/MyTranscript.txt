@@ -1,12 +1,12 @@
 **********************
 PowerShell transcript start
-Start time: 20210425172350
+Start time: 20210425192636
 Username: PANTHEON\administrator
 RunAs User: PANTHEON\administrator
 Configuration Name: 
 Machine: AMPHITRITE (Microsoft Windows NT 10.0.17763.0)
-Host Application: C:\Program Files\PowerShell\7\pwsh.dll -NoProfile -NonInteractive -ExecutionPolicy Bypass -Command Import-Module 'c:\Users\administrator.PANTHEON\.vscode\extensions\ms-vscode.powershell-2021.2.2\modules\PowerShellEditorServices\PowerShellEditorServices.psd1'; Start-EditorServices -HostName 'Visual Studio Code Host' -HostProfileId 'Microsoft.VSCode' -HostVersion '2021.2.2' -AdditionalModules @('PowerShellEditorServices.VSCode') -BundledModulesPath 'c:\Users\administrator.PANTHEON\.vscode\extensions\ms-vscode.powershell-2021.2.2\modules' -EnableConsoleRepl -StartupBanner '' -LogLevel 'Normal' -LogPath 'c:\Users\administrator.PANTHEON\.vscode\extensions\ms-vscode.powershell-2021.2.2\logs\1619364223-95039128-dce5-4fec-96d8-b17ceac9ed101619364217042\EditorServices.log' -SessionDetailsPath 'c:\Users\administrator.PANTHEON\.vscode\extensions\ms-vscode.powershell-2021.2.2\sessions\PSES-VSCode-1540-625917' -FeatureFlags @() 
-Process ID: 6636
+Host Application: C:\Program Files\PowerShell\7\pwsh.dll -NoProfile -NonInteractive -ExecutionPolicy Bypass -Command Import-Module 'c:\Users\administrator.PANTHEON\.vscode\extensions\ms-vscode.powershell-2021.2.2\modules\PowerShellEditorServices\PowerShellEditorServices.psd1'; Start-EditorServices -HostName 'Visual Studio Code Host' -HostProfileId 'Microsoft.VSCode' -HostVersion '2021.2.2' -AdditionalModules @('PowerShellEditorServices.VSCode') -BundledModulesPath 'c:\Users\administrator.PANTHEON\.vscode\extensions\ms-vscode.powershell-2021.2.2\modules' -EnableConsoleRepl -StartupBanner '' -LogLevel 'Normal' -LogPath 'c:\Users\administrator.PANTHEON\.vscode\extensions\ms-vscode.powershell-2021.2.2\logs\1619371590-9d17ad33-85e2-481c-a88e-7578375b926d1619371587416\EditorServices.log' -SessionDetailsPath 'c:\Users\administrator.PANTHEON\.vscode\extensions\ms-vscode.powershell-2021.2.2\sessions\PSES-VSCode-5564-643056' -FeatureFlags @() 
+Process ID: 3524
 PSVersion: 7.1.3
 PSEdition: Core
 GitCommitId: 7.1.3
@@ -28,210 +28,66 @@ PS>@{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineNa
 Name                           Value
 ----                           -----
 computerName                   AMPHITRITE
-instanceId                     18edeaef-85d8-41c0-abeb-6515c3cb7d22
-processId                      6636
+instanceId                     d0811154-b867-443b-8cdd-088bf5f308f3
+processId                      3524
 
 PS>@{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
 
 Name                           Value
 ----                           -----
 computerName                   AMPHITRITE
-instanceId                     18edeaef-85d8-41c0-abeb-6515c3cb7d22
-processId                      6636
+instanceId                     d0811154-b867-443b-8cdd-088bf5f308f3
+processId                      3524
 
-PS>Connect-AzAccount
+PS>get-command -Module AZ.Kusto
 
-Account                           SubscriptionName TenantId                             Environment
--------                           ---------------- --------                             -----------
-ericvanos@xhelios.onmicrosoft.com MSDN Platforms   c395f110-ab2e-44ab-b096-7000e2511b32 AzureCloud
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Function        Add-AzKustoClusterLanguageExtension                1.0.1      AZ.Kusto
+Function        Add-AzKustoDatabasePrincipal                       1.0.1      AZ.Kusto
+Function        Get-AzKustoAttachedDatabaseConfiguration           1.0.1      AZ.Kusto
+Function        Get-AzKustoCluster                                 1.0.1      AZ.Kusto
+Function        Get-AzKustoClusterFollowerDatabase                 1.0.1      AZ.Kusto
+Function        Get-AzKustoClusterLanguageExtension                1.0.1      AZ.Kusto
+Function        Get-AzKustoClusterPrincipalAssignment              1.0.1      AZ.Kusto
+Function        Get-AzKustoClusterSku                              1.0.1      AZ.Kusto
+Function        Get-AzKustoDatabase                                1.0.1      AZ.Kusto
+Function        Get-AzKustoDatabasePrincipal                       1.0.1      AZ.Kusto
+Function        Get-AzKustoDatabasePrincipalAssignment             1.0.1      AZ.Kusto
+Function        Get-AzKustoDataConnection                          1.0.1      AZ.Kusto
+Function        Invoke-AzKustoDataConnectionValidation             1.0.1      AZ.Kusto
+Function        Invoke-AzKustoDetachClusterFollowerDatabase        1.0.1      AZ.Kusto
+Function        Invoke-AzKustoDiagnoseClusterVirtualNetwork        1.0.1      AZ.Kusto
+Function        New-AzKustoAttachedDatabaseConfiguration           1.0.1      AZ.Kusto
+Function        New-AzKustoCluster                                 1.0.1      AZ.Kusto
+Function        New-AzKustoClusterPrincipalAssignment              1.0.1      AZ.Kusto
+Function        New-AzKustoDatabase                                1.0.1      AZ.Kusto
+Function        New-AzKustoDatabasePrincipalAssignment             1.0.1      AZ.Kusto
+Function        New-AzKustoDataConnection                          1.0.1      AZ.Kusto
+Function        Remove-AzKustoAttachedDatabaseConfiguration        1.0.1      AZ.Kusto
+Function        Remove-AzKustoCluster                              1.0.1      AZ.Kusto
+Function        Remove-AzKustoClusterLanguageExtension             1.0.1      AZ.Kusto
+Function        Remove-AzKustoClusterPrincipalAssignment           1.0.1      AZ.Kusto
+Function        Remove-AzKustoDatabase                             1.0.1      AZ.Kusto
+Function        Remove-AzKustoDatabasePrincipal                    1.0.1      AZ.Kusto
+Function        Remove-AzKustoDatabasePrincipalAssignment          1.0.1      AZ.Kusto
+Function        Remove-AzKustoDataConnection                       1.0.1      AZ.Kusto
+Function        Start-AzKustoCluster                               1.0.1      AZ.Kusto
+Function        Stop-AzKustoCluster                                1.0.1      AZ.Kusto
+Function        Test-AzKustoClusterNameAvailability                1.0.1      AZ.Kusto
+Function        Test-AzKustoClusterPrincipalAssignmentNameAvailab? 1.0.1      AZ.Kusto
+Function        Test-AzKustoDatabaseNameAvailability               1.0.1      AZ.Kusto
+Function        Test-AzKustoDatabasePrincipalAssignmentNameAvaila? 1.0.1      AZ.Kusto
+Function        Test-AzKustoDataConnectionNameAvailability         1.0.1      AZ.Kusto
+Function        Update-AzKustoCluster                              1.0.1      AZ.Kusto
+Function        Update-AzKustoDatabase                             1.0.1      AZ.Kusto
+Function        Update-AzKustoDataConnection                       1.0.1      AZ.Kusto
 
 PS>@{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
 
 Name                           Value
 ----                           -----
 computerName                   AMPHITRITE
-instanceId                     18edeaef-85d8-41c0-abeb-6515c3cb7d22
-processId                      6636
-
-PS C:\> TerminatingError(Resolve-Path): "The specified wildcard character pattern is not valid: [$"
-PS C:\> TerminatingError(Resolve-Path): "The specified wildcard character pattern is not valid: [."
-PS C:\> TerminatingError(Resolve-Path): "The specified wildcard character pattern is not valid: [.T"
-PS C:\> TerminatingError(Resolve-Path): "The specified wildcard character pattern is not valid: [.Ten"
-PS C:\> TerminatingError(Resolve-Path): "The specified wildcard character pattern is not valid: [.Tent"
-PS C:\> TerminatingError(Resolve-Path): "The specified wildcard character pattern is not valid: [.Tena"
-PS C:\> TerminatingError(Resolve-Path): "The specified wildcard character pattern is not valid: [.Tenan"
-PS C:\> TerminatingError(Resolve-Path): "The specified wildcard character pattern is not valid: [.Tenant"
-PS C:\> TerminatingError(Resolve-Path): "The specified wildcard character pattern is not valid: [.TenantI"
-PS C:\> TerminatingError(Resolve-Path): "The specified wildcard character pattern is not valid: [.TenantId"
-PS C:\> $cred = Connect-AzAccount
-PS C:\> @{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
-
-Name                           Value
-----                           -----
-computerName                   AMPHITRITE
-instanceId                     18edeaef-85d8-41c0-abeb-6515c3cb7d22
-processId                      6636
-
-PS C:\> $cred
-
-Account                           SubscriptionName TenantId                             Environment
--------                           ---------------- --------                             -----------
-ericvanos@xhelios.onmicrosoft.com MSDN Platforms   c395f110-ab2e-44ab-b096-7000e2511b32 AzureCloud
-
-PS C:\> @{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
-
-Name                           Value
-----                           -----
-computerName                   AMPHITRITE
-instanceId                     18edeaef-85d8-41c0-abeb-6515c3cb7d22
-processId                      6636
-
-PS C:\> Set-AzContext $cred.TenantId
->> TerminatingError(Set-AzContext): "Cannot bind argument to parameter 'Context' because it is null."
-
-Set-AzContext: Cannot bind argument to parameter 'Context' because it is null.
-
-[91mSet-AzContext: [91mCannot bind argument to parameter 'Context' because it is null.[0m
-PS C:\> @{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
-
-Name                           Value
-----                           -----
-computerName                   AMPHITRITE
-instanceId                     18edeaef-85d8-41c0-abeb-6515c3cb7d22
-processId                      6636
-
-PS C:\> $cred
-
-Account                           SubscriptionName TenantId                             Environment
--------                           ---------------- --------                             -----------
-ericvanos@xhelios.onmicrosoft.com MSDN Platforms   c395f110-ab2e-44ab-b096-7000e2511b32 AzureCloud
-
-PS C:\> @{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
-
-Name                           Value
-----                           -----
-computerName                   AMPHITRITE
-instanceId                     18edeaef-85d8-41c0-abeb-6515c3cb7d22
-processId                      6636
-
-PS C:\> Set-AzContext $cred.subscriptionId
->> TerminatingError(Set-AzContext): "Cannot bind argument to parameter 'Context' because it is null."
-
-Set-AzContext: Cannot bind argument to parameter 'Context' because it is null.
-
-[91mSet-AzContext: [91mCannot bind argument to parameter 'Context' because it is null.[0m
-PS C:\> @{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
-
-Name                           Value
-----                           -----
-computerName                   AMPHITRITE
-instanceId                     18edeaef-85d8-41c0-abeb-6515c3cb7d22
-processId                      6636
-
-PS C:\> New-AzResourceGroup `
-  -Name myResourceGroup `
-  -Location "Central US"
-
-ResourceGroupName : myResourceGroup
-Location          : centralus
-ProvisioningState : Succeeded
-Tags              :
-ResourceId        : /subscriptions/940541f2-0f53-48e7-8046-f6530b423abc/resourceGroups/myResourceGroup
-
-
-PS C:\> @{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
-
-Name                           Value
-----                           -----
-computerName                   AMPHITRITE
-instanceId                     18edeaef-85d8-41c0-abeb-6515c3cb7d22
-processId                      6636
-
-PS C:\> $bicepFile = "C:\Work\Azure\Biceps\AzureDeploy.bicep"
-New-AzResourceGroupDeployment `
-  -Name firstbicep `
-  -ResourceGroupName myResourceGroup `
-  -TemplateFile $bicepFile
-
-DeploymentName          : firstbicep
-ResourceGroupName       : myResourceGroup
-ProvisioningState       : Succeeded
-Timestamp               : 4/25/2021 3:40:13 PM
-Mode                    : Incremental
-TemplateLink            :
-Parameters              :
-Outputs                 :
-DeploymentDebugLogLevel :
-
-
-PS C:\> @{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
-
-Name                           Value
-----                           -----
-computerName                   AMPHITRITE
-instanceId                     18edeaef-85d8-41c0-abeb-6515c3cb7d22
-processId                      6636
-
-PS C:\> Remove-AzResourceGroup -Name myResourceGroup -Force
-True
-PS C:\> @{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
-
-Name                           Value
-----                           -----
-computerName                   AMPHITRITE
-instanceId                     18edeaef-85d8-41c0-abeb-6515c3cb7d22
-processId                      6636
-
-PS C:\> CommandInvocation(Get-Help): "Get-Help"
->> ParameterBinding(Get-Help): name="Name"; value="Connect-AzAccount"
->> ParameterBinding(Get-Help): name="Online"; value="False"
->> ParameterBinding(Get-Help): name="ErrorAction"; value="Ignore"
-
-NAME
-    Connect-AzAccount
-
-SYNOPSIS
-    Connect to Azure with an authenticated account for use with cmdlets from the Az PowerShell modules.
-
-
-SYNTAX
-    Connect-AzAccount -AccessToken <System.String> -AccountId <System.String> [-ContextName <System.String>] [-DefaultProfile <Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer>]
-    [-Environment <System.String>] [-Force] [-GraphAccessToken <System.String>] [-KeyVaultAccessToken <System.String>] [-MaxContextPopulation <System.Int32>] [-Scope {Process | CurrentUser}] [-SkipContextPopulation]
-    [-SkipValidation] [-Subscription <System.String>] [-Tenant <System.String>] [-Confirm] [-WhatIf] [<CommonParameters>]
-
-    Connect-AzAccount [-AccountId <System.String>] [-ContextName <System.String>] [-DefaultProfile <Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer>] [-Environment <System.String>]
-    [-Force] -Identity [-ManagedServiceHostName <System.String>] [-ManagedServicePort <System.Int32>] [-ManagedServiceSecret <System.Security.SecureString>] [-MaxContextPopulation <System.Int32>] [-Scope {Process | CurrentUser}]
-    [-SkipContextPopulation] [-Subscription <System.String>] [-Tenant <System.String>] [-Confirm] [-WhatIf] [<CommonParameters>]
-
-    Connect-AzAccount -ApplicationId <System.String> -CertificateThumbprint <System.String> [-ContextName <System.String>] [-DefaultProfile
-    <Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer>] [-Environment <System.String>] [-Force] [-MaxContextPopulation <System.Int32>] [-Scope {Process | CurrentUser}] [-ServicePrincipal]
-    [-SkipContextPopulation] [-Subscription <System.String>] -Tenant <System.String> [-Confirm] [-WhatIf] [<CommonParameters>]
-
-    Connect-AzAccount [-ContextName <System.String>] -Credential <System.Management.Automation.PSCredential> [-DefaultProfile <Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer>]
-    [-Environment <System.String>] [-Force] [-MaxContextPopulation <System.Int32>] [-Scope {Process | CurrentUser}] -ServicePrincipal [-SkipContextPopulation] [-Subscription <System.String>] -Tenant <System.String> [-Confirm]
-    [-WhatIf] [<CommonParameters>]
-
-    Connect-AzAccount [-ContextName <System.String>] -Credential <System.Management.Automation.PSCredential> [-DefaultProfile <Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer>]
-    [-Environment <System.String>] [-Force] [-MaxContextPopulation <System.Int32>] [-Scope {Process | CurrentUser}] [-SkipContextPopulation] [-Subscription <System.String>] [-Tenant <System.String>] [-Confirm] [-WhatIf]
-    [<CommonParameters>]
-
-    Connect-AzAccount [-ContextName <System.String>] [-DefaultProfile <Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer>] [-Environment <System.String>] [-Force] [-MaxContextPopulation
-    <System.Int32>] [-Scope {Process | CurrentUser}] [-SkipContextPopulation] [-Subscription <System.String>] [-Tenant <System.String>] [-UseDeviceAuthentication] [-Confirm] [-WhatIf] [<CommonParameters>]
-
-
-DESCRIPTION
-    The `Connect-AzAccount` cmdlet connects to Azure with an authenticated account for use with cmdlets from the Az PowerShell modules. You can use this authenticated account only with Azure Resource Manager requests. To add an
-    authenticated account for use with Service Management, use the `Add-AzureAccount` cmdlet from the Azure PowerShell module. If no context is found for the current user, the user's context list is populated with a context for
-    each of their first 25 subscriptions. The list of contexts created for the user can be found by running `Get-AzContext -ListAvailable`. To skip this context population, specify the SkipContextPopulation switch parameter.
-    After executing this cmdlet, you can disconnect from an Azure account using `Disconnect-AzAccount`.
-
-
-RELATED LINKS
-    Online Version: https://docs.microsoft.com/powershell/module/az.accounts/connect-azaccount
-
-REMARKS
-    To see the examples, type: "Get-Help Connect-AzAccount -Examples"
-    For more information, type: "Get-Help Connect-AzAccount -Detailed"
-    For technical information, type: "Get-Help Connect-AzAccount -Full"
-    For online help, type: "Get-Help Connect-AzAccount -Online"
+instanceId                     d0811154-b867-443b-8cdd-088bf5f308f3
+processId                      3524
 
