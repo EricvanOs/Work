@@ -186,3 +186,52 @@ PS C:\> CommandInvocation(Get-Help): "Get-Help"
 >> ParameterBinding(Get-Help): name="Name"; value="Connect-AzAccount"
 >> ParameterBinding(Get-Help): name="Online"; value="False"
 >> ParameterBinding(Get-Help): name="ErrorAction"; value="Ignore"
+
+NAME
+    Connect-AzAccount
+
+SYNOPSIS
+    Connect to Azure with an authenticated account for use with cmdlets from the Az PowerShell modules.
+
+
+SYNTAX
+    Connect-AzAccount -AccessToken <System.String> -AccountId <System.String> [-ContextName <System.String>] [-DefaultProfile <Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer>]
+    [-Environment <System.String>] [-Force] [-GraphAccessToken <System.String>] [-KeyVaultAccessToken <System.String>] [-MaxContextPopulation <System.Int32>] [-Scope {Process | CurrentUser}] [-SkipContextPopulation]
+    [-SkipValidation] [-Subscription <System.String>] [-Tenant <System.String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+
+    Connect-AzAccount [-AccountId <System.String>] [-ContextName <System.String>] [-DefaultProfile <Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer>] [-Environment <System.String>]
+    [-Force] -Identity [-ManagedServiceHostName <System.String>] [-ManagedServicePort <System.Int32>] [-ManagedServiceSecret <System.Security.SecureString>] [-MaxContextPopulation <System.Int32>] [-Scope {Process | CurrentUser}]
+    [-SkipContextPopulation] [-Subscription <System.String>] [-Tenant <System.String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+
+    Connect-AzAccount -ApplicationId <System.String> -CertificateThumbprint <System.String> [-ContextName <System.String>] [-DefaultProfile
+    <Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer>] [-Environment <System.String>] [-Force] [-MaxContextPopulation <System.Int32>] [-Scope {Process | CurrentUser}] [-ServicePrincipal]
+    [-SkipContextPopulation] [-Subscription <System.String>] -Tenant <System.String> [-Confirm] [-WhatIf] [<CommonParameters>]
+
+    Connect-AzAccount [-ContextName <System.String>] -Credential <System.Management.Automation.PSCredential> [-DefaultProfile <Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer>]
+    [-Environment <System.String>] [-Force] [-MaxContextPopulation <System.Int32>] [-Scope {Process | CurrentUser}] -ServicePrincipal [-SkipContextPopulation] [-Subscription <System.String>] -Tenant <System.String> [-Confirm]
+    [-WhatIf] [<CommonParameters>]
+
+    Connect-AzAccount [-ContextName <System.String>] -Credential <System.Management.Automation.PSCredential> [-DefaultProfile <Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer>]
+    [-Environment <System.String>] [-Force] [-MaxContextPopulation <System.Int32>] [-Scope {Process | CurrentUser}] [-SkipContextPopulation] [-Subscription <System.String>] [-Tenant <System.String>] [-Confirm] [-WhatIf]
+    [<CommonParameters>]
+
+    Connect-AzAccount [-ContextName <System.String>] [-DefaultProfile <Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer>] [-Environment <System.String>] [-Force] [-MaxContextPopulation
+    <System.Int32>] [-Scope {Process | CurrentUser}] [-SkipContextPopulation] [-Subscription <System.String>] [-Tenant <System.String>] [-UseDeviceAuthentication] [-Confirm] [-WhatIf] [<CommonParameters>]
+
+
+DESCRIPTION
+    The `Connect-AzAccount` cmdlet connects to Azure with an authenticated account for use with cmdlets from the Az PowerShell modules. You can use this authenticated account only with Azure Resource Manager requests. To add an
+    authenticated account for use with Service Management, use the `Add-AzureAccount` cmdlet from the Azure PowerShell module. If no context is found for the current user, the user's context list is populated with a context for
+    each of their first 25 subscriptions. The list of contexts created for the user can be found by running `Get-AzContext -ListAvailable`. To skip this context population, specify the SkipContextPopulation switch parameter.
+    After executing this cmdlet, you can disconnect from an Azure account using `Disconnect-AzAccount`.
+
+
+RELATED LINKS
+    Online Version: https://docs.microsoft.com/powershell/module/az.accounts/connect-azaccount
+
+REMARKS
+    To see the examples, type: "Get-Help Connect-AzAccount -Examples"
+    For more information, type: "Get-Help Connect-AzAccount -Detailed"
+    For technical information, type: "Get-Help Connect-AzAccount -Full"
+    For online help, type: "Get-Help Connect-AzAccount -Online"
+
