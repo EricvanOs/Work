@@ -1,12 +1,12 @@
 **********************
 PowerShell transcript start
-Start time: 20210425192636
+Start time: 20210425193031
 Username: PANTHEON\administrator
 RunAs User: PANTHEON\administrator
 Configuration Name: 
 Machine: AMPHITRITE (Microsoft Windows NT 10.0.17763.0)
-Host Application: C:\Program Files\PowerShell\7\pwsh.dll -NoProfile -NonInteractive -ExecutionPolicy Bypass -Command Import-Module 'c:\Users\administrator.PANTHEON\.vscode\extensions\ms-vscode.powershell-2021.2.2\modules\PowerShellEditorServices\PowerShellEditorServices.psd1'; Start-EditorServices -HostName 'Visual Studio Code Host' -HostProfileId 'Microsoft.VSCode' -HostVersion '2021.2.2' -AdditionalModules @('PowerShellEditorServices.VSCode') -BundledModulesPath 'c:\Users\administrator.PANTHEON\.vscode\extensions\ms-vscode.powershell-2021.2.2\modules' -EnableConsoleRepl -StartupBanner '' -LogLevel 'Normal' -LogPath 'c:\Users\administrator.PANTHEON\.vscode\extensions\ms-vscode.powershell-2021.2.2\logs\1619371590-9d17ad33-85e2-481c-a88e-7578375b926d1619371587416\EditorServices.log' -SessionDetailsPath 'c:\Users\administrator.PANTHEON\.vscode\extensions\ms-vscode.powershell-2021.2.2\sessions\PSES-VSCode-5564-643056' -FeatureFlags @() 
-Process ID: 3524
+Host Application: C:\Program Files\PowerShell\7\pwsh.dll -NoProfile -NonInteractive -ExecutionPolicy Bypass -Command Import-Module 'c:\Users\administrator.PANTHEON\.vscode\extensions\ms-vscode.powershell-2021.2.2\modules\PowerShellEditorServices\PowerShellEditorServices.psd1'; Start-EditorServices -HostName 'Visual Studio Code Host' -HostProfileId 'Microsoft.VSCode' -HostVersion '2021.2.2' -AdditionalModules @('PowerShellEditorServices.VSCode') -BundledModulesPath 'c:\Users\administrator.PANTHEON\.vscode\extensions\ms-vscode.powershell-2021.2.2\modules' -EnableConsoleRepl -StartupBanner '' -LogLevel 'Normal' -LogPath 'c:\Users\administrator.PANTHEON\.vscode\extensions\ms-vscode.powershell-2021.2.2\logs\1619371825-c3db780b-1ab6-460d-add2-07ce7d5852831619371731180\EditorServices.log' -SessionDetailsPath 'c:\Users\administrator.PANTHEON\.vscode\extensions\ms-vscode.powershell-2021.2.2\sessions\PSES-VSCode-7064-746845' -FeatureFlags @() 
+Process ID: 4700
 PSVersion: 7.1.3
 PSEdition: Core
 GitCommitId: 7.1.3
@@ -27,67 +27,15 @@ PS>@{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineNa
 
 Name                           Value
 ----                           -----
+processId                      4700
 computerName                   AMPHITRITE
-instanceId                     d0811154-b867-443b-8cdd-088bf5f308f3
-processId                      3524
+instanceId                     b41823d3-0915-4b07-9d8d-6d1740d357cb
 
 PS>@{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
 
 Name                           Value
 ----                           -----
+processId                      4700
 computerName                   AMPHITRITE
-instanceId                     d0811154-b867-443b-8cdd-088bf5f308f3
-processId                      3524
-
-PS>get-command -Module AZ.Kusto
-
-CommandType     Name                                               Version    Source
------------     ----                                               -------    ------
-Function        Add-AzKustoClusterLanguageExtension                1.0.1      AZ.Kusto
-Function        Add-AzKustoDatabasePrincipal                       1.0.1      AZ.Kusto
-Function        Get-AzKustoAttachedDatabaseConfiguration           1.0.1      AZ.Kusto
-Function        Get-AzKustoCluster                                 1.0.1      AZ.Kusto
-Function        Get-AzKustoClusterFollowerDatabase                 1.0.1      AZ.Kusto
-Function        Get-AzKustoClusterLanguageExtension                1.0.1      AZ.Kusto
-Function        Get-AzKustoClusterPrincipalAssignment              1.0.1      AZ.Kusto
-Function        Get-AzKustoClusterSku                              1.0.1      AZ.Kusto
-Function        Get-AzKustoDatabase                                1.0.1      AZ.Kusto
-Function        Get-AzKustoDatabasePrincipal                       1.0.1      AZ.Kusto
-Function        Get-AzKustoDatabasePrincipalAssignment             1.0.1      AZ.Kusto
-Function        Get-AzKustoDataConnection                          1.0.1      AZ.Kusto
-Function        Invoke-AzKustoDataConnectionValidation             1.0.1      AZ.Kusto
-Function        Invoke-AzKustoDetachClusterFollowerDatabase        1.0.1      AZ.Kusto
-Function        Invoke-AzKustoDiagnoseClusterVirtualNetwork        1.0.1      AZ.Kusto
-Function        New-AzKustoAttachedDatabaseConfiguration           1.0.1      AZ.Kusto
-Function        New-AzKustoCluster                                 1.0.1      AZ.Kusto
-Function        New-AzKustoClusterPrincipalAssignment              1.0.1      AZ.Kusto
-Function        New-AzKustoDatabase                                1.0.1      AZ.Kusto
-Function        New-AzKustoDatabasePrincipalAssignment             1.0.1      AZ.Kusto
-Function        New-AzKustoDataConnection                          1.0.1      AZ.Kusto
-Function        Remove-AzKustoAttachedDatabaseConfiguration        1.0.1      AZ.Kusto
-Function        Remove-AzKustoCluster                              1.0.1      AZ.Kusto
-Function        Remove-AzKustoClusterLanguageExtension             1.0.1      AZ.Kusto
-Function        Remove-AzKustoClusterPrincipalAssignment           1.0.1      AZ.Kusto
-Function        Remove-AzKustoDatabase                             1.0.1      AZ.Kusto
-Function        Remove-AzKustoDatabasePrincipal                    1.0.1      AZ.Kusto
-Function        Remove-AzKustoDatabasePrincipalAssignment          1.0.1      AZ.Kusto
-Function        Remove-AzKustoDataConnection                       1.0.1      AZ.Kusto
-Function        Start-AzKustoCluster                               1.0.1      AZ.Kusto
-Function        Stop-AzKustoCluster                                1.0.1      AZ.Kusto
-Function        Test-AzKustoClusterNameAvailability                1.0.1      AZ.Kusto
-Function        Test-AzKustoClusterPrincipalAssignmentNameAvailab? 1.0.1      AZ.Kusto
-Function        Test-AzKustoDatabaseNameAvailability               1.0.1      AZ.Kusto
-Function        Test-AzKustoDatabasePrincipalAssignmentNameAvaila? 1.0.1      AZ.Kusto
-Function        Test-AzKustoDataConnectionNameAvailability         1.0.1      AZ.Kusto
-Function        Update-AzKustoCluster                              1.0.1      AZ.Kusto
-Function        Update-AzKustoDatabase                             1.0.1      AZ.Kusto
-Function        Update-AzKustoDataConnection                       1.0.1      AZ.Kusto
-
-PS>@{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
-
-Name                           Value
-----                           -----
-computerName                   AMPHITRITE
-instanceId                     d0811154-b867-443b-8cdd-088bf5f308f3
-processId                      3524
+instanceId                     b41823d3-0915-4b07-9d8d-6d1740d357cb
 
