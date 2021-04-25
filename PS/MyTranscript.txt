@@ -39,3 +39,136 @@ computerName                   AMPHITRITE
 instanceId                     18edeaef-85d8-41c0-abeb-6515c3cb7d22
 processId                      6636
 
+PS>Connect-AzAccount
+
+Account                           SubscriptionName TenantId                             Environment
+-------                           ---------------- --------                             -----------
+ericvanos@xhelios.onmicrosoft.com MSDN Platforms   c395f110-ab2e-44ab-b096-7000e2511b32 AzureCloud
+
+PS>@{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
+
+Name                           Value
+----                           -----
+computerName                   AMPHITRITE
+instanceId                     18edeaef-85d8-41c0-abeb-6515c3cb7d22
+processId                      6636
+
+PS C:\> TerminatingError(Resolve-Path): "The specified wildcard character pattern is not valid: [$"
+PS C:\> TerminatingError(Resolve-Path): "The specified wildcard character pattern is not valid: [."
+PS C:\> TerminatingError(Resolve-Path): "The specified wildcard character pattern is not valid: [.T"
+PS C:\> TerminatingError(Resolve-Path): "The specified wildcard character pattern is not valid: [.Ten"
+PS C:\> TerminatingError(Resolve-Path): "The specified wildcard character pattern is not valid: [.Tent"
+PS C:\> TerminatingError(Resolve-Path): "The specified wildcard character pattern is not valid: [.Tena"
+PS C:\> TerminatingError(Resolve-Path): "The specified wildcard character pattern is not valid: [.Tenan"
+PS C:\> TerminatingError(Resolve-Path): "The specified wildcard character pattern is not valid: [.Tenant"
+PS C:\> TerminatingError(Resolve-Path): "The specified wildcard character pattern is not valid: [.TenantI"
+PS C:\> TerminatingError(Resolve-Path): "The specified wildcard character pattern is not valid: [.TenantId"
+PS C:\> $cred = Connect-AzAccount
+PS C:\> @{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
+
+Name                           Value
+----                           -----
+computerName                   AMPHITRITE
+instanceId                     18edeaef-85d8-41c0-abeb-6515c3cb7d22
+processId                      6636
+
+PS C:\> $cred
+
+Account                           SubscriptionName TenantId                             Environment
+-------                           ---------------- --------                             -----------
+ericvanos@xhelios.onmicrosoft.com MSDN Platforms   c395f110-ab2e-44ab-b096-7000e2511b32 AzureCloud
+
+PS C:\> @{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
+
+Name                           Value
+----                           -----
+computerName                   AMPHITRITE
+instanceId                     18edeaef-85d8-41c0-abeb-6515c3cb7d22
+processId                      6636
+
+PS C:\> Set-AzContext $cred.TenantId
+>> TerminatingError(Set-AzContext): "Cannot bind argument to parameter 'Context' because it is null."
+
+Set-AzContext: Cannot bind argument to parameter 'Context' because it is null.
+
+[91mSet-AzContext: [91mCannot bind argument to parameter 'Context' because it is null.[0m
+PS C:\> @{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
+
+Name                           Value
+----                           -----
+computerName                   AMPHITRITE
+instanceId                     18edeaef-85d8-41c0-abeb-6515c3cb7d22
+processId                      6636
+
+PS C:\> $cred
+
+Account                           SubscriptionName TenantId                             Environment
+-------                           ---------------- --------                             -----------
+ericvanos@xhelios.onmicrosoft.com MSDN Platforms   c395f110-ab2e-44ab-b096-7000e2511b32 AzureCloud
+
+PS C:\> @{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
+
+Name                           Value
+----                           -----
+computerName                   AMPHITRITE
+instanceId                     18edeaef-85d8-41c0-abeb-6515c3cb7d22
+processId                      6636
+
+PS C:\> Set-AzContext $cred.subscriptionId
+>> TerminatingError(Set-AzContext): "Cannot bind argument to parameter 'Context' because it is null."
+
+Set-AzContext: Cannot bind argument to parameter 'Context' because it is null.
+
+[91mSet-AzContext: [91mCannot bind argument to parameter 'Context' because it is null.[0m
+PS C:\> @{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
+
+Name                           Value
+----                           -----
+computerName                   AMPHITRITE
+instanceId                     18edeaef-85d8-41c0-abeb-6515c3cb7d22
+processId                      6636
+
+PS C:\> New-AzResourceGroup `
+  -Name myResourceGroup `
+  -Location "Central US"
+
+ResourceGroupName : myResourceGroup
+Location          : centralus
+ProvisioningState : Succeeded
+Tags              :
+ResourceId        : /subscriptions/940541f2-0f53-48e7-8046-f6530b423abc/resourceGroups/myResourceGroup
+
+
+PS C:\> @{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
+
+Name                           Value
+----                           -----
+computerName                   AMPHITRITE
+instanceId                     18edeaef-85d8-41c0-abeb-6515c3cb7d22
+processId                      6636
+
+PS C:\> $bicepFile = "C:\Work\Azure\Biceps\AzureDeploy.bicep"
+New-AzResourceGroupDeployment `
+  -Name firstbicep `
+  -ResourceGroupName myResourceGroup `
+  -TemplateFile $bicepFile
+
+DeploymentName          : firstbicep
+ResourceGroupName       : myResourceGroup
+ProvisioningState       : Succeeded
+Timestamp               : 4/25/2021 3:40:13 PM
+Mode                    : Incremental
+TemplateLink            :
+Parameters              :
+Outputs                 :
+DeploymentDebugLogLevel :
+
+
+PS C:\> @{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
+
+Name                           Value
+----                           -----
+computerName                   AMPHITRITE
+instanceId                     18edeaef-85d8-41c0-abeb-6515c3cb7d22
+processId                      6636
+
