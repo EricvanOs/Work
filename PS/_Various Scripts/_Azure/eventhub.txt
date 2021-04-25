@@ -1,0 +1,8 @@
+New-AzEventHubNamespace -ResourceGroupName Mod3Lab3 -NamespaceName xericy -Location eastus
+
+New-AzEventHub -ResourceGroupName Mod3Lab3 -NamespaceName xericy -EventHubName Mod3Lab3 -MessageRetentionInDays 3
+
+
+
+
+New-AzVm -ResourceGroupName "myResourceGroup" -Name "myVM" -Location "East  US" -VirtualNetworkName "myVnet" -SubnetName "mySubnet" -SecurityGroupName   "myNetworkSecurityGroup" -PublicIpAddressName "myPublicIpAddress" -OpenPorts 80,3389

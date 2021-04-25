@@ -1,0 +1,41 @@
+**********************
+PowerShell transcript start
+Start time: 20210425155557
+Username: PANTHEON\administrator
+RunAs User: PANTHEON\administrator
+Configuration Name: 
+Machine: AMPHITRITE (Microsoft Windows NT 10.0.17763.0)
+Host Application: C:\Program Files\PowerShell\7\pwsh.dll -NoProfile -NonInteractive -ExecutionPolicy Bypass -Command Import-Module 'c:\Users\administrator.PANTHEON\.vscode\extensions\ms-vscode.powershell-2021.2.2\modules\PowerShellEditorServices\PowerShellEditorServices.psd1'; Start-EditorServices -HostName 'Visual Studio Code Host' -HostProfileId 'Microsoft.VSCode' -HostVersion '2021.2.2' -AdditionalModules @('PowerShellEditorServices.VSCode') -BundledModulesPath 'c:\Users\administrator.PANTHEON\.vscode\extensions\ms-vscode.powershell-2021.2.2\modules' -EnableConsoleRepl -StartupBanner '' -LogLevel 'Normal' -LogPath 'c:\Users\administrator.PANTHEON\.vscode\extensions\ms-vscode.powershell-2021.2.2\logs\1619358951-dc98f4f6-f118-4ec6-875f-04a7bf54b1841619358943797\EditorServices.log' -SessionDetailsPath 'c:\Users\administrator.PANTHEON\.vscode\extensions\ms-vscode.powershell-2021.2.2\sessions\PSES-VSCode-2688-229733' -FeatureFlags @() 
+Process ID: 6860
+PSVersion: 7.1.3
+PSEdition: Core
+GitCommitId: 7.1.3
+OS: Microsoft Windows 10.0.17763
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.10032.0, 6.0.0, 6.1.0, 6.2.0, 7.0.0, 7.1.3
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+
+Remove-Variable: C:\Users\administrator.PANTHEON\Documents\PowerShell\Microsoft.VSCode_profile.ps1:8:1
+Line |
+   8 |  Remove-Variable -Name quote
+     |  ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot find a variable with the name 'quote'.
+PS>@{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
+
+Name                           Value
+----                           -----
+computerName                   AMPHITRITE
+processId                      6860
+instanceId                     02652771-10b1-4064-ba3b-aa7151f06ac2
+
+PS>@{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
+
+Name                           Value
+----                           -----
+computerName                   AMPHITRITE
+processId                      6860
+instanceId                     02652771-10b1-4064-ba3b-aa7151f06ac2
+

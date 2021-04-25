@@ -1,0 +1,74 @@
+Connect to OData
+
+If you have not already, first specify connection properties in an ODBC DSN (data source name). This is the last step of the driver installation. You can use the Microsoft ODBC Data Source Administrator to create and configure ODBC DSNs. To create an external data source in SQL Server using PolyBase, configure a System DSN (CData OData Sys is created automatically).
+
+The User and Password properties, under the Authentication section, must be set to valid OData user credentials. In addition, you will need to specify a URL to a valid OData server organization root or OData services file.
+
+Click "Test Connection" to ensure that the DSN is connected to OData properly. Navigate to the Tables tab to review the table definitions for OData.
+
+Creating a Master Encryption Key
+
+Execute the following SQL command to create a new master key, 'ENCRYPTION,' to encrypt the credentials for the external data source.
+
+CREATE MASTER KEY ENCRYPTION BY PASSWORD = 'password';
+
+Creating a Credential Database
+
+Execute the following SQL command to create credentials for the external data source connected to OData services.
+
+NOTE: Since OData does not require a User or Password to authenticate, you may use whatever values you wish for IDENTITY and SECRET.
+
+CREATE DATABASE SCOPED CREDENTIAL odata_creds
+WITH IDENTITY = 'username', SECRET = 'password';
+
+Create an External Data Source for OData
+
+Execute the following SQL command to create an external data source for OData with PolyBase, using the DSN and credentials configured earlier.
+
+For OData, set SERVERNAME to 'localhost' or '127.0.0.1' and leave PORT empty. PUSHDOWN is set to ON by default, meaning the ODBC Driver can leverage server-side processing for complex queries.
+
+CREATE EXTERNAL DATA SOURCE cdata_odata_source
+WITH ( 
+  LOCATION = 'odbc://SERVERNAME[:PORT]',
+  CONNECTION_OPTIONS = 'DSN=CData OData Sys',
+  -- PUSHDOWN = ON | OFF,
+  CREDENTIAL = odata_creds
+);
+
+Create External Tables for OData
+
+After creating the external data source, use CREATE EXTERNAL TABLE statements to link to OData services from your SQL Server instance. The table column definitions must match those exposed by the CData ODBC Driver for OData. You can refer to the Tables tab of the DSN Configuration Wizard to see the table definition.
+[Table definition in the DSN Configuration Wizard (Salesforce is shown)]
+Sample CREATE TABLE Statement
+
+The statement to create an external table based on a OData Orders would look similar to the following:
+
+CREATE EXTERNAL TABLE Orders(
+  OrderName [nvarchar](255) NULL,
+  Freight [nvarchar](255) NULL,
+  ...
+) WITH ( 
+  LOCATION='Orders',
+  DATA_SOURCE=cdata_odata_source
+);
+
+
+---------------------------
+https://docs.microsoft.com/en-us/sql/relational-databases/polybase/polybase-configure-odbc-generic?view=sql-server-ver15
+
+
+----
+
+https://audministrator.wordpress.com/2015/01/03/getting-odata-using-powershell/
+
+https://github.com/dfinke/ODataExplorer
+
+https://www.odata.org/
+
+https://www.powershellgallery.com/packages/Microsoft.PowerShell.ODataUtils/1.1.7.0
+https://www.powershellgallery.com/packages/ODataCmdlets/20.0.7654.0
+https://www.powershellgallery.com/packages/OData/1.0
+
+
+---
+http://cdn.cdata.com/help/RDE/odbc/default.htm

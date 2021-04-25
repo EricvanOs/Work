@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2024
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "PowershellErrorHandling", "PowershellErrorHandling\PowershellErrorHandling.dtproj", "{8279DB55-B5B1-4C65-8DB3-DF9582F37637}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8279DB55-B5B1-4C65-8DB3-DF9582F37637}.Development|Default.ActiveCfg = Development
+		{8279DB55-B5B1-4C65-8DB3-DF9582F37637}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6B8FD06B-64AF-49CF-82FB-E9D056A8069C}
+	EndGlobalSection
+EndGlobal

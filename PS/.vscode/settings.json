@@ -1,0 +1,13 @@
+{
+    "sqltools.connections": [
+        {
+            "askForPassword": true,
+            "database": "adventureworks",
+            "dialect": "MSSQL",
+            "name": "eos",
+            "port": 1433,
+            "server": "eos",
+            "username": "sa"
+        }
+    ]
+}

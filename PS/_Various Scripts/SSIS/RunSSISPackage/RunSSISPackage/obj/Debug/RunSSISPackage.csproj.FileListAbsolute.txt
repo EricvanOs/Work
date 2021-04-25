@@ -1,0 +1,21 @@
+\\CYG7091\SQL Integration Services\Projects\RunSSISPackage\RunSSISPackage\bin\Debug\RunSSISPackage.exe.config
+\\CYG7091\SQL Integration Services\Projects\RunSSISPackage\RunSSISPackage\bin\Debug\RunSSISPackage.exe
+\\CYG7091\SQL Integration Services\Projects\RunSSISPackage\RunSSISPackage\bin\Debug\RunSSISPackage.pdb
+\\CYG7091\SQL Integration Services\Projects\RunSSISPackage\RunSSISPackage\bin\Debug\Microsoft.SqlServer.Management.IntegrationServices.dll
+\\CYG7091\SQL Integration Services\Projects\RunSSISPackage\RunSSISPackage\bin\Debug\Microsoft.SqlServer.Management.Sdk.Sfc.dll
+\\CYG7091\SQL Integration Services\Projects\RunSSISPackage\RunSSISPackage\bin\Debug\Microsoft.SqlServer.Smo.dll
+\\CYG7091\SQL Integration Services\Projects\RunSSISPackage\RunSSISPackage\bin\Debug\Microsoft.SqlServer.ConnectionInfo.dll
+\\CYG7091\SQL Integration Services\Projects\RunSSISPackage\RunSSISPackage\obj\Debug\RunSSISPackage.csprojResolveAssemblyReference.cache
+\\CYG7091\SQL Integration Services\Projects\RunSSISPackage\RunSSISPackage\obj\Debug\RunSSISPackage.exe
+\\CYG7091\SQL Integration Services\Projects\RunSSISPackage\RunSSISPackage\obj\Debug\RunSSISPackage.pdb
+K:\_CM\_Various Scripts\SSIS\RunSSISPackage\RunSSISPackage\bin\Debug\RunSSISPackage.exe.config
+K:\_CM\_Various Scripts\SSIS\RunSSISPackage\RunSSISPackage\bin\Debug\RunSSISPackage.exe
+K:\_CM\_Various Scripts\SSIS\RunSSISPackage\RunSSISPackage\bin\Debug\RunSSISPackage.pdb
+K:\_CM\_Various Scripts\SSIS\RunSSISPackage\RunSSISPackage\bin\Debug\Microsoft.SqlServer.Management.IntegrationServices.dll
+K:\_CM\_Various Scripts\SSIS\RunSSISPackage\RunSSISPackage\bin\Debug\Microsoft.SqlServer.Management.Sdk.Sfc.dll
+K:\_CM\_Various Scripts\SSIS\RunSSISPackage\RunSSISPackage\bin\Debug\Microsoft.SqlServer.Smo.dll
+K:\_CM\_Various Scripts\SSIS\RunSSISPackage\RunSSISPackage\obj\Debug\RunSSISPackage.csprojAssemblyReference.cache
+K:\_CM\_Various Scripts\SSIS\RunSSISPackage\RunSSISPackage\obj\Debug\RunSSISPackage.csproj.CoreCompileInputs.cache
+K:\_CM\_Various Scripts\SSIS\RunSSISPackage\RunSSISPackage\obj\Debug\RunSSISPackage.csproj.CopyComplete
+K:\_CM\_Various Scripts\SSIS\RunSSISPackage\RunSSISPackage\obj\Debug\RunSSISPackage.exe
+K:\_CM\_Various Scripts\SSIS\RunSSISPackage\RunSSISPackage\obj\Debug\RunSSISPackage.pdb

@@ -1,0 +1,5 @@
+az login
+
+az resource list
+
+git status

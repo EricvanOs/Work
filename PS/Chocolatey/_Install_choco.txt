@@ -1,0 +1,5 @@
+PowerShell command run as administrator (do not use ISE)
+
+Invoke-WebRequest -Uri https://chocolatey.org/install.ps1 -UseBasicParsing | Invoke-Expression
+
+-- restart machine

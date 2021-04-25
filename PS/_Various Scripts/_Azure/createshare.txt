@@ -1,0 +1,4 @@
+$a = 'bKebBG0r8blFrsPAtrg7QPKAe04rBOThti+XWklBD37I0Pu5Jcbw55CJBNX27HtotNQUla/haSNdC+0wiMQNSw=='
+$acctKey = ConvertTo-SecureString -String $a -AsPlainText -Force
+$credential = New-Object System.Management.Automation.PSCredential -ArgumentList "Azure\mystorage1234456", $acctKey
+New-PSDrive -Name Z -PSProvider FileSystem -Root "\\mystorage1234456.file.core.windows.net\my-file-share"  -Credential $credential
