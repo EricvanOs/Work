@@ -1,6 +1,11 @@
-$cred = Connect-AzAccount
+Connect-AzAccount
 
-# Set-AzContext $cred.subscriptionId
+# Get subscriptionId
+$SubscriptionId = (Get-AzContext | Where-Object{$_.Name -like "*MSDN*"}).Subscription.id
+
+# set correct subscription you want to work with
+Select-AzSubscription -SubscriptionId $SubscriptionId
+
 
 # Create resource group
 New-AzResourceGroup `
