@@ -27,8 +27,9 @@ Search-AzGraph -Query $query
 $query = @"
 Resources
 	| where type =~ 'Microsoft.Compute/virtualMachines'
-	| where properties.osProfile.computerName =~ 'savazuusscwin10' or properties.extended.instanceView.computerName =~ 'savazuusscdc01'
+	| where properties.osProfile.computerName =~ 'hera2he' or properties.extended.instanceView.computerName =~ 'hera2he'
 	| join (ResourceContainers | where type=='microsoft.resources/subscriptions' | project SubName=name, subscriptionId) on subscriptionId
     | project VMName = name, CompName = properties.osProfile.computerName, OSType =  properties.storageProfile.osDisk.osType, RGName = resourceGroup, SubName, SubID = subscriptionId
 "@
 Search-AzGraph -Query $query
+
