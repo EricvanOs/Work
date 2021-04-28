@@ -40,3 +40,20 @@ Resources
 | limit 1
 "@
 Search-AzGraph -Query $query | ConvertTo-Json -Depth 100
+
+$query = @"
+Resources
+| where type=~ 'microsoft.compute/virtualmachinescalesets'
+| where name contains 'contoso'
+| project subscriptionId, name, location, resourceGroup, Capacity = toint(sku.capacity), Tier = sku.name
+| order by Capacity desc
+"@
+Search-AzGraph -Query $query
+
+$query = @"
+Resources
+| summarize resourceCount=count() by subscriptionId
+| join (ResourceContainers | where type=='microsoft.resources/subscriptions' | project SubName=name, subscriptionId) on subscriptionId
+| project-away subscriptionId, subscriptionId1
+"@
+Search-AzGraph -Query $query
