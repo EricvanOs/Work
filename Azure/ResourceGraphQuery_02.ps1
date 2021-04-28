@@ -33,3 +33,10 @@ Resources
 "@
 Search-AzGraph -Query $query
 
+# default Depth level = 2
+$query = @"
+Resources 
+| where type =~ 'Microsoft.Compute/virtualMachines' 
+| limit 1
+"@
+Search-AzGraph -Query $query | ConvertTo-Json -Depth 100
