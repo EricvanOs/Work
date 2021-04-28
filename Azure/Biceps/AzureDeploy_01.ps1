@@ -14,7 +14,7 @@ New-AzResourceGroup `
 
 # Deploy Bicep file
 
-$bicepFile = "C:\Work\Azure\Biceps\AzureDeploy.bicep"
+$bicepFile = "C:\Work\Azure\Biceps\AzureDeploy_01.bicep"
 New-AzResourceGroupDeployment `
   -Name firstbicep `
   -ResourceGroupName myResourceGroup `
