@@ -52,3 +52,4 @@ on publicIpId
 "@
 
 Search-AzGraph -Query $query
+
