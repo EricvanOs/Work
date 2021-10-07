@@ -5,7 +5,7 @@ Get-Process | Sort-Object -Property VM -Descending | Select-Object -First 10
 Get-Date | Select-Object -Property DayOfWeek
 
 # 3
-Get-EventLog -Newest 10 -LogName Security | Select-Object -Property EventID,TimeWritten,Message
+Get-WinEvent -MaxEvents 10 -LogName Security | Select-Object -Property EventID,TimeWritten,Message
 
 #4
 Get-ADComputer -Filter * -Properties OperatingSystem | Sort-Object -Property OperatingSystem | 
