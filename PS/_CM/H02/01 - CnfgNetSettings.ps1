@@ -2,7 +2,7 @@
 Test-Connection sisyphus 
 
 # 1b
-Test-NetConnection -ComputerName iris -Port 25
+Test-NetConnection -ComputerName hydra -Port 3389
 
 
 # 2
@@ -13,7 +13,7 @@ New-NetIPAddress -InterfaceAlias Ethernet -IPAddress 172.16.0.30 -PrefixLength 2
 Set-NetIPAddress -InterfaceAlias Ethernet -PrefixLength 16   # change setting of interface except ipaddress
 Remove-NetIPAddress -InterfaceIndex ethernet -IPAddress 17.16.0.15 # remove "old" address
  
-get-help Set-NetIPAddress -ShowWindow
+get-help Set-NetIPAddress -Online
 
 # 4
 Set-DnsClientServerAddress -InterfaceAlias Ethernet -IPAddress 172.16.0.11
