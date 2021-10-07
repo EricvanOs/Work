@@ -12,10 +12,10 @@ Get-Service | Sort-Object -Property Status
 Get-Service | Sort-Object -Property Status -Descending
 
 # 5
-Get-EventLog -LogName Security -Newest 10
+Get-WinEvent -LogName Security -MaxEvents 10
 
 # 6
-Get-EventLog -LogName Security -Newest 10 | Sort-Object -Property TimeWritten
+Get-WinEvent -LogName Security -MaxEvents 10 | Sort-Object -Property TimeWritten
 
 # 7
 Get-ADUser -Filter * | Sort-Object -Property SurName | Format-Wide -AutoSize
