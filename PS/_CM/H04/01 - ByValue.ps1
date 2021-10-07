@@ -5,7 +5,7 @@ Get-Service -Name BITS | Stop-Service -WhatIf
 Get-Service | Get-Member
 
 # 3
-Get-Help Stop-Service -ShowWindow  # inputObject <ServiceController[]> ; ByValue
+Get-Help Stop-Service -Online  # inputObject <ServiceController[]> ; ByValue
 
 # 4 
-Get-Help Select-Object -ShowWindow  #inputObject <PSObject> ; ByValue (maw elk object)
+Get-Help Select-Object -Online  #inputObject <PSObject> ; ByValue (maw elk object)

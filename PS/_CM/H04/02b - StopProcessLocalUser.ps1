@@ -14,8 +14,6 @@ get-help stop-process -online  # Accept pipeline input?       True (ByPropertyNa
 # dit mislukt, naam van kolom is anders
 Get-LocalUser | Where-Object{$_.name -eq 'Notepad'} | select-object -Property @{n='xyz';e={$_.name}} | Stop-Process
 
-
 # cleanup
-
 Remove-LocalUser -Name Notepad
 
