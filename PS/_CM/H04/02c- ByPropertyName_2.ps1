@@ -1,4 +1,4 @@
-﻿Get-Help Get-Process -ShowWindow
+﻿Get-Help Get-Process -Online
 <#
 Parameters
     -ComputerName <String[]>
