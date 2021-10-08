@@ -4,7 +4,7 @@ Get-PSDrive
 
 Set-Location sqlserver:\
 
-Set-Location SQLSERVER:\sql\eos\default\logins
+Set-Location SQLSERVER:\sql\echo\default\logins
 
 Set-Location c:\
 
