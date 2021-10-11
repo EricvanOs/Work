@@ -33,7 +33,7 @@ Get-Process -Id $id
 
 # doesn't work
 Get-ADComputer -Filter * | Get-Process
-# or, thre are no processes running with those names
+# or, there are no processes running with those names
 Get-ADComputer -Filter * | Select-Object -Property name | Get-Process 
 
 # want to use name (from get-adcomputer) as computername in get-process

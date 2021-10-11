@@ -5,7 +5,7 @@ Get-ADComputer -Filter * | Get-Process   # gaat fout
 Get-ADComputer -Filter * | Get-Member
 
 # 3
-Get-Help Get-Process -Online  # ByPropertyName  -- Id, Name
+Get-Help Get-Process -Online  # ByPropertyName  -- ComputerName, Id, Name
 
 # 4
 Start-Process -FilePath Notepad -WindowStyle Hidden
@@ -22,5 +22,5 @@ Get-Process -id 5436
 
 
 Get-ADComputer -Filter("Name -like 'hy*a*' ") | 
-  Select-Object -Property @{n='Name';e={$_.Name}} | 
+  Select-Object -Property @{n='ComputerName';e={$_.Name}} | 
   Get-Process
