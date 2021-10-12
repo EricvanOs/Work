@@ -1,4 +1,6 @@
-﻿notepad
+﻿New-PSDrive -Name K -Root C:\Work\PS\Temp -PSProvider FileSystem  
+
+notepad
 
 Get-Process -Name notepad | Tee-Object -Variable proc | Select-Object processname,handles
 
@@ -20,3 +22,5 @@ Get-ChildItem -Path $Path -File -Recurse | Out-File -FilePath $Path\NewSystemFil
 # cleanup
 
 "$Path\AllSystemFiles.txt" , "$Path\NewSystemFiles.txt" | Remove-Item
+
+Remove-PSDrive K

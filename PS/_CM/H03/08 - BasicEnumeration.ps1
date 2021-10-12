@@ -5,8 +5,8 @@ get-alias foreach
 
 get-service | ForEach-Object name   # netter
 
-<#
-Get-WinEvent -LogName Application | Get-Member  #clear is a method
+
+Get-EventLog -List | Get-Member  #clear is a method
 
 Get-EventLog -List | Where Log -ne 'System' | ForEach Clear -WhatIf
 
@@ -19,7 +19,7 @@ Get-EventLog -List | Where-Object{$_.Log -ne 'System'} | ForEach-Object -MemberN
 
 # another solution
 Clear-EventLog -LogName (Get-EventLog -List | Where-Object{$_.Log -ne 'System'}).Log -WhatIf
-#>
+
 
 Invoke-Expression -Command "notepad.exe" # 2* doen
 
