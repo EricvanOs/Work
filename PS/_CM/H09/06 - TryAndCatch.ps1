@@ -13,7 +13,7 @@ Foreach ($computer in $computers) {
     Try {
         Get-CimInstance -Class Win32_BIOS -ComputerName $computer -ErrorAction Stop
     } Catch {
-        Write-Host "Error connecting to $computer"
+        Write-Host "Error connecting to $computer" 
     } Finally {
         Write-Host "BIOS query for $computer is complete"
     }

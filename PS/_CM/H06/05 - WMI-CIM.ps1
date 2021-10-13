@@ -6,7 +6,7 @@ Get-Command -Noun wmi* | Select-Object -Property Name
 
 Get-WmiObject -Class Win32_OperatingSystem
 
-Get-WmiObject -Query "SELECT * FROM win32_service WHERE name='Spooler'" -ComputerName localhost,hypnos,hydra | 
+Get-WmiObject -Query "SELECT * FROM win32_service WHERE name='Spooler'" -ComputerName localhost,echo,hydra | 
 Format-List -Property PSComputerName,Name,State,Status
 
 $mem2spool = Get-WmiObject -Query "SELECT * FROM win32_service WHERE name='Spooler'"

@@ -10,5 +10,9 @@ If ($ComputerName -eq "") {
 
 
 # test
+New-PSDrive -Name K -Root C:\Work\PS -PSProvider FileSystem  
 
 Set-Location -Path K:\_CM\H09
+
+# cleanup
+Remove-PSDrive K

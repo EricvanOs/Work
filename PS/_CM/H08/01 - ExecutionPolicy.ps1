@@ -1,4 +1,6 @@
-﻿#Verify script location
+﻿New-PSDrive -Name K -Root C:\Work\PS -PSProvider FileSystem  
+
+#Verify script location
 Set-Location k:\_cm\H08\
 Get-ChildItem HelloWorld.ps1
 
@@ -14,3 +16,7 @@ Get-ExecutionPolicy -List
 Set-ExecutionPolicy Unrestricted -Scope CurrentUser  # lukt niet vanwege GPO
 .\HelloWorld.ps1 
 Set-ExecutionPolicy Restricted -Scope CurrentUser
+
+# cleanup
+Set-Location c:
+Remove-PSDrive K

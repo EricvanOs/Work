@@ -1,4 +1,6 @@
-﻿# get codesigning certificate
+﻿New-PSDrive -Name K -Root C:\Work\PS -PSProvider FileSystem  
+
+# get codesigning certificate
 $cert =  Get-ChildItem -Path "Cert:\CurrentUser\My" -CodeSigningCert
 
 # sign ps1-file
@@ -86,3 +88,7 @@ function Remove-Signature
 # now use it
 
 Remove-Signature -FilePath K:\_CM\H08\Signing_Test.ps1
+
+# cleanup
+Set-Location c:\
+Remove-PSDrive K

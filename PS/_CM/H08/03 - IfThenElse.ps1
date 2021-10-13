@@ -1,4 +1,6 @@
-﻿$services = Get-Content -path k:\_cm\h08\services.txt
+﻿New-PSDrive -Name K -Root C:\Work\PS -PSProvider FileSystem
+
+$services = Get-Content -path k:\_cm\h08\services.txt
 
 ForEach ($service in $services) {
  
@@ -14,4 +16,7 @@ ForEach ($service in $services) {
 }
 
 
+# cleanup
+Set-Location c:
+Remove-PSDrive K
 

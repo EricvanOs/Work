@@ -1,0 +1,2 @@
+"DistinguishedName","Enabled","GivenName","Name","ObjectClass","ObjectGUID","SamAccountName","SID","Surname","UserPrincipalName"
+"CN=PietjeP,OU=PSTest,DC=pantheon,DC=somewhere","False","Piet","PietjeP","user","821b19a5-8492-4a01-9ea1-9d6139aa26dc","PietjePuk","S-1-5-21-1214440339-839522115-842925246-14622","Puk",

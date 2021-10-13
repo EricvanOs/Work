@@ -1,3 +1,6 @@
+New-PSDrive -Name K -Root C:\Work\PS -PSProvider FileSystem  
+
+
 #Use Get-Content to import data from a text file
 Get-Content K:\_CM\H08\computers.txt 
 $computers = Get-Content K:\_CM\H08\computers.txt
@@ -36,3 +39,5 @@ $usersXml[0]
 $usersXml | Get-Member
 $usersXml.First
 
+# cleanup
+Remove-PSDrive K

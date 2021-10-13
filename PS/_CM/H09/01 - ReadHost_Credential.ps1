@@ -1,4 +1,6 @@
-﻿#Use Read-Host to obtain user input
+﻿New-PSDrive -Name K -Root C:\Work\PS -PSProvider FileSystem  
+
+#Use Read-Host to obtain user input
 $days = Read-Host 'Enter the number of days'
 $days
 
@@ -24,3 +26,7 @@ Exit-PSSession
 Get-ADComputer -Filter * | Out-GridView
 $computer = Get-ADComputer -Filter * | Out-GridView -OutputMode Multiple   # click somewhere & ok
 $computer
+
+
+# cleanup
+Remove-PSDrive K

@@ -1,4 +1,6 @@
-﻿# Creating a Certificate with New-SelfSignedCertificate 
+﻿New-PSDrive -Name K -Root C:\Work\PS -PSProvider FileSystem  
+
+# Creating a Certificate with New-SelfSignedCertificate 
 New-SelfSignedCertificate -DnsName Amphitrite -CertStoreLocation "Cert:\CurrentUser\My" -KeyUsage KeyEncipherment,DataEncipherment, KeyAgreement -Type DocumentEncryptionCert
  
 # test, is really available 
@@ -28,3 +30,5 @@ Get-Certificate -Template WebServer -DnsName somename.pantheon.somewhere -Url ld
 Get-Childitem -Path Cert:\localMachine\My | Where-Object{$_.DNSNameList -like "*somename*"} | Remove-Item
 
 remove-item -Path K:\_CM\secret.txt
+
+Remove-PSDrive K
