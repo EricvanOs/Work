@@ -16,8 +16,9 @@
     $timeStamp + $data | Out-File $logPath -Append
 }
 
+# use vscode
 # add breakpoint at row 9 and 16 (click/Toggle Break Point (F9))
-#  start with debugging (F5)
+# start with debugging (F5)
 
 Write-Log -Folder k:\_cm -File TestLog.txt -Data "Test log data" 
 
