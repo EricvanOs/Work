@@ -1,4 +1,4 @@
-Connect-AaAccount      
+Connect-AzAccount      
 
 $a = Get-AzKeyVaultSecret -VaultName 'keyvault2he' -Name 'mysecret' -Version '5a651de5f61f4155b876df6e396c4164'
 
@@ -19,3 +19,6 @@ ConvertFrom-SecureString $a.SecretValue -AsPlainText
 
 Get-Command -Module Az.KeyVault -Name *Secret*
 
+
+$secret = Read-Host -Prompt 'Type in a new secret'  -AsSecureString  
+Set-AzKeyVaultSecret -VaultName keyvault2he -Name 'mysecret' -SecretValue  $secret -WhatIf
