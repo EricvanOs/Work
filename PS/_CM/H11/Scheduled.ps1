@@ -9,7 +9,7 @@ Get-Job | Remove-Job
 $trigger = New-JobTrigger -Once -At (Get-Date).AddMinutes(2)
 
 # 3
-Register-ScheduledJob -Trigger $trigger -Name DemoJob -ScriptBlock { Get-EventLog -LogName Application } -Credential 'pantheon\administrator'
+Register-ScheduledJob -Trigger $trigger -Name DemoJob -ScriptBlock { Get-EventLog -LogName Application } 
 
 # 4
 Get-ScheduledJob | Select-Object -Expand JobTriggers 
@@ -30,3 +30,6 @@ Get-Job -Name DemoJob | Remove-Job
 # cleanup schedule
 # zie taskscheduler-microsoft-windows-powershell-scheduledjobs
 Unregister-ScheduledJob -Name DemoJob 
+
+
+

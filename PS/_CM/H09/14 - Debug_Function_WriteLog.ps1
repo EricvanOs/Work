@@ -16,8 +16,8 @@
     $timeStamp + $data | Out-File $logPath -Append
 }
 
-# test (2*)
-# New-PSDrive -Name K -Root C:\Work\PS -PSProvider FileSystem  
+# add breakpoint at row 9 and 16 (click/Toggle Break Point (F9))
+#  start with debugging (F5)
 
 Write-Log -Folder k:\_cm -File TestLog.txt -Data "Test log data" 
 
