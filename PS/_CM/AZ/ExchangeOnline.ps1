@@ -1,4 +1,4 @@
-Install-Module -Name ExchangeOnlineManagement
+Install-Module -Name ExchangeOnlineManagement 
 
 get-command -Module ExchangeOnlineManagement
 
@@ -10,6 +10,9 @@ winrm set winrm/config/client/auth '@{Basic="true"}'
 Connect-ExchangeOnline
 
 Get-EXOMailbox
+
+# module not needed anymore
+Uninstall-Module -Name ExchangeOnlineManagement 
 
 # use in cloudshell (don't want to change my local/gpo settings)
 
