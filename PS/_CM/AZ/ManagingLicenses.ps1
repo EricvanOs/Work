@@ -1,3 +1,10 @@
+# import with parameter , run Get-Module -list AzureAD ; PSEdition = Desk 
+# run as if windowspowershell 
+
+Import-Module AzureAD -UseWindowsPowerShell
+connect-AzureAd
+
+
 <#
 Reviewing licenses by using AzureAD cmdlets
 You can use the Get-AzureADSubscribedSku cmdlet to review the licenses available in your Microsoft

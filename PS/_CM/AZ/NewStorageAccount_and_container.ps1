@@ -1,3 +1,7 @@
+# connect and set correct context
+Set-AzContext -SubscriptionId (Get-AzSubscription -TenantId ((Connect-AzAccount).Context.Tenant)).Id
+
+
 $storageAccount = New-AzStorageAccount -ResourceGroupName $resourceGroup `
 -Name "mystorageaccount" `
 -SkuName Standard_LRS `
@@ -13,3 +17,9 @@ New-AzStorageContainer -Name $containerName -Context $ctx -Permission blob
 # You can use the Set-AzStorageAccount cmdlet to modify an Azure Storage account.
 
 Set-AzStorageAccount -ResourceGroupName "MyResourceGroup" -AccountName "mystorageaccount" -Type "Standard_RAGRS"
+
+
+
+
+
+

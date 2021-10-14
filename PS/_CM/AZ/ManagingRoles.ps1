@@ -1,3 +1,9 @@
+# import with parameter , run Get-Module -list AzureAD ; PSEdition = Desk 
+# run as if windowspowershell 
+
+Import-Module AzureAD -UseWindowsPowerShell
+connect-AzureAd
+
 <#
 AzureAD cmdlets require you to identify whether a role is already in use before you can assign it to a user. 
 If no users have been assigned to a role, then it exists only as a template, and you need to enable
@@ -9,7 +15,7 @@ The following example depicts how to enable the User Administrator role. When yo
 need to refer to the object ID of the template:
 #>
 
-$roleTemplate = Get-AzureADDirectoryRoleTemplate | Where {$_.displayName -eq 'User Administrator'}
+$roleTemplate = Get-AzureADDirectoryRoleTemplate | Where-Object {$_.displayName -eq 'User Administrator'}
 Enable-AzureADDirectoryRole -RoleTemplateId $roleTemplate.ObjectId
 
 <#
@@ -20,5 +26,5 @@ parameter refers to the ObjectID of the user account:
 #>
 
 $user = Get-AzureADUser -ObjectID AbbieP@adatum.com
-$role = Get-AzureADDirectoryRole | Where {$_.displayName -eq 'User Administrator'}
+$role = Get-AzureADDirectoryRole | Where-Object {$_.displayName -eq 'User Administrator'}
 Add-AzureADDirectoryRoleMember -ObjectId $role.ObjectId -RefObjectId $user.ObjectID
