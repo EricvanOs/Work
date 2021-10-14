@@ -1,3 +1,5 @@
+# run ISE, not yet compatible with powershell 7
+
 #if needed
 Install-Module -Name Microsoft.Online.SharePoint.PowerShell 
 
