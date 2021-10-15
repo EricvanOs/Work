@@ -34,6 +34,8 @@ Get-Process | Where-Object ProcessName -eq 'notepad' | ForEach-Object Kill -What
 (Get-Process | Where-Object ProcessName -eq 'notepad' ).Kill()  # whatif doesn't work now
 
 # another solution(s)
+Invoke-Expression -Command "notepad.exe" 
+
 Get-Process | Where-Object ProcessName -eq 'notepad' | Stop-Process -WhatIf
 Stop-Process -Name notepad -WhatIf
 Stop-Process -ID (Get-Process | Where-Object{$_.name -eq 'notepad'} ).id  -WhatIf

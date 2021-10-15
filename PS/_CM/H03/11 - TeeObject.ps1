@@ -21,4 +21,3 @@ Get-ChildItem -Path $Path -File -Recurse | Out-File -FilePath $Path\NewSystemFil
 
 "$Path\AllSystemFiles.txt" , "$Path\NewSystemFiles.txt" | Remove-Item
 
-Remove-PSDrive K

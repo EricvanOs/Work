@@ -16,10 +16,9 @@ list
 # 6
 Get-Alias -definition Get-ChildItem
 
-
 # 7
 Get-Command *alias*
-Get-Help Set-Alias -ShowWindow # remark remove-item
+Get-Help Set-Alias -Online # remark remove-item
 
 Get-ChildItem alias:\
 

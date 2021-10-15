@@ -2,16 +2,11 @@
 Get-Help about*
 
 # 2
-Get-Help about_aliases -ShowWindow
+Get-Help about_aliases 
 Get-Help Get-Service -Online
 
-# 3
-Get-Help about_eventlogs -ShowWindow
 
-# 4
-Get-Help *beep* -ShowWindow
-
-
+# bijzonder tekens met ` (backtick)
 "`a"   # a beep, let op backtick ipv single quote
 
 'abc' + 'def'
@@ -19,3 +14,4 @@ Get-Help *beep* -ShowWindow
 'abc' + "`t"  + 'def'
 
 'abc' + "`r`n"  + 'def'
+'abc' + '`r`n'  + 'def'  #werkt niet

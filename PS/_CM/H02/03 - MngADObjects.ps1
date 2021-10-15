@@ -38,7 +38,7 @@ Get-ADGroup PShelpdesk
 
 Get-Help Set-ADGroup -Online
 
-$group= Get-ADGroup -Identity PSHelpdesk
+$group = Get-ADGroup -Identity PSHelpdesk
 $group.Description = "Group for support team"
 Set-ADGroup -Instance $group
 
