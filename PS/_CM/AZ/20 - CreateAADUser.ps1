@@ -1,10 +1,11 @@
 # import with parameter , run Get-Module -list AzureAD ; PSEdition = Desk 
-# run as if windowspowershell 
+# vooralsnog zijn beide imports nodig 
 
+Import-Module AzureAD -SkipEditionCheck
 Import-Module AzureAD -UseWindowsPowerShell
-connect-AzureAd   
+Connect-AzureAD  
 
-$UserPassword=New-Object -TypeName Microsoft.Open.AzureAD.Model.PasswordProfile 
+$UserPassword=New-Object -TypeName Microsoft.Open.AzureAD.Model.PasswordProfile
 $UserPassword.Password="Pa55w.rd123456"
 
 # splatting
@@ -27,6 +28,4 @@ Get-AzureADUser -All $true
 
 #cleanup
 Get-AzureADUser -ObjectId AbbieP@in-li.eu | Remove-AzureADUser
-
-
 
