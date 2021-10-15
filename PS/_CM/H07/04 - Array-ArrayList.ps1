@@ -6,12 +6,12 @@ $users = Get-ADUser -Filter *
 $computers
 $users
 $users.count
-$users[125]
+$users[93]
 
 #View propterties and methods for array items
 $computers | Get-Member
 $users | Get-Member
-$users[125].UserPrincipalName
+$users[93].UserPrincipalName
 
 #Add an item to an array
 $computers += 'LON-SRV2'
@@ -23,7 +23,7 @@ $usersList.IsFixedSize
 
 #Remove an item from an ArrayList
 $usersList.count
-$usersList[125]
-$usersList.RemoveAt(125)
+$usersList[93]
+$usersList.RemoveAt(93)
 $usersList.count
-$usersList[125]
+$usersList[-1]

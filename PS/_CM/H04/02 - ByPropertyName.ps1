@@ -1,26 +1,25 @@
 ﻿# 1
-Get-ADComputer -Filter * | Get-Process   # gaat fout 
+Get-ADComputer -Filter * | Get-HotFix   # gaat fout 
 
 # 2
 Get-ADComputer -Filter * | Get-Member
 
-# 3
-Get-Help Get-Process -Online  # ByPropertyName  -- ComputerName, Id, Name
+# 3  iets anders zoeken
+Get-Help Get-Hotfix -Online  # ByPropertyName  -- ComputerName
 
-# 4
-Start-Process -FilePath Notepad -WindowStyle Hidden
+Get-HotFix -ComputerName Hydra
+Get-HotFix -Description Update 
+Get-HotFix -Id KB5005540
 
-get-process | Where-Object{$_.Name -eq 'notepad'}
 
-# Get-Process -ComputerName localhost | Where-Object{$_.Name -eq 'notepad'}   ## was possible in powershell 5.1
-
-Get-Process -Name notepad
-
-Get-Process -id 5436
-
-# maw een  name of id als input voor get-process
-
+# maw een  computername,id of description als input voor get-hotfix
+# alleen Accept pipeline input: True voor ComputerName
 
 Get-ADComputer -Filter("Name -like 'hy*a*' ") | 
   Select-Object -Property @{n='ComputerName';e={$_.Name}} | 
-  Get-Process
+Get-HotFix 
+
+
+
+
+

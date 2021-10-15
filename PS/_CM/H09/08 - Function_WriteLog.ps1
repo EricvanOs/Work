@@ -17,8 +17,6 @@
 }
 
 # test (2*)
-# New-PSDrive -Name K -Root C:\Work\PS -PSProvider FileSystem  
-
 Write-Log -Folder k:\_cm -File TestLog.txt -Data "Test log data" 
 
 Get-Content -Path K:\_cm\TestLog.txt
@@ -26,4 +24,3 @@ Get-Content -Path K:\_cm\TestLog.txt
 Remove-Item -Path K:\_cm\TestLog.txt
 
 Set-Location -Path c:\
-# Remove-PSDrive K

@@ -10,28 +10,23 @@ The name of the remote computer that is being queried.
 .EXAMPLE
 .\Query-Bios.ps1 LON-DC1
 #>
-
+[cmdletbinding()]
 Param (
-    [string]$ComputerName = 'localhost'
+    [Parameter(Mandatory=$true)]
+    [string]$ComputerName = ($env:computerName)
 )
 
-If ($ComputerName -eq '' -or $computername -eq $null) 
-{
-    Write-Host 'A ComputerName is required.'
-} 
-Else 
-{
-    Get-CimInstance Win32_BIOS -ComputerName $ComputerName
+
+try {
+    Get-CimInstance Win32_BIOS -ComputerName $ComputerName -ErrorAction Stop
+}
+catch {
+    Write-Host 'A (correct) ComputerName is required.'
 }
 
-<#
+
+
 # test
-New-PSDrive -Name K -Root C:\Work\PS -PSProvider FileSystem  
-
+<#
 Set-Location -Path K:\_cm\H09
-
-get-help '.\05 - QueryBios-GetHelp.ps1'
-
-# cleanup
-Remove-PSDrive K
 #>
