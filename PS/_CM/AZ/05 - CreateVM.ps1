@@ -1,3 +1,6 @@
+# connect and set correct context
+Set-AzContext -SubscriptionId (Get-AzSubscription -TenantId ((Connect-AzAccount).Context.Tenant)).Id
+
 #  username and password for the Azure VM
 $cred = Get-Credential
 
@@ -13,4 +16,4 @@ OpenPorts = 3389
 }
 
 
-New-AzVM @vmParams
+New-AzVM @vmParams -WhatIf

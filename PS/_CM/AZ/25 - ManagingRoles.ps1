@@ -1,8 +1,9 @@
 # import with parameter , run Get-Module -list AzureAD ; PSEdition = Desk 
-# run as if windowspowershell 
+# vooralsnog zijn beide imports nodig 
 
+Import-Module AzureAD -SkipEditionCheck
 Import-Module AzureAD -UseWindowsPowerShell
-connect-AzureAd
+Connect-AzureAD 
 
 <#
 AzureAD cmdlets require you to identify whether a role is already in use before you can assign it to a user. 

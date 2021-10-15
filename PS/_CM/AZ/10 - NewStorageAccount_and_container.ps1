@@ -19,6 +19,7 @@ New-AzStorageContainer -Name $containerName -Context $ctx -Permission blob
 Set-AzStorageAccount -ResourceGroupName "MyResourceGroup" -AccountName "mystorageaccount" -Type "Standard_RAGRS"
 
 
+#cleanup
 
 
 
