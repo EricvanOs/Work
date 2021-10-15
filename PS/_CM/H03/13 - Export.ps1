@@ -1,6 +1,4 @@
-﻿New-PSDrive -Name K -Root C:\Work\PS\Temp -PSProvider FileSystem  
-
-New-ADUser -Name 'PietjeP' -SamAccountName 'PietjePuk' -GivenName 'Piet' -Surname 'Puk' -DisplayName 'Pietje Puk' `
+﻿New-ADUser -Name 'PietjeP' -SamAccountName 'PietjePuk' -GivenName 'Piet' -Surname 'Puk' -DisplayName 'Pietje Puk' `
            -Path 'OU=PSTest,DC=Pantheon,DC=somewhere'
 
 Get-ADUser -Identity  'CN=PietjeP,OU=PSTest,DC=Pantheon,DC=somewhere' | Export-Csv -NoTypeInformation  -Path k:\outad.csv
@@ -13,4 +11,3 @@ Remove-ADUser PietjePuk -Confirm:$false
 
 Get-ChildItem -Path K:\outad.csv | Remove-Item
 
-Remove-PSDrive K

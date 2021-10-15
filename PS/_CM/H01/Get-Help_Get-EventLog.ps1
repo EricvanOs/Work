@@ -1,4 +1,7 @@
-﻿get-help Get-EventLog 
+﻿# import with UseWindowsPowerShell for compatibility
+import-Module  -Name Microsoft.PowerShell.Management -UseWindowsPowerShell
+
+get-help Get-EventLog -Online
 
 
 # of
@@ -25,3 +28,5 @@ Get-EventLog -List
 
 Get-EventLog -LogName  .......
 Get-EventLog -AsString .......
+
+

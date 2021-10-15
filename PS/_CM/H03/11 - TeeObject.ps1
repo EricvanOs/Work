@@ -1,6 +1,4 @@
-﻿New-PSDrive -Name K -Root C:\Work\PS\Temp -PSProvider FileSystem  
-
-notepad
+﻿notepad
 
 Get-Process -Name notepad | Tee-Object -Variable proc | Select-Object processname,handles
 
@@ -10,7 +8,7 @@ $proc.kill()
 
 # or
 
-$Path = 'K:\'
+$Path = 'K:\Temp'
 
 Get-ChildItem -Path $Path -File -Recurse | Tee-Object -FilePath $Path\AllSystemFiles.txt -Append | 
                                         Out-File $Path\NewSystemFiles.txt
