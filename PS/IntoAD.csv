@@ -1,2 +1,0 @@
-Path,Enabled,GivenName,Name,ObjectClass,SamAccountName,Surname,UserPrincipalName
-"CN=PietjeP,CN=Users,DC=pantheon,DC=somewhere",FALSE,Piet,PietjeP,user,PietjePuk,Puk,Pukje@pantheon.somewhere
