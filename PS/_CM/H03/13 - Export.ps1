@@ -7,6 +7,8 @@ Remove-ADUser PietjePuk -Confirm:$false
 # pas outad-file aan --> eerste kolom naar path en entry aanpassen
 Import-Csv -Path K:\outad.csv | New-ADUser
 
+Get-ADUser -Filter "Name -eq 'PietjeP'"
+
 Remove-ADUser PietjePuk -Confirm:$false
 
 Get-ChildItem -Path K:\outad.csv | Remove-Item

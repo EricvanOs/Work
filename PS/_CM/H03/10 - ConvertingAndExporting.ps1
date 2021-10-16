@@ -16,8 +16,7 @@ Get-Service | Export-CSV -LiteralPath K:\Temp\Serv2.csv -NoTypeInformation   # b
 # 6
 Get-Service | Export-CliXML -Path k:\Temp\Serv.xml
 
-Get-Service | Get-Member                                   # System.ServiceProcess.ServiceController (methods & properties)
-Get-Service | Export-CliXML -Path k:\Temp\Serv.xml                
+Get-Service | Get-Member                                   # System.ServiceProcess.ServiceController (methods & properties)           
 
 Import-Clixml -Path K:\Temp\Serv.xml |Get-Member           # Deserialized.System.ServiceProcess.ServiceController (only properties and some base methods)
 

@@ -1,6 +1,15 @@
 ﻿# 1
-Get-ItemProperty -Path HKCU:\Network\* | ForEach-Object -Process { Set-ItemProperty -Path $PSItem.PSPath -Name RemotePath -Value $PSItem.RemotePath.ToUpper() }
-
-# 2
 Get-ChildItem -Path K:\temp -Directory -recurse | Where-Object Name -eq xx | ForEach-Object  {$PSItem.CreateSubdirectory('Test')} | Select-Object -ExpandProperty FullName
+
+#2  cleanup of #1
+# Alle folders xx met daar direct onder Test
+
+$dirs = Get-ChildItem -Path K:\temp -Directory -recurse | Where-Object{$_.Name -eq 'xx'} 
+
+foreach ($dir in $dirs){
+
+   Get-ChildItem -Path $dir.fullname -Directory | Where-Object{$_.Name -eq 'Test'} | Remove-Item  -whatif
+
+}
+
 
