@@ -51,10 +51,9 @@ Get-Process -ComputerName ($comps -split ',') | Sort-Object id |
 
 
 # ordered hash table
-$ordered = [ordered]@{a=1;c=3;b=2}
-$nonordered = @{a=1;c=3;b=2}
+[hashtable]$ordered = [ordered]@{a=1;c=3;b=2}
+[hashtable]$nonordered = @{a=1;c=3;b=2}
 
 $ordered
 "`r"
-$nonordered
-
+$nonordered  
