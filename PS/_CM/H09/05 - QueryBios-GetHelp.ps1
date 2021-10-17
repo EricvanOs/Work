@@ -12,8 +12,8 @@ The name of the remote computer that is being queried.
 #>
 [cmdletbinding()]
 Param (
-    [Parameter(Mandatory=$true)]
-    [string]$ComputerName = ($env:computerName)
+    
+    [ValidateNotNullOrEmpty()][string]$ComputerName = ($env:computerName)
 )
 
 
@@ -29,4 +29,18 @@ catch {
 # test
 <#
 Set-Location -Path K:\_cm\H09
+#>
+
+<#
+[ValidateCount()]	Minimum and maximum number of elements in an array
+[ValidateDrive()]	Allowable drive letters in a path
+[ValidateLength()]	Minimum and maximum length of a string
+[ValidateNotNull()]	May not be $null
+[ValidateNotNullOrEmpty()]	May neither be $null or an empty array or an empty string
+[ValidatePattern()]	Must match a Regular Expression pattern
+[ValidateRange()]	Must be a number in the given range
+[ValidateScript()]	Validation script must return $true
+[ValidateSet()]	Must be one of the listed strings
+[ValidateTrustedData()]	Introduced in PowerShell 6, used internally
+[ValidateUserDrive()]	Must be a path using the User drive. This drive can be defined in JEA (Just Enough Administration) session configurations.
 #>
