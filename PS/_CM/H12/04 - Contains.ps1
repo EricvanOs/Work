@@ -22,5 +22,6 @@ $coll -contains $slt
 $coll = Get-Service | select-object -ExpandProperty name
 $slt = Get-Service | Where-Object{$_.name -like 'BITS'} | select-object -ExpandProperty name
 $coll -contains $slt
+$slt -in $coll
 # of
 $coll -contains 'BITS'
