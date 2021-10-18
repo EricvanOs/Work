@@ -15,3 +15,13 @@ Get-Help Get-Service -Online
 
 'abc' + "`r`n"  + 'def'
 'abc' + '`r`n'  + 'def'  #werkt niet
+
+# strings
+
+'abc' + 'def'
+"abc" + "def"
+$a = 'def'
+'abc' + '$a'
+'abc' + "$a"
+"abc$a"
+"abc`$a"

@@ -4,6 +4,9 @@ Test-Connection sisyphus
 # 1b
 Test-NetConnection -ComputerName hydra -Port 3389
 
+$ProgressPreference = 'SilentlyContinue'
+Test-NetConnection -ComputerName hydra -Port 3389 
+$ProgressPreference = 'Continue'
 
 # 2
 Get-NetIPConfiguration

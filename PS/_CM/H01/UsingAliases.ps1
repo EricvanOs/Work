@@ -32,3 +32,13 @@ gps| ? pm -gt 1000 | ft -a
 
 # Aanzienlijk beter
 Get-Process | Where-Object{$_.PagedMemorySize64 -gt 1000} | Format-Table -AutoSize
+
+# mag ook zo
+Get-Process | 
+Where-Object{$_.PagedMemorySize64 -gt 1000} | 
+Format-Table -AutoSize
+
+# of zo sinds ps 7
+Get-Process 
+ | Where-Object{$_.PagedMemorySize64 -gt 1000} 
+ | Format-Table -AutoSize
