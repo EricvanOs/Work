@@ -15,7 +15,7 @@ New-ADUser -Name PSHelpDeskTest -samAccountName PSHelpDeskTest
 # enable account, will fail
 Enable-ADAccount PSHelpDeskTest
 #set password
-Set-ADAccountPassword -Identity PSHelpDeskTest -NewPassword (ConvertTo-SecureString -AsPlainText 'P@ssw0rd' -force)
+Set-ADAccountPassword -Identity PSHelpDeskTest -NewPassword (ConvertTo-SecureString -AsPlainText 'P@ssw0rd1234567' -force)
 # enable account
 Enable-ADAccount PSHelpDeskTest
 #cleanup

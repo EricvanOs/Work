@@ -20,6 +20,7 @@
 Write-Log -Folder k:\_cm -File TestLog.txt -Data "Test log data" 
 
 Get-Content -Path K:\_cm\TestLog.txt
+
 # cleanup
 Remove-Item -Path K:\_cm\TestLog.txt
 
