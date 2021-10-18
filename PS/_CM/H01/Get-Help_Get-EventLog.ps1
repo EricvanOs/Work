@@ -1,5 +1,5 @@
 ﻿# import with UseWindowsPowerShell for compatibility
-import-Module  -Name Microsoft.PowerShell.Management -UseWindowsPowerShell
+Import-Module  -Name Microsoft.PowerShell.Management -UseWindowsPowerShell
 
 get-help Get-EventLog -Online
 

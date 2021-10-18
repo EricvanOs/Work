@@ -18,6 +18,5 @@ Get-ADuser "Jane Doe" -Properties StreetAddress,City,State,Country
 
 
 #cleanup
-
 Get-ADUser "Jane Doe" | Remove-ADUser -Confirm:$false
 Get-ADGroup -Identity "CN=PSHelpDesk,ou=PSTest,dc=pantheon,dc=somewhere" | Remove-ADGroup -Confirm:$false
