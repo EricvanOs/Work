@@ -50,7 +50,7 @@ Get-Job -name CIMJob  | Receive-Job
 Get-Job -name CIMJob  | Remove-Job
 
 
-# Voor WMI mag ook op deze wijze
+# Voor WMI mag ook op deze wijze, voor PS 5.1
 Get-WmiObject -Class Win32_ComputerSystem -ComputerName Hydra -AsJob 
 
 $job = Get-Job | Where-Object{'Job'+ ($_.id) -eq $_.Name }

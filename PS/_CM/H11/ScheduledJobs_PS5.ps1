@@ -1,5 +1,5 @@
-﻿# 1
-Import-Module PSScheduledJob
+﻿# 1 use ISE
+Import-Module PSScheduledJob -UseWindowsPowerShell
 Get-Command -Module PSScheduledJob 
 
 #Cleanup
