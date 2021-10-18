@@ -9,3 +9,6 @@ Get-Help Stop-Service -Online  # inputObject <ServiceController[]> ; ByValue
 
 # 4 
 Get-Help Select-Object -Online  #inputObject <PSObject> ; ByValue (maw elk object)
+
+
+Get-Command -Noun Object

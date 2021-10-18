@@ -1,8 +1,5 @@
-﻿Get-WmiObject -List
+﻿# 1
 Get-CimInstance -Namespace root -ClassName __Namespace
-
-# 1
-Get-WmiObject -Class Win32_Service
 
 # 2
 Get-CimInstance -ClassName Win32_Process
@@ -13,8 +10,5 @@ Get-CimInstance -ClassName Win32_LogicalDisk -Filter "DriveType=3"
 
 # 4
 Get-CimInstance -Query "SELECT * FROM Win32_NetworkAdapter"
-Get-CimInstance -Query "SELECT * FROM Win32_NetworkAdapter where servicename like '%c' "
-
-
-
+Get-CimInstance -Query "SELECT * FROM Win32_NetworkAdapter where servicename like '%ic' "
 

@@ -55,6 +55,13 @@ dn Display Numbers Padded by 0 by n times
 
 '{0:#,#}' -f 100980243
 
+# in a loop
+$procs = Get-Process
+foreach ($proc in $procs) {}
+$proc
+'{0,20} {1,40}' -f $proc.ProcessName , $proc.vm
+'{0,-20} {1,40}' -f $proc.ProcessName , $proc.vm
+
 
 
 $procs = Get-Process

@@ -1,5 +1,4 @@
-﻿
-# run the following script in ISE 
+﻿# run the following script in ISE 
 # get-service has changed in ps 7
 
 # 1
