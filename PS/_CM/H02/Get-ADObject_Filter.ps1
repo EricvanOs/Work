@@ -12,6 +12,7 @@ Get-ADObject -Filter '(CN -like "er*" -or CN -eq "administrator" )'
 Get-ADObject -LDAPFilter  '(cn=er*)'
 Get-ADObject -LDAPFilter  "(cn=er*)"
 
+
 # beide filters mag niet (zie MSDN)
 Get-ADObject -LDAPFilter '(cn=er*)' -Filter 'Name -like "*us"'
 
