@@ -17,6 +17,7 @@ need to refer to the object ID of the template:
 #>
 
 $roleTemplate = Get-AzureADDirectoryRoleTemplate | Where-Object {$_.displayName -eq 'User Administrator'}
+# if role has been enabled, mo need to enable again (will give error)
 Enable-AzureADDirectoryRole -RoleTemplateId $roleTemplate.ObjectId
 
 <#
@@ -26,6 +27,18 @@ the User Administrator role. The -ObjectId parameter refers to the ObjectID of t
 parameter refers to the ObjectID of the user account:
 #>
 
-$user = Get-AzureADUser -ObjectID AbbieP@adatum.com
+$user = Get-AzureADUser -ObjectID AbbieP@in-li.eu
 $role = Get-AzureADDirectoryRole | Where-Object {$_.displayName -eq 'User Administrator'}
 Add-AzureADDirectoryRoleMember -ObjectId $role.ObjectId -RefObjectId $user.ObjectID
+
+
+# controle via interface
+# or
+Get-AzureADDirectoryRoleMember -ObjectId $role.ObjectId
+
+
+# remove user from role
+Remove-AzureADDirectoryRoleMember -ObjectId $role.ObjectId -MemberId $user.ObjectId
+
+
+# cleanup user as well

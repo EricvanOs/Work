@@ -38,7 +38,7 @@ $License.SkuId = '05e9a617-0261-4cee-bb44-138d3ef5d965'
 $LicensesToAssign = New-Object -TypeName Microsoft.Open.AzureAD.Model.AssignedLicenses
 $LicensesToAssign.AddLicenses = $License
 
-Set-AzureADUserLicense -ObjectId AbbieP@adatum.com -AssignedLicenses $LicensesToAssign
+Set-AzureADUserLicense -ObjectId AbbieP@in-li.eu -AssignedLicenses $LicensesToAssign
 
 <#
 If you want to disable service plans for a user, you need to add the GUID for the service plans to the

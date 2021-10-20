@@ -26,6 +26,8 @@ Get-AzureADUser -ObjectId AbbieP@in-li.eu
 #all the user accounts in a Microsoft 365 tenant:
 Get-AzureADUser -All $true
 
-#cleanup
-Get-AzureADUser -ObjectId AbbieP@in-li.eu | Remove-AzureADUser
 
+#cleanup, user needed in next examples
+# Get-AzureADUser -ObjectId AbbieP@in-li.eu | Remove-AzureADUser
+
+Get-AzureADUser -ObjectId AbbieP@in-li.eu | Remove-AzureADUser
