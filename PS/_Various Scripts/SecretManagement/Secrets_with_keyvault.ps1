@@ -1,4 +1,4 @@
-# save credential once
+# save credential once. bounded to user on specific computer
 <# 
 $username = "$env:USERDOMAIN\$env:USERNAME"
 Get-Credential -UserName $username | Export-Clixml -Path "\\pantheon\data\Courses\AZ040\$($env:USERDOMAIN)_$($env:USERNAME)_$($env:computername).xml"
