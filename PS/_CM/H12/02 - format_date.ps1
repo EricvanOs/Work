@@ -19,4 +19,7 @@ foreach ($c in $cultures){
 #list of static methods
 [globalization.cultureinfo].GetMethods() | Select-Object Name, IsStatic -Unique
 
+# parse a string into datetime
+[DateTime]::ParseExact('02-06-2018 16:25:28', 'dd-MM-yyyy HH:mm:ss', $null)
+
 
