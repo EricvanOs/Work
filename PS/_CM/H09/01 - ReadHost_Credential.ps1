@@ -11,8 +11,9 @@ Get-Content K:\_CM\cred.xml
 # using credentials again (on this machine and user)
 $cred = Import-Clixml -Path K:\_CM\cred.xml 
 
+
 # retrieve password
-$cred.GetNetworkCredential().password
+$cred.GetNetworkCredential().password 
 
 # example
 Enter-PSSession -ComputerName sisyphus -Credential (Get-Credential)
@@ -23,4 +24,15 @@ Exit-PSSession
 Get-ADComputer -Filter * | Out-GridView
 $computer = Get-ADComputer -Filter * | Out-GridView -OutputMode Multiple   # click somewhere & ok
 $computer
+
+#  variations
+$Credential = $host.ui.PromptForCredential("Need credentials", "Please enter your user name and password.", "", "NetBiosUserName")
+$Credential
+
+$User = "Domain01\User01"
+$PWord = ConvertTo-SecureString -String "P@sSwOrd" -AsPlainText -Force
+$Credential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $User, $PWord
+$Credential
+
+Get-Credential -Message "Credential are required for access to the \\Server1\Scripts file share." -User Server01\PowerUser
 
