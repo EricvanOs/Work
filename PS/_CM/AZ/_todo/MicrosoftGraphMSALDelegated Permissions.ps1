@@ -18,4 +18,5 @@ $myAccessToken.AccessToken | Get-JWTDetails
 
 $myAuthMethods = (
 Invoke-RestMethod -Headers @{Authorization = "Bearer $($myAccessToken.AccessToken)" } -Uri "https://graph.microsoft.com/beta/me/authentication/methods"  -Method Get
+)
 $myAuthMethods
