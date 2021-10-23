@@ -12,6 +12,8 @@ Import-Csv -Path K:\outad.csv | New-ADUser
 
 Get-ADUser -Filter "Name -eq 'PietjeP'"
 
+Get-Content -Path K:\outad.csv
+
 Remove-ADUser PietjePuk -Confirm:$false
 
 Get-ChildItem -Path K:\outad.csv | Remove-Item
