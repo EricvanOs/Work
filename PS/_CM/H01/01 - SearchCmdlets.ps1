@@ -2,7 +2,7 @@
 Get-Command *net*
 
 # 2
-Get-Help *net* -Category cmdlet  
+Get-Help get-*net* -Category cmdlet  
 
 Get-Alias
 
@@ -12,4 +12,4 @@ Get-Service
 
 Get-Help Get-Service
 Get-Help Get-Service -ShowWindow
-get-help Get-Service -Online 
+Get-Help Get-Service -Online 

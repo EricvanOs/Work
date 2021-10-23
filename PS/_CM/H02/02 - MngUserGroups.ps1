@@ -13,8 +13,10 @@ Set-ADuser "Jane Doe" -StreetAddress "1530 Nowhere Ave." -City "Winnipeg" -State
 # 5
 Get-ADPrincipalGroupMembership "Jane Doe"
 
-# 6
+# extra "ldap" properties via parameter (Properties)
 Get-ADuser "Jane Doe" -Properties StreetAddress,City,State,Country
+# compare with
+Get-ADuser "Jane Doe" | Select-Object -Property *
 
 
 #cleanup
