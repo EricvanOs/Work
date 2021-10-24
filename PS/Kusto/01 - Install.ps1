@@ -28,3 +28,13 @@ $kcsb = New-Object Kusto.Data.KustoConnectionStringBuilder ($clusterUrl, $databa
 #     $applicationKey = "application key goes here"
 #     $authority = "authority goes here"
 #     $kcsb = $kcsb.WithAadApplicationKeyAuthentication($applicationId, $applicationKey, $authority)
+
+
+<# nog uitzoeken
+https://docs.microsoft.com/en-us/azure/data-explorer/kusto/api/connection-strings/kusto
+
+cluster(https://ade.loganalytics.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.operationalinsights/workspaces/<workspace-name>)
+
+https://ade.loganalytics.io/subscriptions/940541f2-0f53-48e7-8046-f6530b423abc/resourcegroups/loganalytics/providers/microsoft.operationalinsights/workspaces/loganalytics2li
+
+#>
