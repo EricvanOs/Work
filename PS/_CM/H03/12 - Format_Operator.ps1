@@ -78,3 +78,12 @@ foreach ($proc in $procs) {
   '{0,-20} {1,40}' -f $proc.ProcessName , $proc.vm
   
 }
+
+
+# mag ook zo
+get-process 
+| Where-Object{$_.name -like '*sql*'} 
+| Format-Table -Property Name, ID, VM, @{Label        = 'VM(GB)';
+                                         Expression   = {$_.VM /1GB};
+                                         FormatString = 'N2';
+                                         Align        = 'right'}    
