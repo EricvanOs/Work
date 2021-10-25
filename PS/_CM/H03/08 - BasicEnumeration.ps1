@@ -6,6 +6,9 @@ get-alias foreach
 get-service | ForEach-Object name   # netter
 
 
+# import with UseWindowsPowerShell for compatibility
+Import-Module  -Name Microsoft.PowerShell.Management -UseWindowsPowerShell
+
 Get-EventLog -List | Get-Member  #clear is a method
 
 Get-EventLog -List | Where Log -ne 'System' | ForEach Clear -WhatIf
