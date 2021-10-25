@@ -1,13 +1,10 @@
-﻿# 1
+﻿# USE ISE (some statements are changed in ps7)
 Get-Service | ForEach Name
 
 get-alias foreach
 
 get-service | ForEach-Object name   # netter
 
-
-# import with UseWindowsPowerShell for compatibility
-Import-Module  -Name Microsoft.PowerShell.Management -UseWindowsPowerShell
 
 Get-EventLog -List | Get-Member  #clear is a method
 
