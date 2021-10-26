@@ -1,4 +1,4 @@
-﻿$connectionString = 'Provider=sqloledb;Data Source=eos;Initial Catalog=AdventureWorks;Integrated Security=SSPI'
+﻿$connectionString = 'Provider=sqloledb;Data Source=echo;Initial Catalog=AdventureWorks;Integrated Security=SSPI'
 $query = @'
 select top(11) * from person.address
 '@

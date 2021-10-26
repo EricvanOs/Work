@@ -1,4 +1,4 @@
-﻿$connectionstring = 'DRIVER={SQL Server};Server=eos;Database=AdventureWorks;Trusted_Connection=yes;'
+﻿$connectionstring = 'DRIVER={SQL Server};Server=echo;Database=AdventureWorks;Trusted_Connection=yes;'
 $query = $query = @"
 select top(10) * from person.address
 "@

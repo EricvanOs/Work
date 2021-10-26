@@ -1,4 +1,4 @@
-﻿$connectionString = 'Data Source=eos;Integrated Security=SSPI;Initial Catalog=AdventureWorks'
+﻿$connectionString = 'Data Source=echo;Integrated Security=SSPI;Initial Catalog=AdventureWorks'
 $query = @"
 SELECT TOP 25  [ContactID],[FirstName],[LastName],[EmailAddress],[Phone]
 FROM [AdventureWorks].[Person].[Contact]
