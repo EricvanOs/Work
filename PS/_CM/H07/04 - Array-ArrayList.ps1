@@ -3,10 +3,13 @@ $computers = 'LON-DC1','LON-SRV1','LON-CL1'
 $users = Get-ADUser -Filter *
 
 #View the items in an array
+$computers -is [array]
+$users -is [array]
 $computers
 $users
 $users.count
 $users[93]
+$users[-1]
 
 #View propterties and methods for array items
 $computers | Get-Member
