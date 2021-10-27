@@ -2,7 +2,7 @@
     [string]$ComputerName='Hydra'
 )
 
-$bios = Get-WmiObject Win32_BIOS -ComputerName $ComputerName
+$bios = Get-CimInstance Win32_BIOS -ComputerName $ComputerName
 
 Write-Host "The BIOS information for $ComputerName"
 $bios
