@@ -1,6 +1,6 @@
 ﻿$name ='Bad'
 Try {
-  Get-WmiObject -Class Win32_Service -ComputerName $name -ErrorAction Stop
+  Get-CimInstance -Class Win32_Service -ComputerName $name -ErrorAction Stop
 } 
   Catch {
   Write-Host "Error connecting to $name" -ForegroundColor DarkCyan
@@ -28,7 +28,7 @@ Try {
   Catch {
   Write-Host "Cannot kill process"
 }
-  Finally{
+  Finally {
   $ErrorActionPreference='Continue'
 }
 
