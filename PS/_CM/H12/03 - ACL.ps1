@@ -1,5 +1,5 @@
 ﻿#Create new folder
-$newfolder = 'K:\test'
+$newfolder = 'K:\testacl'
 New-Item $newfolder -ItemType Directory
 
 #view acl for new folder

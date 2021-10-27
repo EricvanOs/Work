@@ -1,4 +1,4 @@
-﻿$Path = 'K:\_CM\_Various Scripts\XML'
+﻿$Path = 'K:\_Various Scripts\XML'
 
 [XML]$AppConfig = Get-Content -Path (Join-Path -Path $Path -ChildPath 'ApplicationHost.config')
 

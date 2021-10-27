@@ -1,30 +1,26 @@
 function GetOSInfo 
 {
- param 
- (
- [string]$name, 
- [string]$logfile
+ param (
+    [string]$name, 
+    [string]$logfile
  )
+
  try {
- $continue = $True 
- $os = Get-WmiObject Win32_OperatingSystem `
- -computerName $name -ea 'Stop' 
- } catch {
- if ($logFile -ne '') {
- $name | Out-File $logfile -append 
+    $continue = $True 
+    $os = Get-CimInstance Win32_OperatingSystem -computerName $name -ea 'Stop' 
+ } 
+ catch {
+    if ($logFile -ne '') { $name | Out-File $logfile -append }
+    $continue = $False
  }
- $continue = $False
- }
+
  if ($continue) { 
- $bios = Get-WmiObject Win32_BIOS `
- -computername $name
- $obj = New-Object PSObject 
- $obj | Add-Member NoteProperty ComputerName $name
- $obj | Add-Member NoteProperty OSBuild ($os.buildnumber)
- $obj | Add-Member NoteProperty BIOSSerial ($bios.serialnumber)
- $obj | Add-Member NoteProperty LastBoot `
- ($os.ConvertToDateTime($os.lastbootuptime))
- Write-Output $obj 
+    $bios = Get-CimInstance Win32_BIOS  -computername $name
+    $obj = New-Object PSObject 
+    $obj | Add-Member NoteProperty ComputerName $name
+    $obj | Add-Member NoteProperty OSBuild ($os.buildnumber)
+    $obj | Add-Member NoteProperty BIOSSerial ($bios.serialnumber)
+    Write-Output $obj 
  } 
 }
 
@@ -63,29 +59,21 @@ Just use a single, manually-specified computer:
 function Get-OSInfo 
 {
  [CmdletBinding()] 
- param 
- (
- [Parameter(Mandatory=$True,
- ValueFromPipeline=$True,
- ValueFromPipelineByPropertyName=$True)] 
- [Alias('host')] 
- [string[]]$computerName, 
- [string]$logFile = '' 
+ param (
+    [Parameter(Mandatory=$True,
+    ValueFromPipeline=$True,
+    ValueFromPipelineByPropertyName=$True)] 
+    [Alias('host')] 
+    [string[]]$computerName, 
+    [string]$logFile = '' 
  )
  
- BEGIN 
- {
- if ($logFile -ne '') { 
- Remove-Item -Path $logFile -ErrorAction 'SilentlyContinue'
+ BEGIN {
+    if ($logFile -ne '') { Remove-Item -Path $logFile -ErrorAction 'SilentlyContinue' }
  }
  
- }
- 
- PROCESS 
- {
- foreach ($name in $computername) { 
- GetOSInfo $name $logFile 
- }
+ PROCESS {
+     foreach ($name in $computername) { GetOSInfo $name $logFile }
  } 
 }
 
