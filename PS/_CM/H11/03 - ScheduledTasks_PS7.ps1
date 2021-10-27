@@ -20,9 +20,9 @@ $taskAction = New-ScheduledTaskAction `
 $taskAction
 
 
-# Create a new trigger (Daily at 3 AM)
+# Create a new trigger (now plus 2 minutes)
 $taskTrigger = New-ScheduledTaskTrigger -Once -At (Get-Date).AddMinutes(2)
-$tasktrigger
+$taskTrigger
 
 # Register the new PowerShell scheduled task
 

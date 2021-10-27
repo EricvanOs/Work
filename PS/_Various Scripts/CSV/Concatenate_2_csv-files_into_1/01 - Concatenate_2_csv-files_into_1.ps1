@@ -14,7 +14,7 @@ $file1 | ForEach-Object{
 
 $file1 | Export-CSV -LiteralPath result.csv -notype
 
+Get-Content -Path .\result.csv
 
 ## cleanup 
-
 get-item -Path result.csv | Remove-Item
