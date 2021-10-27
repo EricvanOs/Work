@@ -22,6 +22,7 @@ $computer = 'LON-CL1'
 
 $role = 'unknown role'
 $location = 'unknown location'
+
 Switch -wildcard ($computer) {
     "*-CL*"  {$role = 'client'; Break} 
     "*-SRV*" {$role = 'server'}
