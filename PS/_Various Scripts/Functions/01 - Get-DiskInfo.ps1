@@ -17,7 +17,7 @@ The type of drive to query. Defaults to 3, representing local fixed disks.
     [int]$DriveType = 3
   )
   Write-Verbose ('Getting drive types of {0} from {1}' -f $DriveType, $ComputerName)
-  Get-WMIObject -Class Win32_LogicalDisk -Filter "DriveType=$DriveType" -ComputerName $ComputerName |
+  Get-CimInstance -Class Win32_LogicalDisk -Filter "DriveType=$DriveType" -ComputerName $ComputerName |
   Select-Object -Property @{n='DriveLetter';e={$_.DeviceID}},
   @{n='FreeSpace(MB)';e={"{0:N2}" -f ($_.FreeSpace / 1MB)}},
   @{n='Size(GB)';e={"{0:N2}" -f ($_.Size / 1GB)}},
