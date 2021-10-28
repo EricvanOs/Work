@@ -1,5 +1,5 @@
 ## Define the log file
-$logDir = 'K:\temp'
+$logDir = 'C:\Work\PS\temp'
 $logFile = "$logDir\AppLog_$(Get-Date -format 'yyyy-mm-dd_hh-mm-ss-tt').xml"
 
 ## Get the ten latest application log events

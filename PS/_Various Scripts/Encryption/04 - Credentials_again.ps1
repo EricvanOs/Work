@@ -1,4 +1,4 @@
-$Path = 'K:\_CM\_Various Scripts\Encryption'
+$Path = 'C:\Work\PS\_Various Scripts\Encryption'
 Set-Location -Path $Path
 
 $password = Read-Host -Prompt 'Enter your Password'
