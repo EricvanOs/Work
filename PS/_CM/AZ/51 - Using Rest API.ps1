@@ -12,8 +12,8 @@ $r
 $r.Content
 
 #Invoke-RestMethod is for calls that return rich format response and translates the response, e.g. JSON to a custom object
-Invoke-RestMethod -Uri https://azure.microsoft.com/updates/feed/ |
-  Format-Table -Property title, description, pubDate
+Invoke-RestMethod -Uri https://azure.microsoft.com/updates/feed/ 
+ | Format-Table -Property title, description, pubDate
 
 
 #We often need to authenticate so need a token which is passed to the command
