@@ -1,10 +1,6 @@
 function Find-AzureVMFromCompName
 {
-    # John Savill 5/9/2020
-    # Simple function to find an Azure VM based on the guest OS computer name. Will search all resources the account
-    # logged in as has access to
-    # Prior to using this you should have logged in to Azure using Connect-AzAccount and installed the Az.ResourceGraph module
-
+   
     Param (
         [Parameter(Mandatory=$true,
         ValueFromPipeline=$true)]

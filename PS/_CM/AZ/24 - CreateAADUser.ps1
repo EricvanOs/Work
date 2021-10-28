@@ -30,4 +30,3 @@ Get-AzureADUser -All $true
 #cleanup, user needed in next examples
 # Get-AzureADUser -ObjectId AbbieP@in-li.eu | Remove-AzureADUser
 
-Get-AzureADUser -ObjectId AbbieP@in-li.eu | Remove-AzureADUser
