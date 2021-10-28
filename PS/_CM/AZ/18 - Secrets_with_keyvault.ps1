@@ -50,6 +50,8 @@ Get-SecretInfo -Vault KeyVaultStore
 Get-Secret -Name Secret1 -AsPlainText #-vault if have same name over vaults
 
 
+# https://www.powershellgallery.com/packages?q=secretmanagement
+
 #Credential Manager (Windows Only) for current user
 Install-Module -Name SecretManagement.JustinGrote.CredMan -Scope AllUsers -Force
 Register-SecretVault -Module SecretManagement.JustinGrote.CredMan -Name CredManStore
