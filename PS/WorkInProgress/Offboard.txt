@@ -1,0 +1,13 @@
+e3ffecabbbaa5b318c238dcbebb0796f9fa7fb46
+
+https://api-eu.securitycenter.windows.com/api/machines?$top=10
+
+
+
+
+https://api.securitycenter.windows.com/api/machines/cb3820b4dc203f902201c71be3b40b839bec9cd9/offboard
+
+{
+  "Comment": "Offboarding machine"
+}
+

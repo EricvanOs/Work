@@ -1,0 +1,11 @@
+RDP to a server using ipv6
+
+
+2001-982-62f-1-2041-f947-7c4a-335f.ipv6-literal.net
+
+
+ [ipaddress]$ipv6 = '2001:0982:062f:0001:715d:7ac1:bf6e:0b5e'
+
+ $ipv6Literal = $ipv6.IPAddressToString.Replace(":","-")+'.ipv6-literal.net'
+  
+ $ipv6Literal

@@ -1,0 +1,15 @@
+settings - Enpoints - SIEM
+
+Application URI
+https://WindowsDefenderATPSiemConnector
+
+Client ID
+53ef1145-1579-438f-bba0-cd785cd2aff5
+
+Authorization server URL
+https://login.windows.net/c395f110-ab2e-44ab-b096-7000e2511b32/oauth2/token
+
+Resource
+https://graph.windows.net
+
+Client secret
