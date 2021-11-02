@@ -5,7 +5,9 @@ Get-Credential -UserName $username | Export-Clixml -Path "\\pantheon\data\Course
 #>
 
 #Install if needed
-Install-Module Microsoft.PowerShell.SecretManagement
+if (Get-Module -Name Microsoft.PowerShell.SecretManagement -eq $null){
+    Install-Module Microsoft.PowerShell.SecretManagement
+}
 
 #Common set of commands can use across vaults (where secrets are stored)
 Get-Command -Module Microsoft.PowerShell.SecretManagement
