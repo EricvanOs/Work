@@ -50,3 +50,17 @@ Set-Location "$($SiteCode):\" @initParams
 Set-Location -Path C:\
 
 Exit-PSSession
+
+# Active directory
+
+Enter-PSSession -ComputerName sisyphus
+
+Import-Module -Name ActiveDirectory
+
+Set-Location -Path AD:
+
+Get-ChildItem
+
+Set-Location -Path C:\
+
+Exit-PSSession
