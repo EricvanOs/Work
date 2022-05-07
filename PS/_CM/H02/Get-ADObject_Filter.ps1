@@ -1,7 +1,7 @@
 ﻿Get-ADUser -Filter '*'
 Get-ADUser -Filter *
 
-get-help about_ActiveDirectory_Filter 
+get-help about_ActiveDirectory_Filter -Online
 
 Get-ADObject -Filter ' ObjectClass -eq "computer" '   # ' en "
 Get-ADObject -Filter " ObjectClass -eq 'computer' "   # " en '
