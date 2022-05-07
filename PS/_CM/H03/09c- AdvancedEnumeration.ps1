@@ -1,4 +1,8 @@
-1..100 | ForEach-Object -Process {if ($_ % 2) { return }  "Hello: $_" } 
+1..100 | ForEach-Object -Process {if (($_ % 2) -eq 1) { return }  
+                                    "Hello: $_" 
+                                 } 
+#mag ook zo
+1..100 | ForEach-Object -Process {if ($_ % 2) { return }  "Hello: $_" }                               
 
 # parallel
 1..100 | ForEach-Object -Parallel {if ($_ % 2) { return }  "Hello: $_" }    
