@@ -6,8 +6,9 @@ Get-Help about_aliases
 Get-Help Get-Service -Online
 
 
-# bijzonder tekens met ` (backtick)
-"`a"   # a beep, let op backtick ipv single quote
+# bijzondere tekens met ` (backtick)
+Get-Help about_Special_Characters 
+"a`vb"   # a beep, let op backtick ipv single quote
 
 'abc' + 'def'
 
