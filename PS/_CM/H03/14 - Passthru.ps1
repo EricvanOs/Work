@@ -2,7 +2,7 @@
 $notepad = Start-Process notepad
 
 # nu wel
-$notepad = Start-Process notepad –PassThru
+$notepad = Start-Process notepad -PassThru
 
 $notepad.StartTime
 
