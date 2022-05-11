@@ -1,4 +1,4 @@
-What Exactly Are Streams
+# What Exactly Are Streams
 <#
 The output from a given command can be directed into different streams, think of channels, that can be acted upon later. 
 By default, output that is not explicitly redirected will go to the success stream. 

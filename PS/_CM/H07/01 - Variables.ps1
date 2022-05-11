@@ -40,7 +40,7 @@ $date1.GetType()
 $date2.GetType()
 
 # Geeft een fout
-[Int]$num4 = 'Text that can not be converted'
+[Int]'Text that can not be converted'
 
 #When adding dissimilar variable types, Windows PowerShell
 #attempts to convert them to be the same based on the type

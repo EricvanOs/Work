@@ -14,5 +14,5 @@ $LogNameKeys = @{
       LogName = @("System", "Application", "Security")
   }
 #Convert the hashtable to a string
-$LogNameKeys.Values | Out-String -Stream #we used a similar command earlier
+$LogNameKeys.Values | Out-String -Stream 
 

@@ -1,21 +1,15 @@
 ﻿$AcceleratorType = [psobject].Assembly.GetType("System.Management.Automation.TypeAccelerators")
 $AcceleratorType::Get 
 
-
-
 # examples
 
-$ip = [ipaddress] '192.168.8.102'
-$ip
+[ipaddress] '192.168.8.102'
 
-$mail = [mailaddress] 'pietje@here.com'
-$mail
+[mailaddress] 'pietje@here.com'
 
-[mailaddress] $mail2 = '"John, Doe" <JDoe@abc.com>'
-$mail2
+[mailaddress] '"John, Doe" <JDoe@abc.com>'
 
-[adsi] $Account = 'LDAP://cn=Jim de Jong,ou=bekenden,dc=pantheon,DC=somewhere' # LDAP met hoofdletters
-$Account
+[adsi] 'LDAP://cn=Jim de Jong,ou=bekenden,dc=pantheon,DC=somewhere' # LDAP met hoofdletters
 
 ([adsisearcher]'samaccountname=JdeJong').FindOne()
 
@@ -28,8 +22,7 @@ $Account
 [cultureinfo]::CurrentCulture = 'nl-NL'; Get-Date 
 
 # guid
-[guid]$a = New-Guid
-$a
+[guid] (New-Guid) 
 
 # PSCredential
 $password = ConvertTo-SecureString 'Password@123' -AsPlainText -Force
@@ -44,6 +37,9 @@ New-Object System.Management.Automation.PSCredential ('Administrator', $password
 # [TimeSpan]::New(days, hours, minutes, seconds)
 $ts = [TimeSpan]::New(1, 7, 5, 59)
 (Get-Date).AddHours($ts.TotalHours)
+
+#find methods of static class 
+[timespan] | Get-Member -Static
 
 # void suppress all output
 $array = New-Object System.Collections.ArrayList

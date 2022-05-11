@@ -22,11 +22,11 @@ Try {
 $ErrorActionPreference  # default setting = Continue 
 
 Try {
-  $ErrorActionPreference='stop'  # maw als iets gebeurt stop
+  $ErrorActionPreference='stop'  # if error occurs then stop
   Get-Process -Name Notepad | ForEach-Object { $PSItem.Kill() } 
 } 
   Catch {
-  Write-Host "Cannot kill process"
+  Write-Host "Cannot kill process" -ForegroundColor DarkCyan
 }
   Finally {
   $ErrorActionPreference='Continue'

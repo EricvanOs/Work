@@ -17,7 +17,7 @@ $a[2]
 $a[-1]
 
 $list = $list + 'D'
-
+$list += 'E'
 
 ####
 $hash = @{"server1" = "192.168.17.21";
@@ -39,11 +39,12 @@ $colorPicker = @('blue','white','yellow','black')
 $colorPicker -is [array]
 $colorPicker += 'brown'
 $colorPicker[0] = 'green'
-$colorPicker.Remove('brown')    # fails, but no error appears in interface
+$colorPicker.Remove('brown')    # fails
 
 # again
 $colorPicker = [System.Collections.ArrayList]@('blue','white','yellow','black')
 $colorPicker -is [hashtable]
+$colorPicker -is [array]
 $colorPicker -is [System.Collections.ArrayList]
 $colorPicker += 'brown'   # vreemd, implicit type casting naar array; maw niet gebruiken
 $colorPicker.Add('pink')
@@ -51,4 +52,4 @@ $colorPicker[0] = 'green'
 $colorPicker.Remove('pink') 
 $colorPicker.IndexOf('yellow')
 $colorPicker.Insert(2,'gray')  # er tussen zetten
-$colorPicker.RemoveAt(3)    # item met index[3] weghalen
+$colorPicker.RemoveAt(4)    # item met index[3] weghalen
