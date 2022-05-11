@@ -15,7 +15,7 @@ while(($inp = Read-Host -Prompt 'Select a command') -ne 'Q'){
 }
 
 # do-while  - loop
-$i=1
+$i=6
 do{
    Write-Host "$i"
    $i++

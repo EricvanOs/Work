@@ -16,6 +16,7 @@
     $timeStamp + $data | Out-File $logPath -Append
 }
 
+
 # test (2*)
 Write-Log -Folder k:\_cm -File TestLog.txt -Data "Test log data" 
 
