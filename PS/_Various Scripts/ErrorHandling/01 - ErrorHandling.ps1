@@ -1,4 +1,14 @@
-﻿$name ='Bad'
+﻿
+Try {
+   1/0
+} 
+  Catch {
+  Write-Host $Error[0]  -ForegroundColor DarkCyan
+}
+
+
+
+$name ='Bad'
 Try {
   Get-CimInstance -Class Win32_Service -ComputerName $name -ErrorAction Stop
 } 

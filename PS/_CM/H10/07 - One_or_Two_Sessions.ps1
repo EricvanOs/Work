@@ -9,3 +9,5 @@ Invoke-Command –ComputerName $ComputerName –ScriptBlock { Get-Service –Nam
 $Session = New-PSSession -ComputerName $ComputerName 
 Invoke-Command -Session $Session –ScriptBlock { $x = 'BITS' }
 Invoke-Command -Session $Session –ScriptBlock { Get-Service –Name $x }
+
+$Session | Remove-PSSession
