@@ -6,7 +6,7 @@ $SubscriptionId = (Get-AzSubscription -TenantId ($azc.Context.Tenant)).Id
 
 # Set the resource group name and location for your server
 $resourceGroupName = "myResourceGroup-$(Get-Random)"
-$location = "westus2"
+$location = "westus"
 # Set an admin login and password for your server
 $adminSqlLogin = "SqlAdmin"
 $password = "ChangeYourAdminPassword1"
@@ -22,21 +22,21 @@ $endIp = "0.0.0.0"
 Set-AzContext -SubscriptionId $subscriptionId 
 
 # Create a resource group
-$resourceGroup = New-AzResourceGroup -Name $resourceGroupName -Location $location
+New-AzResourceGroup -Name $resourceGroupName -Location $location
 
 # Create a server with a system wide unique server name
-$server = New-AzSqlServer -ResourceGroupName $resourceGroupName `
+New-AzSqlServer -ResourceGroupName $resourceGroupName `
     -ServerName $serverName `
     -Location $location `
     -SqlAdministratorCredentials $(New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $adminSqlLogin, $(ConvertTo-SecureString -String $password -AsPlainText -Force))
 
 # Create a server firewall rule that allows access from the specified IP range
-$serverFirewallRule = New-AzSqlServerFirewallRule -ResourceGroupName $resourceGroupName `
+New-AzSqlServerFirewallRule -ResourceGroupName $resourceGroupName `
     -ServerName $serverName `
     -FirewallRuleName "AllowedIPs" -StartIpAddress $startIp -EndIpAddress $endIp
 
 # Create a blank database with an S0 performance level
-$database = New-AzSqlDatabase  -ResourceGroupName $resourceGroupName `
+New-AzSqlDatabase  -ResourceGroupName $resourceGroupName `
     -ServerName $serverName `
     -DatabaseName $databaseName `
     -RequestedServiceObjectiveName "S0" `

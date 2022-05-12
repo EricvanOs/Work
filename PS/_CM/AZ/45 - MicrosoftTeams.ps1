@@ -4,10 +4,11 @@ Install-Module -Name MicrosoftTeams
 # if needed
 Update-Module -Name MicrosoftTeams
 
-# connect to Tems
+# connect to Teams
 Connect-MicrosoftTeams
 
 Get-Command  -Module MicrosoftTeams
 
 
-Get-Team
+$teams = Get-Team     
+$teams
