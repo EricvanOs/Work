@@ -1,8 +1,8 @@
 # if needed
-Install-Module -Name MicrosoftTeams
+# Install-Module -Name MicrosoftTeams
 
 # if needed
-Update-Module -Name MicrosoftTeams
+# Update-Module -Name MicrosoftTeams
 
 # connect to Teams
 Connect-MicrosoftTeams

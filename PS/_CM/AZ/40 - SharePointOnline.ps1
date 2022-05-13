@@ -1,10 +1,10 @@
 # run ISE, not yet compatible with powershell 7
 
 #if needed
-Install-Module -Name Microsoft.Online.SharePoint.PowerShell 
+# Install-Module -Name Microsoft.Online.SharePoint.PowerShell 
 
 #if needed
-Update-Module -Name Microsoft.Online.SharePoint.PowerShell
+# Update-Module -Name Microsoft.Online.SharePoint.PowerShell
 
 
 Import-Module -Name Microsoft.Online.SharePoint.PowerShell -verbose  #with verbose is necessary

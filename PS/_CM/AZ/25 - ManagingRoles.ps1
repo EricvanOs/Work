@@ -17,7 +17,7 @@ need to refer to the object ID of the template:
 #>
 
 $roleTemplate = Get-AzureADDirectoryRoleTemplate | Where-Object {$_.displayName -eq 'User Administrator'}
-# if role has been enabled, mo need to enable again (will give error)
+# if role has been enabled, no need to enable again (will give an error)
 Enable-AzureADDirectoryRole -RoleTemplateId $roleTemplate.ObjectId
 
 <#

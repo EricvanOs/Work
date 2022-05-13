@@ -1,4 +1,4 @@
-Install-Module -Name ExchangeOnlineManagement 
+# Install-Module -Name ExchangeOnlineManagement 
 
 get-command -Module ExchangeOnlineManagement
 
