@@ -19,7 +19,7 @@ $AcceleratorType::Get
 # culture/locales
 [cultureinfo]::CurrentCulture = 'nl-NL'; 1.2
 
-[cultureinfo]::CurrentCulture = 'nl-NL'; Get-Date 
+[cultureinfo]::CurrentCulture = 'th-TH'; Get-Date 
 
 # guid
 [guid] (New-Guid) 
