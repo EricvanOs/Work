@@ -24,9 +24,10 @@ Get-EventLog -ComputerName localhost
 Get-EventLog -List
 
 
-# conclusie er zijn twee varianten
+# conclusie er zijn drie varianten
 
-Get-EventLog -LogName  .......
-Get-EventLog -AsString .......
+Get-EventLog -LogName  Application
+Get-EventLog -AsString 
+Get-EventLog -List
 
 

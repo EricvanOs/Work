@@ -13,7 +13,7 @@ get-service -ComputerName (Get-ADComputer -Filter ('Name -like "e*us"') | Select
 Get-ADComputer -Filter ('Name -like "e*us"') | Get-Member
 
 # 4
-Help Get-Service -online #computername should be a string[]
+Get-Help Get-Service -online #computername should be a string[]
 
 # 5
 
