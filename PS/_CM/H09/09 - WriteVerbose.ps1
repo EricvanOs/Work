@@ -15,6 +15,8 @@ Test-Verbose -Verbose
 
 $VerboseColor = $host.PrivateData.VerboseForegroundColor
 
+$Host.PrivateData.VerboseForegroundColor = [System.ConsoleColor]::Yellow
+
 $host.PrivateData.VerboseForegroundColor = 'Magenta'
 
 Test-Verbose -Verbose 
