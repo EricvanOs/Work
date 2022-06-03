@@ -15,13 +15,13 @@ Import-Csv K:\_CM\H08\users.csv
 $users = Import-Csv K:\_CM\H08\users.csv
 $users.count
 $users[0]
-$users[0].First
-$users.First
+$users[0].FirstName
+$users.FirstName
 
 
 # import csv without header information
 Import-Csv K:\_CM\H08\users_no_header.csv  # niet wat je wilt
-$users = Import-Csv K:\_CM\H08\users_no_header.csv -Header First,Last,FullName,Department
+$users = Import-Csv K:\_CM\H08\users_no_header.csv -Header FirstName,LastName,FullName,Department
 $users.count
 $users[0]
 $users[0].First
@@ -34,5 +34,5 @@ $usersXml = Import-Clixml K:\_CM\H08\users.xml
 $usersXml.count
 $usersXml[0]
 $usersXml | Get-Member
-$usersXml.First
+$usersXml.FirstName
 
