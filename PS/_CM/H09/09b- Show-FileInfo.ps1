@@ -30,10 +30,10 @@ function Show-FileInfo ()
     # Format the output time
     if ($rt.TotalSeconds -lt 1)
       { $elapsed = "$($rt.TotalMilliseconds.ToString('#,0.0000')) Milliseconds" }
-    elseif ($rt.TotalSeconds -gt 60)
-      { $elapsed = "$($rt.TotalMinutes.ToString('#,0.0000')) Minutes" }
-    else
+    elseif ($rt.TotalSeconds -lt 60)
       { $elapsed = "$($rt.TotalSeconds.ToString('#,0.0000')) Seconds" }
+    else
+      { $elapsed = "$($rt.TotalMinutes.ToString('#,0.0000')) Minutes" }
  
  
     Write-Verbose @"
