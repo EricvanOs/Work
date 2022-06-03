@@ -2,7 +2,7 @@
 # A hash table, which is sometimes called a dictionary or an associative array, stores a paired list of items.
 
 
-$list = "A","B","C","1","2","3"
+$list = 'A','B','C','1','2','3'
 
 foreach ( $item in $list ) { $item }
 

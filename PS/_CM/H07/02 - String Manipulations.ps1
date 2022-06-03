@@ -10,7 +10,7 @@ $logFile.Contains('D:')
 #Output must be caputured to update the value
 $logFile.Insert(6,'\MyScript')
 $logFile
-$logFile=$logFile.Insert(6,'\MyScript')
+$logFile = $logFile.Insert(6,'\MyScript')
 $logFile
 
 #Replace text in a variable value

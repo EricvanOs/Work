@@ -1,5 +1,5 @@
 ﻿Param (
-    [string]$ComputerName='Hydra'
+    [string]$ComputerName = 'Hydra'
 )
 
 $bios = Get-CimInstance Win32_BIOS -ComputerName $ComputerName

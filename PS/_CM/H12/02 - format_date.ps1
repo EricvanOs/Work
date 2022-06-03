@@ -22,4 +22,5 @@ foreach ($c in $cultures){
 # parse a string into datetime
 [DateTime]::ParseExact('02-06-2018 16:25:28', 'dd-MM-yyyy HH:mm:ss', $null)
 
-
+$date = '02}06+2018 16:25:28'
+([datetime]::ParseExact($date,"dd}MM+yyyy HH:mm:ss",$null))
