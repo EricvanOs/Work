@@ -9,8 +9,8 @@ $openid.token_endpoint
 $token = $openid.token_endpoint
 
 $Body = @{
-    client_id = "14a4552e-c0b8-40be-8285-33505c7f303d"        # better use keyvault
-    client_secret = "~0wo6kV6_BAz1nzl_dK-58a40K~6f.OKdN"      # better use keyvault
+    client_id = "14a4552e-c0b8-40be-8285-33505c7f303d"        # better use (key)vault
+    client_secret = "~0wo6kV6_BAz1nzl_dK-58a40K~6f.OKdN"      # better use (key)vault
     redirect_uri = "https://localhost"
     grant_type = "client_credentials"
     scope = "https://graph.microsoft.com/.default" 

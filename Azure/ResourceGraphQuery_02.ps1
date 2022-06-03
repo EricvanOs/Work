@@ -17,10 +17,10 @@ Search-AzGraph -Query $query
 
 
 $query = @"
-Resources | 
-where type =~ 'Microsoft.Network/publicIPAddresses' |
-where properties.ipConfiguration =~ '' |
-project name, resourceGroup, subscriptionId, location, tags, id
+Resources | 
+where type =~ 'Microsoft.Network/publicIPAddresses' |
+where properties.ipConfiguration =~ '' |
+project name, resourceGroup, subscriptionId, location, tags, id
 "@
 Search-AzGraph -Query $query
 

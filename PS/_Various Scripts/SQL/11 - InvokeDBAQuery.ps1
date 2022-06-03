@@ -13,6 +13,14 @@ Invoke-DbaQuery -SqlInstance $sqlserver -Database tempdb -Query "Example_SP" -Sq
 
 
 
+# also
+$query = @"
+insert into dbo.person (voornaam,Achternaam,id)
+values(@voornaam,@achternaam,@id)
+"@
+
+Invoke-DbaQuery -SqlInstance $sqlserver -Database tempdb -Query $query  -SqlParameter $QueryParameters
+
 
  # in db sp 
  <#
