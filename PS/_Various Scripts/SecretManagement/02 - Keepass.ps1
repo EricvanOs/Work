@@ -33,3 +33,6 @@ Get-Secret -Name ApplicationID -AsPlainText
 
 # end of script unregister the SecretVault
 Unregister-SecretVault -Name ScriptingVault
+
+import-module HashDB
+Cleanup-Cbz 
