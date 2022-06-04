@@ -2,13 +2,15 @@
 Install-Module Microsoft.PowerShell.SecretManagement, Microsoft.PowerShell.SecretStore -Scope AllUsers
 Install-Module -Name SecretManagement.KeePass -RequiredVersion 0.9.2
 
-# using keepass with file authentication (Use NTFS on folder) - no masterpassword
+# using keepass with file authentication (Use NTFS on folder) and masterpassword
 $FolderPath = '\\pantheon\data\misc\credentials'
 $VaultParameters = @{
     Path = "$FolderPath\ScriptingVault.kdbx"
-    UseMasterPassword = $false
-    KeyPath= "$FolderPath\ScriptingVault.keyx"
+    UseMasterPassword = $true
+    KeyPath= "$FolderPath\ScriptingVault.keyx"   #mag op USB-stick
 }
+
+# Masterpassword = mijnsupergeheimepaswoord
 
 Register-SecretVault -Name 'ScriptingVault' -ModuleName 'SecretManagement.Keepass' -VaultParameters $VaultParameters
 
@@ -33,6 +35,3 @@ Get-Secret -Name ApplicationID -AsPlainText
 
 # end of script unregister the SecretVault
 Unregister-SecretVault -Name ScriptingVault
-
-import-module HashDB
-Cleanup-Cbz 
