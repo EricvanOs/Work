@@ -1,37 +1,46 @@
-# create self-signed certificate
-New-SelfSignedCertificate -Subject "Sentinel Mgmt" -CertStoreLocation Cert:\CurrentUser\My
+#region Need to do once for a certificate to use with Application
 
-#install certificate
-$thumbprint = (Get-ChildItem -Path Cert:\CurrentUser\My |Where-Object{$_.Subject -eq 'CN=Sentinel Mgmt'}   ).Thumbprint
-$path = '\\pantheon\data\misc\Credentials'
+    # create self-signed certificate
+    New-SelfSignedCertificate -Subject "Sentinel Mgmt" -CertStoreLocation Cert:\CurrentUser\My
 
-Export-Certificate -Cert Cert:\CurrentUser\My\$thumbprint -Type Cert -FilePath $path\SentinelMgmt.cer
-$password = ConvertTo-SecureString -String "CertificateSecretPassword" -Force -AsPlainText  # not safe
-Export-PfxCertificate -Password $password -Cert Cert:\CurrentUser\My\$thumbprint -FilePath $path\SentinelMgmt.pfx
+    #install certificate
+    $thumbprint = (Get-ChildItem -Path Cert:\CurrentUser\My |Where-Object{$_.Subject -eq 'CN=Sentinel Mgmt'}   ).Thumbprint
+    $path = '\\pantheon\data\misc\Credentials'
 
-# good practice remove certificate from machine
-Get-ChildItem -Path Cert:\CurrentUser\My |Where-Object{$_.Subject -eq 'CN=Sentinel Mgmt'} | Remove-Item
+    Export-Certificate -Cert Cert:\CurrentUser\My\$thumbprint -Type Cert -FilePath $path\SentinelMgmt.cer
+    $password = ConvertTo-SecureString -String "CertificateSecretPassword" -Force -AsPlainText  # not safe
+    Export-PfxCertificate -Password $password -Cert Cert:\CurrentUser\My\$thumbprint -FilePath $path\SentinelMgmt.pfx
 
-# upload cer-file (not pfx) manually to azure or scripted
-Connect-AzAccount 
+    # good practice remove certificate from machine
+    Get-ChildItem -Path Cert:\CurrentUser\My |Where-Object{$_.Subject -eq 'CN=Sentinel Mgmt'} | Remove-Item
 
-$ApplicationID = '7ffa9e3d-95ad-418c-9ee5-2422e989a634'  # same as ClientID (not safe) 
+    # upload cer-file (not pfx) manually to azure or scripted
+    Connect-AzAccount 
 
-$cert = New-Object  System.Security.Cryptography.X509Certificates.X509Certificate("$($path)\SentinelMgmt.cer")
-$key = [System.Convert]::ToBase64String($cert.GetRawCertData())
-New-AzADAppCredential -ApplicationId $ApplicationID  -CertValue $key
+    $ApplicationID = '7ffa9e3d-95ad-418c-9ee5-2422e989a634'  # same as ClientID (not safe) 
 
-# logoff azure to test 
-Disconnect-AzAccount
+    $cert = New-Object  System.Security.Cryptography.X509Certificates.X509Certificate("$($path)\SentinelMgmt.cer")
+    $key = [System.Convert]::ToBase64String($cert.GetRawCertData())
+    New-AzADAppCredential -ApplicationId $ApplicationID  -CertValue $key
 
 
-# Now want to use certificate based authentication to App
+    # logoff azure to test 
+    Disconnect-AzAccount
+    #endregion
 
-# install pfx file
-$password = ConvertTo-SecureString -String "CertificateSecretPassword" -Force -AsPlainText
-Import-PfxCertificate -Password $password -FilePath $path\SentinelMgmt.pfx -CertStoreLocation Cert:\CurrentUser\My
+#region Now want to use certificate based authentication 
+    # install pfx file (once on a machine)
+    $password = ConvertTo-SecureString -String "CertificateSecretPassword" -Force -AsPlainText
+    Import-PfxCertificate -Password $password -FilePath $path\SentinelMgmt.pfx -CertStoreLocation Cert:\CurrentUser\My
+#endregion
 
 # test 
 # if needed Install-Module Microsoft.Graph -Scope CurrentUser 
+$ApplicationID = '7ffa9e3d-95ad-418c-9ee5-2422e989a634'
+$thumbprint = (Get-ChildItem -Path Cert:\CurrentUser\My |Where-Object{$_.Subject -eq 'CN=Sentinel Mgmt'}   ).Thumbprint
+
 Connect-MgGraph -ClientId $ApplicationID -TenantId 'in-li.eu' -CertificateThumbprint $thumbprint
 Get-MgAuditLogSignIn | Measure-Object
+
+# finished using MSGraph
+Disconnect-MgGraph 
