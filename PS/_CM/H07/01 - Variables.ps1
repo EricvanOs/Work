@@ -8,6 +8,15 @@ $logFile
 $service = Get-Service W32Time
 $service
 
+#region
+New-Variable -Name Myvar -Value 'nice'
+$myvar
+Set-Variable -Name MyVar -value 'very nice' -PassThru
+New-Variable -Name 'with a space' -Value 'space' -Option ReadOnly -Description 'How nice' 
+${with a space} 
+Get-Variable -Name 'with a space' | Select-Object -Property *
+#endregion
+
 #Display variable contents within text
 Write-Host "The log file location is $logFile"
 

@@ -8,7 +8,7 @@ Set-Location -Path Cert:\CurrentUser\my
 
 Get-ChildItem
 
-Set-Location -Path c:\
+Set-Location -Path c:
 
 # environment
 
@@ -18,7 +18,7 @@ Get-ChildItem
 
 $env:COMPUTERNAME
 
-Set-Location -Path c:\
+Set-Location -Path c:
 
 # SCCM of Hermes
 
@@ -47,7 +47,7 @@ if($null -eq (Get-PSDrive -Name $SiteCode -PSProvider CMSite -ErrorAction Silent
 # Set the current location to be the site code.
 Set-Location "$($SiteCode):\" @initParams
 
-Set-Location -Path C:\
+Set-Location -Path C:
 
 Exit-PSSession
 
@@ -61,7 +61,7 @@ Set-Location -Path AD:
 
 Get-ChildItem
 
-Set-Location -Path C:\
+Set-Location -Path C:
 
 Exit-PSSession
 
