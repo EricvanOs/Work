@@ -64,3 +64,19 @@ Get-ChildItem
 Set-Location -Path C:\
 
 Exit-PSSession
+
+# alias
+
+Set-Location alias:
+
+Get-ChildItem
+
+Set-Location c:
+
+# function
+
+Set-Location function:
+
+Get-ChildItem
+
+Set-Location c:

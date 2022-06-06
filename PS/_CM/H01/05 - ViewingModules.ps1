@@ -1,18 +1,14 @@
-﻿# 1 
-Get-Module
+﻿Get-Module
 Get-Module -ListAvailable
 
-# 2
 Get-ADUser JdeJong
 
-# 3
+# which modules are loaded in memory?
 Get-Module
 
-
-# 5
+# load into memory
 Import-Module ServerManager # is niet echt nodig
 
-# 6
 Get-Module
 
 

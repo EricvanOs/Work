@@ -8,7 +8,7 @@ Get-Help Get-Service -Online
 
 # bijzondere tekens met ` (backtick)
 Get-Help about_Special_Characters 
-"a`vb"   # a beep, let op backtick ipv single quote
+"a`vb"   # v vertical tab, let op backtick ipv single quote
 
 'abc' + 'def'
 

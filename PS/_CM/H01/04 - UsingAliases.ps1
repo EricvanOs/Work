@@ -1,30 +1,29 @@
-﻿# 1
-dir
+﻿dir
 
-# 2 beter maak gebruik van
+# beter maak gebruik van
 Get-ChildItem
 
-# 3
+# info 
 Get-Alias dir
 
-# 4
+# 
 New-Alias list Get-ChildItem
 
-# 5
+# 
 list
 
-# 6
+# 
 Get-Alias -definition Get-ChildItem
 
-# 7
+# 
 Get-Command *alias*
-Get-Help Set-Alias -Online # remark remove-item
+Get-Help Set-Alias -Online # remark remove-item  OR select "Set-Alias" and CRTL+F1
 
 Get-ChildItem alias:\
 
 Remove-Item alias:\list
 
-# 8 controle
+# controle
 Get-Alias -definition Get-ChildItem
 
 # niet lekker leesbaar
@@ -42,3 +41,11 @@ Format-Table -AutoSize
 Get-Process 
  | Where-Object{$_.PagedMemorySize64 -gt 1000} 
  | Format-Table -AutoSize
+
+
+<# 
+dangerous! dangerous! dangerous!
+Remove-Item -Path Alias:dir
+Set-Alias -Name dir -Value Remove-Item 
+#>
+
