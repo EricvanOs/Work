@@ -2,9 +2,9 @@
 
 $vault = 'ScriptingVault'
 # Read secrets from vault 
-$tenantId = (Get-Secret -Name TenantID -Vault $vault -AsPlainText) # Paste your own tenant ID here
-$appId = (Get-Secret -Name MicrosoftDefenderForEndpoint-ApplicationID -Vault $vault -AsPlainText) # Paste your own app ID here
-$appSecret = (Get-Secret -Name MicrosoftDefenderForEndpoint-Secret -Vault $vault -AsPlainText) # Paste your own app secret here
+$tenantId = (Get-Secret -Name TenantID -Vault $vault -AsPlainText) 
+$ApplicationId = (Get-Secret -Name MicrosoftDefenderForEndpoint-ApplicationID -Vault $vault -AsPlainText) 
+$ApplicationSecret = (Get-Secret -Name MicrosoftDefenderForEndpoint-Secret -Vault $vault -AsPlainText) 
 
 Close-HeliosVault
 
@@ -13,18 +13,22 @@ $resourceAppIdUri = 'https://api.securitycenter.microsoft.com'
 $oAuthUri = "https://login.microsoftonline.com/$TenantId/oauth2/token"
 $body = [Ordered] @{
     resource = $resourceAppIdUri
-    client_id = $appId
-    client_secret = $appSecret
+    client_id = $ApplicationId
+    client_secret = $ApplicationSecret
     grant_type = 'client_credentials'
 }
 $response = Invoke-RestMethod -Method Post -Uri $oAuthUri -Body $body -ErrorAction Stop
 $aadToken = $response.access_token
 
 
+# https://docs.microsoft.com/en-us/microsoft-365/security/defender-endpoint/exposed-apis-list?view=o365-worldwide
+# look at advanced hunting
+# https://docs.microsoft.com/en-us/microsoft-365/security/defender-endpoint/run-advanced-query-sample-powershell?view=o365-worldwide
 
-# send a KQL query to endpoint
-$query = 'DeviceInfo | limit 5' # Paste your own query here
-
+# send a KQL query to endpoint (use here-string)
+$query = @'
+    DeviceInfo | limit 5
+'@   
 $url = "https://api-eu.securitycenter.microsoft.com/api/advancedqueries/run"
 $headers = @{ 
     'Content-Type' = 'application/json'
@@ -37,9 +41,8 @@ $response =  $webResponse | ConvertFrom-Json
 $response.Results.DeviceName
 
 
-
 <#
-want to send the following query, use a here-string
+want to send the following query, use a here-string (single quote - see $filter)
 https://api-eu.securitycenter.windows.com/api/machines?$filter=healthStatus eq 'Active'
 #>
 $url = @'
