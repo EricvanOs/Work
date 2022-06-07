@@ -75,8 +75,15 @@ Set-Location c:
 
 # function
 
+function myfunction {
+Write-Host 'Some output'
+}
+
+myfunction
+
 Set-Location function:
 
-Get-ChildItem
+Get-ChildItem -Path my* | Select-Object -Property *
 
 Set-Location c:
+
