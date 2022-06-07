@@ -1,0 +1,9 @@
+{
+   "Port": "9000",
+   "ApplicationName": "TestApp",
+   "MaintenanceWindow": "Every Saturday",
+   "BusinessUnit": "IT",
+   "AppOwner": "Josh",
+   "AppID": "1jj2221-223443s",
+   "Location": "EastUS"
+}
