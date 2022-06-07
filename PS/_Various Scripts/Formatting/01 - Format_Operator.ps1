@@ -53,6 +53,8 @@ dn Display Numbers Padded by 0 by n times
 
 '{0:yyyy}' -f (get-date)
 
+'{0:yyyy-MMMM-dd}' -f (get-date)
+
 '{0:#,#}' -f 100980243
 
 # in a loop
