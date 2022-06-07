@@ -6,7 +6,7 @@ if ( Get-Process | Where-Object Name -eq Notepad ){write-host 'Notepad running'}
 Get-Process Notepad  # will give an error
 Get-Process | Where-Object Name -eq Notepad # will give empty result set
 
-#stop all notepads
+#stop all notepads, notice *
 if ( $process = Get-Process Notepad* )
 {
     $process | Stop-Process
