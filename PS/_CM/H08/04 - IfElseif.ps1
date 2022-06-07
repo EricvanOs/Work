@@ -12,11 +12,12 @@ If ($freeSpace -le 5GB) {
 
 
 
-While ($fruit -ne "X") {
-    $fruit = Read-Host "Name that fruit"
+While ($fruit -ne 'X') {
+    $fruit = Read-Host 'Name that fruit or X to escape'
 
     if ($fruit -eq 'Apple') {'I have an Apple'}
     elseif ($fruit -eq 'Banana') {'I have a Banana' }
     elseif ($fruit -eq 'Orange') {'I have an Orange'}
+    elseif ($fruit -eq 'X') {}
     else {'Sorry, that fruit is not in the list'}
 }

@@ -32,6 +32,7 @@ $diff.TotalHours
 # from file-import
 $Date = '2020-09-07T13:35:08.4780000Z'  #UTC-time
 [DateTime]$Date  # localtime (Daylight saving - Spring Forward, Summer Time) +2 hours
+($Date).IsDaylightSavingTime()
 
 $Date = '2020-02-07T13:35:08.4780000Z'  #UTC-time
 [DateTime]$Date #localtime (Winter Time) +1 hour
@@ -48,5 +49,7 @@ $sDate
 ([datetime]$sDate).ToLocalTime()
 
 ([datetime]$sDate).ToUniversalTime() # converted to UCT
+
+
 
 
