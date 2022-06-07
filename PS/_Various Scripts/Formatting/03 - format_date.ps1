@@ -1,12 +1,13 @@
 ﻿(Get-Culture).DateTimeFormat
 
 
-$cultures = 'en-US','en-GB','fr-CA','fr-FR','ms-MY','zh-HK'
+$cultures = 'en-US','de-DE','fr-CA','fr-FR','ms-MY','zh-HK'
 
 foreach ($c in $cultures){
  $culture = New-Object system.globalization.cultureinfo($c)
  $date = Get-Date -format ($culture.DateTimeFormat.ShortDatePattern)
- New-Object psobject -Property @{'name'=$culture.displayname; 'date'=$date}
+ $longdate = Get-Date -format ($culture.DateTimeFormat.LongDatePattern)
+ New-Object psobject -Property @{'name'=$culture.displayname; 'date'=$date; 'longdate'=$longdate}
 }
 
 
@@ -34,3 +35,18 @@ $termdate = [datetime]::ParseExact($tdate,'dd-MMM-yyyy',$null)
 $termdate.ToString('MMM/dd/yyyy')
 #or 
 $termdate.ToString('MM/dd/yyyy')
+
+
+# parse a string into datetime, succeeds
+[DateTime]::ParseExact('02-06-2018 16:25:28', 'dd-MM-yyyy HH:mm:ss', $null)
+# parse a string into datetime, fails
+[DateTime]::ParseExact('02-16-2018 16:25:28', 'dd-MM-yyyy HH:mm:ss', $null)
+
+
+$string = '5/22/2012 10:31'
+#[DateTime]$date = new-object DateTime 1900,1,1
+[DateTime]$date = new-object DateTime 1900,7,4
+[dateTime]::tryParse($string, [ref][DateTime]$date)
+$date
+
+[DateTime]::Parse($string, $null)

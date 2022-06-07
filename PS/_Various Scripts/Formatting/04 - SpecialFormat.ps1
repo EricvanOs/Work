@@ -14,8 +14,8 @@ function Format-Color([hashtable] $Colors = @{}, [switch] $SimpleMatch) {
 	}
 }
 
-Get-Service | 
-  Select-Object -Property DisplayName,Status |
-  Format-Color @{'Running' = 'Green' ; 'Stopped' = 'Red'}
+Get-Service 
+	| Select-Object -Property DisplayName,Status 
+	| Format-Color @{'Running' = 'Green' ; 'Stopped' = 'Red'}
 
 
