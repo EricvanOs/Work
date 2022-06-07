@@ -23,9 +23,9 @@ $xmlstream | Get-Member
 # to CliXML ( Common Language Infrastructure(CLI) XML)
 Get-Service BITS | Export-CliXML -Path k:\Temp\Serv-TypeInfo.xml
 
-Get-Service | Get-Member                                   # System.ServiceProcess.ServiceController (methods & properties)           
+Get-Service | Get-Member                                       # System.ServiceProcess.ServiceController (methods & properties)           
 
-Import-Clixml -Path K:\Temp\Serv-TypeInfo.xml | Get-Member           # Deserialized.System.ServiceProcess.ServiceController (only properties and some base methods)
+Import-Clixml -Path K:\Temp\Serv-TypeInfo.xml | Get-Member     # Deserialized.System.ServiceProcess.ServiceController (only properties and some base methods)
 
 # combined
 Get-Content K:\_CM\H03\Patching.json | ConvertFrom-Json | ConvertTo-Csv | Out-File K:\Temp\ServerPatching.csv
