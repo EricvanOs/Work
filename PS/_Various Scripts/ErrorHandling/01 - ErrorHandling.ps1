@@ -1,4 +1,11 @@
-﻿
+﻿Get-Service -Name Foo,BITS,Nobody,WinRM -ErrorAction Continue
+Get-Service -Name BITS,Nobody,WinRM -ErrorAction SilentlyContinue
+Get-Service -Name BITS,Nobody,WinRM -ErrorAction Inquire
+Get-Service -Name BITS,Nobody,WinRM -ErrorAction Ignore
+Get-Service -Name BITS,Nobody,WinRM -ErrorAction Stop
+
+
+
 Try {
    1/0
 } 
@@ -6,8 +13,17 @@ Try {
   Write-Host $Error[0]  -ForegroundColor DarkCyan
 }
 
+# does not work
+$name ='Bad'
+Try {
+  Get-CimInstance -Class Win32_Service -ComputerName $name 
+} 
+  Catch {
+  Write-Host "Error connecting to $name" -ForegroundColor DarkCyan
+}
 
 
+# force a "Stop" when an error occurs
 $name ='Bad'
 Try {
   Get-CimInstance -Class Win32_Service -ComputerName $name -ErrorAction Stop
@@ -17,9 +33,7 @@ Try {
 }
 
 
-
-# werkt niet 
-
+# does not work, because  BOL: A terminating error in one scriptblocks may not cause the termination of the Foreach-Object cmdlet
 Try {
   Get-Process -Name Notepad | ForEach-Object { $PSItem.Kill() }  -ErrorAction Stop  # ErrorAction werkt niet
 } 
