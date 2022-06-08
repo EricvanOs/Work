@@ -1,5 +1,5 @@
-﻿$input_path = 'K:\_CM\_Various Scripts\Regular Expressions\emails.txt'
-$output_file = 'K:\_CM\_Various Scripts\Regular Expressions\extracted_addresses.txt'
+﻿$input_path = 'K:\_Various Scripts\Regular Expressions\emails.txt'
+$output_file = 'K:\_Various Scripts\Regular Expressions\extracted_addresses.txt'
 $regex = '\b[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,10}\b'
 
 # read file again
@@ -30,3 +30,5 @@ select-string -Path $input_path -Pattern $regex -AllMatches |
 #cleanup
 
 Get-Item -path $output_file | Remove-Item
+
+

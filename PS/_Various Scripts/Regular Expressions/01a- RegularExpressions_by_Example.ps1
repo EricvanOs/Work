@@ -67,8 +67,8 @@ $Matches.domain
 $Matches.user
 
 
-$log = (Get-EventLog -LogName Security -Newest 1 -InstanceId 4799).message
-$r = '(?s).*Account Name:\s*(?<N>.*).*Account Domain:\s*(?<D>[A-Z,0-9]*)'
+$log = (get-winevent -LogName Security | Where-Object{$_.id -eq 4799} | Select-Object -First 1).message
+[regex]$r = '(?s).*Account Name:\s*(?<N>.*).*Account Domain:\s*(?<D>[A-Z,0-9]*)'
 # remark (?s) is also called  "single line mode" maw beschouw 't als een regel.
 $log -match $r
 $Matches
