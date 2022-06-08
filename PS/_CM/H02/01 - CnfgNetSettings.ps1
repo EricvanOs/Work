@@ -1,34 +1,31 @@
-﻿# 1
+﻿# equivalent of ping
 Test-Connection sisyphus 
 
-# 1b
+# equivalent of port-ping
 Test-NetConnection -ComputerName hydra -Port 3389
 
 $ProgressPreference = 'SilentlyContinue'
 Test-NetConnection -ComputerName hydra -Port 3389 
 $ProgressPreference = 'Continue'
 
-# 2
+# equivalent of ipconfig
 Get-NetIPConfiguration
 
-# 3
+(Get-NetIPConfiguration).Ipv4Address | Select-Object IPAddress,Prefixlength
+
+# change ipaddress
 New-NetIPAddress -InterfaceAlias Ethernet -IPAddress 172.16.0.30 -PrefixLength 24   # adds new ipaddress
 Set-NetIPAddress -InterfaceAlias Ethernet -PrefixLength 16   # change setting of interface except ipaddress
 Remove-NetIPAddress -InterfaceIndex ethernet -IPAddress 17.16.0.15 # remove "old" address
  
 get-help Set-NetIPAddress -Online
 
-# 4
+# set dns-server address
 Set-DnsClientServerAddress -InterfaceAlias Ethernet -IPAddress 172.16.0.11
 
-# 5
+# equivalent of route delete
 Remove-NetRoute -InterfaceAlias Ethernet -DestinationPrefix 0.0.0.0/0 -Confirm:$false
 
-# 6
+# equivalent of route add
 New-NetRoute -InterfaceAlias Ethernet -DestinationPrefix 0.0.0.0/0 -NextHop 172.16.0.2
 
-#7
-Get-NetIPConfiguration
-
-#8
-Test-NetConnection Sisyphus

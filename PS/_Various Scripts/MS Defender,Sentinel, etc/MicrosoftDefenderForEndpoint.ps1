@@ -20,6 +20,9 @@ $body = [Ordered] @{
 $response = Invoke-RestMethod -Method Post -Uri $oAuthUri -Body $body -ErrorAction Stop
 $aadToken = $response.access_token
 
+# let's have a look at the access token
+import-module JWTDetails
+$aadToken | Get-JWTDetails
 
 # https://docs.microsoft.com/en-us/microsoft-365/security/defender-endpoint/exposed-apis-list?view=o365-worldwide
 # look at advanced hunting
