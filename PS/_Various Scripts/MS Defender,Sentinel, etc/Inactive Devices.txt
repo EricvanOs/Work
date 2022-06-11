@@ -1,3 +1,0 @@
-Inactive Devices
-
-https://api-eu.securitycenter.windows.com/api/machines?$filter=healthStatus eq 'Inactive' 
