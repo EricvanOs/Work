@@ -62,3 +62,33 @@ $webResponse = Invoke-WebRequest -Method GET -Uri $url -Headers $headers -ErrorA
 $response =  $webResponse | ConvertFrom-Json
 $response.value.computerdnsname
 
+
+<#
+see: Microsoft 365 Defender - API Explorer - Add Device Tag
+
+POST https://api-eu.securitycenter.windows.com/api/machines/{machine-id}/tags
+{
+  "Value" : "AzureVM",
+  "Action": "Add"
+}
+#>
+$url = @'
+    https://api-eu.securitycenter.windows.com/api/machines/c9641111a9ae0228e9779c0801c68ba20ed1a19a/tags
+'@
+
+$headers = @{ 
+    'Content-Type' = 'application/json'
+    Accept = 'application/json'
+    Authorization = "Bearer $aadToken" 
+}
+
+$body = @'
+    {
+    "Value" : "AzureVM",
+    "Action": "Add"
+    }
+'@
+
+$webResponse = Invoke-WebRequest -Method POST -Uri $url -Body $body -Headers $headers -ErrorAction Stop
+
+

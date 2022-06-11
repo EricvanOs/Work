@@ -6,6 +6,7 @@ Msg3 = The specified variable does not exist.
 '@
 ConvertFrom-StringData -StringData $Here
 
+
 # Convert string data using a different delimiter
 $StringData = @'
 color|red
@@ -13,8 +14,7 @@ model|coupe
 year|1965
 condition|mint
 '@
-$carData = ConvertFrom-StringData -StringData $StringData -Delimiter '|'
-$carData
+ConvertFrom-StringData -StringData $StringData -Delimiter '|'
 
 
 # Convert a here-string containing a comment
@@ -27,6 +27,7 @@ Category = Storage
 Cost = Free
 '@
 
+
 # Convert a string to a hash table
-$A = ConvertFrom-StringData -StringData "Top = Red `n Bottom = Blue"
-$A
+ConvertFrom-StringData -StringData "Top = Red `nBottom = Blue"
+
