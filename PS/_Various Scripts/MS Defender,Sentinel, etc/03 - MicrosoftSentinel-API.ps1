@@ -52,8 +52,40 @@ $webResponse = Invoke-WebRequest -Method GET -Uri $url -Headers $headers  -Error
 $response = $webResponse | ConvertFrom-Json
 $response.value
 
+
+
+# may also use powershell module Az.SecurityInsights - not as extensive as API-calls e.g. watchlists
+Get-AzSentinelIncident -ResourceGroupName loganalytics -WorkspaceName loganalytics2li
+Get-AzSentinelDataConnector -ResourceGroupName loganalytics -WorkspaceName loganalytics2li
+
+# list all watchlists
+# GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/watchlists?api-version=2021-10-01
+
+
+# add a watchlist
+# PUT https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/watchlists/{watchlistAlias}?api-version=2021-10-01
+<#
+BODY
+{
+  "etag": "\"0300bf09-0000-0000-0000-5c37296e0000\"",
+  "properties": {
+    "displayName": "High Value Assets Watchlist",
+    "source": "Local file",
+    "provider": "Microsoft",
+    "description": "Watchlist from CSV content",
+    "numberOfLinesToSkip": 1,
+    "rawContent": "This line will be skipped\nheader1,header2\nvalue1,value2",
+    "itemsSearchKey": "header1",
+    "contentType": "text/csv"
+  }
+}
+#>
+
+# update watchlist
+
+
+# delete watchlist
+# DELETE https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/watchlists/{watchlistAlias}?api-version=2021-10-01
+
 # disconnect 
 Disconnect-AzAccount
-
-@'
-'@
