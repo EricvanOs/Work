@@ -1,7 +1,7 @@
-﻿# 1 
-Get-Command *net*
+﻿# help & searches
+Get-Command -name *note*
+Get-Command -noun *note*
 
-# 2
 Get-Help get-*net* -Category cmdlet  
 
 Get-Alias

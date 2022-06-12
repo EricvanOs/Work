@@ -1,6 +1,6 @@
 ﻿dir
 
-# beter maak gebruik van
+# beter, maak gebruik van
 Get-ChildItem
 
 # info 

@@ -1,16 +1,16 @@
-﻿# 1 
+﻿# add a group 
 New-ADGroup -Name PSHelpDesk -Path "ou=PSTest,dc=pantheon,dc=somewhere" -GroupScope Global
 
-# 2
+# add an user
 New-ADUser -Name "Jane Doe" -Department "IT" -Path "ou=PSTest,dc=pantheon,dc=somewhere"
 
-# 3
+#  add user to group
 Add-ADGroupMember "PSHelpDesk" -Members "Jane Doe"
 
-# 4
+# change proerties of user
 Set-ADuser "Jane Doe" -StreetAddress "1530 Nowhere Ave." -City "Winnipeg" -State "Manitoba" -Country "CA"
 
-# 5
+# get membership of group
 Get-ADPrincipalGroupMembership "Jane Doe"
 
 # extra "ldap" properties via parameter (Properties)
