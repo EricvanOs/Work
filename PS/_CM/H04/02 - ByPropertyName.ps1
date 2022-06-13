@@ -9,15 +9,15 @@ Get-Help Get-Hotfix -Online  # ByPropertyName  -- ComputerName
 
 Get-HotFix -ComputerName Hydra,Erebus
 Get-HotFix -Description Update 
-Get-HotFix -Id KB5005540
+Get-HotFix -Id KB5013888
 
 
 # maw een computername,id of description als input voor get-hotfix
 # alleen Accept pipeline input: True voor ComputerName
 
-Get-ADComputer -Filter("Name -like 'hy*a*' ") 
- | Select-Object -Property @{n='ComputerName';e={$_.Name}} 
- | Get-HotFix 
+Get-ADComputer -Filter("Name -like 'hy*ra*' ") | 
+  Select-Object -Property @{n='ComputerName';e={$_.Name}}  | 
+  Get-HotFix 
 
 
 
