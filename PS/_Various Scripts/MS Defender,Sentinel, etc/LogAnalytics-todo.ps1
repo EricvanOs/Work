@@ -114,3 +114,29 @@ foreach ($row in $result.tables.rows) {
 }
 # Export to CSV
 $logData | export-csv C:\yourReportPath\logAnalytics.csv -NoTypeInformation
+
+Connect-AzAccount
+https://management.azure.com/subscriptions/940541f2-0f53-48e7-8046-f6530b423abc/resourcegroups/loganalytics/providers/Microsoft.OperationalInsights/workspaces/loganalytics2li/tables/AzureDiagnostics?api-version=2021-12-01-preview
+
+
+
+$ApplicationId = '8770e2b9-1e44-429b-80c1-f16ba65f68cd'
+$ApplicationSecret = '5vs8Q~0neWTeFU5edznvu24REgt8dU4k4dA.8cTK'
+
+$scope = "Data.Read"
+
+
+Open-HeliosVault
+Set-Secret -Name LogAnalytics-Secret -Secret '5vs8Q~0neWTeFU5edznvu24REgt8dU4k4dA.8cTK'  -Vault 'ScriptingVault'
+
+
+#$resourceAppIdUri = 'https://api.securitycenter.microsoft.com'
+$oAuthUri = "https://login.microsoftonline.com/$TenantId/oauth2/token"
+$body = [Ordered] @{
+    client_id = $ApplicationId
+    client_secret = $ApplicationSecret
+    grant_type = 'client_credentials'
+    scope = $scope
+}
+$response = Invoke-RestMethod -Method GET -Uri $oAuthUri -Body $body -ErrorAction Stop
+$aadToken = $response.access_token
