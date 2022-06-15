@@ -5,12 +5,15 @@ $days
 #Use Get-Credential to obtain and store a credential
 $cred = Get-Credential
 $cred | Format-List
-$cred | Export-Clixml -Path K:\_CM\cred.xml
+$cred | Export-Clixml -Path K:\_CM\cred.xml 
 Get-Content K:\_CM\cred.xml
 
 # using credentials again (on this machine and user)
 $cred = Import-Clixml -Path K:\_CM\cred.xml 
 
+#using on cerberus
+Copy-Item -Path K:\_CM\cred.xml -Destination '\\cerberus\c$\temp\cred.xml'
+Remove-Item -Path '\\cerberus\c$\temp\cred.xml'
 
 # retrieve password
 $cred.GetNetworkCredential().password 
