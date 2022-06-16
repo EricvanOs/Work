@@ -49,6 +49,7 @@ function Find-AzureVMFromCompName
 Set-AzContext -SubscriptionId (Get-AzSubscription -TenantId ((Connect-AzAccount).Context.Tenant)).Id
 
 # test
-Find-AzureVMFromCompName -ComputerName ion2he
-
 $computername = 'ion2he'
+Find-AzureVMFromCompName -ComputerName $computername
+
+
