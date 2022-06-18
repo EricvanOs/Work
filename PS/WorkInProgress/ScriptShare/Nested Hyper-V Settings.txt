@@ -1,0 +1,15 @@
+#on Host
+
+Set-VMProcessor -VMName Atlas -ExposeVirtualizationExtensions $true
+
+# in nested VM-Host
+
+new-vmswitch -name VmNAT -SwitchType Internal
+New-NetNat –Name LocalNAT –InternalIPInterfaceAddressPrefix "192.168.100.0/24"
+
+# Next, assign an IP address to the net adapter:
+
+get-netadapter "vEthernet (VmNat)" | New-NetIPAddress -IPAddress 192.168.100.1 -AddressFamily IPv4 -PrefixLength 24
+
+
+
