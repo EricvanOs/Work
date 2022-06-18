@@ -11,5 +11,6 @@ Get-AzSecurityAlert | Select-Object -First 1
 
 Get-Command -Module Az.SecurityInsights
 
-Get-AzSentinelIncident -ResourceGroupName loganalytics -WorkspaceName loganalytics2li
+Get-AzSentinelIncident -ResourceGroupName loganalytics -WorkspaceName loganalytics2li |
+ Select-Object -First 1
 
