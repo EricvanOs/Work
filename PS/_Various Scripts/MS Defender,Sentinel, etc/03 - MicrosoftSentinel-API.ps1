@@ -33,7 +33,7 @@ $apitoken = (Get-AzAccessToken).Token
 
 # always use a here-string as the string can contain single-quotes and $filter (not a PS variable) 
 $url = @'
-  https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/incidents?api-version=2021-10-01'
+  https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/incidents?api-version=2021-10-01
 '@  
 
 # create variables with same name as {....} in above string
