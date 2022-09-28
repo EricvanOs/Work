@@ -69,7 +69,7 @@ $authHeader = @{
 
 #Submit the REST call for the list guest users!
 $rquery=@'
- $filter=userType eq 'guest'
+$filter=userType eq 'guest'
 '@
 $r = Invoke-RestMethod -Uri "https://graph.microsoft.com/v1.0/users/?$rquery" -Method GET -Headers $authHeader
 $r.value
