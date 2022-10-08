@@ -1,6 +1,6 @@
 Connect-AzAccount 
 
-$WorkspaceName = 'LogAnalytics2he'
+$WorkspaceName = 'LogAnalytics2li'
 $WorkspaceResourceGroupName = 'LogAnalytics'
 $Workspace = Get-AzOperationalInsightsWorkspace -ResourceGroupName $WorkspaceResourceGroupName -Name $WorkspaceName
 
