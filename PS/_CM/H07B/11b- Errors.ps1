@@ -1,11 +1,11 @@
 #Region Regular Error
     #Lets make an error
     Get-Content -Path r:\doesnotexist\nothere.txt
-    Throw("Youre own Error") #Can always just throw my own!
+    Throw("Your own Error") #Can always just throw my own!
     #Look at the last error
     Get-Error
     #Also default error variable that errors added to
-    $Error
+    $Error[0]
 #Endregion
 
 #Region Custom variable

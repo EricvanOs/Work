@@ -11,5 +11,5 @@ If ($ComputerName -eq "") {
 
 # test
 <#
-Set-Location -Path K:\_CM\H09
+Set-Location -Path K:\_CM\H07B
 #>

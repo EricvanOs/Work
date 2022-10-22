@@ -1,4 +1,4 @@
-﻿$computers = 'LON-DC1','Prometheus'
+﻿$computers = 'LON-DC1','Epimetheus'
 
 #Without error checking
 

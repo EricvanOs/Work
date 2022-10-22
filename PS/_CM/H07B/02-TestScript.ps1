@@ -9,5 +9,5 @@ Write-Host "The value of `$EventID is: $EventID"
 
 # test
 <#
-set-location K:\_CM\H09
+set-location K:\_CM\H07B
 #>

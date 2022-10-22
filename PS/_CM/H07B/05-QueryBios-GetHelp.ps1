@@ -28,7 +28,7 @@ catch {
 
 # test
 <#
-Set-Location -Path K:\_cm\H09
+Set-Location -Path K:\_cm\H07B
 #>
 
 <#
