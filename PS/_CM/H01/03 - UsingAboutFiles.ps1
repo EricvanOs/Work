@@ -3,7 +3,7 @@ Get-Help about*
 
 # 2
 Get-Help about_aliases 
-Get-Help Get-Service -Online
+Get-Help about_Aliases -ShowWindow
 
 
 # bijzondere tekens met ` (backtick)
