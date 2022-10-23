@@ -20,3 +20,4 @@ else {
 ($z).length
 
 # $null is not equivalent to NULL in SQL Server
+# $null lijkt op blank() in DAX
