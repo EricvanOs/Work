@@ -1,9 +1,9 @@
 {
     "python.pythonPath": "C:\\Users\\administrator.PANTHEON\\Anaconda3\\python.exe",
     "azureML.defaultWorkspaceId": "/subscriptions/940541f2-0f53-48e7-8046-f6530b423abc/resourceGroups/machinelearning/providers/Microsoft.MachineLearningServices/workspaces/ml2he",
-    "terminal.integrated.shellIntegration.history": 0,
-    "terminal.integrated.enablePersistentSessions": false,
-    "terminal.integrated.persistentSessionReviveProcess": "never",
+    "terminal.integrated.shellIntegration.history": 100,
+    "terminal.integrated.enablePersistentSessions": true,
+    "terminal.integrated.persistentSessionReviveProcess": "onExit",
     "terminal.integrated.scrollback": 1000,
     "terminal.integrated.allowChords": true
 }
