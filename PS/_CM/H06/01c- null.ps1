@@ -1,4 +1,4 @@
-Set-Location -Path K:\Temp
+Set-Location -Path C:\Work\PS\Temp
 
 New-Item -ItemType File -Name 'sample1.txt' 
 
@@ -12,4 +12,4 @@ New-Item -ItemType File -Name 'sample4.txt' > $null
 $null = (New-Item -ItemType File -Name 'sample5.txt')
 
 #cleanup 
-Get-Item -Path k:\temp\* -Filter "sample?.txt" | Remove-Item 
+Get-Item -Path .\* -Filter "sample?.txt" | Remove-Item 

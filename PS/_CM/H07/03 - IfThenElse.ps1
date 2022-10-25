@@ -1,4 +1,4 @@
-﻿$services = Get-Content -path k:\_cm\h08\services.txt
+﻿$services = Get-Content -path C:\Work\PS\_CM\H07\services.txt
 
 ForEach ($service in $services) {
  
