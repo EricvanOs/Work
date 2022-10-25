@@ -26,7 +26,7 @@ Write-Host "Total file size is $sizeMB MB"
 # test
 New-PSDrive -Name K -Root C:\Work\PS -PSProvider FileSystem  
 
-Set-Location -Path  K:\_cm\H07B
+Set-Location -Path C:\Work\PS\_CM\H07B
 
 # & '.\07 - ReadFolderStructure.ps1' -Path c:\tools_ssas
 # & '.\07 - ReadFolderStructure.ps1' -Path c:\tools_ssas -Recurse

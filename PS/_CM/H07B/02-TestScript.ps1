@@ -9,5 +9,5 @@ Write-Host "The value of `$EventID is: $EventID"
 
 # test
 <#
-set-location K:\_CM\H07B
+Set-Location -Path C:\Work\PS\_CM\H07B
 #>

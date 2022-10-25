@@ -28,7 +28,7 @@ catch {
 
 # test
 <#
-Set-Location -Path K:\_cm\H07B
+Set-Location -Path C:\Work\PS\_CM\H07B
 #>
 
 <#

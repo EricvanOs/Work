@@ -5,6 +5,7 @@ $users = Get-ADUser -Filter *
 #View the items in an array
 $computers -is [array]
 $users -is [array]
+$users.IsFixedSize
 $computers
 $users
 $users.count

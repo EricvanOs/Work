@@ -16,13 +16,14 @@
     $timeStamp + $data | Out-File $logPath -Append
 }
 
+Set-Location -Path C:\Work\PS\_CM
 
 # test (2*)
-Write-Log -Folder k:\_cm -File TestLog.txt -Data "Test log data" 
+Write-Log -Folder . -File TestLog.txt -Data "Test log data" 
 
-Get-Content -Path K:\_cm\TestLog.txt
+Get-Content -Path .\TestLog.txt
 
 # cleanup
-Remove-Item -Path K:\_cm\TestLog.txt
+Remove-Item -Path .\TestLog.txt
 
 Set-Location -Path c:\

@@ -1,13 +1,15 @@
-﻿# get codesigning certificate
+﻿Set-Location -Path 'C:\Work\PS\_CM\H07'
+
+# get codesigning certificate
 $cert =  Get-ChildItem -Path "Cert:\CurrentUser\My" -CodeSigningCert
 
 # sign ps1-file
-Set-AuthenticodeSignature -FilePath 'K:\_CM\H08\Signing_Test.ps1' -Certificate $cert
+Set-AuthenticodeSignature -FilePath '.\Signing_Test.ps1' -Certificate $cert
 
-Get-AuthenticodeSignature -FilePath 'K:\_CM\H08\Signing_Test.ps1'  
+Get-AuthenticodeSignature -FilePath '.\Signing_Test.ps1'  
 
 # change file, test again
-Get-AuthenticodeSignature -FilePath 'K:\_CM\H08\Signing_Test.ps1' 
+Get-AuthenticodeSignature -FilePath '.\Signing_Test.ps1' 
 
 <#
 # change execution policy
@@ -84,5 +86,5 @@ function Remove-Signature
 
 
 # now use it
-Remove-Signature -FilePath K:\_CM\H08\Signing_Test.ps1
+Remove-Signature -FilePath (Resolve-Path .\Signing_Test.ps1).Path
 

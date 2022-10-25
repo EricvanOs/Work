@@ -1,18 +1,20 @@
+Set-Location -Path 'C:\Work\PS\_CM\H07'
+
 #Use Get-Content to import data from a text file
-Get-Content K:\_CM\H08\computers.txt 
-$computers = Get-Content K:\_CM\H08\computers.txt
+Get-Content .\computers.txt 
+$computers = Get-Content .\computers.txt
 $computers.count
 $computers
 
 # nogmaals
-$computers = Get-Content K:\_CM\H08\computers.txt -Raw
+$computers = Get-Content .\computers.txt -Raw
 $computers.count
 $computers
 
 
 #Use Import-Csv to import data from a .csv file
-Import-Csv K:\_CM\H08\users.csv
-$users = Import-Csv K:\_CM\H08\users.csv
+Import-Csv .\users.csv
+$users = Import-Csv .\users.csv
 $users.count
 $users[0]
 $users[0].FirstName
@@ -20,8 +22,8 @@ $users.FirstName
 
 
 # import csv without header information
-Import-Csv K:\_CM\H08\users_no_header.csv  # niet wat je wilt
-$users = Import-Csv K:\_CM\H08\users_no_header.csv -Header FirstName,LastName,FullName,Department
+Import-Csv .\users_no_header.csv  # niet wat je wilt
+$users = Import-Csv .\users_no_header.csv -Header FirstName,LastName,FullName,Department
 $users.count
 $users[0]
 $users[0].First
@@ -29,8 +31,8 @@ $users.First
 
 
 #Use Import-Clixml to import data from an XML file
-Import-Clixml K:\_CM\H08\users.xml
-$usersXml = Import-Clixml K:\_CM\H08\users.xml
+Import-Clixml .\users.xml
+$usersXml = Import-Clixml .\users.xml
 $usersXml.count
 $usersXml[0]
 $usersXml | Get-Member

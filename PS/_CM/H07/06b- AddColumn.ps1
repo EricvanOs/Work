@@ -1,4 +1,6 @@
-$path = 'k:\_cm\H08\users.csv'
+Set-Location -Path 'C:\Work\PS\_CM\H07'
+
+$path = '.\users.csv'
 $csv = Import-Csv -Path $path
 
 # add additional empty column 
