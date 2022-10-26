@@ -1,4 +1,4 @@
-﻿$path = 'K:\_CM\_Various Scripts\Office'
+﻿$path = 'C:\Work\PS\_Various Scripts\Office'
 
 Set-Location -Path $path
 

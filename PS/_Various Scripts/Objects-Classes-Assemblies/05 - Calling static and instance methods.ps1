@@ -25,11 +25,11 @@ Add-Type -TypeDefinition $code
 
 
 #call static method
-[HelloWorld]::SayHello('belle')
+[HelloWorld]::SayHello('Belle')
 
 
 #call instance method
 
 $obj = New-Object helloworld
-$obj.GetLuckyNumber("belle")
+$obj.GetLuckyNumber("Belle")
 

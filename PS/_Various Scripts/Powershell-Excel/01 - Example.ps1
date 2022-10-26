@@ -1,4 +1,4 @@
-﻿$Path = 'K:\_CM\_Various Scripts\Powershell-Excel\Sample - Superstore.xls'
+﻿$Path = 'C:\Work\PS\_Various Scripts\Powershell-Excel\Sample - Superstore.xls'
 
 $Excel = New-Object -ComObject Excel.Application 
 

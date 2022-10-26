@@ -24,7 +24,7 @@ The * Stream
 ​# Retrieve both the C:\ directory and then a Fakepath relative to the current directory
 # Success output will be directed test.txt
 # If an error is encountered, direct that to the success stream, and then to test.txt
-Set-Location -Path K:\Temp
+Set-Location -Path C:\Work\PS\Temp
 Get-ChildItem "C:\","Fakepath" 2>&1 > .\test.txt
 Get-Content -Path .\test.txt
 Remove-Item -Path .\test.txt

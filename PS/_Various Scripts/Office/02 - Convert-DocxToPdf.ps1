@@ -1,4 +1,4 @@
-﻿$documents_path = 'K:\_CM\_Various Scripts\Office'
+﻿$documents_path = 'C:\Work\PS\_Various Scripts\Office'
 
 $wordFormatPDF = 17
 $word_app = New-Object -ComObject Word.Application
