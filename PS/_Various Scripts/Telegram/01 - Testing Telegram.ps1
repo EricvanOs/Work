@@ -12,4 +12,4 @@ get-command -Module PoshGram
 Test-BotToken -BotToken $BotToken 
 
 # send a message
-Send-TelegramTextMessage -BotToken $BotToken -ChatID $ChatID -Message "Going strong"
+Send-TelegramTextMessage -BotToken $BotToken -ChatID $ChatID -Message "A powershell test"
