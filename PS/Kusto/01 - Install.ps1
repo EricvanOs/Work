@@ -3,13 +3,13 @@
 #  Packages location - This is an example to the location where you extract the Microsoft.Azure.Kusto.Tools.NETCore package.
 #  https://www.nuget.org/packages/Microsoft.Azure.Kusto.Tools.NETCore/
 <#
-dotnet add package Microsoft.Azure.Kusto.Tools --version 6.0.3
+dotnet add package Microsoft.Azure.Kusto.Tools --version 7.0.0
 
 Find-Package -Name Microsoft.Azure.Kusto.Tools -Source nuget.org | Install-Package
 #>
 
-#  Please make sure you load the types from a local directory and not from a remote share. --Use iSE
-$packagesRoot = "C:\Program Files\PackageManagement\NuGet\Packages\Microsoft.Azure.Kusto.Tools.6.0.3\tools\net472" 
+#  Please make sure you load the types from a local directory and not from a remote share.
+$packagesRoot = 'C:\Program Files\PackageManagement\NuGet\Packages\Microsoft.Azure.Kusto.Tools.7.0.0\tools\netcoreapp2.1'
 
 #  Part 2 of 3
 #  ------------

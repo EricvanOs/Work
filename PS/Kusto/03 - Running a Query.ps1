@@ -1,7 +1,12 @@
 ﻿$queryProvider = [Kusto.Data.Net.Client.KustoClientFactory]::CreateCslQueryProvider($kcsb)
-$query = "StormEvents | limit 5"
-Write-Host "Executing query: '$query' with connection string: '$($kcsb.ToString())'"
-#   Optional: set a client request ID and set a client request property (e.g. Server Timeout)
+$query = @'
+StormEvents 
+ | limit 5 
+ | project StartTime,State,EventType
+'@
+# Write-Host "Executing query: '$query' with connection string: '$($kcsb.ToString())'"
+
+#  Optional: set a client request ID and set a client request property (e.g. Server Timeout)
 $crp = New-Object Kusto.Data.Common.ClientRequestProperties
 $crp.ClientRequestId = "MyPowershellScript.ExecuteQuery." + [Guid]::NewGuid().ToString()
 $crp.SetOption([Kusto.Data.Common.ClientRequestProperties]::OptionServerTimeout, [TimeSpan]::FromSeconds(30))
