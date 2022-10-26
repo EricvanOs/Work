@@ -15,7 +15,7 @@
 }
 
 
-Get-FilewithDebug -path C:\Users\administrator.PANTHEON\ -Debug -Verbose
+Get-FilewithDebug -path C:\Users\administrator.PANTHEON\Downloads -Debug -Verbose
 
 
  # Suspend, test variables, and exit to continue
