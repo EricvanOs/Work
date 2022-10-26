@@ -20,11 +20,12 @@
 # add breakpoint at row 9 and 16 (click/Toggle Break Point (F9))
 # start with debugging (F5)
 
-Write-Log -Folder k:\_cm -File TestLog.txt -Data "Test log data" 
+Set-Location -Path C:\Work\PS\_CM
 
-Get-Content -Path K:\_cm\TestLog.txt
+Write-Log -Folder . -File TestLog.txt -Data "Test log data" 
+
+Get-Content -Path .\TestLog.txt
 # cleanup
-Remove-Item -Path K:\_cm\TestLog.txt
+Remove-Item -Path .\TestLog.txt
 
 Set-Location -Path c:\
-# Remove-PSDrive K

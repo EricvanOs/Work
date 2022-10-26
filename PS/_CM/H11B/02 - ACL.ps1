@@ -1,5 +1,7 @@
-﻿#Create new folder
-$newfolder = 'K:\testacl'
+﻿Set-Location -Path C:\Work\PS\Temp
+
+#Create new folder
+$newfolder = 'testacl'
 New-Item $newfolder -ItemType Directory
 
 #view acl for new folder

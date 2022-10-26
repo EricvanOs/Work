@@ -21,7 +21,7 @@ Unprotect-CmsMessage -Path .\secret.txt
 
 # test with codesigning certificate --> Error if you encrypt data
 $subject = Get-ChildItem -Path Cert:\CurrentUser\My -CodeSigningCert | select-object -ExpandProperty Subject
-"This is a secret message" | Protect-CmsMessage -To $subject -OutFile k:\_CM\secret.txt
+"This is a secret message" | Protect-CmsMessage -To $subject -OutFile .\secret.txt
 
 # create cert with: Data Encipherment or Key Encipherment key usage, and include the Document Encryption Enhanced Key Usage (1.3.6.1.4.1.311.80.1)
 # create template first in CA, already done

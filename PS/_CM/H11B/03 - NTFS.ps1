@@ -1,3 +1,5 @@
+Set-Location -Path C:\Work\PS\Temp
+
 # use module NTFSSecurity for manipulating NTFS-Rights
 
 get-module -Name *ntf* -ListAvailable
@@ -5,7 +7,7 @@ get-module -Name *ntf* -ListAvailable
 Get-Command -Module NTFSSecurity
 
 
-$path = 'K:\Temp\NTFS-Test'
+$path = '.\NTFS-Test'
 
 $files = Get-ChildItem -Path $path
 

@@ -1,4 +1,4 @@
-Set-Location -Path K:\_CM\H12
+Set-Location -Path C:\Work\PS\_CM\H11B
 Get-Content -Path .\Testfile1.txt
 Get-Content -Path .\Testfile2.txt
 

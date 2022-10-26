@@ -8,7 +8,7 @@ $proc.kill()
 
 # or
 
-$Path = 'K:\Temp'
+$Path = 'C:\Work\PS\Temp'
 
 Get-ChildItem -Path $Path -File -Recurse | Tee-Object -FilePath $Path\AllSystemFiles.txt -Append | 
                                         Out-File $Path\NewSystemFiles.txt
