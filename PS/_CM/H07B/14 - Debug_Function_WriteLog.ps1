@@ -17,7 +17,7 @@
 }
 
 # use vscode
-# add breakpoint at row 9 and 16 (click/Toggle Break Point (F9))
+# add breakpoint at row 9,16 and 25(click/Toggle Break Point (F9))
 # start with debugging (F5)
 
 Set-Location -Path C:\Work\PS\_CM
