@@ -23,9 +23,11 @@ New-AzResourceGroupDeployment `
 
 
 
-# cleanup
-Get-AzResourceGroup -Name $ResourceGroupName | Remove-AzResourceGroup -Force
-# see functions Invoke-Async.ps1 or invoke-command ..... -AsJob
+# cleanup -- Asynchronously
+Start-Job -ScriptBlock{
+  Get-AzResourceGroup -Name $ResourceGroupName | Remove-AzResourceGroup -Force
+}  -Name Cleanup
+
 Get-ChildItem -path $path  -Directory | Where-Object{$_.name -eq 'Web'}   | Remove-Item -Recurse -Force 
 
 

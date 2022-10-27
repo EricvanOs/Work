@@ -1,0 +1,28 @@
+
+    Directory: C:\
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           3/10/2021  2:43 PM                AllShare
+d----           4/28/2021  8:06 AM                AzureDataStudio
+d----           5/18/2021  5:39 PM                BusinessOpsTemp
+d----           2/20/2022  8:40 AM                GitHub
+d----            4/9/2020 10:26 AM                PerfLogs
+l----          11/16/2019 11:00 AM                PowerShell-Scripts ->
+                                                  \\pantheon\data\Misc\PowerShell-Scripts
+d-r--          10/23/2022 10:55 AM                Program Files
+d----           7/14/2022  6:50 AM                Program Files (x86)
+d----          11/16/2019 10:56 AM                RTempDir
+d----           10/9/2022 12:32 PM                Sentinel
+d----           10/7/2022 12:32 PM                Temp
+d----           5/17/2021  6:48 AM                tempExport
+d----          10/10/2022  6:43 PM                Tmp
+l----          10/11/2019  8:12 AM                Tools -> \\pantheon.somewhere\data\Misc\Tools
+l----          11/30/2019  7:18 AM                Tools_All ->
+                                                  \\pantheon\data\misc\Tools_All\Amphitrite
+d-r--          11/15/2021  4:54 AM                Users
+d----           9/21/2022  6:27 PM                Windows
+d----            7/3/2021  9:57 AM                Work
+
+Get-ChildItem: Cannot find path 'C:\Work\PS\Temp\Fakepath' because it does not exist.
+
