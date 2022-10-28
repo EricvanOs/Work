@@ -23,7 +23,7 @@ $azContext = Get-AzContext
 $azProfile = [Microsoft.Azure.Commands.Common.Authentication.Abstractions.AzureRmProfileProvider]::Instance.Profile
 $profileClient = New-Object -TypeName Microsoft.Azure.Commands.ResourceManager.Common.RMProfileClient -ArgumentList ($azProfile)
 $token = $profileClient.AcquireAccessToken($azContext.Subscription.TenantId)
-$subid = 
+ 
 #Create a hash table for the auth header as we have multiple headers
 $authHeader = @{
     'Content-Type'='application/json'
