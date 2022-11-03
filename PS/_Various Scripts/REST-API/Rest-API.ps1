@@ -3,7 +3,7 @@
 (Invoke-WebRequest -Uri $endpointUri).Content # niet echt leesbare informatie
 
 # aanzienlijk beter
-Invoke-restmethod -Uri $endpointUri  -Headers @{ 'Authentication' = 'Bearer xxxxxxxxxxxxxxxx'  }
+Invoke-RestMethod -Uri $endpointUri  -Headers @{ 'Authentication' = 'Bearer xxxxxxxxxxxxxxxx'  }
 
 
 # or
