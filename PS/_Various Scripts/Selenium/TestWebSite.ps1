@@ -1,4 +1,4 @@
-# use edge download correspomding chromedriver.exe
+# use edge download corresponding chromedriver.exe
 # from https://chromedriver.chromium.org/downloads
 # copy to C:\Users\administrator.PANTHEON\Documents\PowerShell\Modules\Selenium\3.0.1\assemblies
 #edge is not working ?, but chrome is.
@@ -14,9 +14,9 @@ $pg | get-member
 
 $pg.Text | get-member
 
-$pg.FindElementsByLinkText
+$pg.FindElementsByLinkText("About Us")
 
-$Element = Find-SeElement -Driver $Driver -Id "Accept all"
+$Element = Find-SeElement -Driver $Driver -Id "About Us"
 Invoke-SeClick -Element $Element
 
 
