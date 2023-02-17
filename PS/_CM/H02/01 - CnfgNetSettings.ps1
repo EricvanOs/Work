@@ -29,3 +29,18 @@ Remove-NetRoute -InterfaceAlias Ethernet -DestinationPrefix 0.0.0.0/0 -Confirm:$
 # equivalent of route add
 New-NetRoute -InterfaceAlias Ethernet -DestinationPrefix 0.0.0.0/0 -NextHop 172.16.0.2
 
+
+## Extra
+Get-NetIPConfiguration | Select-Object -Property AllIpAddresses
+
+Get-NetIPConfiguration | Select-Object -ExpandProperty   AllIpAddresses
+
+Get-NetIPConfiguration | Select-Object -ExpandProperty   AllIpAddresses | Select-Object -Property IpAddress 
+
+(Get-NetIPConfiguration | Select-Object -ExpandProperty   AllIpAddresses).IPAddress 
+
+# vergelijk typename
+Get-NetIPConfiguration | Select-Object -ExpandProperty   AllIpAddresses | Select-Object -Property IpAddress | get-member
+
+(Get-NetIPConfiguration | Select-Object -ExpandProperty   AllIpAddresses).IPAddress | Get-Member
+
