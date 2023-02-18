@@ -11,11 +11,11 @@
 1..2 | ForEach-Object -Begin {'begin'} -Process {'process'}
 
 # begin, process (2 blocks) and end
-1..2 | ForEach-Object -Begin {'begin'}  -process  {'process A'},{'process B'},{'process C'} -End {'end'}
+1..2 | ForEach-Object -Begin {'begin'}  -Process  {'process A'},{'process B'},{'process C'} -End {'end'}
 
 
 # begin, process (2*), after process and end
-1..2 | ForEach-Object -Begin {'begin'}  -process {'process A'},{'process B'},{'process C'} -RemainingScripts {'after process'}  -End {'end'}
+1..2 | ForEach-Object -Begin {'begin'}  -Process {'process A'},{'process B'},{'process C'} -RemainingScripts {'after process'}  -End {'end'}
 
 
 

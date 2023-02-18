@@ -1,5 +1,5 @@
 ﻿# 1
-Get-ChildItem -Path K:\temp -Directory -recurse 
+Get-ChildItem -Path 'c:\work\ps\Temp' -Directory -recurse 
    | Where-Object Name -eq xx 
    | ForEach-Object  {$PSItem.CreateSubdirectory('Test')} 
    | Select-Object -ExpandProperty FullName
@@ -7,11 +7,11 @@ Get-ChildItem -Path K:\temp -Directory -recurse
 #2  cleanup of #1
 # Alle folders xx met daar direct onder Test
 
-$dirs = Get-ChildItem -Path K:\temp -Directory -recurse | Where-Object{$_.Name -eq 'xx'} 
+$dirs = Get-ChildItem -Path 'c:\work\ps\Temp' -Directory -recurse | Where-Object{$_.Name -eq 'xx'} 
 
 foreach ($dir in $dirs){
 
-   Get-ChildItem -Path $dir.fullname -Directory | Where-Object{$_.Name -eq 'Test'} | Remove-Item  -whatif
+   Get-ChildItem -Path $dir.fullname -Directory | Where-Object{$_.Name -eq 'Test'} | Remove-Item  -WhatIf
 
 }
 
