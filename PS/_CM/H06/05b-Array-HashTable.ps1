@@ -20,11 +20,11 @@ $list = $list + 'D'
 $list += 'E'
 
 ####
-$hash = @{"server1" = "192.168.17.21";
-  "server2" = "192.168.17.22";
-  "server3" = "192.168.17.23"}
+$hash = @{'server1' = '192.168.17.21';
+  'server2' = '192.168.17.22';
+  'server3' = '192.168.17.23'}
 
-$hash["server1"]
+$hash['server1']
 $hash.server1
 $hash.'server1'
 

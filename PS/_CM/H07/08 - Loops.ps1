@@ -1,6 +1,6 @@
 ﻿# for-loop
 for ($i=1; $i -le 10; $i++) {$i}
-for ($i=1; $i -le 10; $i++) {$i,"`r"}
+for ($i=2; $i -le 1000; $i=$i*$i) {$i}
 
 
 # while-loop
@@ -15,7 +15,7 @@ while(($inp = Read-Host -Prompt 'Select a command') -ne 'Q'){
 }
 
 # do-while  - loop
-$i=6
+$i=1
 do{
    Write-Host "$i"
    $i++
