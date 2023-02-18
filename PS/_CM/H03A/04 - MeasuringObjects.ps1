@@ -1,10 +1,10 @@
-﻿# 1
+﻿# number of services
 Get-Service | Measure-Object
 
-# 2
+# number of users
 Get-ADUser -Filter * | Measure-Object
 
-# 3
+# sizes
 Get-Process | Measure-Object -Property VM -Sum -Average
 
-Get-ChildItem -Path K: -Recurse | Measure-Object -Property Length -Sum -Average -Maximum -Minimum
+Get-ChildItem -Path C:\Work\PS\Temp -Recurse | Measure-Object -Property Length -Sum -Average -Maximum -Minimum
