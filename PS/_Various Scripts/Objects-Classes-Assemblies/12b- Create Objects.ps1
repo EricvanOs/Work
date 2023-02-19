@@ -53,7 +53,7 @@ $system.GetUTC()
 $os = Get-CimInstance Win32_OperatingSystem
 $bios = Get-CimInstance Win32_bios
 
-$extra = $os | Select-Object –Property *, @{n='OSVersion';e={$_.Version}},  #merk op n = name of Label , e is Expression
+$extra = $os | Select-Object -Property *, @{n='OSVersion';e={$_.Version}},  #merk op n = name of Label , e is Expression
 @{n='OSBuild';e={$_.BuildNumber}},
 @{n='BIOSSerial';e={$bios.SerialNumber}} 
 
@@ -65,7 +65,7 @@ $extra
 
 $os | get-process
 
-$extra = $os | Select-Object –Property *,  @{n='ComputerName';e={$_.PSComputerName}} -ExcludeProperty name
+$extra = $os | Select-Object -Property *,  @{n='ComputerName';e={$_.PSComputerName}} -ExcludeProperty name
 
 $extra | Get-Process
 
