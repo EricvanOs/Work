@@ -32,7 +32,8 @@ $diff.TotalHours
 # from file-import
 $Date = '2020-09-07T13:35:08.4780000Z'  #UTC-time
 [DateTime]$Date  # localtime (Daylight saving - Spring Forward, Summer Time) +2 hours
-($Date).IsDaylightSavingTime()
+([DateTime]$Date).IsDaylightSavingTime()
+
 
 $Date = '2020-02-07T13:35:08.4780000Z'  #UTC-time
 [DateTime]$Date #localtime (Winter Time) +1 hour
@@ -43,7 +44,7 @@ $Date = '2020-02-07T13:35:08.4780000Z'  #UTC-time
 [System.TimeZone]::CurrentTimeZone.GetUtcOffset([datetime]$Date).TotalHours
 
 # 
-[string]$sDate = '2022-06-07 11:26:02 AM +07:00' 
+[string]$sDate = '2022-06-07 11:26:02 AM +07:00'  # let op UTC tov NL is 2 uur (1 uur + zomertijd)
 $sDate
 [datetime]$sDate #my localtime
 ([datetime]$sDate).ToLocalTime()
