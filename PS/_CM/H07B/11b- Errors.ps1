@@ -54,9 +54,11 @@
 
 #Region Types of error action
     #Note there are other types of ErrorAction
-    Get-Content -Path r:\doesnotexist\nothere42.txt -ErrorAction SilentlyContinue
-    Get-Error #still errored, we just didn't see it!
+    Get-Content -Path q:\doesnotexist\nothere42.txt -ErrorAction SilentlyContinue
+    (Get-Error).InvocationInfo.Line #still errored, we just didn't see it!
 #Endregion
+
+
 
 #Region Looking at details
     #Can look at the error details

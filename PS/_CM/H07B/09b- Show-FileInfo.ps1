@@ -45,4 +45,4 @@ function Show-FileInfo ()
 }  
 
 
-Get-ChildItem -Path k:\temp | Show-FileInfo -Verbose
+Get-ChildItem -Path c:\work\ps\temp | Show-FileInfo -Verbose
