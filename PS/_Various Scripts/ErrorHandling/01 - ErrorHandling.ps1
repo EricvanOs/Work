@@ -1,4 +1,4 @@
-﻿Get-Service -Name Foo,BITS,Nobody,WinRM -ErrorAction Continue
+﻿Get-Service -Name BITS,Nobody,WinRM -ErrorAction Continue  # zie $ErrorActionPreference  # default setting = Continue 
 Get-Service -Name BITS,Nobody,WinRM -ErrorAction SilentlyContinue
 Get-Service -Name BITS,Nobody,WinRM -ErrorAction Inquire
 Get-Service -Name BITS,Nobody,WinRM -ErrorAction Ignore
