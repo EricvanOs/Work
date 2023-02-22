@@ -13,7 +13,8 @@ HelloWorld.ps1 #gaat fout
 Get-ExecutionPolicy -List
 Set-ExecutionPolicy Unrestricted -Scope CurrentUser  # lukt niet vanwege GPO
 .\HelloWorld.ps1 
-Set-ExecutionPolicy Restricted -Scope CurrentUser
+Changing execution policy
+# Set-ExecutionPolicy Restricted -Scope CurrentUser
 
 # cleanup
 Set-Location c:
