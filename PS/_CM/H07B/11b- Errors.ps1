@@ -10,7 +10,7 @@
 
 #Region Custom variable
     #Can error to my own variable
-    Get-Content -Path r:\doesnotexist\nothere.txt -ErrorVariable BadThings #Note if did +BadThings would add content to existing
+    Get-Content -Path s:\doesnotexist\nothere.txt -ErrorVariable BadThings #Note if did +BadThings would add content to existing
     $BadThings
     #Could do a check
     if($BadThings)
@@ -22,7 +22,7 @@
 #Region Using Try-Catch
     #Handle the error with try-catch
     try {
-        Get-Content -Path r:\doesnotexist\nothere.txt
+        Get-Content -Path t:\doesnotexist\nothere.txt
     }
     catch {
         Write-Output "Something went wrong"
@@ -55,7 +55,7 @@
 #Region Types of error action
     #Note there are other types of ErrorAction
     Get-Content -Path q:\doesnotexist\nothere42.txt -ErrorAction SilentlyContinue
-    (Get-Error).InvocationInfo.Line #still errored, we just didn't see it!
+    (Get-Error).InvocationInfo #still errored, we just didn't see it!
 #Endregion
 
 
