@@ -76,7 +76,8 @@
   }
 
 #endregion  Build FileSystemWatcher
-    #region  Initiate Jobs for FileSystemWatcher
+
+#region  Initiate Jobs for FileSystemWatcher
 
   $ObjectEventParams  = @{
     InputObject =  $FileSystemWatcher
@@ -90,10 +91,10 @@
       $Null  = Register-ObjectEvent  @ObjectEventParams
   }
 
-  #endregion  Initiate Jobs for FileSystemWatcher
+#endregion  Initiate Jobs for FileSystemWatcher
 
 } 
 
 
-Start-FileSystemWatcher -Path k:\ -EventName Created 
+Start-FileSystemWatcher -Path C:\Work\PS\Temp -EventName Created 
 

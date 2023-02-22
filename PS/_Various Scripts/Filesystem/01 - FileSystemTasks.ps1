@@ -1,12 +1,12 @@
 ﻿# Resolve Path
  
- Set-Location -Path K:\_CM
+ Set-Location -Path C:\Work\PS\_CM
  
  Resolve-Path .\test.txt 
 
- Split-Path -Path 'K:\_CM\test.txt'
+ Split-Path -Path 'C:\Work\PS\_CM\test.txt' -Leaf
 
- Join-Path -Path 'K:\_CM' -ChildPath test.txt
+ Join-Path -Path 'C:\Work\PS\_CM' -ChildPath test.txt
 
  Test-Path -Path K:\abc
 

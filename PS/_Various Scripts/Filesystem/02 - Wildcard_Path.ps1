@@ -1,4 +1,6 @@
-﻿Set-Location k:\
+﻿New-PSDrive -Name K -Root C:\Work\PS\Temp -PSProvider FileSystem
+
+Set-Location k:\
 
 New-Item -Path k:\ -ItemType Directory -Name x1
 New-Item -Path k:\ -ItemType Directory -Name x2
@@ -28,4 +30,5 @@ $path | New-Item  -ItemType file -Name abc.txt
 # cleanup
 Remove-Item -Path 'k:\x1','k:\x2' -Recurse -Confirm:$false 
 
-
+Set-Location -Path C:\
+Remove-PSDrive K

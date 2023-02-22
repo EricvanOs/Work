@@ -1,8 +1,10 @@
-﻿# all different information about an item
+﻿New-PSDrive -Name K -Root C:\Work\PS\Temp -PSProvider FileSystem
+
+Set-Location k:\
+
+# all different information about an item
 
  Get-Item $env:windir\explorer.exe | Select-Object *
-
- Set-Location -Path 'K:\'
 
  # List directories only:
 Get-ChildItem | Where-Object { $_ -is [System.IO.DirectoryInfo] }
@@ -51,3 +53,7 @@ Get-PSDrive
 
 # Methods and property of [IO.Path]
 [IO.Path] | Get-Member -Static
+
+# cleanup
+Set-Location -Path C:\
+Remove-PSDrive K

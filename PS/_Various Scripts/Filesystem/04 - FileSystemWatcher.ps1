@@ -71,7 +71,7 @@ function Invoke-FileSystemWatcher {
     Write-Verbose -Message "[PROCESS] Event now registered"
 }
 
-$Path = 'K:\_CM\_Various Scripts\Filesystem'
+$Path = 'C:\Work\PS\_Various Scripts\Filesystem'
 Set-Location $Path
 
 # Example | monitor directory size and alert to host  
