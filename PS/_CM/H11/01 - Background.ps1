@@ -2,7 +2,7 @@
 Start-Job -ScriptBlock { Get-ChildItem -Path C:\ -Recurse } -Name LocalDir
 
 # Remote Job
-Invoke-Command -ScriptBlock { Get-EventLog -LogName Security -Newest 100 } -ComputerName hydra,erebus -AsJob -JobName RemoteLogs
+Invoke-Command -ScriptBlock { Get-EventLog -LogName Security -Newest 100 } -ComputerName hydra,echo -AsJob -JobName RemoteLogs
 
 # 3
 Get-Job 
