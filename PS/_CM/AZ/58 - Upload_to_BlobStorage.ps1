@@ -17,12 +17,14 @@ $headers = @{
     'x-ms-blob-type' = 'BlockBlob'
 }
 
-#Upload File...
+#Upload file
 Invoke-RestMethod -Uri $uri -Method Put -Headers $headers -InFile $name
 
-#Upload File again 
+#Upload file again 
 Invoke-RestMethod -Uri $uri -Method Put -Headers $headers -InFile $name # automatic override will take place
 
-# Delete File...
+#Download file
+
+#Delete file
 Invoke-RestMethod -Uri $uri -Method Delete -Headers $headers -InFile $name   
 

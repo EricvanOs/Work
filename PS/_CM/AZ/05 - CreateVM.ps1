@@ -20,7 +20,7 @@ OpenPorts = 3389
 }
 
 
-New-AzVM @vmParams -WhatIf
+New-AzVM @vmParams -PublicIpSku Standard -WhatIf
 
 
 # cleanup
