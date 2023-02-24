@@ -1,4 +1,5 @@
 # Install-Module -Name ExchangeOnlineManagement 
+Import-Module ExchangeOnlineManagement -UseWindowsPowerShell
 
 get-command -Module ExchangeOnlineManagement
 
@@ -15,6 +16,7 @@ get-mailbox #fails, see winrm remarks
 # if module is not needed anymore
 # Uninstall-Module -Name ExchangeOnlineManagement 
 
+<#
 # use in cloudshell (don't want to change my local/gpo settings)
 
 # Install-Module -Name ExchangeOnlineManagement
@@ -22,4 +24,4 @@ get-mailbox #fails, see winrm remarks
 Connect-ExchangeOnline
 
 get-mailbox
-
+#>
