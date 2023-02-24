@@ -6,12 +6,12 @@ $subid = (Get-AzSubscription -TenantId ($azc.Context.Tenant)).Id
 #Many commands use REST behind the scenes
 Get-AzResourceGroup -debug
 
-#Invoke-WebRequest does not do much to the response
+#Invoke-WebRequest - simple response
 $r = Invoke-WebRequest -Uri https://azure.microsoft.com/updates/feed/
 $r
 $r.Content
 
-#Invoke-RestMethod is for calls that return rich format response and translates the response, e.g. JSON to a custom object
+#Invoke-RestMethod - rich format response. Translate the response, e.g. JSON to a custom object
 Invoke-RestMethod -Uri https://azure.microsoft.com/updates/feed/ 
  | Format-Table -Property title, description, pubDate
 

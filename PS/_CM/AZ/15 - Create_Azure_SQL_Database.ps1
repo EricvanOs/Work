@@ -3,6 +3,8 @@ $azc = Connect-AzAccount
 # The SubscriptionId in which to create these objects
 $SubscriptionId = (Get-AzSubscription -TenantId ($azc.Context.Tenant)).Id
 #  $SubscriptionId = (Get-AzContext).Subscription.id  # also possible
+# Set subscription context
+Set-AzContext -SubscriptionId $subscriptionId 
 
 # Set the resource group name and location for your server
 $resourceGroupName = "myResourceGroup-$(Get-Random)"
@@ -17,9 +19,6 @@ $databaseName = "mySampleDatabase"
 # The ip address range that you want to allow to access your server
 $startIp = "0.0.0.0"   # not safe
 $endIp = "0.0.0.0"
-
-# Set subscription 
-Set-AzContext -SubscriptionId $subscriptionId 
 
 # Create a resource group
 New-AzResourceGroup -Name $resourceGroupName -Location $location
