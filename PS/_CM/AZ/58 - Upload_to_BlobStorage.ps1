@@ -24,7 +24,11 @@ Invoke-RestMethod -Uri $uri -Method Put -Headers $headers -InFile $name
 Invoke-RestMethod -Uri $uri -Method Put -Headers $headers -InFile $name # automatic override will take place
 
 #Download file
+Invoke-RestMethod -Uri $uri -Method Get -Headers $headers -InFile $name | Out-File .\SomeDataOut.txt
 
 #Delete file
-Invoke-RestMethod -Uri $uri -Method Delete -Headers $headers -InFile $name   
+Invoke-RestMethod -Uri $uri -Method Delete -Headers $headers -InFile $name  
+
+#cleanup
+Get-ChildItem -Path .\SomeDataOut.txt | Remove-Item
 

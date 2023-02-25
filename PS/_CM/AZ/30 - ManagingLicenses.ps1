@@ -59,3 +59,8 @@ $License.SkuId = '05e9a617-0261-4cee-bb44-138d3ef5d965'
 $LicensesToAssign = New-Object -TypeName Microsoft.Open.AzureAD.Model.AssignedLicenses
 $LicensesToAssign.RemoveLicenses = $License
 Set-AzureADUserLicense -ObjectId AbbieP@adatum.com -AssignedLicenses $LicensesToAssign
+
+
+# to do
+# https://learn.microsoft.com/en-us/azure/active-directory/enterprise-users/licensing-service-plan-reference
+# 

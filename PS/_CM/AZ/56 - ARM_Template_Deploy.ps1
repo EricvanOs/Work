@@ -22,11 +22,17 @@ New-AzResourceGroupDeployment `
   -TemplateParameterFile $parameterFile
 
 
-
 # cleanup -- Asynchronously
-Start-Job -ScriptBlock{
-  Get-AzResourceGroup -Name $ResourceGroupName | Remove-AzResourceGroup -Force
-}  -Name Cleanup
+# https://learn.microsoft.com/en-us/powershell/azure/using-psjobs?view=azps-9.4.0
+
+
+Start-Job -Name Cleanup -ScriptBlock{
+ Get-AzResourceGroup -Name $using:ResourceGroupName | Remove-AzResourceGroup -Force -Confirm:$false
+} 
+
+Get-Job -Name Cleanup
+Receive-Job -Name Cleanup
+
 
 Get-ChildItem -path $path  -Directory | Where-Object{$_.name -eq 'Web'}   | Remove-Item -Recurse -Force 
 
