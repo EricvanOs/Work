@@ -3,11 +3,11 @@ $role = 'unknown role'
 $location = 'unknown location'
 
 Switch -wildcard ($computer) {
-    "*-CL*"  {$role = 'client'} 
-    "*-SRV*" {$role = 'server'}
-    "*-DC*"  {$role = 'domain controller'}
-    "LON-*"  {$location = 'London'}
-    "VAN-*"  {$location = 'Vancouver'}
+    '*-CL*'  {$role = 'client'} 
+    '*-SRV*' {$role = 'server'}
+    '*-DC*'  {$role = 'domain controller'}
+    'LON-*'  {$location = 'London'}
+    'VAN-*'  {$location = 'Vancouver'}
     Default  {"$computer is not a valid name"}
 }
 
@@ -21,14 +21,15 @@ $role = 'unknown role'
 $location = 'unknown location'
 
 Switch -wildcard ($computer) {
-    "*-CL*"  {$role = 'client'; break} 
-    "*-SRV*" {$role = 'server'}
-    "*-DC*"  {$role = 'domain controller'}
-    "LON-*"  {$location = 'London'}
-    "VAN-*"  {$location = 'Vancouver'}
+    '*-CL*'  {$role = 'client'; break} 
+    '*-SRV*' {$role = 'server'}
+    '*-DC*'  {$role = 'domain controller'}
+    'LON-*'  {$location = 'London'}
+    'VAN-*'  {$location = 'Vancouver'}
     Default  {"$computer is not a valid name"}
 }
 
 Write-Host "$computer is a $role in $location"
 
 
+# see: https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_switch?view=powershell-7.3
