@@ -10,4 +10,4 @@ $notepad | Stop-Process
 
 
 # set of command which have PassThru as parameter
-Get-Command -CommandType 8 | Where-Object {$_.definition -match 'passthru'}
+Get-Command -CommandType Cmdlet | Where-Object{$_.Definition -match '\[-PassThru\]' }   #letop -match is regex-search

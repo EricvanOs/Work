@@ -1,11 +1,7 @@
-1..100 | ForEach-Object -Process {if (($_ % 2) -eq 1) { return }  
-                                    "Hello: $_" 
-                                 } 
-#mag ook zo
-1..100 | ForEach-Object -Process {if ($_ % 2) { return }  "Hello: $_" }                               
+1..100 | ForEach-Object -Process {if (($_ % 2) -eq 1) { return } "Hello: $_" } 
 
-# parallel
-1..100 | ForEach-Object -Parallel {if ($_ % 2) { return }  "Hello: $_" }    
+ # parallel
+1..10 | ForEach-Object -Parallel { Write-Error "Error: $_" }  
 
 # two script blocks
 1..2 | ForEach-Object -Begin {'begin'} -Process {'process'}
@@ -21,9 +17,7 @@
 
 # parameter passing
 $test1 = 'TestA'
-1..2 | Foreach-Object -Parallel {
-    $using:test1
-}
+1..2 | Foreach-Object -Parallel { $using:test1}
 
 # throttle
 $Message = "Output:"
@@ -32,6 +26,8 @@ $Message = "Output:"
     "$using:Message $_"
     Start-Sleep 3
 } -ThrottleLimit 4
+
+
 
 
 
