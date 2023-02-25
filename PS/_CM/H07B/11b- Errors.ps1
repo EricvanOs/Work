@@ -8,12 +8,15 @@
     $Error[0]
 #Endregion
 
+#clear error-array
+$Error.Clear()
+
 #Region Custom variable
     #Can error to my own variable
     Get-Content -Path s:\doesnotexist\nothere.txt -ErrorVariable BadThings #Note if did +BadThings would add content to existing
     $BadThings
     #Could do a check
-    if($BadThings)
+    if($null -ne $BadThings)
     {
         Write-Host -ForegroundColor Blue -BackgroundColor White "Had an issue, $($BadThings.Exception.Message)"
     }
@@ -111,8 +114,8 @@
 
 #Region Errors from cmd.exe
     #For cmd execution it writes to its own error stream we can capture
-    $executionoutput = Invoke-Expression "cmd.exe /c dir r:\nofolder\nofile.file"
-    $executionoutput #Nope
+    $executionoutput = Invoke-Expression "cmd.exe /c dir r:\nofolder\nofile.file" 
+    $executionoutput #empty
 
     #Need STDERR (2) to go to STDOUT (1)
     $executionoutput = Invoke-Expression "cmd.exe /c dir r:\nofolder\nofile.file 2>&1"
