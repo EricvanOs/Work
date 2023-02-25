@@ -39,3 +39,6 @@ $graph = "https://graph.microsoft.com/beta/groups"
 $api = Invoke-RestMethod -Headers @{Authorization = "Bearer $($request.access_token)"} -uri $graph -Method Get
 
 $api.value
+
+
+# to do --> cleanup  add secrets to vault

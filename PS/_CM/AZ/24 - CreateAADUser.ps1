@@ -22,6 +22,7 @@ New-AzureADUser @UserParams -PasswordProfile $UserPassword -AccountEnabled $true
 
 #test
 Get-AzureADUser -ObjectId AbbieP@in-li.eu
+Get-AzureADUser -ObjectId 1002e9f6-6269-417d-9bc8-e016527c540f
 
 #all the user accounts in a Microsoft 365 tenant:
 Get-AzureADUser -All $true
