@@ -1,5 +1,13 @@
-# connect and set correct context
-Set-AzContext -SubscriptionId (Get-AzSubscription -TenantId ((Connect-AzAccount).Context.Tenant)).Id
+# connect
+$azc = Connect-AzAccount
+# The SubscriptionId in which to create these objects
+$SubscriptionId = (Get-AzSubscription -TenantId ($azc.Context.Tenant)).Id
+#  $SubscriptionId = (Get-AzContext).Subscription.id  # also possible
+# Set subscription context
+Set-AzContext -SubscriptionId $subscriptionId 
+
+# connect and set correct context  in one step
+# Set-AzContext -SubscriptionId (Get-AzSubscription -TenantId ((Connect-AzAccount).Context.Tenant)).Id
 
 $ResourceGroupName = 'myResourceGroup77788'
 if ($null -eq (Get-AzResourceGroup  | Where-Object{$_.ResourceGroupName -eq $ResourceGroupName})) { New-AzResourceGroup -name $ResourceGroupName -Location westeurope }  

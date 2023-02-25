@@ -40,6 +40,8 @@ Get-AzStorageAccount -ResourceGroupName $ResourceGroupName | Remove-AzStorageAcc
 Get-AzResourceGroup  | Where-Object{$_.ResourceGroupName -eq $ResourceGroupName} | Remove-AzResourceGroup -Confirm:$false -Force
 
 
+# to do
+# https://learn.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-powershell
+# https://learn.microsoft.com/en-us/answers/questions/954398/script-to-download-files-from-azure-storage-accoun
 
-
-
+# https://baswijdenes.com/how-to-download-a-file-from-an-azure-storage-blob-powershell/
