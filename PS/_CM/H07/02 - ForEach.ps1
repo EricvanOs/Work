@@ -1,4 +1,4 @@
-# letop ldap properties kunnen ook leeg zijn 
+# letop (ldap) properties kunnen ook leeg zijn 
 Get-ADUser -Filter {(Department -eq 'Legal')} | Measure-Object 
 Get-ADUser -Filter {(Department -ne 'Legal')} | Measure-Object 
 Get-ADUser -Filter {(Department -notlike '*')} | Measure-Object  
