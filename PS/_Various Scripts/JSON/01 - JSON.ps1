@@ -39,4 +39,4 @@ $aa.Author[0].City
 $injson = Get-Process |Where-Object{$_.name -like 'winpty*'} | Select-Object -property	Handles,ProcessName, Id  | ConvertTo-Json
 $injson
 
-# https://petri.com/how-to-use-powershell-7-to-work-with-json-files/
+
