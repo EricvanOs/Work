@@ -5,9 +5,12 @@ $secureString = ConvertTo-SecureString -Force -AsPlainText "hello"
 # encrypted string via read-host
 $secureString = Read-Host -AsSecureString
 
-
 # convert it back again
 [System.Runtime.InteropServices.marshal]::PtrToStringAuto([System.Runtime.InteropServices.marshal]::SecureStringToBSTR($securestring))
+
+##
+$secureString = ConvertTo-SecureString -String 'Example' -AsPlainText
+ConvertFrom-SecureString -SecureString $secureString -AsPlainText 
 
 
 #Create user
