@@ -35,6 +35,28 @@ Unregister-Event -SourceIdentifier Timer.Elapsed
 Get-EventSubscriber
 Get-Event
 
+# timer event with action
+$Timer = New-Object Timers.Timer
+$Timer.Interval = 5000
+$params = @{
+    InputObject = $Timer
+    EventName = 'Elapsed'
+    SourceIdentifier = 'Timer.Random'
+    Action = { $script:Random = Get-Random -Min 0 -Max 100 }
+}
+Register-ObjectEvent @params
+
+$Timer.Enabled = $True
+$Subscriber = Get-EventSubscriber -SourceIdentifier Timer.Random
+($Subscriber.action).gettype().fullname
+
+$Subscriber.action | Format-List -Property *
+
+# timer loop is 5000ms and runs a action --> every 5s a new random number
+& $Subscriber.action.module {$Random}
+
+#cleanup
+Unregister-Event -SourceIdentifier Timer.Random
 
 ################## to do
 
