@@ -1,0 +1,7 @@
+https://powershell.one/tricks/assemblies/load-from-memory
+
+https://github.com/TobiasPSP/Modules.PSOneTools
+
+$myJson = Get-Content .\test.json -Raw | ConvertFrom-Json 
+$myJson.Accounts.Users.asmith.department = "Senior Leadership" 
+$myJson | ConvertTo-Json -Depth 4 | Out-File .\test.json  
