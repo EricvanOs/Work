@@ -4,3 +4,8 @@ https://www.byteinthesky.com/powershell/difference-between-set-content-and-out-f
 
 https://www.byteinthesky.com/powershell/how-to-use-tuple-in-powershell/
 
+
+
+
+https://github.com/EvotecIT/PSWriteHTML
+https://pshtml.readthedocs.io/en/latest/
