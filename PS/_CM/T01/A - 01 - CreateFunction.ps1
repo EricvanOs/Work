@@ -14,7 +14,7 @@ Function Get-TMComputerStatus {
         } #foreach $computer
     } #Get-TMComputerStatus
     
-    #### again
+ #### again, restructure to accept pipeline input
 Function Get-TMComputerStatus {
     [cmdletbinding()]
     Param(
@@ -45,4 +45,4 @@ Function Get-TMComputerStatus {
     }
     
     END {}
-} #Get-TMComputerStatus
+} 
