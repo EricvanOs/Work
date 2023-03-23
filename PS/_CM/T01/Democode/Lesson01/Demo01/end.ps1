@@ -8,3 +8,9 @@ function Get-CorpCompSysInfo {
     )
     Get-CimInstance -ClassName Win32_ComputerSystem -ComputerName $ComputerName
 }
+
+
+# test
+Get-CorpCompSysInfo -ComputerName localhost
+Get-CorpCompSysInfo -ComputerName               # error
+Get-CorpCompSysInfo -ComputerName xyz           # error

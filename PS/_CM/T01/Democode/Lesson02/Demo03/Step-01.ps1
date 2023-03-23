@@ -11,3 +11,4 @@ function Get-CorpCompSysInfo {
 }
 
 
+Get-CorpCompSysInfo -ComputerName hydra -Verbose
