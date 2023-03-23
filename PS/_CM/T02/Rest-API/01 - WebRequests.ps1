@@ -5,9 +5,14 @@ Invoke-WebRequest https://blogs.technet.microsoft.com/heyscriptingguy/  -Method 
 
 Invoke-WebRequest https://expired.badssl.com/
 
-Invoke-WebRequest https://expired.badssl.com/ -SkipCertificateCheck
+Invoke-WebRequest https://expired.badssl.com/ -SkipCertificateCheck  # available in  >= .net 7.0
 
-########### USE PS 5.1
+
+
+
+
+
+########### If you want to use in PS 5.1
 Class AcceptAllPolicy: System.Net.ICertificatePolicy {
     [Boolean] CheckValidationResult(
         [System.Net.ServicePoint] $servicePoint,
@@ -21,8 +26,7 @@ Class AcceptAllPolicy: System.Net.ICertificatePolicy {
        }
        [System.Net.ServicePointManager]::CertificatePolicy =  [AcceptAllPolicy]::new()
     
-       Invoke-WebRequest "https://expired.badssl.com/"
-
+Invoke-WebRequest "https://expired.badssl.com/"
  #######################
  
  
