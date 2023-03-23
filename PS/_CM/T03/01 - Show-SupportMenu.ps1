@@ -1,6 +1,4 @@
-﻿# This script might be saved as "Show-SupportMenu.ps1"
-# The verb "Show" implies direct use of the screen and
-# human interactivity
+﻿# The verb "Show" implies direct use of the screen and human interactivity
 
 $continue = $true
 while ($continue) {

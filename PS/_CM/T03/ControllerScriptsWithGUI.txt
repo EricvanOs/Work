@@ -8,7 +8,3 @@ https://audministrator.wordpress.com/2020/05/11/powershell-core-running-gui-scri
 
 https://www.thelazyadministrator.com/2019/04/01/master-user-creator-powershell-gui-software-v2-update/
 
-
-
-
-https://learn.microsoft.com/en-us/powershell/dsc/overview?view=dsc-2.0
