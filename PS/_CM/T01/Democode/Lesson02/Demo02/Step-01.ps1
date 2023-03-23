@@ -1,3 +1,0 @@
-﻿
-Get-CorpCompSysInfo -ComputerName localhost
-
