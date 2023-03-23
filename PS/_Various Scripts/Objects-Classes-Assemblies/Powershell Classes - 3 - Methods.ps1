@@ -36,7 +36,7 @@
         
         
             $AllNames = Get-ADUser -Filter "SamaccountName -like '$UName*'"
-            [int]$LastUsed = $AllNames | % {$_.SamAccountName.trim($Uname)} | select -Last 1
+            [int]$LastUsed = $AllNames | ForEach-Object {$_.SamAccountName.trim($Uname)} | Select-Object -Last 1
             $Next = $LastUsed+1
             $nextNumber = $Next.tostring().padleft(2,'0')
             $SamAccountName = $UName + $nextNumber

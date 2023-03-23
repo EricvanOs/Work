@@ -1,6 +1,8 @@
 
-using assembly 'C:\Program Files\PackageManagement\NuGet\Packages\YamlDotNet.13.0.1\lib\net7.0\YamlDotNet.dll'
+using assembly 'C:\Program Files\PackageManagement\NuGet\Packages\YamlDotNet.13.0.2\lib\net7.0\YamlDotNet.dll'
 using namespace YamlDotNet
+
+# see: https://github.com/aaubry/YamlDotNet/wiki/Serialization.Serializer
 
 $yamlSerializer = [Serialization.Serializer]::new()
 
@@ -13,3 +15,12 @@ $info = [ordered]@{
 }
 
 $yamlSerializer.Serialize($info)
+
+
+
+# meta information 
+[Serialization.Serializer].Getmembers()
+[Serialization.Serializer] | Get-Member -Static
+
+$yamlSerializer | Get-Member
+
