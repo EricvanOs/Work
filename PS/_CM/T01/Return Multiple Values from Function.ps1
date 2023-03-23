@@ -1,5 +1,5 @@
 ﻿
-Function Test()
+function Test()
 {
     $FirstName = "John"
     $LastName = "Doe"
@@ -13,8 +13,7 @@ $lastName
 
 
 # Return Values Using HashTable
-
-Function Test() {
+function Test() {
     $FullName = @{
         FirstName = "John"
         LastName  = "Doe"
@@ -31,7 +30,7 @@ foreach ($key in $fullName.Keys) {
 
 # Return Values Using PSCustomObject
 
-Function Test() {    
+function Test() {    
     $FullName = [PSCustomObject]@{
         FirstName = "John"
         LastName  = "Doe"

@@ -5,8 +5,7 @@ function MyFunction {
     Param($param)
     Write-Host "I'm calling: $(& $param)"
 }
-
-Function Test {
+function Test {
     "Function Test"
 }
 
@@ -17,14 +16,11 @@ MyFunction -param { Test }
 
 
 # Passing a Function with Parameters
-
-
 function MyFunction {
     Param($param)
     Write-Host "I'm calling: $(& $param @args)"
 }
-
-Function Test {
+function Test {
     "Function Test with parameters: $args"
 }
 

@@ -12,14 +12,15 @@ function Show-Pipeline {
     }
 }
 
-$result = 1..3 | Show-Pipeline
-
-
+$list = 1..3 | Show-Pipeline
+1..3 | Show-Pipeline
+1..3 | Out-Null | Show-Pipeline
+1..3 | Out-Default | Show-Pipeline
 
 ####################
 function Invoke-Return {
     process {
-        if ($_ -gt 2) {return 7}
+        if ($_ -gt 2 -and $_ -lt 8) {return 'A'}
         $_
     }
     end {
@@ -29,10 +30,9 @@ function Invoke-Return {
   
  1..10 | Invoke-Return
 
-
 function Invoke-Break {
     process {
-        if ($_ -gt 2) {break}
+        if ($_ -gt 2 -and $_ -lt 8) {break}
         $_
     }
     end {
@@ -42,15 +42,3 @@ function Invoke-Break {
 
 1..10 | Invoke-Break
 
-
-function Invoke-Continue {
-    process {
-        if ($_ -gt 2 ) {continue}
-        $_
-    }
-    end {
-        'All done'
-    }
-}
-
-1..10 | Invoke-Continue
