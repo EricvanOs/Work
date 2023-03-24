@@ -57,7 +57,7 @@ $fragment2 = Get-Process   |
 
 
 # Now we combine the fragments
-ConvertTo-HTML -Title "Report for LON-DC1" -Body "<h1>Report for Morpheus</h1>",$fragment1,$fragment2 |
+ConvertTo-HTML -Title "Report for Morpheus" -Body "<h1>Report for Morpheus</h1>",$fragment1,$fragment2 |
 Out-File .\morpheus.html
 
 

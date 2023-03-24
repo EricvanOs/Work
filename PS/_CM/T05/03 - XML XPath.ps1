@@ -1,15 +1,15 @@
 $string = @"
 <?xml version="1.0"?>
 <cars>
- <car type="Saloon">
- <colour>Green</colour>
- <doors>4</doors>
- <transmission>Automatic</transmission>
- <engine>
- <size>2.0</size>
- <cylinders>4</cylinders>
- </engine>
- </car>
+    <car type="Saloon">
+    <colour>Green</colour>
+    <doors>4</doors>
+    <transmission>Automatic</transmission>
+    <engine>
+        <size>2.0</size>
+        <cylinders>4</cylinders>
+    </engine>
+    </car>
 </cars>
 "@
 
@@ -24,15 +24,15 @@ Select-Xml -XPath '//car[colour="Green"]/engine' -Content $string | Select-Objec
 [Xml]$xml = @"
 <?xml version="1.0"?>
 <cars xmlns:c="http://example/cars">
- <car type="Saloon">
- <c:colour>Green</c:colour>
- <c:doors>4</c:doors>
- <c:transmission>Automatic</c:transmission>
- <c:engine>
- <size>2.0</size>
- <cylinders>4</cylinders>
- </c:engine>
- </car>
+    <car type="Saloon">
+    <c:colour>Green</c:colour>
+    <c:doors>4</c:doors>
+    <c:transmission>Automatic</c:transmission>
+    <c:engine>
+        <size>2.0</size>
+        <cylinders>4</cylinders>
+    </c:engine>
+    </car>
 </cars>
 "@
 
@@ -45,10 +45,10 @@ Select-Xml '//car/c:engine' -Namespace @{c='http://example/cars'} -Xml $xml
 <?xml version="1.0"?>
 <items>
  <item name='Fridge'>
- <category>Appliancse</category>
+    <category>Appliancse</category>
  </item>
  <item name='Cooker'>
- <category>Appliances</category>
+    <category>Appliances</category>
  </item>
 </items>
 "@
@@ -76,7 +76,7 @@ $xml.Save([Console]::Out)
 [Xml]$xml = @"
 <?xml version="1.0"?>
 <list name='letters'>
-<name>1</name>
+    <name>1</name>
 </list>
 "@
 $xml.SelectSingleNode('/list[@name="letters"]').SetAttribute('name','numbers')
@@ -100,21 +100,23 @@ $xml.list.AppendChild($newElement)
 $xml.Save([Console]::Out)
 
 
+# merging two xml-files
+
 [Xml]$xml = @"
 <?xml version="1.0"?>
 <list type='numbers'>
  <name>1</name>
 </list>
 "@
+
 [Xml]$newNodes = @"
 <root>
-HTML, XML, and JSON Chapter 12
-[ 302 ]
  <name>2</name>
  <name>3</name>
  <name>4</name>
 </root>
 "@
+
 # Copying the name nodes requires each node to be selected in turn, imported into the original document, and added to the desired node:
 foreach ($node in $newNodes.SelectNodes('/root/name')) {
  $newNode = $xml.ImportNode($node, $true)
@@ -135,12 +137,16 @@ $xml.OuterXml
  <name>3</name>
 </list>
 "@
+
 $node = $xml.SelectSingleNode('/list/*[.="3"]')
 $null = $node.ParentNode.RemoveChild($node)
 #test
 $xml.Save([Console]::Out)
 
+
 # Attributes are also easy to remove from a document:
 $xml.list.RemoveAttribute('type')
 #test
 $xml.Save([Console]::Out)
+
+

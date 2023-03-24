@@ -1,6 +1,6 @@
 ﻿# This is optional and will not be saved. Create a module-level variable for
 # the error log path:
-$CorpErrorLogPreference = 'c:\errors.txt'
+$CorpErrorLogPath = 'c:\work\ps\temp\errors.txt'
 
 
 # In the function, we will create a parameter for the
@@ -39,7 +39,7 @@ Get-CorpCompSystemInfo -ComputerName LON-DC1,LON-CL1
         [ValidatePattern('LON-\w{2,3}\d{1,2}')]
         [string[]]$ComputerName,
 
-        [string]$ErrorFilePath = $CorpErrorLogPreference    # this is new
+        [string]$ErrorFilePath = $CorpErrorLogPath          # this is new
     )
     BEGIN {                                                 #
         Remove-Item -Path $ErrorFilePath                    # these lines are new
@@ -63,41 +63,6 @@ Get-CorpCompSystemInfo -ComputerName LON-DC1,LON-CL1
     }
 }
 
-function Set-CorpComputerState {
-    [CmdletBinding(SupportsShouldProcess=$True,ConfirmImpact="High")]
-    param(
-        [Parameter(Mandatory=$True,
-                   HelpMessage='Computer name to set state for',
-                   ValueFromPipeline=$True,
-                   ValueFromPipelineByPropertyName=$True)]
-        [Alias('hostname')]
-        [string[]]$ComputerName,
 
-        [Parameter(Mandatory=$True,
-                   HelpMessage='Action to take: PowerOff, Shutdown, Restart, or Logoff')]
-        [ValidateSet('PowerOff','Shutdown','Restart','Logoff')]
-        [string]$State,
-
-        [switch]$force
-    )
-    BEGIN {
-        switch ($state) {
-            'LogOff'   { $_action = 0 }
-            'Shutdown' { $_action = 1 }
-            'Restart'  { $_action = 2 }
-            'PowerOff' { $_action = 8 }
-        }
-        if ($force) { $_action += 4 }
-        Write-Verbose "Action value is $_action"
-    }
-    PROCESS {
-        foreach ($computer in $computername) {
-            if ($PSCmdlet.ShouldProcess("$computer - action is $_action")) {
-                Write-Verbose "Contacting $computer"
-                $os = Get-WmiObject -Class Win32_OperatingSystem -ComputerName $Computer -EnableAllPrivileges
-                $return = $os.win32shutdown($_action)
-                Write-Verbose "Return value from $computer is $($return.returnvalue)"
-            }
-        }
-    }
-}
+# test 
+Get-CorpCompSysInfo -ComputerName lon-dc1

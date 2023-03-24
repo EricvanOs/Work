@@ -1,9 +1,4 @@
-﻿# This creates a sample XML file to work on.
-# Review the structure of this and notice the
-# differences between values within elements, 
-# and the attributes of those elements.
-
-Set-Location -Path C:\Work\PS\_CM\T05
+﻿Set-Location -Path C:\Work\PS\_CM\T05
 
 $sample = @"
 <computers>
@@ -16,5 +11,23 @@ $sample = @"
 </computers>
 "@
 
+# export file
 $sample | out-file .\inventory.xml
 
+# import xml-file
+[xml]$xml = Get-Content .\inventory.xml
+
+# XML document element
+$xml
+
+# root <computers> element
+$xml.computers
+
+# first computer
+$xml.computers.computer[0]
+
+# first computer's <addresses> element
+$xml.computers.computer[0].addresses
+
+# <ipaddress> elements
+$xml.computers.computer[0].addresses.ipaddress

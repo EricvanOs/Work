@@ -33,7 +33,7 @@ Try {
 }
 
 
-# does not work, because  BOL: A terminating error in one scriptblocks may not cause the termination of the Foreach-Object cmdlet
+# does not work: A terminating error in one scriptblocks may not cause the termination of the Foreach-Object cmdlet
 Try {
   Get-Process -Name Notepad | ForEach-Object { $PSItem.Kill() }  -ErrorAction Stop  # ErrorAction werkt niet
 } 

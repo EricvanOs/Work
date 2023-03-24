@@ -1,18 +1,20 @@
-﻿# import xml-file
-[xml]$xml = Get-Content .\inventory.xml
+[Xml]$xml = @"
+<?xml version="1.0"?>
+<cars>
+    <car type="Saloon">
+        <colour>Green</colour>
+        <doors>4</doors>
+        <transmission>Automatic</transmission>
+        <engine>
+        <size>2.0</size>
+        <cylinders>4</cylinders>
+        </engine>
+    </car>
+</cars>
+"@
 
-# XML document element
-$xml
+$xml.cars.car
 
-# root <computers> element
-$xml.computers
-
-# first computer
-$xml.computers.computer[0]
-
-# first computer's <addresses> element
-$xml.computers.computer[0].addresses
-
-# <ipaddress> elements
-$xml.computers.computer[0].addresses.ipaddress
+# show as 'original' file 
+$xml.Save([Console]::Out)
 
