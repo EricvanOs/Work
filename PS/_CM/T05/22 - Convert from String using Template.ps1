@@ -1,4 +1,4 @@
-﻿Get-Item -Path '\\Sisyphus\Netlogon' | Out-Null
+﻿Get-Item -Path '\\aphrodite\Public' | Out-Null
 
 $netstatOutput = netstat -p tcp 
 $netstatOutput
@@ -15,4 +15,4 @@ Active Connections
 $netstatConverted = $netstatOutput | ConvertFrom-String -TemplateContent $template
 $netstatConverted
 
-$netstatConverted | Where-Object -Property 'ForeignAddress' -Like 'Sisyphus:*'
+
