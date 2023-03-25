@@ -11,3 +11,5 @@ function fibonacci($n) {
 # 1,1,2,3,5,8,13,21
 
 fibonacci (8)
+
+(fibonacci (21)) / (fibonacci (20))  # golden ratio    .5 + .5 * [math]::sqrt(5)
