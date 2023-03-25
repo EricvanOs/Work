@@ -48,7 +48,7 @@ $Error.Clear()
 #Region Make terminating with ErrorAction
     #Make our normal non-terminating error a terminating with the error action
     try {
-        Get-Content -Path r:\doesnotexist\nothere.txt -ErrorAction Stop
+        Get-Content -Path u:\doesnotexist\nothere.txt -ErrorAction Stop
     }
     catch {
         Write-Output "Something went wrong"
@@ -57,7 +57,7 @@ $Error.Clear()
 
 #Region Types of error action
     #Note there are other types of ErrorAction
-    Get-Content -Path q:\doesnotexist\nothere42.txt -ErrorAction SilentlyContinue
+    Get-Content -Path v:\doesnotexist\nothere.txt -ErrorAction SilentlyContinue
     (Get-Error).InvocationInfo #still errored, we just didn't see it!
 #Endregion
 
@@ -66,7 +66,7 @@ $Error.Clear()
 #Region Looking at details
     #Can look at the error details
     try {
-        Get-Content -Path r:\doesnotexist\nothere.txt -ErrorAction Stop
+        Get-Content -Path w:\doesnotexist\nothere.txt -ErrorAction Stop
     }
     catch {
         $ErrorMessage = $_.Exception.Message
@@ -98,7 +98,7 @@ $Error.Clear()
     try {
         $CurrentErrorActionPreference = $ErrorActionPreference
         $ErrorActionPreference = "Stop"
-        Get-Content -Path r:\doesnotexist\nothere.txt #any command here, e.g. cmd /c
+        Get-Content -Path x:\doesnotexist\nothere.txt #any command here, e.g. cmd /c
     }
     catch {
         Write-Output "Something went wrong"
@@ -114,10 +114,10 @@ $Error.Clear()
 
 #Region Errors from cmd.exe
     #For cmd execution it writes to its own error stream we can capture
-    $executionoutput = Invoke-Expression "cmd.exe /c dir r:\nofolder\nofile.file" 
+    $executionoutput = Invoke-Expression "cmd.exe /c dir y:\nofolder\nofile.file" 
     $executionoutput #empty
 
     #Need STDERR (2) to go to STDOUT (1)
-    $executionoutput = Invoke-Expression "cmd.exe /c dir r:\nofolder\nofile.file 2>&1"
+    $executionoutput = Invoke-Expression "cmd.exe /c dir z:\nofolder\nofile.file 2>&1"
     $executionoutput
 #Endregion
