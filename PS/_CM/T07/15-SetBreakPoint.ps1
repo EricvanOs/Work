@@ -22,19 +22,22 @@
 }
 
 Set-Location -Path C:\work\ps\_CM\T07
+# cleanup from previous run
+Remove-Item -Path .\debug.txt -ErrorAction SilentlyContinue
+Get-PSBreakpoint | Remove-PSBreakpoint
 
 # Set a breakpoint on line 18.
 Set-PSBreakpoint -Script .\15-SetBreakPoint.ps1 -Line 18
 
 # Also set a breakpoint that outputs data to a debugging file
 # each time $properties is written to
-Set-PSBreakpoint -Script .\15-SetBreakPoint.ps1 -Variable properties -Mode Write -Action { $properties | Out-File -Path C:\work\ps\_CM\T07\debug.txt -append }
+Set-PSBreakpoint -Script .\15-SetBreakPoint.ps1 -Variable properties -Mode Write -Action { $properties | Out-File -FilePath .\debug.txt -append }
 
 # This will run the command
 Get-ArchitectureInfo -ComputerName 'Morpheus','Epimetheus' |
 Select-Object -Property ComputerName
 
-# cleanup
-Remove-Item -Path .\debug.txt
 
-# run from command prompt in ISE
+Get-Content -Path .\debug.txt
+
+# run from command prompt in ISE/PS5
