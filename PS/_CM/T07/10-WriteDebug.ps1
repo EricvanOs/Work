@@ -20,5 +20,3 @@ Get-FilewithDebug -path C:\Users\administrator.PANTHEON\Downloads -Verbose
 Get-FilewithDebug -path C:\Users\administrator.PANTHEON\Downloads -Debug
 Get-FilewithDebug -path C:\Users\administrator.PANTHEON\Downloads -Verbose -Debug
 
-# set-location C:\Work\PS\_CM\H07B
- # Suspend, test variables, and exit to continue
