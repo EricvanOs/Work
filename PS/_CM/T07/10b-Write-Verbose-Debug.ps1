@@ -1,3 +1,5 @@
+# Set-Location -Path C:\Work\ps\_CM\T07
+
 param(
     [switch]$Verbose,
     [switch]$Debug
