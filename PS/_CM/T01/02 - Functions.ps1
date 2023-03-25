@@ -1,5 +1,4 @@
-﻿# Save this as \Documents\WindowsPowerShell\Modules\DemoTools\DemoTools.psm1
-# (overwrite the existing file)
+﻿# extend function with verbose option
 
 function Get-CorpCompSysInfo {
     [CmdletBinding()]
