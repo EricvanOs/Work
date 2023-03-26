@@ -1,5 +1,4 @@
 # Creating methods
-
 class Tree {
     [int]$Height
     [int]$Age

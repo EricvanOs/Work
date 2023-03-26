@@ -1,6 +1,5 @@
 # Constructors
 # When creating a class you can also create a constructor. The constructor is a special method that is called when you create an instance of the class.
-
 class Tree {
     [int]$Height
     [int]$Age

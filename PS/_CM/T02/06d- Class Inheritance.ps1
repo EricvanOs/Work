@@ -1,4 +1,3 @@
-
 # Class inheritance
 class Tree {
     [int]$Height
