@@ -1,8 +1,6 @@
 ﻿function Get-CorpCompSysInfo {
     [CmdletBinding()]
     Param(
-
-
         [string]$ComputerName
     )
     Write-Verbose "Now connecting to $ComputerName"
@@ -17,7 +15,6 @@ function Get-CorpCompSysInfo {
     [CmdletBinding()]
     Param(
         [Parameter(Mandatory=$True)]
-
         [string]$ComputerName
     )
     Write-Verbose "Now connecting to $ComputerName"
@@ -32,7 +29,6 @@ function Get-CorpCompSysInfo {
     [CmdletBinding()]
     Param(
         [Parameter(Mandatory=$True,HelpMessage='Computer name to query')]
-
         [string]$ComputerName
     )
     Write-Verbose "Now connecting to $ComputerName"
