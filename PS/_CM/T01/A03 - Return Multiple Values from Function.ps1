@@ -1,5 +1,4 @@
-﻿
-function Test()
+﻿function Test()
 {
     $FirstName = "John"
     $LastName = "Doe"
@@ -29,7 +28,6 @@ foreach ($key in $fullName.Keys) {
 
 
 # Return Values Using PSCustomObject
-
 function Test() {    
     $FullName = [PSCustomObject]@{
         FirstName = "John"

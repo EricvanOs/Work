@@ -2,3 +2,6 @@
 
 
 Get-Help  New-ModuleManifest  -online
+
+
+$env:PSModulePath

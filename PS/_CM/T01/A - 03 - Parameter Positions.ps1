@@ -1,8 +1,10 @@
 function test {
     param(
-    [string[]]$one,
-    [int]$two,
-    [switch]$three
+        [string[]]$one,
+
+        [int]$two,
+        
+        [switch]$three
     )
 }
   
@@ -12,12 +14,14 @@ function test {
 
 function test {
     param(
-    [Parameter(Position=1)]
-    [string[]]$one,
-    [Parameter(Position=2)]
-    [int]$two,
-    [Parameter(Position=3)]
-    [switch]$three
+        [Parameter(Position=1)]
+        [string[]]$one,
+
+        [Parameter(Position=2)]
+        [int]$two,
+        
+        [Parameter(Position=3)]
+        [switch]$three
     )
  }
  

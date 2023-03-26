@@ -1,5 +1,4 @@
-﻿
-# Passing a Function without Parameters
+﻿# Passing a Function without Parameters
 
 function MyFunction {
     Param($param)

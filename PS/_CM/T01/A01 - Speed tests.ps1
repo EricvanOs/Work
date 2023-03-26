@@ -1,8 +1,8 @@
 function SquareRoot {
     [cmdletbinding()]
     Param(
-    [Parameter(Position = 0, Mandatory, ValueFromPipeline)]
-    [int[]]$Value
+        [Parameter(Position = 0, Mandatory, ValueFromPipeline)]
+        [int[]]$Value
     )
 
     Begin {
