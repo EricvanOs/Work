@@ -25,7 +25,7 @@
 }
 
 
-############  ADD Comment, comment based help
+############  ADD Comment, comment-based help
 function Get-CorpCompSysInfo {
     <#
     .SYNOPSIS
