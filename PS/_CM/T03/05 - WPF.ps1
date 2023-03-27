@@ -29,7 +29,7 @@ Function Show-MachineInfo {
     $OK = {
     #get machine info from the name in the text box.
     #we're trimming the value in case there are extra spaces
-    $data = Get-MachineInfo -Computername ($txtInput.text).trim()
+    $data = Get-Hotfix -Computername ($txtInput.text).trim()
     #set the value of the txtResults to the data as a string
     $txtResults.text = $data | Out-String
     }
