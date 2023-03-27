@@ -62,10 +62,10 @@ Function Get-TMComputerStatus {
 
     #adding a script property
     $obj | Add-Member -MemberType ScriptProperty `
-    -Name TopProcesses `
+    -Name LastInstalledHotFixes `
     -Value {
-        Get-Process -ComputerName $this.computername |
-        Sort-Object -Property WorkingSet -Descending |
+        Get-HotFix -ComputerName $this.computername |
+        Sort-Object -Property InstalledOn -Descending |
         Select-Object -first 5
     }
     $obj
@@ -84,6 +84,6 @@ Function Get-TMComputerStatus {
 Get-TMComputerStatus $env:computername | Select-Object -Property *
 
 (Get-TMComputerStatus $env:computername).ping()
-(Get-TMComputerStatus $env:computername).TopProcesses  # Empty as Get-Process - computername will not work with PS 7
+(Get-TMComputerStatus $env:computername).LastInstalledHotFixes  
 
   
