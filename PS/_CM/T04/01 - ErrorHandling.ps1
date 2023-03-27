@@ -1,8 +1,8 @@
-﻿Get-Service -Name BITS,Nobody,WinRM -ErrorAction Continue  # zie $ErrorActionPreference  # default setting = Continue 
-Get-Service -Name BITS,Nobody,WinRM -ErrorAction SilentlyContinue
-Get-Service -Name BITS,Nobody,WinRM -ErrorAction Inquire
-Get-Service -Name BITS,Nobody,WinRM -ErrorAction Ignore
-Get-Service -Name BITS,Nobody,WinRM -ErrorAction Stop
+﻿Get-Service -Name BITS,Nobody1,WinRM -ErrorAction Continue ; $error[0] # zie $ErrorActionPreference  # default setting = Continue 
+Get-Service -Name BITS,Nobody2,WinRM -ErrorAction SilentlyContinue  ; $error[0] 
+Get-Service -Name BITS,Nobody3,WinRM -ErrorAction Inquire  ; $error[0] 
+Get-Service -Name BITS,Nobody4,WinRM -ErrorAction Ignore  ; $error[0] 
+Get-Service -Name BITS,Nobody5,WinRM -ErrorAction Stop  ; $error[0] 
 
 
 
