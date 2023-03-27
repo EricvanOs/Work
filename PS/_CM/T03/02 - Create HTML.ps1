@@ -51,7 +51,7 @@ $fragment1 = Get-CorpCompSysInfo -ComputerName Morpheus |
 # ConvertTo-HTML produces an array of strings. What we will need later is a single string.
 # So we use Out-String to process the array into a single string.
 
-$fragment2 = Get-HotFix -ComputerName Morpheus | sort-object InstalledOn -Descending |  Select-Object -Last 10 | 
+$fragment2 = Get-HotFix -ComputerName Morpheus | Sort-Object InstalledOn -Descending |  Select-Object -First 10 | 
              ConvertTo-HTML -Fragment -Property Description,HotFixID,InstalledOn -PreContent "<h2>HotFixes</h2>" -As Table |
              Out-String
 
