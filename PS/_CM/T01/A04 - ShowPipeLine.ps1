@@ -1,14 +1,13 @@
 function Show-Pipeline {
     begin {
-        $position = $myinvocation.PipelinePosition
-        Write-Host "Pipeline position ${position}: Start"
+        Write-Host "Pipeline : Start"
     }
     process {
-        Write-Host "Pipeline position ${position}: $_"
+        Write-Host "Pipeline : $_"
     $_
     }
     end {
-        Write-Host "Pipeline position ${position}: End"
+        Write-Host "Pipeline : End"
     }
 }
 
