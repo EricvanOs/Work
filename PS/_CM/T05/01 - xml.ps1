@@ -12,10 +12,10 @@ $sample = @"
 "@
 
 # export file
-$sample | out-file .\inventory.xml
+$sample | out-file .\Cinventory.xml
 
 # import xml-file
-[xml]$xml = Get-Content .\inventory.xml
+[xml]$xml = Get-Content .\Cinventory.xml
 
 # XML document element
 $xml
