@@ -8,16 +8,17 @@ function test {
     )
 }
   
- Get-Help test -Full
+test 'A' 7 $true 
+Get-Help test -Full
 
- ### better
+ ### if I want other parameter positions
 
 function test {
     param(
         [Parameter(Position=1)]
         [string[]]$one,
 
-        [Parameter(Position=2)]
+        [Parameter(Position=0)]
         [int]$two,
         
         [Parameter(Position=3)]
@@ -25,6 +26,7 @@ function test {
     )
  }
  
- 
+ test 'A' 7 $true  # error
+ test  7  'A' $true
  Get-Help test -Full 
     
