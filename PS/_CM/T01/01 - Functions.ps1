@@ -20,4 +20,3 @@ Get-CorpCompSysInfo -ComputerName xyz           # error
 (Get-Command Get-CorpCompSysInfo).Parameters
 (Get-Command Get-CorpCompSysInfo).CmdletBinding
 (Get-Command Get-CorpCompSysInfo).Definition
-(Get-Command Get-CorpCompSysInfo).ResolveParameter('ComputerName')
