@@ -52,9 +52,10 @@ $fragment1 = Get-CorpCompSysInfo -ComputerName Morpheus |
 # ConvertTo-HTML produces an array of strings. What we will need later is a single string.
 # So we use Out-String to process the array into a single string.
 
-$fragment2 = Get-Process   |
-             ConvertTo-HTML -Fragment -Property Name,ID,VM,PM,WS -PreContent "<h2>Processes</h2>" -As Table |
+$fragment2 = Get-HotFix -ComputerName Morpheus | Sort-Object InstalledOn -Descending |  Select-Object -First 10 | 
+             ConvertTo-HTML -Fragment -Property Description,HotFixID,InstalledOn -PreContent "<h2>HotFixes</h2>" -As Table |
              Out-String
+
 
 # Create a here-string with CSS
 $style = @"
@@ -76,3 +77,5 @@ $style = @"
 # Now we combine the fragments
 ConvertTo-HTML -Title "Report for Morpheus" -Head $style -Body "<h1>Report for Morpheus</h1>",$fragment1,$fragment2 |
 Out-File .\morpheus.html
+
+Start-Process -FilePath .\morpheus.html
