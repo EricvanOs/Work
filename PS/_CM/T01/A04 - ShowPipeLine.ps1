@@ -4,7 +4,7 @@ function Show-Pipeline {
     }
     process {
         Write-Host "Pipeline : $_"
-    $_
+        $_ + 100
     }
     end {
         Write-Host "Pipeline : End"
@@ -12,6 +12,7 @@ function Show-Pipeline {
 }
 
 $list = 1..3 | Show-Pipeline
+[int]$list = 1..3 | Show-Pipeline
 1..3 | Show-Pipeline
 1..3 | Out-Null | Show-Pipeline
 1..3 | Out-Default | Show-Pipeline
