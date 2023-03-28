@@ -72,6 +72,8 @@ $log = (get-winevent -LogName Security | Where-Object{$_.id -eq 4799} | Select-O
 # remark (?s) is also called  "single line mode" maw beschouw 't als een regel.
 $log -match $r
 $Matches
+$Matches.D
+$Matches.N
 
 
 

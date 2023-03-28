@@ -1,0 +1,8 @@
+<computers>
+    <computer name="LON-DC1">
+        <addresses>
+            <ipaddress family="IPv4" adaptername="Ethernet" interfaceindex="0">192.168.12.4</ipaddress>
+        </addresses>
+    </computer>
+    <computer name="LON-SVR1" />
+</computers>
