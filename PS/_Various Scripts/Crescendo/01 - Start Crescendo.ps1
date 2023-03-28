@@ -12,5 +12,5 @@ https://tommymaynard.com/simple-simple-microsoft-crescendo-example/
 
 https://tommymaynard.com/simple-simple-microsoft-crescendo-example-part-ii/
 
-
+https://adam-bacon.netlify.app/presentations/crescendo/
 #>
