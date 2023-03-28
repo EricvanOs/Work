@@ -49,7 +49,7 @@ Configuration HRWebsiteOnPremise
             DependsOn       = "[WindowsFeature]AspNet45"
         }
         # Create a new website
-        xWebsite SavTechWebSite
+        xWebsite HRSite
         {
             Ensure          = "Present"
             Name            = "HRSite"
