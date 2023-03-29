@@ -19,7 +19,7 @@ get-range -start 1 -stop 4
 
 Set-Column   -Column 1 -StartRow 2
 
-https://www.youtube.com/watch?v=YyAEsZG21ao&list=PL5uoqS92stXioZw-u-ze_NtvSo0k0K0kq&index=2
+# see: https://www.youtube.com/watch?v=YyAEsZG21ao&list=PL5uoqS92stXioZw-u-ze_NtvSo0k0K0kq&index=2
 
 Set-Column -Worksheet $excelInfo.Name  -Heading "WinsToFastLaps"  -Value {"=E$row/C$row"} -Column 7 -AutoSize -AutoNameRange
 
