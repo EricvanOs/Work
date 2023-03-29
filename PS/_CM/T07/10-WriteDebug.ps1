@@ -14,9 +14,14 @@
     $return
 }
 
+Set-Location -Path C:\Work\PS\_CM\T07
 
 
 Get-FilewithDebug -path C:\Users\administrator.PANTHEON\Downloads -Verbose
+Start-Sleep -Seconds 5
 Get-FilewithDebug -path C:\Users\administrator.PANTHEON\Downloads -Debug
+Start-Sleep -Seconds 5
 Get-FilewithDebug -path C:\Users\administrator.PANTHEON\Downloads -Verbose -Debug
 
+
+# run ps1-file 
