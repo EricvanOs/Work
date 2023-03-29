@@ -1,4 +1,6 @@
-﻿function Get-ArchitectureInfo {
+﻿# run from command prompt in ISE/PS5
+
+function Get-ArchitectureInfo {
     [CmdletBinding()]
     param(
         [Parameter(Mandatory=$True)]
@@ -40,4 +42,3 @@ Select-Object -Property ComputerName
 
 Get-Content -Path .\debug.txt
 
-# run from command prompt in ISE/PS5

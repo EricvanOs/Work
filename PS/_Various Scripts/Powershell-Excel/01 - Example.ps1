@@ -31,7 +31,7 @@ $workSheet.rows(23).Value2
     Address = $BeginAddress
 }
 
-# all orders from the sam address
+# all orders from the same address
 Do {
     $Found = $WorkSheet.Cells.FindNext($Found)
     $Address = $Found.Address(0,0,1,1)
