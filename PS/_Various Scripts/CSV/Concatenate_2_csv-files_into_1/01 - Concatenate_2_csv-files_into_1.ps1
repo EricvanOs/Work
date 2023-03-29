@@ -1,4 +1,4 @@
-$path = 'K:\_Various Scripts\CSV\Concatenate_2_csv-files_into_1'
+$path = 'C:\Work\PS\_Various Scripts\CSV\Concatenate_2_csv-files_into_1'
 Set-Location -Path $path
 
 $file1 = Import-CSV -LiteralPath test1.csv
