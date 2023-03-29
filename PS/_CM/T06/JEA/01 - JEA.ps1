@@ -5,7 +5,7 @@ New-Item -Path 'C:\Program Files\WindowsPowerShell\Modules\Demo' -ItemType File 
 New-ModuleManifest -Path 'C:\Program Files\WindowsPowerShell\Modules\demo\demo.psd1' `
 -RootModule 'C:\Program Files\WindowsPowerShell\Modules\demo\demo.psm1'
 
-gci 'C:\Program Files\WindowsPowerShell\Modules\demo'
+get-childitem  'C:\Program Files\WindowsPowerShell\Modules\demo'
 
 #Make JeaConfiguration folder in ProgramData
 if ((Test-Path "$env:ProgramData\JEAConfiguration") -eq $false){New-Item -ItemType Directory `
@@ -22,7 +22,7 @@ $ConfFileData = @{
 }
 New-PSSessionConfigurationFile @ConfFileData
 
-cd C:\ProgramData\JEAConfiguration
+set-location C:\ProgramData\JEAConfiguration
 psedit .\Demo.pssc
 
 

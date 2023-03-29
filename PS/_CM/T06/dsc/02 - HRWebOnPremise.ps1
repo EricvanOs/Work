@@ -12,7 +12,7 @@ Configuration HRWebsiteOnPremise
         # Target nodes to apply the configuration
         [string[]]$NodeName = 'localhost'
     )
-    Import-DscResource –ModuleName 'PSDesiredStateConfiguration'
+    Import-DscResource -ModuleName 'PSDesiredStateConfiguration'
     # Import the module that defines custom resources
     Import-DscResource -Module xWebAdministration
     Node $NodeName
