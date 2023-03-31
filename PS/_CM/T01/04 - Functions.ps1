@@ -23,9 +23,9 @@ function Get-CorpCompSysInfo {
     [CmdletBinding()]
     param(
         [Parameter(Mandatory=$True,
-                   HelpMessage='Computer name to query',
-                   ValueFromPipeline=$True,
-                   ValueFromPipelineByPropertyName=$True)]
+        HelpMessage='Computer name to query',
+        ValueFromPipeline=$True,
+        ValueFromPipelineByPropertyName=$True)]
         [Alias('hostname')]
         [ValidatePattern('m\w+eus')]
         [string[]]$ComputerName
@@ -53,9 +53,9 @@ function Get-CorpCompSysInfo {
     [CmdletBinding()]
     param(
         [Parameter(Mandatory=$True,
-                   HelpMessage='Computer name to query',
-                   ValueFromPipeline=$True,
-                   ValueFromPipelineByPropertyName=$True)]
+        HelpMessage='Computer name to query',
+        ValueFromPipeline=$True,
+        ValueFromPipelineByPropertyName=$True)]
         [Alias('hostname')]
         [ValidatePattern('m\w+eus')]
         [string[]]$ComputerName
