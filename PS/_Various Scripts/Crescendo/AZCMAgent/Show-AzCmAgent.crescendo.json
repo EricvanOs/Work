@@ -1,0 +1,33 @@
+{
+  "$schema": "https://aka.ms/PowerShell/Crescendo/Schemas/2022-06",
+  "Commands": [
+    {
+      "Verb": "Show",
+      "Noun": "AzCmAgent",
+      "OriginalName": "c:/program files/AzureConnectedMachineAgent/azcmagent.exe",
+      "OriginalCommandElements": [
+        "show",
+        "--json"
+      ],
+      "Platform": [
+        "Windows"
+      ],
+      "Description": "Gets machine metadata and Agent status. This is primarily useful for troubleshooting.",
+      "Aliases": [
+        "azinfo"
+      ],
+      "OutputHandlers": [
+        {
+            "ParameterSetName": "Default",
+            "HandlerType": "Inline",
+            "Handler": "$args[0] | ConvertFrom-Json"
+        }
+      ],
+      "SupportsShouldProcess": false,
+      "SupportsTransactions": false,
+      "NoInvocation": false,
+      "Parameters": [],
+      "Examples": []
+    }
+  ]
+}

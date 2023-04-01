@@ -1,0 +1,15 @@
+{
+  "Verb": "Show",
+  "Noun": "AzCmAgent",
+  "OriginalName": "c:/program files/AzureConnectedMachineAgent/azcmagent.exe",
+  "Platform": [
+    "Windows",
+    "Linux",
+    "MacOS"
+  ],
+  "SupportsShouldProcess": false,
+  "SupportsTransactions": false,
+  "NoInvocation": false,
+  "Parameters": [],
+  "Examples": []
+}
