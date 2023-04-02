@@ -3,7 +3,7 @@ function Manage-HeliosSecrets {
 
     $continue = $true
     while ($continue) {
-        Write-Host "'n'n'n" # adds three blank lines
+        Write-Host "`n" # adds a blank line
         Write-Host "=================================="
         Write-Host "          SUPPORT MENU            "
         Write-Host "=================================="
@@ -15,23 +15,32 @@ function Manage-HeliosSecrets {
         Write-Host "X. Exit this menu                 "
         Write-Host "                                  "
 
-        $choice = Read-Host  "Enter selection"
-
+        Try {
+            [ValidateSet('1','2','X')]
+            [string]$choice = Read-Host "Give selection" -ErrorAction Stop
+        }
+        Catch{
+            Write-Host "** Unknown Selection **" -ForegroundColor red -BackgroundColor white
+            Continue
+        }
+    
         switch ($choice) {
             "1" {
                 Write-Host "Enter name of secret to be added." -ForegroundColor Green
-                New-HeliosSecret
-                    }
+                $newname = Read-Host 'Name of secret'
+                $newsecret = Read-Host 'password or secret'
+                New-HeliosSecret -Name $newname -Secret $newsecret
+                }
             "2" {
-                Write-Host "enter name of secret where password/secret has to be changed." -ForegroundColor Green
-                Set-HeliosSecret
+                Write-Host "Enter name of secret where password/secret has to be changed." -ForegroundColor Green
+                $oldname = Read-Host 'Name of secret of be changed'
+                $newsecret = Read-Host 'New password or secret'
+                Set-HeliosSecret -Name $oldname -Secret $newsecret
             }
             "X" {
                 $continue = $false
             }
-            default {
-                Write-Host "** Unknown Selection **" -ForegroundColor red -BackgroundColor white
-            }
+
         }
 
     }
