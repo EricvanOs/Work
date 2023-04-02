@@ -35,8 +35,9 @@ Get-ADComputer -Filter 'Name -like "e*us"' | Select-Object @{n='ComputerName';e=
 Set-Location -Path k:\
 $hotfixid = 'KB957095'
 $servers = Get-Content -Path .\Servers.txt
-$servers | ForEach-Object { if (!(Get-HotFix -Id $hotfixid -ComputerName $_))
-         { Add-Content $_ -Path .\"Missing-$($hotfixid).txt" }}
+$servers | ForEach-Object { if (!(Get-HotFix -Id $hotfixid -ComputerName $_)){ 
+    Add-Content $_ -Path .\"Missing-$($hotfixid).txt" }
+}
 
 # test
 Get-HotFix -ComputerName erebus -Id xyz
@@ -46,8 +47,9 @@ Get-HotFix -ComputerName erebus -Id xyz -ErrorAction SilentlyContinue
 Set-Location -Path k:\
 $hotfixid = 'KB957095'
 $servers = Get-Content -Path .\Servers.txt
-$servers | ForEach-Object { if (!(Get-HotFix -Id $hotfixid -ComputerName $_  -ErrorAction SilentlyContinue))
-         { Add-Content $_ -Path .\"Missing-$($hotfixid).txt" }}
+$servers | ForEach-Object { if (!(Get-HotFix -Id $hotfixid -ComputerName $_  -ErrorAction SilentlyContinue)){ 
+    Add-Content $_ -Path .\"Missing-$($hotfixid).txt" }
+}
 
 # test output
 Get-Content -Path .\"Missing-$($hotfixid).txt"

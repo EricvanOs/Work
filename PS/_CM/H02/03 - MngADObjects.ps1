@@ -15,7 +15,7 @@ Get-ADObject -Identity "CN=JohnSmithcontact,OU=PSTest,DC=pantheon,DC=somewhere" 
 # 3
 get-help New-ADUser -Online
 New-ADUser -Name "PietjeP" -SamAccountName "PietjePuk" -GivenName "Piet" -Surname "Puk" -DisplayName "Pietje Puk" `
-           -Path "OU=PSTest,DC=Pantheon,DC=somewhere" #name = commonname en backtick
+            -Path "OU=PSTest,DC=Pantheon,DC=somewhere" #name = commonname en backtick
 
 Get-ADUser -Identity  "CN=PietjeP,OU=PSTest,DC=Pantheon,DC=somewhere"
 Get-ADUser PietjePuk  #mag ook
@@ -48,6 +48,6 @@ Remove-ADGroup PShelpdesk -Confirm:$false
 Remove-ADUser PietjePuk -Confirm:$false
 
 
- 
+
 
 

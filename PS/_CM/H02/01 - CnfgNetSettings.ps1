@@ -17,7 +17,7 @@ Get-NetIPConfiguration
 New-NetIPAddress -InterfaceAlias Ethernet -IPAddress 172.16.0.30 -PrefixLength 24   # adds new ipaddress
 Set-NetIPAddress -InterfaceAlias Ethernet -PrefixLength 16   # change setting of interface except ipaddress
 Remove-NetIPAddress -InterfaceIndex ethernet -IPAddress 17.16.0.15 # remove "old" address
- 
+
 get-help Set-NetIPAddress -Online
 
 # set dns-server address

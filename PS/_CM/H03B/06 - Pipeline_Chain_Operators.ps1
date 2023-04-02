@@ -4,7 +4,7 @@ The && operator : left-hand pipeline succeeded --> the right-hand pipeline execu
                 : left-hand pipeline failed    --> stop
     
 The || operator : left-hand pipeline succeeded --> stop
-		    : left-hand pipeline failed    --> the right-hand pipeline executes  
+                : left-hand pipeline failed    --> the right-hand pipeline executes  
 #>
 
 #examples
