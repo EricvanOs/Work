@@ -1,3 +1,6 @@
+# Create table in tempdb
+
+$query = @'
 CREATE TABLE tbl_PoShDisk
 (
 [SystemName] VARCHAR(40) not null,
@@ -6,3 +9,9 @@ CREATE TABLE tbl_PoShDisk
 [TotalSize] int not null,
 [FreeSize] int not null
 )
+'@
+
+Invoke-Sqlcmd -ServerInstance echo -Database tempdb -Query $query
+
+
+
