@@ -1,18 +1,18 @@
+$ServerInstance = 'echo'
+$Database = 'tempdb'
+$ComputerName = 'echo'
 
-#Invoke-sqlcmd Connection string parameters
-$params = @{'server'='Echo';'Database'='tempdb'}
- 
 #function to retrieve disk information
-Function Get-DisksSpace ([string]$Servername)
+Function Get-DisksSpace ([string]$ComputerName)
 {
-Get-WmiObject win32_logicaldisk -ComputerName $Servername -Filter "Drivetype=3" |`
-select  SystemName,DeviceID,VolumeName,@{Label="Total SIze";Expression={$_.Size / 1gb -as [int] }},@{Label="Free Size";Expression={$_.freespace / 1gb -as [int] }}
+Get-CIMInstance win32_logicaldisk -ComputerName $ComputerName -Filter "Drivetype=3" |
+Select-Object SystemName,DeviceID,VolumeName,@{Label="Total SIze";Expression={$_.Size / 1gb -as [int] }},@{Label="Free Size";Expression={$_.freespace / 1gb -as [int] }}
 }
- 
+
 #Variable to hold output as data-table
-$dataTable = Get-DisksSpace hqdbsp18 |  Out-DataTable
+$dataTable = Get-DisksSpace $ComputerName |  Out-DataTable
 #Define Connection string
-$connectionString = "Data Source=echo; Integrated Security=True;Initial Catalog=tempdb;"
+$connectionString = "Data Source=$ServerInstance;Integrated Security=True;Initial Catalog=$Database;"
 #Bulk copy object instantiation
 $bulkCopy = new-object ("Data.SqlClient.SqlBulkCopy") $connectionString
 #Define the destination table 
@@ -20,4 +20,4 @@ $bulkCopy.DestinationTableName = "DiskInformation"
 #load the data into the target
 $bulkCopy.WriteToServer($dataTable)
 #Query the target table to see for output
-Invoke-Sqlcmd @params -Query "SELECT  * FROM DiskInformation" | format-table -AutoSize
+Invoke-Sqlcmd -ServerInstance $ServerInstance -Database $Database -Query 'SELECT  * FROM DiskInformation' | format-table -AutoSize
