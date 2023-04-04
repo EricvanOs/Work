@@ -4,7 +4,7 @@ $params = @{'server'='Echo';'Database'='tempdb'}
 $server = 'Echo'
 #Prepare Insert Statement
 $insert = @'
-	INSERT INTO [dbo].[tbl_PosHdisk](SystemName,DeviceID,VolumeName,TotalSize,FreeSize)
+	INSERT INTO [dbo].[DiskInformation](SystemName,DeviceID,VolumeName,TotalSize,FreeSize)
 	VALUES ('{0}','{1}','{2}','{3}','{4}')
 '@
  
@@ -32,4 +32,4 @@ Catch {
 	Throw $_
 }
  
-Invoke-Sqlcmd @params -Query "SELECT  * FROM tbl_PosHdisk" | format-table -AutoSize
+Invoke-Sqlcmd @params -Query "SELECT  * DiskInformation" | format-table -AutoSize

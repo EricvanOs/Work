@@ -13,7 +13,7 @@ param($server,$devId,$volName,$frSpace,$totSpace)
     $usedSpace=[Math]::Round($usedSpace,2)
 # Data preparation for loading data into SQL table 
 $InsertResults = @"
-INSERT INTO [dbo].[tbl_PosHdisk](SystemName,DeviceID,VolumeName,TotalSize,FreeSize)
+INSERT INTO [dbo].[DiskInformation](SystemName,DeviceID,VolumeName,TotalSize,FreeSize)
 VALUES ('$SERVER','$devId','$volName',$totSpace,$usedSpace)
 "@      
 #call the invoke-sqlcmdlet to execute the query
@@ -31,4 +31,4 @@ writeDiskInfo $sqlServer $item.DeviceID $item.VolumeName $item.FreeSpace $item.S
 }
 #Query the destination table to view the result
 
-Invoke-Sqlcmd @params -Query "SELECT  * FROM tbl_PosHdisk" | format-table -AutoSize
+Invoke-Sqlcmd @params -Query "SELECT  * FROM DiskInformation" | format-table -AutoSize

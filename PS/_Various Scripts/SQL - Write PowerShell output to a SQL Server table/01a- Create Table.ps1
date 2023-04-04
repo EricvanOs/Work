@@ -1,7 +1,8 @@
 # Create table in tempdb
-
+$ServerInstance = 'echo'
+$Database = 'tempdb'
 $query = @'
-CREATE TABLE tbl_PoShDisk
+CREATE TABLE DiskInformation
 (
 [SystemName] VARCHAR(40) not null,
 [DeviceID] VARCHAR(40) not null,
@@ -11,7 +12,7 @@ CREATE TABLE tbl_PoShDisk
 )
 '@
 
-Invoke-Sqlcmd -ServerInstance echo -Database tempdb -Query $query
+Invoke-Sqlcmd -ServerInstance $ServerInstance -Database $Database -Query $query
 
 
 

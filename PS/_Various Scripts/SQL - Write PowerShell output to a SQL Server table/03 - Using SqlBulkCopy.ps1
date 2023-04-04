@@ -1,6 +1,6 @@
 
 #Invoke-sqlcmd Connection string parameters
-$params = @{'server'='HQDBT01';'Database'='SQLShackDemo'}
+$params = @{'server'='Echo';'Database'='tempdb'}
  
 #function to retrieve disk information
 Function Get-DisksSpace ([string]$Servername)
@@ -12,12 +12,12 @@ select  SystemName,DeviceID,VolumeName,@{Label="Total SIze";Expression={$_.Size 
 #Variable to hold output as data-table
 $dataTable = Get-DisksSpace hqdbsp18 |  Out-DataTable
 #Define Connection string
-$connectionString = "Data Source=hqdbt01; Integrated Security=True;Initial Catalog=SQLShackDemo;"
+$connectionString = "Data Source=echo; Integrated Security=True;Initial Catalog=tempdb;"
 #Bulk copy object instantiation
 $bulkCopy = new-object ("Data.SqlClient.SqlBulkCopy") $connectionString
 #Define the destination table 
-$bulkCopy.DestinationTableName = "tbl_PosHdisk"
+$bulkCopy.DestinationTableName = "DiskInformation"
 #load the data into the target
 $bulkCopy.WriteToServer($dataTable)
 #Query the target table to see for output
-Invoke-Sqlcmd @params -Query "SELECT  * FROM tbl_PosHdisk" | format-table -AutoSize
+Invoke-Sqlcmd @params -Query "SELECT  * FROM DiskInformation" | format-table -AutoSize
