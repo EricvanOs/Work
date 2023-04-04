@@ -14,5 +14,6 @@ CREATE TABLE DiskInformation
 
 Invoke-Sqlcmd -ServerInstance $ServerInstance -Database $Database -Query $query
 
-
+# test
+Invoke-Sqlcmd -ServerInstance $ServerInstance -Database $Database -Query 'select * from DiskInformation'
 
