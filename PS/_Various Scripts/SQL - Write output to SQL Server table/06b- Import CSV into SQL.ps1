@@ -2,8 +2,8 @@ $Path = '\\pantheon\data\Courses\PowerShell\DiskSpace.csv'
 $ServerInstance = 'echo'
 $Database = 'tempdb'
 $query = @"
---Create table.
-
+drop table if exists CSVDiskInformation
+GO
 CREATE TABLE CSVDiskInformation
 (
 [SystemName] VARCHAR(40),
@@ -12,6 +12,7 @@ CREATE TABLE CSVDiskInformation
 [TotalSize] VARCHAR(40),
 [FreeSize] VARCHAR(40)
 )
+GO
 
 --Load the data into the SQL table starting with 2 row, comma(',') as delimiter and newline as rowseparator
 

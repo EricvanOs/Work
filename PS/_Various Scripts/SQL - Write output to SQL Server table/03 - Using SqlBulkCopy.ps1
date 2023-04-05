@@ -6,7 +6,7 @@ $ComputerName = 'echo'
 Function Get-DisksSpace ([string]$ComputerName)
 {
 Get-CIMInstance win32_logicaldisk -ComputerName $ComputerName -Filter "Drivetype=3" |
-Select-Object SystemName,DeviceID,VolumeName,@{Label="Total SIze";Expression={$_.Size / 1gb -as [int] }},@{Label="Free Size";Expression={$_.freespace / 1gb -as [int] }}
+Select-Object SystemName,DeviceID,VolumeName,@{Label="Total Size";Expression={$_.Size / 1gb -as [int] }},@{Label="Free Size";Expression={$_.freespace / 1gb -as [int] }}
 }
 
 #Variable to hold output as data-table
