@@ -2,6 +2,8 @@
 $ServerInstance = 'echo'
 $Database = 'tempdb'
 $query = @'
+drop table if exists dbo.Diskinformation;
+go
 CREATE TABLE DiskInformation
 (
 [SystemName] VARCHAR(40) not null,

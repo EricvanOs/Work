@@ -31,4 +31,8 @@ foreach ($item in $items){
 
 
 # Query the destination table to view the result
-Invoke-Sqlcmd serverinstance $ServerInstance -Database $Database -Query 'SELECT  * FROM DiskInformation' | format-table -AutoSize
+Invoke-Sqlcmd -ServerInstance $ServerInstance -Database $Database -Query 'SELECT  * FROM DiskInformation' | format-table -AutoSize
+
+
+# truncate table
+Invoke-Sqlcmd -ServerInstance $ServerInstance -Database $Database -Query 'truncate table dbo.Diskinformation'

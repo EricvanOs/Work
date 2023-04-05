@@ -19,5 +19,9 @@ $bulkCopy = new-object ("Data.SqlClient.SqlBulkCopy") $connectionString
 $bulkCopy.DestinationTableName = "DiskInformation"
 #load the data into the target
 $bulkCopy.WriteToServer($dataTable)
+
 #Query the target table to see for output
 Invoke-Sqlcmd -ServerInstance $ServerInstance -Database $Database -Query 'SELECT  * FROM DiskInformation' | format-table -AutoSize
+
+# truncate table
+Invoke-Sqlcmd -ServerInstance $ServerInstance -Database $Database -Query 'truncate table dbo.Diskinformation'

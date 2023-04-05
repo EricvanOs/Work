@@ -2,6 +2,7 @@ $Path = '\\pantheon\data\Courses\PowerShell\DiskSpace.JSON'
 $ServerInstance = 'echo'
 $Database = 'tempdb'
 $query = @"
+Insert into DiskInformation(SystemName,DeviceID,VolumeName,TotalSize,FreeSize)
 SELECT t.*
 FROM
 OPENROWSET(BULK N'$Path', SINGLE_NCLOB) AS JSON
@@ -16,3 +17,7 @@ OPENROWSET(BULK N'$Path', SINGLE_NCLOB) AS JSON
 "@
 
 Invoke-Sqlcmd -ServerInstance $ServerInstance -Database $Database -Query $query
+
+# test
+Invoke-Sqlcmd -ServerInstance $ServerInstance -Database $Database -Query 'select * from DiskInformation'
+

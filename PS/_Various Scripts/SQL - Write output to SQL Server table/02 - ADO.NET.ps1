@@ -29,4 +29,7 @@ Catch {
 	Throw $_
 }
 
-Invoke-Sqlcmd -ServerInstance $ServerInstance -Database $Database -Query 'SELECT  * DiskInformation' | format-table -AutoSize
+Invoke-Sqlcmd -ServerInstance $ServerInstance -Database $Database -Query 'SELECT  * from DiskInformation' | format-table -AutoSize
+
+# truncate table
+Invoke-Sqlcmd -ServerInstance $ServerInstance -Database $Database -Query 'truncate table dbo.Diskinformation'
