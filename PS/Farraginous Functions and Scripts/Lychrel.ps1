@@ -1,4 +1,9 @@
-[uint64]$a =  89  # 7889, 196
+function Lychrel{
+    param(
+        [uint64]$a
+    )
+
+# [uint64]$a =  89  # 7889, 196
 [uint64]$c =   0
 
 do {
@@ -8,4 +13,8 @@ do {
     [uint64]$c = -join($b)
     write-host $a
 } until ($a -eq $c)
+}
 
+# test
+# Lychrel(95)
+# Lychrel(89)
