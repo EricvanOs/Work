@@ -1,15 +1,23 @@
-Set-Location -Path C:\Work\PS\Temp
+﻿$x = 5
+$y = $null
 
-New-Item -ItemType File -Name 'sample1.txt' 
+$x + $y
+$x * $y
 
-# don't show output
-New-Item -ItemType File -Name 'sample2.txt' | Out-Null
+$z = 'abc'
+$y + $z
 
-[void](New-Item -ItemType File -Name 'sample3.txt')
+if ($y -eq 0){
+  write-host 'NULL is equal to zero'
+}
+else {
+  write-host 'NULL is not equal to zero'
+}
 
-New-Item -ItemType File -Name 'sample4.txt' > $null
 
-$null = (New-Item -ItemType File -Name 'sample5.txt')
+($x).Length
+($y).length
+($z).length
 
-#cleanup 
-Get-Item -Path .\* -Filter "sample?.txt" | Remove-Item 
+# $null is not equivalent to NULL in SQL Server
+# $null lijkt op blank() in DAX

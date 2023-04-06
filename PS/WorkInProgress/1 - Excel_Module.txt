@@ -1,3 +1,0 @@
-module excel use:
-	ExcelImport
-	psExcel
