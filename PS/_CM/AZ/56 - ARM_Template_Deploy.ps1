@@ -27,7 +27,7 @@ New-AzResourceGroupDeployment `
 
 
 Start-Job -Name Cleanup -ScriptBlock{
- Get-AzResourceGroup -Name $using:ResourceGroupName | Remove-AzResourceGroup -Force -Confirm:$false
+  Get-AzResourceGroup -Name $using:ResourceGroupName | Remove-AzResourceGroup -Force -Confirm:$false
 } 
 
 Get-Job -Name Cleanup

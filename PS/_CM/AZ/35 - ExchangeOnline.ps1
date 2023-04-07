@@ -1,27 +1,7 @@
-# Install-Module -Name ExchangeOnlineManagement 
-Import-Module ExchangeOnlineManagement -UseWindowsPowerShell
+# https://learn.microsoft.com/en-us/powershell/exchange/connect-to-exchange-online-powershell?view=exchange-ps
 
-get-command -Module ExchangeOnlineManagement
+Import-Module ExchangeOnlineManagement
 
-<#
-winrm get winrm/config/client/auth
-winrm set winrm/config/client/auth '@{Basic="true"}'
-#>
+Connect-ExchangeOnline -UserPrincipalName 'ericvanos@xhelios.onmicrosoft.com'
 
-Connect-ExchangeOnline 
-
-Get-EXOMailbox
-get-mailbox #fails, see winrm remarks
-
-# if module is not needed anymore
-# Uninstall-Module -Name ExchangeOnlineManagement 
-
-<#
-# use in cloudshell (don't want to change my local/gpo settings)
-
-# Install-Module -Name ExchangeOnlineManagement
-
-Connect-ExchangeOnline
-
-get-mailbox
-#>
+Get-Command -Module ExchangeOnlineManagement

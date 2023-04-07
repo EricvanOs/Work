@@ -1,44 +1,32 @@
-# import with parameter , run Get-Module -list AzureAD ; PSEdition = Desk 
-# vooralsnog zijn beide imports nodig 
+# connection
+Connect-MgGraph  -Scopes "RoleManagement.Read.Directory", "Directory.Read.All", "RoleManagement.ReadWrite.Directory"
 
-Import-Module AzureAD -SkipEditionCheck
-Import-Module AzureAD -UseWindowsPowerShell
-Connect-AzureAD 
+# search template to use
+$roleTemplate = Get-MgDirectoryRoleTemplate | Where-Object {$_.displayName -eq 'User Administrator'}
 
-<#
-AzureAD cmdlets require you to identify whether a role is already in use before you can assign it to a user. 
-If no users have been assigned to a role, then it exists only as a template, and you need to enable
-the role before you can add users to it. 
-You can use the Get-AzureADDirectoryRole cmdlet to review the
-roles that are enabled. Use the Get-AzureADDirectoryRoleTemplate cmdlet to review the roles that
-aren't yet enabled.
-The following example depicts how to enable the User Administrator role. When you enable the role, you
-need to refer to the object ID of the template:
-#>
+$params = @{
+	RoleTemplateId = $roleTemplate.id
+}
+New-MgDirectoryRole -BodyParameter $params  #will fail as role is already available in the directory
 
-$roleTemplate = Get-AzureADDirectoryRoleTemplate | Where-Object {$_.displayName -eq 'User Administrator'}
-# if role has been enabled, no need to enable again (will give an error)
-Enable-AzureADDirectoryRole -RoleTemplateId $roleTemplate.ObjectId
+# add user to role
+$user = Get-MgUser -UserId AbbieP@in-li.eu
+$role = Get-MgDirectoryRole | Where-Object {$_.displayName -eq 'User Administrator'}
 
-<#
-After you enable the role, you can add a role member to assign administrative permissions by using the
-Add-AzureADDirectoryRoleMember cmdlet. The following example depicts how to add an account to
-the User Administrator role. The -ObjectId parameter refers to the ObjectID of the role. The -RefObjectId
-parameter refers to the ObjectID of the user account:
-#>
+$DirObject = @{
+    "@odata.id" = "https://graph.microsoft.com/v1.0/directoryObjects/$($user.id)"
+    }
 
-$user = Get-AzureADUser -ObjectID AbbieP@in-li.eu
-$role = Get-AzureADDirectoryRole | Where-Object {$_.displayName -eq 'User Administrator'}
-Add-AzureADDirectoryRoleMember -ObjectId $role.ObjectId -RefObjectId $user.ObjectID
+New-MgDirectoryRoleMemberByRef -DirectoryRoleId $role.id -BodyParameter $DirObject
 
-
-# controle via interface
-# or
-Get-AzureADDirectoryRoleMember -ObjectId $role.ObjectId
-
+# test if user is member of role
+# entities of a role
+Get-MgDirectoryRoleMember -DirectoryRoleId $role.Id
+# compare with
+$user
 
 # remove user from role
-Remove-AzureADDirectoryRoleMember -ObjectId $role.ObjectId -MemberId $user.ObjectId
+Remove-MgDirectoryRoleMemberByRef -DirectoryRoleId $role.id -DirectoryObjectId $user.id
 
-
-# cleanup user as well
+# verify
+Get-MgDirectoryRoleMember -DirectoryRoleId $role.Id

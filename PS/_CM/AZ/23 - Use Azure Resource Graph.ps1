@@ -1,6 +1,6 @@
 function Find-AzureVMFromComputerName
 {
-   
+
     Param (
         [Parameter(Mandatory=$true,
         ValueFromPipeline=$true)]
