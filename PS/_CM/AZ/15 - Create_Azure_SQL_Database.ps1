@@ -43,4 +43,4 @@ New-AzSqlDatabase  -ResourceGroupName $resourceGroupName `
     -SampleName 'AdventureWorksLT'
 
 # Clean up deployment 
- Remove-AzResourceGroup -ResourceGroupName $resourceGroupName
+Remove-AzResourceGroup -ResourceGroupName $resourceGroupName

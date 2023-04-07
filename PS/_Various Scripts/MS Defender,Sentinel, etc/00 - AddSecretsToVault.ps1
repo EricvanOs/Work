@@ -37,3 +37,7 @@ Set-Secret -Name "$RegApp-Secret" -Secret 'DuEblablabalblablabla' -Vault $vault 
 
 # close vault
 Close-HeliosVault
+
+
+# easier use
+Manage-HeliosSecrets

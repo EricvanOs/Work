@@ -40,3 +40,6 @@ Get-MgUser | Where-Object{$_.DisplayName -eq 'Danny Argo'} | Select-Object -Prop
 # delete account
 $userId = Get-MgUser | Where-Object{$_.DisplayName -eq 'Danny Argo'} | Select-Object -ExpandProperty id
 Remove-MgUser -UserId $userId
+
+# verify
+Get-MgUser | Where-Object{$_.DisplayName -eq 'Danny Argo'}
