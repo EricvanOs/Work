@@ -48,24 +48,10 @@ Connect-MgGraph -Scopes
 Get-MgPolicyTokenLifetimePolicy
 New-AzureADUser @UserParams -PasswordProfile $UserPassword -AccountEnabled $true
 
-#test
-Get-AzureADUser -ObjectId AbbieP@in-li.eu
-Get-AzureADUser -ObjectId 1002e9f6-6269-417d-9bc8-e016527c540f
-
-#all the user accounts in a Microsoft 365 tenant:
-Get-AzureADUser -All $true
-
-
-#cleanup, user needed in next examples
-# Get-AzureADUser -ObjectId AbbieP@in-li.eu | Remove-AzureADUser
-
-# https://learn.microsoft.com/en-us/powershell/microsoftgraph/migration-steps?view=graph-powershell-1.0
-
-
 
 
 $Certificate=New-SelfSignedCertificate -Subject testing.com -CertStoreLocation Cert:\CurrentUser\My 
-
+$Certificate
 
 Connect-MgGraph -ClientID '14d82eec-204b-4c2f-b7e8-296a70dab67e' -TenantId 'c395f110-ab2e-44ab-b096-7000e2511b32' -CertificateName 'CN=testing.com'
 
