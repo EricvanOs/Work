@@ -1,13 +1,4 @@
-# run ISE, not yet compatible with powershell 7
-
-#if needed
-# Install-Module -Name Microsoft.Online.SharePoint.PowerShell 
-
-#if needed
-# Update-Module -Name Microsoft.Online.SharePoint.PowerShell
-
-
-Import-Module -Name Microsoft.Online.SharePoint.PowerShell -verbose  #with verbose is necessary
+Import-Module Microsoft.Online.SharePoint.PowerShell -UseWindowsPowerShell    # implicit remoting
 
 # list of commands in module
 get-command -Module Microsoft.Online.SharePoint.PowerShell
