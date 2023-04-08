@@ -46,5 +46,5 @@ Get-MgPolicyTokenLifetimePolicy
 
 Connect-MgGraph -Scopes 
 Get-MgPolicyTokenLifetimePolicy
-New-AzureADUser @UserParams -PasswordProfile $UserPassword -AccountEnabled $true
+
 

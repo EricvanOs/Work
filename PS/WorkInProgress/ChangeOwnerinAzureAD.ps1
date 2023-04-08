@@ -21,4 +21,8 @@ Remove-AzureADDeviceRegisteredOwner -ObjectId 9cfabe6a-xxxx-xxxx-xxxx-xxxxxxxxxx
 https://matrixpost.net/change-owner-for-azure-ad-joined-windows-10-devices/
 
 https://docs.microsoft.com/en-us/troubleshoot/azure/active-directory/pending-devices
+
 #>
+
+
+
