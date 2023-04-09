@@ -1,0 +1,1 @@
+﻿unblock-file -Path (Get-ChildItem -Path c:\*.* -File -Recurse -ErrorAction Ignore | Get-Item -Stream * | Where-Object{$_.stream -ne ':$DATA'} ).filename
