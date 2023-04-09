@@ -1,17 +1,21 @@
-﻿$NoTimeout = New-PSSessionOption -OperationTimeout 0
-$ses = New-PSSession -ComputerName athena.pantheon.somewhere -SessionOption $NoTimeout -Name 'WSUSCleanUp'
-Invoke-Command -Session $ses -ScriptBlock{
+﻿function WSUSServer_Cleanup{
+    param()
 
-    Get-WsusServer |  Invoke-WsusServerCleanup -CleanupObsoleteUpdates;
-    Get-WsusServer |  Invoke-WsusServerCleanup -CleanupUnneededContentFiles;
-    Get-WsusServer |  Invoke-WsusServerCleanup -DeclineExpiredUpdates;
-    Get-WsusServer |  Invoke-WsusServerCleanup -DeclineSupersededUpdates;
-} -AsJob -JobName 'Cleanup'
+    $NoTimeout = New-PSSessionOption -OperationTimeout 0
+    $ses = New-PSSession -ComputerName athena.pantheon.somewhere -SessionOption $NoTimeout -Name 'WSUSCleanUp'
+    Invoke-Command -Session $ses -ScriptBlock{
 
-Get-Job 'Cleanup' | Wait-Job
+        Get-WsusServer |  Invoke-WsusServerCleanup -CleanupObsoleteUpdates;
+        Get-WsusServer |  Invoke-WsusServerCleanup -CleanupUnneededContentFiles;
+        Get-WsusServer |  Invoke-WsusServerCleanup -DeclineExpiredUpdates;
+        Get-WsusServer |  Invoke-WsusServerCleanup -DeclineSupersededUpdates;
+    } -AsJob -JobName 'Cleanup'
 
-Receive-Job 'Cleanup' 
+    Get-Job 'Cleanup' | Wait-Job
 
-Remove-Job 'Cleanup'
+    Receive-Job 'Cleanup' 
 
-Get-PSSession -Name 'WSUSCleanup' | Remove-PSSession
+    Remove-Job 'Cleanup'
+
+    Get-PSSession -Name 'WSUSCleanup' | Remove-PSSession
+}

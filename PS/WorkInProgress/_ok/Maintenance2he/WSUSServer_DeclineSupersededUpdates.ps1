@@ -1,30 +1,33 @@
-﻿$NoTimeout = New-PSSessionOption -OperationTimeout 0
-$ses = New-PSSession -ComputerName athena.pantheon.somewhere -SessionOption $NoTimeout
-Invoke-Command -Session $ses -ScriptBlock{
+﻿function WSUSServer_DeclineSupersededUpdates{
+    param()
 
-    $server = 'Athena'
-    $port = '8530'
-    #Write-Progress -Activity 'Getting WSUS server'
-    $WSUSserver = Get-WsusServer -Name $server -PortNumber $port
-    #Write-Progress -Activity 'Getting approved updates, this may take a while...' -PercentComplete -1
-    $approvedupdates = Get-WsusUpdate -UpdateServer $WSUSserver -Approval Approved -Status InstalledOrNotApplicableOrNoStatus
-    #Write-Progress -Activity 'Retrieved updates' -PercentComplete 90
-    $i = 0
-    $superseded = $approvedupdates | ? {$_.Update.IsSuperseded -eq $true -and $_.ComputersNeedingThisUpdate -eq 0}
-    $total = $superseded.count
-    foreach ($update in $superseded)
-    {
-        #Write-Progress -Activity 'Declining updates' -Status "$($update.Update.Title)" -PercentComplete (($i/$total) * 100)
-        $update.Update.Decline()
-        $i++
-    }
+    $NoTimeout = New-PSSessionOption -OperationTimeout 0
+    $ses = New-PSSession -ComputerName athena.pantheon.somewhere -SessionOption $NoTimeout
+    Invoke-Command -Session $ses -ScriptBlock{
 
-    Write-Host "Total declined updates: $total" -ForegroundColor Yellow
-} -AsJob -JobName 'DeclineSupersededUpdates'
+        $server = 'Athena'
+        $port = '8530'
+        #Write-Progress -Activity 'Getting WSUS server'
+        $WSUSserver = Get-WsusServer -Name $server -PortNumber $port
+        #Write-Progress -Activity 'Getting approved updates, this may take a while...' -PercentComplete -1
+        $approvedupdates = Get-WsusUpdate -UpdateServer $WSUSserver -Approval Approved -Status InstalledOrNotApplicableOrNoStatus
+        #Write-Progress -Activity 'Retrieved updates' -PercentComplete 90
+        $i = 0
+        $superseded = $approvedupdates | ? {$_.Update.IsSuperseded -eq $true -and $_.ComputersNeedingThisUpdate -eq 0}
+        $total = $superseded.count
+        foreach ($update in $superseded)
+        {
+            #Write-Progress -Activity 'Declining updates' -Status "$($update.Update.Title)" -PercentComplete (($i/$total) * 100)
+            $update.Update.Decline()
+            $i++
+        }
 
-Get-Job 'DeclineSupersededUpdates' | Wait-Job
+        Write-Host "Total declined updates: $total" -ForegroundColor Yellow
+    } -AsJob -JobName 'DeclineSupersededUpdates'
 
-Receive-Job 'DeclineSupersededUpdates'
+    Get-Job 'DeclineSupersededUpdates' | Wait-Job
 
-Get-PSSession | Remove-PSSession
+    Receive-Job 'DeclineSupersededUpdates'
 
+    Get-PSSession | Remove-PSSession
+}

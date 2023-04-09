@@ -1,14 +1,18 @@
-﻿$ses = New-PSSession -ComputerName sisyphus
-Invoke-Command -Session $ses -ScriptBlock{
+﻿function GPO_Backup{
+    param()
 
-    $BackupPath = '\\pantheon\data\misc\Backups\GPO'  + '\' + (get-date).ToString("yyyy-MM-dd-hh-mm-ss")
+    $ses = New-PSSession -ComputerName sisyphus
+    Invoke-Command -Session $ses -ScriptBlock{
 
-    New-Item $BackupPath  -type directory
+        $BackupPath = '\\pantheon\data\misc\Backups\GPO'  + '\' + (get-date).ToString("yyyy-MM-dd-hh-mm-ss")
 
-    Get-GPO -Domain pantheon.somewhere -All | Backup-GPO -Path $BackupPath  
-    
+        New-Item $BackupPath  -type directory
+
+        Get-GPO -Domain pantheon.somewhere -All | Backup-GPO -Path $BackupPath  
+        
+    }
+
+    Remove-PSSession $ses
 }
-
-Remove-PSSession $ses
 
 

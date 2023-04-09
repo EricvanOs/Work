@@ -1,19 +1,23 @@
-﻿$ses = New-PSSession -ComputerName sisyphus
-Invoke-Command -Session $ses -ScriptBlock{
+﻿function DNS_ExportSettings{
+    param()
 
-    $zones = Get-DnsServerZone | Where-Object{$_.isautocreated -eq $false -and $_.isReverselookupZone -eq $false};
-    $d = (get-date).ToString("yyyy-MM-dd");
-    $bd = '\\pantheon\data\Misc\Backups\DNS\';
-    new-item -Path $bd  -name $d -ItemType directory;
+    $ses = New-PSSession -ComputerName sisyphus
+    Invoke-Command -Session $ses -ScriptBlock{
 
-    foreach ($zone in $zones){
+        $zones = Get-DnsServerZone | Where-Object{$_.isautocreated -eq $false -and $_.isReverselookupZone -eq $false};
+        $d = (get-date).ToString("yyyy-MM-dd");
+        $bd = '\\pantheon\data\Misc\Backups\DNS\';
+        new-item -Path $bd  -name $d -ItemType directory;
 
-        $a = $zone.ZoneName 
-        Export-DnsServerZone -ComputerName sisyphus -name  $a  -FileName ('..\..\..\' + 'a.dns')
-        move-item -path 'c:\a.dns' -Destination ($bd + $d + '\' + "$a.dns")
+        foreach ($zone in $zones){
 
-    };
+            $a = $zone.ZoneName 
+            Export-DnsServerZone -ComputerName sisyphus -name  $a  -FileName ('..\..\..\' + 'a.dns')
+            move-item -path 'c:\a.dns' -Destination ($bd + $d + '\' + "$a.dns")
 
+        };
+
+    }
+
+    Remove-PSSession $ses
 }
-
-Remove-PSSession $ses

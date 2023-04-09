@@ -37,4 +37,3 @@ foreach($comp in $computername){
 
 }
 
-Backup-SSIS -ComputerName 'Hypnos'
