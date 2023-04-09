@@ -1,16 +1,4 @@
-﻿Get-Help Get-Process -Online
-
-# test 
-Start-Process -FilePath Notepad -WindowStyle Hidden
-Get-Process notepad
-$id = (Get-Process notepad).id
-Get-Process $id   # fail because parameter id is a "named" parameter 
-Get-Process -Id $id
-
-
-
-
-# looking for hotfixes on specific computers
+﻿# looking for hotfixes on specific computers
 
 Get-Help Get-HotFix -Online
 
@@ -32,7 +20,7 @@ Get-ADComputer -Filter 'Name -like "e*us"' | Select-Object @{n='ComputerName';e=
 # Verify if an update is installed and if not, write computer name to a file
 # looks as if it doesn't work, but it does, albeit error messages
 
-Set-Location -Path k:\
+Set-Location -Path 'C:\Work\PS\_CM\H03B'
 $hotfixid = 'KB957095'
 $servers = Get-Content -Path .\Servers.txt
 $servers | ForEach-Object { if (!(Get-HotFix -Id $hotfixid -ComputerName $_)){ 
@@ -44,7 +32,6 @@ Get-HotFix -ComputerName erebus -Id xyz
 Get-HotFix -ComputerName erebus -Id xyz -ErrorAction SilentlyContinue
 
 # again
-Set-Location -Path k:\
 $hotfixid = 'KB957095'
 $servers = Get-Content -Path .\Servers.txt
 $servers | ForEach-Object { if (!(Get-HotFix -Id $hotfixid -ComputerName $_  -ErrorAction SilentlyContinue)){ 
