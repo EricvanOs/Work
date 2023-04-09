@@ -1,3 +1,5 @@
+# https://learn.microsoft.com/en-us/graph/auth-limit-mailbox-access
+
 <#
 Configure ApplicationAccessPolicy
 To configure an application access policy and limit the scope of application permissions:
