@@ -21,18 +21,18 @@ Get-ADComputer -Filter 'Name -like "e*us"' | Select-Object @{n='ComputerName';e=
 # looks as if it doesn't work, but it does, albeit error messages
 
 Set-Location -Path 'C:\Work\PS\_CM\H03B'
-$hotfixid = 'KB957095'
+$hotfixid = 'KB4499728'
 $servers = Get-Content -Path .\Servers.txt
 $servers | ForEach-Object { if (!(Get-HotFix -Id $hotfixid -ComputerName $_)){ 
     Add-Content $_ -Path .\"Missing-$($hotfixid).txt" }
 }
 
 # test
-Get-HotFix -ComputerName erebus -Id xyz
-Get-HotFix -ComputerName erebus -Id xyz -ErrorAction SilentlyContinue
+Get-HotFix -ComputerName echo -Id xyz
+Get-HotFix -ComputerName echo -Id xyz -ErrorAction SilentlyContinue
 
 # again
-$hotfixid = 'KB957095'
+$hotfixid = 'KB4499728'
 $servers = Get-Content -Path .\Servers.txt
 $servers | ForEach-Object { if (!(Get-HotFix -Id $hotfixid -ComputerName $_  -ErrorAction SilentlyContinue)){ 
     Add-Content $_ -Path .\"Missing-$($hotfixid).txt" }
