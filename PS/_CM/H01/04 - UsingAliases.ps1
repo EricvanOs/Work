@@ -39,8 +39,8 @@ Format-Table -AutoSize
 
 # of zo sinds ps 7
 Get-Process 
- | Where-Object{$_.PagedMemorySize64 -gt 1000} 
- | Format-Table -AutoSize
+    | Where-Object{$_.PagedMemorySize64 -gt 1000} 
+    | Format-Table -AutoSize
 
 
 <# 
