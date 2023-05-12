@@ -6,6 +6,17 @@ Get-Help about_aliases
 Get-Help about_Aliases -ShowWindow
 
 
+# strings
+
+'abc' + 'def'
+"abc" + "def"
+$a = 'def'
+'abc' + '$a'
+'abc' + "$a"
+"abc$a"
+"abc`$a"
+
+
 # bijzondere tekens met ` (backtick)
 Get-Help about_Special_Characters 
 "a`vb"   # v vertical tab, let op backtick ipv single quote
@@ -16,13 +27,3 @@ Get-Help about_Special_Characters
 
 'abc' + "`r`n"  + 'def'
 'abc' + '`r`n'  + 'def'  #werkt niet
-
-# strings
-
-'abc' + 'def'
-"abc" + "def"
-$a = 'def'
-'abc' + '$a'
-'abc' + "$a"
-"abc$a"
-"abc`$a"
