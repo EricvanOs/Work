@@ -13,11 +13,11 @@ Get-ADUser -Filter * | Get-Member
 # 5
 Get-ADUser -Filter * -Properties * | Get-Member
 
-#6
+# 6a
 Get-ADUser -Filter * -Properties sid,surname | Get-Member
 
-#6 selected-member
+# 6b selected-member
 Get-ADUser -Filter * -Properties sid,surname | Select-Object -Property sid | Get-Member
 
-#7 letop format breekt alles
+# 7 letop format breekt alles
 Get-ADUser -Filter * -Properties sid,surname | Format-Table -AutoSize | Get-Member
