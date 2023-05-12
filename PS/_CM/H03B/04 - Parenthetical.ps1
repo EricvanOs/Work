@@ -3,7 +3,7 @@ New-ADUser -SamAccountName 'PietjePuk' -GivenName 'Piet' -Surname 'Puk' -Display
         -Path 'OU=PSTest,DC=Pantheon,DC=somewhere' -name 'PietjeP' -City 'London'
 
 New-ADGroup -Name PSHelpdesk -SamAccountName PSHelpdesk -GroupCategory Security -GroupScope Global `
-            -Path  'OU=PSTest,DC=Pantheon,DC=somewhere' -DisplayName PSHelpdesk
+        -Path  'OU=PSTest,DC=Pantheon,DC=somewhere' -DisplayName PSHelpdesk
 
 # 
 Get-ADGroup 'PSHelpdesk' | Add-ADGroupMember  # welke users toevoegen ?
