@@ -11,8 +11,8 @@ $hashtable.Values | Out-string -stream
 $hashtable.GetEnumerator() |Foreach-Object{ $_ | Out-String }
 
 $LogNameKeys = @{
-      LogName = @("System", "Application", "Security")
-  }
+    LogName = @("System", "Application", "Security")
+}
 #Convert the hashtable to a string
 $LogNameKeys.Values | Out-String -Stream 
 
