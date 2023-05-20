@@ -26,8 +26,8 @@ Import-Csv .\users_no_header.csv  # niet wat je wilt
 $users = Import-Csv .\users_no_header.csv -Header FirstName,LastName,FullName,Department
 $users.count
 $users[0]
-$users[0].First
-$users.First
+$users[0].FirstName
+$users.FirstName
 
 
 #Use Import-Clixml to import data from an XML file
