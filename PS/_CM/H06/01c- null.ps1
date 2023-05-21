@@ -1,13 +1,12 @@
-﻿$x = 5
-$y = $null
+﻿$x = $null
+$y = 56
+$z = 'abc'
 
 $x + $y
 $x * $y
+$x + $z
 
-$z = 'abc'
-$y + $z
-
-if ($y -eq 0){
+if ($x -eq 0){
   write-host 'NULL is equal to zero'
 }
 else {

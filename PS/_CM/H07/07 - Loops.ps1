@@ -5,12 +5,12 @@ for ($i=2; $i -le 1000; $i=$i*$i) {$i}
 
 # while-loop
 while(($inp = Read-Host -Prompt 'Select a command') -ne 'Q'){
-  switch($inp){
-    L {'File will be deleted'}
-    A {'File will be displayed'}
-    R {'File will be write protected'}
-    Q {'End'}
-    default {'Invalid entry'}
+   switch($inp){
+      L {'File will be deleted'}
+      A {'File will be displayed'}
+      R {'File will be write protected'}
+      Q {'End'}
+      default {'Invalid entry'}
    }
 }
 
@@ -33,7 +33,7 @@ do{
 # bad practice
 $i=1;$j=1
 while($i -lt 20){
-    write-host "$i $j"
+   write-host "$i $j"
    if(($i % 7) -eq 0) {break :DoLoop}
    $j++
    $i=$i+$j 

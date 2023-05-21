@@ -8,5 +8,8 @@ $ipv6Literal = $ipv6.IPAddressToString.Replace(":","-")+'.ipv6-literal.net'
 $ipv6Literal
 
 # test
-Test-NetConnection -ComputerName $ipv6Literal
+
+$ProgressPreference = 'SilentlyContinue'
+Test-NetConnection -ComputerName $ipv6Literal 
 Test-NetConnection -ComputerName $ipv6
+$ProgressPreference = 'Continue'
