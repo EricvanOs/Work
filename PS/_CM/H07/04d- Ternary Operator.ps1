@@ -2,9 +2,8 @@
 $valueA = 50
 $valueB = 100
 # Using simple then/else statements
-$valueA -gt $valueB ? "$valueA is greater than $valueB." : "$valueA is less than $valueB."
-# Using complex then/else statements
-($valueA -gt $valueB) ? (Write-Host "$valueA is greater than $valueB.") : (Write-Host "$valueA is less than $valueB.")
+$valueA -eq $valueB ? "$valueA is equal to $valueB." : "$valueA is not equal to $valueB."
+
 
 # use cases
 # Stopping services
