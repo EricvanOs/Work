@@ -12,10 +12,10 @@ $objects = @{
     ReferenceObject = (Get-Content -Path .\Testfile1.txt)
     DifferenceObject = (Get-Content -Path .\Testfile2.txt)
   }
-  Compare-Object @objects -ExcludeDifferent
+Compare-Object @objects -ExcludeDifferent
 
- 
-  # compare on a property of object
-  Compare-Object -ReferenceObject 'abc' -DifferenceObject 'xyz' -Property Length -IncludeEqual
+
+# compare on a property of object
+Compare-Object -ReferenceObject 'abc' -DifferenceObject 'xyz' -Property Length -IncludeEqual
 
   
