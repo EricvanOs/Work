@@ -18,7 +18,7 @@ Copy-Item -Path .\cred.xml -Destination '\\cerberus\c$\temp\cred.xml'
 Remove-Item -Path '\\cerberus\c$\temp\cred.xml'
 
 # retrieve password
-$cred.GetNetworkCredential().password 
+$cred.GetNetworkCredential().password
 
 # example
 Enter-PSSession -ComputerName sisyphus -Credential (Get-Credential)
