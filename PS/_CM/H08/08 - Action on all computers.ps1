@@ -13,12 +13,13 @@ get-PSSession  | Remove-PSSession
 #use output (list of computers)
 
 $ErrorActionPreference = 'SilentlyContinue'  # better use try and catch
-
 foreach ($comp in $comps){
   Write-host $comp
   $ses = New-PSSession -ComputerName $comp
   Invoke-Command -Session $ses -ScriptBlock {
       # Your commands on remote machine
       }
-  get-PSSession  | Remove-PSSession
+  Get-PSSession  | Remove-PSSession
 } 
+$ErrorActionPreference = 'Continue'
+

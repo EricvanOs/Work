@@ -14,7 +14,7 @@ Get-Module -Name DhcpServer | Select-Object -ExpandProperty ExportedCommands
 
 Get-RemDhcpServerv4Lease -ScopeId 192.168.82.0
 
-Get-ChildItem -Path k:\   # Lokaal !!
+Get-ChildItem -Path c:\Work   # Lokaal !!
 
 # 5
 $dc | Remove-PSSession
