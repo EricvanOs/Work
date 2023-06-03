@@ -2,7 +2,7 @@
 .SYNOPSIS
 Queries a remote computer for BIOS information.
 .DESCRIPTION
-Use this script to obtain BIOS inforamtion from remote computers. You must have sufficient permissions to query this information.
+Use this script to obtain BIOS information from remote computers. You must have sufficient permissions to query this information.
 .PARAMETER ComputerName
 The name of the remote computer that is being queried.
 .EXAMPLE
