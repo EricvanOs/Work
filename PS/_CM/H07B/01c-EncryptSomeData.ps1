@@ -2,10 +2,10 @@
 
 # Creating a Certificate with New-SelfSignedCertificate 
 New-SelfSignedCertificate -DnsName Amphitrite -CertStoreLocation "Cert:\CurrentUser\My" -KeyUsage KeyEncipherment,DataEncipherment, KeyAgreement -Type DocumentEncryptionCert
- 
+
 # test, is really available 
 Get-Childitem -Path Cert:\CurrentUser\My -DocumentEncryptionCert
- 
+
 # get name of certificate , ONLY 1
 $subject = (Get-Childitem -Path Cert:\CurrentUser\My -DocumentEncryptionCert)[0] | select-object -ExpandProperty Subject
 
@@ -14,10 +14,10 @@ $subject = (Get-Childitem -Path Cert:\CurrentUser\My -DocumentEncryptionCert)[0]
 
 # test
 Get-Content -Path .\secret.txt
- 
+
 # Decrypt some data 
 Unprotect-CmsMessage -Path .\secret.txt
- 
+
 
 # test with codesigning certificate --> Error if you encrypt data
 $subject = Get-ChildItem -Path Cert:\CurrentUser\My -CodeSigningCert | select-object -ExpandProperty Subject
