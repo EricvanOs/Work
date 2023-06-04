@@ -1,16 +1,7 @@
-﻿import-module sqlserver
+﻿$sql = 'Clio'
 
-Get-PSDrive
+Import-Module sqlserver  # needed for PSDrive
 
-Set-Location sqlserver:\
-
-Set-Location SQLSERVER:\sql\echo\default\logins
-
-Set-Location c:\
-
-
-
-$sql = 'Clio'
 Push-Location SQLSERVER:\sql\$sql\default\logins
 $winlogins = Get-ChildItem | Where-Object{$_.loginType -like "Windows*" }
 Pop-Location
