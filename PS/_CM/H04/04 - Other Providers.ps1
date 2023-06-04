@@ -3,7 +3,7 @@ Push-Location cert:
 
 Get-ChildItem
 
-Set-Location -Path Cert:\CurrentUser\my
+Set-Location -Path Cert:\CurrentUser\My
 
 Get-ChildItem
 
