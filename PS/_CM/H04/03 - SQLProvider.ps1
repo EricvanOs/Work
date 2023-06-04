@@ -12,8 +12,10 @@ Set-Location c:\
 
 $sql = 'Clio'
 Push-Location SQLSERVER:\sql\$sql\default\logins
-
 $winlogins = Get-ChildItem | Where-Object{$_.loginType -like "Windows*" }
+Pop-Location
+
+## solution #1
 
 foreach ($winlogin in $winlogins)
 {
@@ -33,6 +35,23 @@ foreach ($winlogin in $winlogins)
   } 
 }
 
-Pop-Location
+# solution #2 using regular expressions
+
+foreach ($winlogin in $winlogins)
+{
+  if ($winlogin.name -match  'NT SERVICE|NT AUTHORITY|BUILTIN'){continue}  # these accounts are skipped
+
+  $cnt = (
+  Get-ADObject -Filter {(ObjectClass -eq 'user') -or (ObjectClass -eq 'computer' -or (ObjectClass -eq 'group') )} |
+  Where-Object{ $winlogin.Name -match  $_.name } |
+  Measure-Object
+  ).count
+  
+  if ($cnt -eq 0 )  #no corresponding account in AD
+  {
+      write-host "Following count : $($winlogin.name) does not exists any more in AD"
+  } 
+
+}
 
 
