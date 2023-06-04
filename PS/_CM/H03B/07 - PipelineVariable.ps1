@@ -1,9 +1,6 @@
-﻿1..3    | Foreach-Object -PipelineVariable Left -Process { $_ }  
-        | Foreach-Object -PipelineVariable Right -Process { 7..8 } 
-        | Foreach-Object -Process { "$Left * $Right = " + ($Left*$Right) }
+﻿1..3    | Foreach-Object -PipelineVariable First -Process { $_ }  
+        | Foreach-Object -PipelineVariable Second -Process { 7..8 } 
+        | Foreach-Object -Process {"$First,$Second" + ' --> ' + "$First*$Second = " + ($First*$Second) }
 
 
-1..3    | Foreach-Object -PipelineVariable Left -Process { $_ }  
-        | Foreach-Object -PipelineVariable Right -Process { 7..8 } 
-        | Foreach-Object -Process { "$Left,$Right" }
 
