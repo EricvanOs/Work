@@ -25,7 +25,6 @@ enum MediaTypes {
 # compare with
 [MediaTypes].GetEnumValues()
 
-
 # test again
 [MediaTypes].GetEnumName(15)
 
@@ -34,14 +33,13 @@ enum MediaTypes {
   "{0,-10} {1}" -f $_,[int]([MediaTypes]::$_)
 }
 
-
 #########################
 enum MySeasons
 {
-   Spring
-   Summer
-   Autumn
-   Winter = 25
+  Spring
+  Summer
+  Autumn
+  Winter = 25
 }
 
 
@@ -71,7 +69,6 @@ switch ($Season)
 $Season.GetType()
 
 $Season -is [System.enum]
-True
 
 [Enum]::GetNames( [MySeasons] )
 

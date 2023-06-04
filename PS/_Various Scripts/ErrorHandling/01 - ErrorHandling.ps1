@@ -7,7 +7,7 @@ Get-Service -Name BITS,Nobody,WinRM -ErrorAction Stop
 
 
 Try {
-   1/0
+  1/0
 } 
   Catch {
   Write-Host $Error[0]  -ForegroundColor DarkCyan
