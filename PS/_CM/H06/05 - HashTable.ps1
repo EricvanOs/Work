@@ -17,8 +17,6 @@ $users.Remove('Sang')
 $users
 
 #Creating calculated properties uses a hash table
-#Name and Expression are the required items
-#You can shorten to n and e
 $prop = @{n='Size(KB)';e={$_.Length/1KB}}
 $prop
 Get-ChildItem C:\Windows -File | Format-Table Name,Length

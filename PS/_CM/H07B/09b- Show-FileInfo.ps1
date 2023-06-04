@@ -5,7 +5,7 @@ function Show-FileInfo ()
           $file
         )
 
-  begin{
+  BEGIN {
     $fn = "$($PSCmdlet.MyInvocation.MyCommand.Name)"
     $st = Get-Date
     Write-Verbose @"
@@ -14,12 +14,14 @@ function Show-FileInfo ()
 "@
   }
 
-  process{
+
+  PROCESS {
     $retVal = "$($file.Name) is {0:N0} bytes long." -f $file.Length
     $retVal
   }
 
-  end{
+  
+  END {
     $et = Get-Date
 
     $rt = $et - $st  # Run Time
