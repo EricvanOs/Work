@@ -3,31 +3,41 @@ for ($i=1; $i -le 10; $i++) {$i}
 for ($i=2; $i -le 1000; $i=$i*$i) {$i}
 
 
-# while-loop
-while(($inp = Read-Host -Prompt 'Select a command') -ne 'Q'){
-   switch($inp){
-      L {'File will be deleted'}
-      A {'File will be displayed'}
-      R {'File will be write protected'}
-      Q {'End'}
-      default {'Invalid entry'}
-   }
+# while - loop
+$i=1
+while ($i -le 5){
+   Write-Host $i
+   #add script
+
+
+   #increase counter
+   $i++
 }
+
 
 # do-while  - loop
 $i=1
 do{
-   Write-Host "$i"
+   Write-Host $i
+   #add script
+
+
+   #increase counter
    $i++
 } while ($i -le 5)
 
-# do-until - loop
 
+# do-until - loop
 $i=1
 do{
-   Write-Host "$i"
+   Write-Host $i
+   #add script
+   
+
+   #increase counter
    $i++
 } until ($i -gt 5)
+
 
 
 # bad practice
