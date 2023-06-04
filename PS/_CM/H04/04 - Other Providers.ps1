@@ -1,6 +1,5 @@
 # certificate stores
-
-Set-Location cert:
+Push-Location cert:
 
 Get-ChildItem
 
@@ -8,20 +7,20 @@ Set-Location -Path Cert:\CurrentUser\my
 
 Get-ChildItem
 
-Set-Location -Path c:
+Pop-Location
+
 
 # environment
-
-Set-Location env:
+Push-Location env:
 
 Get-ChildItem
 
 $env:COMPUTERNAME
 
-Set-Location -Path c:
+Pop-Location 
+
 
 # SCCM of Hermes
-
 Enter-PSSession -ComputerName Hermes
 
 $SiteCode = "ATE" # Site code 
@@ -51,27 +50,33 @@ Set-Location -Path C:
 
 Exit-PSSession
 
-# Active directory
 
+# Active directory
 Enter-PSSession -ComputerName sisyphus
 
 Import-Module -Name ActiveDirectory
 
-Set-Location -Path AD:
+Push-Location -Path AD:
 
 Get-ChildItem
-
-Set-Location -Path C:
+Set-Location -Path 'DC=pantheon,DC=somewhere'
+Get-ChildItem
+Set-Location -Path 'OU=PSTest'
+New-Item -ItemType user -path . -name "CN=Sam Sample"
+Remove-Item ".\CN=Sam Sample" -Confirm:$false -Force
+Pop-Location 
 
 Exit-PSSession
 
+
 # alias
 
-Set-Location alias:
+Push-Location alias:
 
 Get-ChildItem
 
-Set-Location c:
+Pop-Location
+
 
 # function
 
@@ -81,9 +86,9 @@ Write-Host 'Some output'
 
 myfunction
 
-Set-Location function:
+Push-Location function:
 
 Get-ChildItem -Path my* | Select-Object -Property *
 
-Set-Location c:
+Pop-Location 
 
