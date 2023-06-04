@@ -1,5 +1,5 @@
 
-# clean block is in PS7.3 allowed
+# clean block is in PS7.3 allowed, similar to finally (in try and catch)
 
 BEGIN{}
 PROCESS{}
