@@ -13,7 +13,7 @@ $prop = @{n='ComputerName';e={$PSItem}}
 $comps | Select-Object -Property $prop | Get-Process  | Sort-Object id | 
   Select-Object -Property ProcessName -First 5
 
- 
+
 # mag ook zo
 $prop2 = @{n='ComputerName';e={$PSItem.Machinename}}
 
