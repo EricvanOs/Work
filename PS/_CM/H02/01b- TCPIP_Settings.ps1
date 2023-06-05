@@ -23,5 +23,3 @@ Get-NetAdapterAdvancedProperty
 Get-NetAdapterBinding
 
 Get-NetConnectionProfile
-
-Get-NetIPInterface
