@@ -30,7 +30,7 @@ Get-Service | Get-Member                                       # System.ServiceP
 Import-Clixml -Path .\Serv-TypeInfo.xml | Get-Member     # Deserialized.System.ServiceProcess.ServiceController (only properties and some base methods)
 
 # combined
-Get-Content .\H03\Patching.json | ConvertFrom-Json | ConvertTo-Csv | Out-File .\ServerPatching.csv
+Get-Content ..\_CM\H03A\Patching.json | ConvertFrom-Json | ConvertTo-Csv | Out-File .\ServerPatching.csv
 
 
 # cleanup
