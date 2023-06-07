@@ -1,4 +1,4 @@
-﻿$ComputerName = 'eos.pantheon.somewhere','clio'
+﻿$ComputerName = 'echo.pantheon.somewhere','clio.pantheon.somewhere'
 
 $Database = 'master'
 

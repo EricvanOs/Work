@@ -1,4 +1,4 @@
-﻿$instanceName = 'eos'
+﻿$instanceName = 'echo.pantheon.somewhere'
 $dbName = 'AdventureWorks'
 # create here-string
 $query = @"

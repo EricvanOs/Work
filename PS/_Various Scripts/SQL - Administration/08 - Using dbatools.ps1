@@ -4,17 +4,17 @@ Get-Command -Module dbatools
 
 #eg
 
-Get-DbaAgentJob -SqlInstance eos 
+Get-DbaAgentJob -SqlInstance clio.pantheon.somewhere 
 
-Get-DbaLogin -SqlInstance eos
+Get-DbaLogin -SqlInstance clio.pantheon.somewhere
 
-Get-DbaDatabase -SqlInstance clio
+Get-DbaDatabase -SqlInstance clio.pantheon.somewhere
 
-Test-DbaLastBackup -SqlInstance clio -Database Ipam_DB
+Test-DbaLastBackup -SqlInstance clio.pantheon.somewhere -Database Ipam_DB
 
 ##
-Test-DbaDiskAlignment -ComputerName eos | Select-Object -Property Name, IsBestPractice
+Test-DbaDiskAlignment -ComputerName clio.pantheon.somewhere | Select-Object -Property Name, IsBestPractice
 
-Test-DbaSpn -ComputerName eos
+Test-DbaSpn -ComputerName clio.pantheon.somewhere
 
-Test-DbaDiskSpeed -SqlInstance clio | Where-Object{$_.ReadPerformance -ne 'Very Good' -or $_.WritePerformance -ne 'Very Good'}
+Test-DbaDiskSpeed -SqlInstance clio.pantheon.somewhere | Where-Object{$_.ReadPerformance -ne 'Very Good' -or $_.WritePerformance -ne 'Very Good'}

@@ -15,10 +15,10 @@
 
 
 # Sample function call:
-Get-SQLErrorLogs -instanceName 'hypnos' |
+Get-SQLErrorLogs -instanceName 'echo.pantheon.somewhere' |
   Where-Object LogDate -gt (Get-Date).AddDays(-2)
 
 
 # information about function
-Get-SQLErrorLogs -instanceName 'hypnos' | Get-Member
+Get-SQLErrorLogs -instanceName 'echo.pantheon.somewhere' | Get-Member
 

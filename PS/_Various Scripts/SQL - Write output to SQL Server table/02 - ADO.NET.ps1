@@ -1,4 +1,4 @@
-$ServerInstance = 'echo'
+$ServerInstance = 'echo.pantheon.somewhere'
 $Database = 'tempdb'
 $ComputerName = 'echo'
 $Query = @'

@@ -1,5 +1,5 @@
 $Path = '\\pantheon\data\Courses\PowerShell\DiskSpace.xml'
-$ServerInstance = 'echo'
+$ServerInstance = 'echo.pantheon.somewhere'
 $Database = 'tempdb'
 $query = @"
 Drop table if exists XMLDiskInformation;

@@ -1,4 +1,4 @@
-﻿$Computer = 'eos'
+﻿$Computer = 'echo.pantheon.somewhere'
 
 # import module if needed
 If ( ! (Get-module sqlserver )) { Import-Module sqlserver | Out-Null}

@@ -1,5 +1,5 @@
 $Path = '\\pantheon\data\Courses\PowerShell\DiskSpace.csv'
-$ServerInstance = 'echo'
+$ServerInstance = 'echo.pantheon.somewhere'
 $Database = 'tempdb'
 $query = @"
 drop table if exists CSVDiskInformation

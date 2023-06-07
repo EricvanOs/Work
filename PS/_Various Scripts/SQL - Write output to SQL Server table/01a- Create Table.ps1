@@ -1,5 +1,5 @@
 # Create table in tempdb
-$ServerInstance = 'echo'
+$ServerInstance = 'echo.pantheon.somewhere'
 $Database = 'tempdb'
 $query = @'
 drop table if exists dbo.Diskinformation;

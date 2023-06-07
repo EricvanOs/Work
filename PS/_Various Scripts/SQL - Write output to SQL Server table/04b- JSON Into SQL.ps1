@@ -1,5 +1,5 @@
 $Path = '\\pantheon\data\Courses\PowerShell\DiskSpace.JSON'
-$ServerInstance = 'echo'
+$ServerInstance = 'echo.pantheon.somewhere'
 $Database = 'tempdb'
 $query = @"
 Insert into DiskInformation(SystemName,DeviceID,VolumeName,TotalSize,FreeSize)

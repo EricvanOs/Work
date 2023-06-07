@@ -1,7 +1,7 @@
 ﻿$Path = 'K:\_CM\_Various Scripts\SQL'
 set-location -Path $Path 
 
-$instanceName = 'eos'
+$instanceName = 'echo.pantheon.somewhere'
 $dbName = 'AdventureWorks'
 $exportfile = Join-Path -Path $Path -ChildPath 'person.csv'
 

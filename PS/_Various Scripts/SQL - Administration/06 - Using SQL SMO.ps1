@@ -2,7 +2,7 @@
 #An SMO object, or SQL Server Management Object, allows you to programmatically access and manipulate SQL Server:
 # import module if needed
 If ( ! (Get-module sqlserver )) { Import-Module sqlserver | Out-Null}
-$instanceName = 'Hypnos'
+$instanceName = 'echo.pantheon.somewhere'
 $server = New-Object -TypeName Microsoft.SqlServer.Management.Smo.Server -ArgumentList $instanceName
 
 

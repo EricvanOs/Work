@@ -8,9 +8,8 @@ $QueryParameters = @{
     "ID" = $ID;
     };
     
-$sqlserver = 'echo'
+$sqlserver = 'echo.pantheon.somewhere'
 Invoke-DbaQuery -SqlInstance $sqlserver -Database tempdb -Query "Example_SP" -SqlParameter $QueryParameters -CommandType StoredProcedure
-
 
 
 # also
