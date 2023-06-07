@@ -14,8 +14,8 @@ enum Colors{
     Red
     Green
     Blue
- }
- 
+}
+
 # see resuls
 [Colors].GetEnumNames()
 
@@ -25,15 +25,15 @@ enum Colors{
     
 # convert to JSON   
 [Colors]::Green,[Colors]::Blue | ConvertTo-Json
-  
+
 [Colors]::Green,[Colors]::Blue | ConvertTo-Json -EnumsAsStrings
     
     
 'first'| ConvertTo-JSON
-   
+
 'first' | ConvertTo-JSON -AsArray
     
- # convert from JSON   
+# convert from JSON   
 '["first","second","third"]' | ConvertFrom-JSON | Measure-Object
     
 '["first","second","third"]' | ConvertFrom-JSON -NoEnumerate | Measure-Object

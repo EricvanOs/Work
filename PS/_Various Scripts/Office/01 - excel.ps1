@@ -6,14 +6,64 @@ Get-Module -Name importexcel | Select-Object -ExpandProperty Exportedcommands
 
 get-help set-row -Examples
 
+Set-Location -Path 'C:\Work\PS\_Various Scripts\Office'
+
+# export data to excel
+$data = ConvertFrom-Csv @"
+Region,State,Units,Price
+West,Texas,927,923.71
+North,Tennessee,466,770.67
+East,Florida,520,458.68
+East,Maine,828,661.24
+West,Virginia,465,053.58
+North,Missouri,436,235.67
+South,Kansas,214,992.47
+North,North Dakota,789,640.72
+South,Delaware,712,508.55
+"@
+
+$data | Export-Excel .\salesData.xlsx
+
+# read data from excel
+$data = Import-Excel .\salesData.xlsx
+$data
+
+# Add chart to spreadsheet
+$data = ConvertFrom-Csv @"
+Region,State,Units,Price
+West,Texas,927,923.71
+North,Tennessee,466,770.67
+East,Florida,520,458.68
+East,Maine,828,661.24
+West,Virginia,465,053.58
+North,Missouri,436,235.67
+South,Kansas,214,992.47
+North,North Dakota,789,640.72
+South,Delaware,712,508.55
+"@
+
+$chart = New-ExcelChartDefinition -XRange State -YRange Units -Title "Units by State" -NoLegend
+
+$data | Export-Excel .\salesData.xlsx -AutoNameRange -ExcelChartDefinition $chart -Show
+
+#Pivot table
+$data = ConvertFrom-Csv @"
+Region,State,Units,Price
+West,Texas,927,923.71
+North,Tennessee,466,770.67
+East,Florida,520,458.68
+East,Maine,828,661.24
+West,Virginia,465,053.58
+North,Missouri,436,235.67
+South,Kansas,214,992.47
+North,North Dakota,789,640.72
+South,Delaware,712,508.55
+"@
+
+$data | Export-Excel .\salesData.xlsx -AutoNameRange -Show -PivotRows Region -PivotData @{'Units'='sum'} -PivotChartType PieExploded3D
 
 
-
-$a = Import-Excel -Path C:\Tmp\Book1.xlsx 
-
-$ExcelInfo = Get-ExcelSheetInfo -Path C:\tmp\Book1.xlsx
-$WS = Import-Excel -Path C:\tmp\Book1.xlsx -WorksheetName sheet1
-# Get-ExcelWorkbookInfo -Path C:\tmp\Book1.xlsx
+# other cmdlets
 
 get-range -start 1 -stop 4
 

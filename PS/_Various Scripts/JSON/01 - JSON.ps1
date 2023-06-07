@@ -1,9 +1,9 @@
 ﻿$json=@"
- {
+{
     "SiteType":  {
-                       "External":  "Http://External.PowerShellDistrict.com" ,
-                       "Internal":  "Http://Internal.PowerShellDistrict.com" 
-                   },
+                    "External":  "Http://External.PowerShellDistrict.com" ,
+                    "Internal":  "Http://Internal.PowerShellDistrict.com" 
+                },
 	"Author": [{
 				Name:"Stephane van Gulick",
 				Age:"Can't remember..",

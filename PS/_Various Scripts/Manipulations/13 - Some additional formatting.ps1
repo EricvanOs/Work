@@ -10,7 +10,7 @@ Get-Process | Select-Object -First 5 |  Select-Object name,@{n='VM(MB)' ; e={$_.
 # name,n,label,l ; expression,e
 # of
 $prop = @{n='VM(MB)'  
-          e={$_.VM / 1MB -as [int]}
-         }
+        e={$_.VM / 1MB -as [int]}
+        }
 
 Get-Process | Select-Object -First 5 |  Select-Object -Property name,$prop
