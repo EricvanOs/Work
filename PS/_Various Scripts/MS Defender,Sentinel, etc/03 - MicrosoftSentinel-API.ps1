@@ -1,15 +1,16 @@
 <#  Already done
-    # once save pfx-password in vault, applicationid also
-    # create selfsigned cert
+    # once save pfx-password in vault, applicationid also : get-secret -Vault 'ScriptingVault' -name MicrosoftSentinel-PFXPassword -AsPlainText
+    
+    # create selfsigned cert : New-SelfSignedCertificate -Subject "SentinelManagement" -CertStoreLocation Cert:\CurrentUser\My
     # export to cer,pfx-file 
 
     #import cer-file in azure
-    #import pfx-file on machine
+    #import pfx-file for user on host/machine : Cert:\CurrentUser\My
 #>
 
-Open-HeliosVault 
 $vault = 'ScriptingVault'
 # Read secrets from vault 
+Open-HeliosVault 
 $TenantId = (Get-Secret -Name TenantID -Vault $vault -AsPlainText) 
 $ApplicationId = (Get-Secret -Name MicrosoftSentinel-ApplicationID -Vault $vault -AsPlainText)
 $subscriptionId = (Get-Secret -Name SubscriptionId -Vault $vault -AsPlainText)
@@ -17,10 +18,7 @@ Close-HeliosVault
 
 $thumbprint = (Get-ChildItem -Path Cert:\CurrentUser\My |Where-Object{$_.Subject -eq 'CN=SentinelManagement'}).Thumbprint
 
-Connect-AzAccount -ServicePrincipal `
-  -CertificateThumbprint $Thumbprint `
-  -ApplicationId $ApplicationId `
-  -TenantId $TenantId
+Connect-AzAccount -ServicePrincipal -CertificateThumbprint $Thumbprint -ApplicationId $ApplicationId  -TenantId $TenantId
 
 Get-AzAccessToken
 $apitoken = (Get-AzAccessToken).Token
