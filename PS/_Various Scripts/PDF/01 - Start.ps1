@@ -1,4 +1,6 @@
 
+Import-Module PSWritePDF
+
 $Path = 'C:\Work\PS\_Various Scripts\PDF'
 
 Set-Location -Path $Path
@@ -14,11 +16,10 @@ New-PDF {
         New-PDFListItem -Text 'Test'
         New-PDFListItem -Text '2nd'
     }
-
     New-PDFText -Text 'Hello ', 'World' -Font HELVETICA, TIMES_ITALIC -FontColor GRAY, BLUE -FontBold $true, $false, $true
     New-PDFText -Text 'Testing adding text. ', 'Keep in mind that this works like array.' -Font HELVETICA -FontColor RED
     New-PDFText -Text 'This text is going by defaults.', ' This will continue...', ' and we can continue working like that.'
-    New-PDFText -Text 'Following text written in polish with default font Verdana that we set in the beggining: '
+    New-PDFText -Text 'Following text written in polish with default font Verdana that we set in the beginning: '
     New-PDFText -Text 'Polski tekst ma się dobrze, tak dobrze, że aż za dobrze'
     New-PDFText -Text 'łomatko' -Font 'HELVETICA'
     New-PDFList -Indent 3 {
