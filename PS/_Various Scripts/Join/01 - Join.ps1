@@ -7,14 +7,14 @@
 Import-Module -Name JoinModule
 
 $Employee = ConvertFrom-SourceTable '
-Id Name    Country Department  Age ReportsTo
--- ----    ------- ----------  --- ---------
-1 Aerts   Belgium Sales        40         5
-2 Bauer   Germany Engineering  31         4
-3 Cook    England Sales        69         1
-4 Duval   France  Engineering  21         5
-5 Evans   England Marketing    35
-6 Fischer Germany Engineering  29         4'
+Id  Name    Country  Department  Age ReportsTo
+--  ----    -------  ----------  --- ---------
+1  Aerts   Belgium  Sales        40         5
+2  Bauer   Germany  Engineering  31         4
+3  Cook    England  Sales        69         1
+4  Duval   France   Engineering  21         5
+5  Evans   England  Marketing    35
+6  Fischer Germany  Engineering  29         4'
 
 $employee | Format-Table
 
@@ -28,11 +28,11 @@ Purchase    France'
 
 
 $Changes = ConvertFrom-SourceTable '
-Id Name    Country Department  Age ReportsTo
--- ----    ------- ----------  --- ---------
-  3 Cook    England Sales        69         5
-  6 Fischer France  Engineering  29         4
-  7 Geralds Belgium Sales        71         1'
+Id  Name      Country  Department   Age  ReportsTo
+--  ----      -------  ----------   ---  ---------
+  3  Cook     England  Sales         69         5
+  6  Fischer  France   Engineering   29         4
+  7  Geralds  Belgium  Sales         71         1'
 
 
 # inner join
