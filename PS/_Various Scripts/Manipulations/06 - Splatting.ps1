@@ -23,3 +23,12 @@ $Data = @{ServerInstance='clio.pantheon.somewhere'
 }
 
 Invoke-Sqlcmd  @Data -Query $Query
+
+
+# remark (see help) - encryption is default mandatory, therefore use full dns-name, not NETBIOS-Name
+invoke-sqlcmd -ServerInstance clio -Database master -Query 'select name from sys.databases'
+invoke-sqlcmd -ServerInstance clio.pantheon.somewhere -Database master -Query 'select name from sys.databases'
+# or
+invoke-sqlcmd -ServerInstance clio -Database master -Query 'select name from sys.databases' -Encrypt Optional
+
+
