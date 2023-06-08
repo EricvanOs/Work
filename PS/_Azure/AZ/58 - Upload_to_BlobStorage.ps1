@@ -1,7 +1,7 @@
-Set-Location -Path C:\Work
+Set-Location -Path C:\Work\PS\_Azure\AZ
 
 #Our source File:
-$file = "C:\Work\SomeData.txt"
+$file = ".\SomeData.txt"
 
 #Get the File-Name without path
 $name = (Get-Item $file).Name

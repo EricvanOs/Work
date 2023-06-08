@@ -3,7 +3,7 @@ $SubscriptionId = (Get-AzSubscription -TenantId ($azc.Context.Tenant)).Id
 Set-AzContext -SubscriptionId $subscriptionId
 
 # unzip
-$Path = 'C:\Work\PS\_CM\AZ'
+$Path = 'C:\Work\PS\_Azure\AZ'
 Expand-Archive -Path $Path\WebTemplate.zip -DestinationPath $Path\Web
 
 
