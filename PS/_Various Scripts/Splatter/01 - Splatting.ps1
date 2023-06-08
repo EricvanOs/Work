@@ -2,25 +2,7 @@
 
 Import-Module -Name Splatter
 
-
-@{Id=$pid;Junk='Data'} | Get-Splat Get-Process    
-# -or 
-@{Id=$pid;Junk='Data'} | ?@ gps
-# -or
-@{Id=$pid;Junk='Data'} | & ${?@} gps
-
-
-
-@{FilePath = 'pwsh';ArgumentList = '-noprofile';PassThru=$true} | 
-    Use-Splat Start-Process |
-    Add-Member NoteProperty TimeOut 15 -PassThru | 
-    Get-Splat Wait-Process, Stop-Process
-
-
-@{a='b'}, @{c='d'} | Merge-Splat
-
-
-# explaination
+# explanation
 
 @{Id=$pid;Junk='Data'} | Get-Splat Get-Process  
 
@@ -42,6 +24,23 @@ get-help get-splat -ShowWindow
 Get-Splat -Command Get-Process -Splat @{Id=$pid}
 #or
 @{Id=$pid} | Get-Splat Get-Process     
-#or, discards superfluous parameters
-@{Id=$pid;Junk='Data'} | Get-Splat Get-Process 
+# discards superfluous parameters
+@{Id=$pid;Junk='Data'} | Get-Splat Get-Process    
+# -or 
+@{Id=$pid;Junk='Data'} | ?@ gps
+# -or
+@{Id=$pid;Junk='Data'} | & ${?@} gps
+
+# merge splats
+@{a='b'}, @{c='d'} | Merge-Splat
+
+
+# running multiple commands
+@{FilePath = 'pwsh';ArgumentList = '-noprofile';PassThru=$true} | 
+    Use-Splat Start-Process |
+    Add-Member NoteProperty TimeOut 15 -PassThru | 
+    Get-Splat Wait-Process, Stop-Process
+
+
+
 
