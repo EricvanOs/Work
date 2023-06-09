@@ -68,8 +68,8 @@ see: Microsoft 365 Defender - API Explorer - Add Device Tag
 
 POST https://api-eu.securitycenter.windows.com/api/machines/{machine-id}/tags
 {
-  "Value" : "AzureVM",
-  "Action": "Add"
+    "Value" : "AzureVM",
+    "Action": "Add"
 }
 #>
 $url = @'
