@@ -20,4 +20,4 @@ get-help Get-MgUserMessage -Online
 # A UPN can also be used as -UserId.
 Get-MgUserMessageAttachment -UserId $userId -MessageId $messageId -AttachmentId $attachmentId
 
- Disconnect-MgGraph
+Disconnect-MgGraph

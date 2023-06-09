@@ -32,7 +32,7 @@ Get-MgContext
 # compose message
 $mailParams = @{
     Message = @{
-     Subject = "Server Disk Space on COMPUTER_A is below the 30% Threshold."
+    Subject = "Server Disk Space on COMPUTER_A is below the 30% Threshold."
         Body = @{
             ContentType = "Text"
             Content = "The remaining available diskspace on [C:] is now at 5GB. Please do something."
@@ -45,13 +45,13 @@ $mailParams = @{
         }
         )
     }
- }
+}
 
- # send mail
- Send-MgUserMail -UserId 'ericvanos@xhelios.onmicrosoft.com' -BodyParameter $mailParams
+# send mail
+Send-MgUserMail -UserId 'ericvanos@xhelios.onmicrosoft.com' -BodyParameter $mailParams
 
 
- ######################## easier to read
+######################## easier to read
 $Subject = "Server Disk Space on COMPUTER_A is below the 30% Threshold."
 $Body = @{
     ContentType = "Text"
@@ -76,16 +76,16 @@ Attachments
 #>
 $mailParams = @{
     Message = @{
-     Subject = $Subject
-     Body = $Body
-     ToRecipients = $ToRecipients
+    Subject = $Subject
+    Body = $Body
+    ToRecipients = $ToRecipients
     }
- }
+}
 ########################
 
 # add attachment
 # convert to Base64
-$filepath = '\\pantheon\data\misc\PowerShell-Scripts\Nested Hyper-V Settings.txt'
+$filepath = '\\pantheon\data\Misc\Tools\_Repairs\ServerManager.txt'
 $f = [convert]::ToBase64String((Get-Content $filepath -AsByteStream))
 
 $Attachments = @(
@@ -93,19 +93,19 @@ $Attachments = @(
     "@odata.type" = "#microsoft.graph.fileAttachment"
     "name" = "LoremIpsum.txt"
     "contentBytes" = $($f)
- }
+    }
 )
 
 #again send mail with attachments
 
 $mailParams = @{
     Message = @{
-     Subject = $Subject
-     Body = $Body
-     ToRecipients = $ToRecipients
-     Attachments = $Attachments
+    Subject = $Subject
+    Body = $Body
+    ToRecipients = $ToRecipients
+    Attachments = $Attachments
     }
- }
+}
 
-  # send mail
-  Send-MgUserMail -UserId 'ericvanos@xhelios.onmicrosoft.com' -BodyParameter $mailParams
+# send mail
+Send-MgUserMail -UserId 'ericvanos@xhelios.onmicrosoft.com' -BodyParameter $mailParams

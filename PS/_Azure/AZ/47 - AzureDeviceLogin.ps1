@@ -155,3 +155,4 @@ $Users = Invoke-RestMethod -Method GET -Uri $UsersUri -Headers $Headers
 $Users.value.userprincipalname
 
 
+Get-JWTDetails $token
