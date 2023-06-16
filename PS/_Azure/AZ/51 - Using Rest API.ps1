@@ -13,7 +13,7 @@ $r.Content
 
 #Invoke-RestMethod - rich format response. Translate the response, e.g. JSON to a custom object
 Invoke-RestMethod -Uri https://azure.microsoft.com/updates/feed/ 
- | Format-Table -Property title, description, pubDate
+    | Format-Table -Property title, description, pubDate
 
 
 #We often need to authenticate so need a token which is passed to the command
@@ -23,7 +23,7 @@ $azContext = Get-AzContext
 $azProfile = [Microsoft.Azure.Commands.Common.Authentication.Abstractions.AzureRmProfileProvider]::Instance.Profile
 $profileClient = New-Object -TypeName Microsoft.Azure.Commands.ResourceManager.Common.RMProfileClient -ArgumentList ($azProfile)
 $token = $profileClient.AcquireAccessToken($azContext.Subscription.TenantId)
- 
+
 #Create a hash table for the auth header as we have multiple headers
 $authHeader = @{
     'Content-Type'='application/json'
@@ -60,7 +60,7 @@ $r = Invoke-RestMethod -Uri $UriString -Method Get -Headers $authHeader
 $r.value
 
 
-#Can token get for other audiences
+# Get token for other audience
 $accessToken = (Get-AzAccessToken -ResourceUrl "https://graph.microsoft.com").Token #MS Graph audience
 $authHeader = @{
     'Content-Type'='application/json'
