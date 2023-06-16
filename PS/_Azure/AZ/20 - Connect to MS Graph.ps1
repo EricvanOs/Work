@@ -8,13 +8,13 @@ Disconnect-MgGraph
 Connect-MgGraph -Scopes 'User.Read.All'
 
 # ARM Endpoint
-$AccessTokenARM = (Get-AzAccessToken).Token
-$AccessTokenARM | Get-JWTDetails
+$AccessTokenTypeARM = (Get-AzAccessToken).Token
+$AccessTokenTypeARM | Get-JWTDetails
 
 
 # MS Graph Endpoint
-$AccessTokenType = (Get-AzAccessToken -ResourceTypeName MSGraph).Token
-$AccessTokenType | Get-JWTDetails
+$AccessTokenTypeGraph = (Get-AzAccessToken -ResourceTypeName MSGraph).Token
+$AccessTokenTypeGraph | Get-JWTDetails
 
 
 #MS Graph Endpoint (same as previous)
@@ -26,9 +26,8 @@ $AccessTokenUrl | Get-JWTDetails
 Get-MgUser -UserId 'ericvanos@xhelios.onmicrosoft.com'
 Get-MgUser -All
 
-
-
-
+# force disconnect
+Disconnect-MgGraph 
 
 
 # Connect to MS Graph with tenantid
@@ -39,7 +38,7 @@ Connect-MgGraph
 
 
 
-
+# work in progress
 Connect-MgGraph  -Scopes 'Policy.ReadWrite.ApplicationConfiguration','Policy.Read.All'
 Import-Module Microsoft.Graph.Identity.SignIns
 Get-MgPolicyTokenLifetimePolicy

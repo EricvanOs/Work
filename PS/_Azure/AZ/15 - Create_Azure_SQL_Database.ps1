@@ -18,8 +18,8 @@ $serverName = "server-$(Get-Random)"
 # The sample database name
 $databaseName = 'mySampleDatabase'
 # The ip address range that you want to allow to access your server
-$startIp = '0.0.0.0'   # not safe
-$endIp = '0.0.0.0'
+$startIp = '86.84.71.229'   
+$endIp = '86.84.71.229'
 
 # Create a resource group
 New-AzResourceGroup -Name $resourceGroupName -Location $location
@@ -43,4 +43,4 @@ New-AzSqlDatabase  -ResourceGroupName $resourceGroupName `
     -SampleName 'AdventureWorksLT'
 
 # Clean up deployment 
-Remove-AzResourceGroup -ResourceGroupName $resourceGroupName
+Remove-AzResourceGroup -ResourceGroupName $resourceGroupName  -Force  

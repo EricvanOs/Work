@@ -24,7 +24,7 @@ $UserParams = @{
 }
 
 
-New-MgUser @UserParams   # should fail
+New-MgUser @UserParams   # should/could fail
 
 # use the correct scope
 Connect-MgGraph -Scopes 'User.Read.All','User.ReadWrite.All'
