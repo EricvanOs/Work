@@ -4,7 +4,7 @@
 # list of all different permissions
 Find-MgGraphPermission -PermissionType Any
 Find-MgGraphPermission -PermissionType Application 
-Find-MgGraphPermission  application.Read 
+Find-MgGraphPermission  Application.Read 
 
 
 # connect to graph
