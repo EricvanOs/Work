@@ -33,3 +33,10 @@ New-AzVM @vmParams -PublicIpSku Standard -WhatIf
 
 # cleanup
 Get-AzResourceGroup  | Where-Object{$_.ResourceGroupName -eq $ResourceGroupName} | Remove-AzResourceGroup -Confirm:$false -Force
+
+
+
+# Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning
+# get-help Update-AzConfig 
+# Update-AzConfig -DisplayBreakingChangeWarning $false -AppliesTo 'New-AzVM'
+
