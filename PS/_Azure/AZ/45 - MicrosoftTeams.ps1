@@ -7,5 +7,5 @@ Get-Command  -Module MicrosoftTeams
 
 
 $teams = Get-Team     
-$teams
+$teams | Select-Object -Property *
 

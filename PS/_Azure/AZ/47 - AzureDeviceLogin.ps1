@@ -47,7 +47,7 @@ function Connect-AzureDevicelogin {
     [cmdletbinding()]
     param( 
         [Parameter()]
-        $ClientID = '1950a258-227b-4e31-a9cf-717495945fc2',
+        $ClientID = '14d82eec-204b-4c2f-b7e8-296a70dab67e',
         
         [Parameter()]
         [switch]$Interactive,
