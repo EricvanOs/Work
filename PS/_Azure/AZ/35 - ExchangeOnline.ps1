@@ -1,6 +1,6 @@
 # https://learn.microsoft.com/en-us/powershell/exchange/connect-to-exchange-online-powershell?view=exchange-ps
 
-Import-Module ExchangeOnlineManagement  -SkipEditionCheck
+Import-Module ExchangeOnlineManagement -UseWindowsPowerShell 
 
 Connect-ExchangeOnline -UserPrincipalName 'ericvanos@xhelios.onmicrosoft.com'
 
