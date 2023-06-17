@@ -16,7 +16,7 @@
 
 # Sample function call:
 Get-SQLErrorLogs -instanceName 'echo.pantheon.somewhere' |
-  Where-Object LogDate -gt (Get-Date).AddDays(-2)
+  Where-Object{$_.LogDate -gt (Get-Date).AddDays(-2)}
 
 
 # information about function

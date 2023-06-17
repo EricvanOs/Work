@@ -3,7 +3,7 @@
 # import module if needed
 If ( ! (Get-module sqlserver )) { Import-Module sqlserver | Out-Null}
 
-Set-Location -Path c:\
+Set-Location -Path C:\
 
 Push-Location  sqlserver:\sql\$Computer\default\databases
 $Databases = Get-ChildItem 

@@ -3,7 +3,7 @@
 # import module if needed
 If ( ! (Get-module sqlserver )) { Import-Module sqlserver | Out-Null}
 
-Set-Location c:\
+Set-Location C:\
 
 Push-Location  sqlserver:\sql\selene\default\databases
 $Databases = Get-ChildItem  | Select-Object -Property Name

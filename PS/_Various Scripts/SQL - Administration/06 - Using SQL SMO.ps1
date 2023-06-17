@@ -5,11 +5,10 @@ If ( ! (Get-module sqlserver )) { Import-Module sqlserver | Out-Null}
 $instanceName = 'echo.pantheon.somewhere'
 $server = New-Object -TypeName Microsoft.SqlServer.Management.Smo.Server -ArgumentList $instanceName
 
-
 $server | Get-Member
 
-# for example
 
+# for example
 $server.VersionMajor
 $server.Collation
 $server.EnumLocks() | Format-Table -AutoSize

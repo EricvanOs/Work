@@ -13,7 +13,6 @@ Invoke-Command -Session $ses  -ScriptBlock{
 
    Invoke-Sqlcmd -Database $using:Database -Query $using:Query 
    
-    
 }  -AsJob -JobName 'SQLQuery'
 
 Get-Job -Name 'SQLQuery' | Wait-Job
