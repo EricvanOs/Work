@@ -14,18 +14,18 @@ Get-RegEx
 '1. one. 2. two.  3. three'| ?<Digits> -Split -IncludeMatch  # Returns each number and the content after it
     
 '123abc456def' |  ?<Digits> -Where { $_.Digits % 2 }         # Returns only matches of odd Digits
-     
 
 
 
-    "
-    number: 1
-    string: 'hello'
-    " | 
-        ?<NewLine> -Split |     
-        Foreach-Object {
-            $key, $value  = $_ | ?<Colon> -Split -Count 1
-            if ($key) {
-                @{$key=$value}
-            }
+
+"
+number: 1
+string: 'hello'
+" | 
+    ?<NewLine> -Split |     
+    Foreach-Object {
+        $key, $value  = $_ | ?<Colon> -Split -Count 1
+        if ($key) {
+            @{$key=$value}
         }
+    }

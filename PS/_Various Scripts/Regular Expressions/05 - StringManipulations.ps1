@@ -1,8 +1,8 @@
-﻿$path = 'K:\_CM\_Various Scripts\Regular Expressions\'
+﻿$path = 'C:\Work\PS\_Various Scripts\Regular Expressions\'
 Set-Location -Path $path
 
 # make use of here-string
-Set-Content -Path twitterData.txt -value @"
+Set-Content -Path .\twitterData.txt -value @"
 Lee, Steve-@Steve_MSFT,2992
 Lee Holmes-13000 @Lee_Holmes
 Staffan Gustafsson-463 @StaffanGson
@@ -10,7 +10,7 @@ Tribbiani, Joey-@Matt_LeBlanc,463400
 "@
 
 # extracting captured groups
-Get-ChildItem -Path twitterData.txt |
+Get-ChildItem -Path .\twitterData.txt |
     Select-String -Pattern "^(\w+) ([^-]+)-(\d+) (@\w+)" |
     Foreach-Object {
         $first, $last, $followers, $handle = $_.Matches[0].Groups[1..4].Value   # this is a common way of getting the groups of a call to select-string
@@ -25,8 +25,8 @@ Get-ChildItem -Path twitterData.txt |
 #####
 $firstLastPattern = "^(?<first>\w+) (?<last>[^-]+)-(?<followers>\d+) (?<handle>@.+)"
 $lastFirstPattern = "^(?<last>[^\s,]+),\s+(?<first>[^-]+)-(?<handle>@[^,]+),(?<followers>\d+)"
-Get-ChildItem twitterData.txt |
-     Select-String -Pattern $firstLastPattern, $lastFirstPattern |
+Get-ChildItem .\twitterData.txt |
+    Select-String -Pattern $firstLastPattern, $lastFirstPattern |
     Foreach-Object {
         # here we access the groups by name instead of by index
         $first, $last, $followers, $handle = $_.Matches[0].Groups['first', 'last', 'followers', 'handle'].Value
@@ -41,7 +41,7 @@ Get-ChildItem twitterData.txt |
 
 
 # using the context property
-Get-ChildItem -Path twitterData.txt |
+Get-ChildItem -Path .\twitterData.txt |
     Select-String -Pattern "Staffan" -Context 2,1 |
     Foreach-Object { $_.Context.PreContext[1], $_.Context.PostContext[0] }
 
