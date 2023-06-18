@@ -62,6 +62,11 @@ South,Delaware,712,508.55
 
 $data | Export-Excel .\salesData.xlsx -AutoNameRange -Show -PivotRows Region -PivotData @{'Units'='sum'} -PivotChartType PieExploded3D
 
+# cleanup
+
+Get-ChildItem -Path .\salesData.xlsx | Remove-Item
+
+
 
 # other cmdlets
 
