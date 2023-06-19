@@ -55,3 +55,56 @@ $HostedContents = @(
 
 
 New-MgChatMessage -ChatId $myChatSession.id -Body $Body -HostedContents $HostedContents
+
+
+
+
+
+
+
+
+
+###############
+Connect-MgGraph
+
+Get-MgDevice | Where-Object{$_.DisplayName -eq 'Scylla'}
+
+Get-MgUser | Where-Object{$_.DisplayName -eq 'Marcus Aurelius'} 
+
+$properties = @(
+	'id',
+	'DisplayName',
+	'userprincipalname',
+	'mail',
+	'jobtitle',
+	'department',
+	'OfficeLocation',
+	'MobilePhone',
+	'BusinessPhones',
+	'streetAddress',
+	'city',
+	'postalcode',
+	'state',
+	'country',
+	'AccountEnabled',
+	'CreatedDateTime'
+)
+
+$select=$properties
+$filter = "DisplayName eq 'Marcus Aurelius' "
+
+Get-MgUser -filter $filter -Property $properties | Select-Object $select
+
+
+# all properties of a user (grab all properties and select a subset)
+
+$properties = @('*')
+$select = $properties
+$filter = " DisplayName eq 'Marcus Aurelius' "
+Get-MgUser -filter $filter -Property $properties | Select-Object $select
+
+# use here-strings for $filter?
+# explanation of $filter : The Get-MgUser filter uses OData v3
+# https://azuresearch.github.io/odata-syntax-diagram/#boolean_expression
+# 
+
