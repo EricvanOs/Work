@@ -1,0 +1,30 @@
+herschrijven
+https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/migrate-your-apps-to-access-the-license-managements-apis-from/ba-p/2464366
+
+https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/set-mguserlicense?view=graph-powershell-1.0
+https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.users/get-mguserlicensedetail?view=graph-powershell-1.0
+
+https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/set-mguserlicense?view=graph-powershell-1.0
+
+https://learn.microsoft.com/en-us/graph/api/user-assignlicense?view=graph-rest-1.0&tabs=http
+
+
+Microsoft 365 E5
+
+ipv EMS-E5, defender for office  365 (plan2), 
+
+
+https://techcommunity.microsoft.com/t5/microsoft-sentinel-blog/integrating-open-source-threat-feeds-with-misp-and-sentinel/ba-p/1350371
+
+
+IaC
+
+https://learn.microsoft.com/en-us/rest/api/securityinsights/
+
+Export-AzResourceGroup -ResourceGroupName "TestGroup" -Resource "/subscriptions/5f43547b-1d2d-4a3e-ace4-88d4b600d568/resourceGroups/TestGroup/providers/Microsoft.Compute/virtualMachines/TestVirtualMachine"
+
+
+Get-AzResource -ResourceGroupName loganalytics
+
+https://github.com/Azure/Azure-Sentinel/tree/master/Parsers/ASimAuthentication
+ihb yaml-files

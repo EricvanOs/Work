@@ -1,0 +1,29 @@
+https://github.com/AzureAD/MSAL.PS
+https://github.com/jasoth/Utility.PS
+
+https://adam-bacon.netlify.app/
+
+
+
+
+#new ps5 Item cmdlets (https://msdn.microsoft.com/en-us/powershell/wmf/5.0/feedback_symbolic) are not working well with relative paths
+#C:\Temp\foo and C:\Temp\foo\foo.txt are returned
+$fld = New-Item -ItemType SymbolicLink -Name 'bar' -Target '.\foo'
+$fl = New-Item -ItemType SymbolicLink -Name 'bar.txt' -Target '.\foo\foo.txt'
+$fld.Target
+$fl.Target
+
+
+https://stackoverflow.com/questions/42513791/how-to-create-relative-symlink-powershell-way
+
+
+
+~~~~~~~~~~~~~~~~~
+https://learn.microsoft.com/en-us/azure/active-directory/app-provisioning/scim-validator-tutorial
+
+
+
+
+
+
+

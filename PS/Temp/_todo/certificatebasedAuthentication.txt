@@ -1,0 +1,8 @@
+https://docs.microsoft.com/en-us/azure/active-directory/authentication/how-to-certificate-based-authentication?WT.mc_id=Portal-Microsoft_AAD_IAM#step-1-configure-the-certificate-authorities
+
+https://learn.microsoft.com/en-us/azure/active-directory/authentication/howto-authentication-passwordless-deployment
+
+https://learn.microsoft.com/en-us/azure/active-directory/authentication/tutorial-enable-sspr-writeback?WT.mc_id=Portal-Microsoft_AAD_IAM#configuring-password-writeback
+
+
+https://www.rebeladmin.com/2022/01/step-by-step-guide-how-to-use-azure-ad-custom-attributes-with-user-flows/
