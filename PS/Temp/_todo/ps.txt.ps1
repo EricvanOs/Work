@@ -58,3 +58,4 @@ if startday = sunday -->  2de donderdag -> startday + (7+(7-3))%7 + 7
 if startday = x     -->  2de y dag  -->  (7 +(x-y))%7 + 7
 if startday = x     -->  zde y dag  -->  (7 +(x-y))%7 + 7(z-1)
 
+
