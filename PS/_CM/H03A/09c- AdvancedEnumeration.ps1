@@ -1,6 +1,6 @@
 1..100 | ForEach-Object -Process {if (($_ % 2) -eq 1) { return } "Hello: $_" } 
 
- # parallel
+# parallel
 1..10 | ForEach-Object -Parallel { Write-Error "Error: $_" }  
 
 # two script blocks
