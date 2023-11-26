@@ -9,7 +9,7 @@ Get-Help Get-Hotfix -Online  # ByPropertyName  -- ComputerName
 
 Get-HotFix -ComputerName Hydra,Apate
 Get-HotFix -Description Update 
-Get-HotFix -Id KB5022504 
+Get-HotFix -Id KB4486153 
 
 
 # maw een computername,id of description als input voor get-hotfix
