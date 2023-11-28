@@ -1,5 +1,5 @@
 ﻿# 2
-Set-Location -Path C:\Windows
+Set-Location -Path C:\
 
 # 3
 New-PSDrive -Name WINDIR -Root C:\Windows -PSProvider FileSystem
