@@ -2,24 +2,18 @@
 Set-Location -Path C:\
 
 # 3
-New-PSDrive -Name WINDIR -Root C:\Windows -PSProvider FileSystem
+New-PSDrive -Name NEWDIR -Root C:\Windows -PSProvider FileSystem
 Get-PSDrive
 
 # 4
-Set-Location WINDIR:
+Set-Location NEWDIR:
 
 #5
-Get-ChildItem WINDIR:
+Get-ChildItem NEWDIR:
 
-#6
-New-Item C:\Work\PS\TempX -ItemType Directory
-
-#7 cleanup
-
-Remove-Item -Path C:\Work\PS\TempX
-
+# cleanup
 Set-Location -Path C:\Work\PS\
 
-Remove-PSDrive  WINDIR
+Remove-PSDrive  NEWDIR
 Get-PSDrive
 
