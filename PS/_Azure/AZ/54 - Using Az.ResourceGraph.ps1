@@ -1,59 +1,58 @@
-Search-AzGraph -Query "summarize count () by subscriptionId" | Format-Table
 
-Search-AzGraph -Query "project name, location, type|
- where type =~ 'Microsoft.Compute/virtualMachines' | order by name desc"
+Search-AzGraph -Query "resources | summarize count () by subscriptionId" 
 
-Search-AzGraph -Query "where type =~ 'Microsoft.Compute/virtualMachines' |
- project name, properties.storageProfile.osDisk.osType | top 3 by name desc"
+Search-AzGraph -Query "resources | project name, location, type | where type =~ 'Microsoft.Compute/virtualMachines' | order by name desc"
 
-Search-AzGraph -Query "where tags.Role=~'DC' | project name, tags"
+Search-AzGraph -Query "resources | where type =~ 'Microsoft.Compute/virtualMachines' | project name, properties.storageProfile.osDisk.osType | top 3 by name desc"
 
-$query = @"
-Resources
-| where type == "microsoft.compute/virtualmachines"
-| project  computerNameOverride = tostring(properties.extended.instanceView.computerName), computerName = properties.osProfile.computerName
-"@
+
+
+$query = @'
+resources
+	| where type == "microsoft.compute/virtualmachines"
+	| project  computerNameOverride = tostring(properties.extended.instanceView.computerName), computerName = properties.osProfile.computerName
+'@
 Search-AzGraph -Query $query
 
 
-$query = @"
-Resources | 
-where type =~ 'Microsoft.Network/publicIPAddresses' |
-where properties.ipConfiguration =~ '' |
-project name, resourceGroup, subscriptionId, location, tags, id
-"@
+$query = @'
+resources 
+	| where type =~ 'Microsoft.Network/publicIPAddresses' 
+	| where properties.ipConfiguration =~ '' 
+	| project name, resourceGroup, subscriptionId, location, tags, id
+'@
 Search-AzGraph -Query $query
 
+$computer='ion2he'
 $query = @"
-Resources
+resources
 	| where type =~ 'Microsoft.Compute/virtualMachines'
-	| where properties.osProfile.computerName =~ 'ion2he' or properties.extended.instanceView.computerName =~ 'hera2he'
+	| where properties.osProfile.computerName =~ '$computer' or properties.extended.instanceView.computerName =~ '$computer'
 	| join (ResourceContainers | where type=='microsoft.resources/subscriptions' | project SubName=name, subscriptionId) on subscriptionId
     | project VMName = name, CompName = properties.osProfile.computerName, OSType =  properties.storageProfile.osDisk.osType, RGName = resourceGroup, SubName, SubID = subscriptionId
 "@
 Search-AzGraph -Query $query
 
-# default Depth level = 2
-$query = @"
-Resources 
-| where type =~ 'Microsoft.Compute/virtualMachines' 
-| limit 1
-"@
-Search-AzGraph -Query $query | ConvertTo-Json -Depth 100
+$query = @'
+resources 
+	| where type =~ 'Microsoft.Compute/virtualMachines' 
+	| limit 1
+'@
+Search-AzGraph -Query $query 
 
-$query = @"
-Resources
-| where type=~ 'microsoft.compute/virtualmachinescalesets'
-| where name contains 'contoso'
-| project subscriptionId, name, location, resourceGroup, Capacity = toint(sku.capacity), Tier = sku.name
-| order by Capacity desc
-"@
+$query = @'
+resources
+	| where type=~ 'microsoft.compute/virtualmachinescalesets'
+	| where name contains '2he'
+	| project subscriptionId, name, location, resourceGroup, Capacity = toint(sku.capacity), Tier = sku.name
+	| order by Capacity desc
+'@
 Search-AzGraph -Query $query
 
-$query = @"
-Resources
-| summarize resourceCount=count() by subscriptionId
-| join (ResourceContainers | where type=='microsoft.resources/subscriptions' | project SubName=name, subscriptionId) on subscriptionId
-| project-away subscriptionId, subscriptionId1
-"@
+$query = @'
+resources
+	| summarize resourceCount=count() by subscriptionId
+	| join (ResourceContainers | where type=='microsoft.resources/subscriptions' | project SubName=name, subscriptionId) on subscriptionId
+	| project-away subscriptionId, subscriptionId1
+'@
 Search-AzGraph -Query $query
