@@ -19,3 +19,10 @@ Get-FilewithDebug -path C:\Users\administrator.PANTHEON\Downloads -Verbose -Debu
 
 # set-location C:\Work\PS\_CM\H07B
 # Suspend, test variables, and exit to continue
+
+
+$DebugPreference
+Write-Debug "Cannot open file."
+$DebugPreference = "Continue"
+Write-Debug "Cannot open file."
+$DebugPreference = "SilentlyContinue"
