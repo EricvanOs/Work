@@ -10,3 +10,4 @@ Get-SPOTenant
 
 Get-SPOSite
 
+Disconnect-SPOService
