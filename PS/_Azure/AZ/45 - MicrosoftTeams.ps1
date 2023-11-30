@@ -6,6 +6,6 @@ Connect-MicrosoftTeams
 Get-Command  -Module MicrosoftTeams
 
 
-$teams = Get-Team     
+$teams = Get-Team  -ProgressAction SilentlyContinue
 $teams | Select-Object -Property *
 
