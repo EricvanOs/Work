@@ -33,7 +33,7 @@ if ($null -ne $oauth.access_token ) {
 
 
 # easier via MS Graph
-Connect-MgGraph -Scopes 'IdentityRiskyUser.Read.All','IdentityRiskEvent.Read.All'     #scopes: Risky User, User Risk
+Connect-MgGraph -Scopes 'IdentityRiskyUser.Read.All','IdentityRiskEvent.Read.All'  -NoWelcome   #scopes: Risky User, User Risk
 
 Get-MgRiskyUser
 Get-MgRiskDetection
