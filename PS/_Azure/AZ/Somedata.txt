@@ -1,1 +1,1 @@
-This file contains some data.
+This file contains some data needed for blob upload test.
