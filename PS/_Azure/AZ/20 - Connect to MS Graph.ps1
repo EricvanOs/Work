@@ -33,7 +33,7 @@ Disconnect-MgGraph
 # Connect to MS Graph with tenantid
 Connect-MgGraph  -TenantId c395f110-ab2e-44ab-b096-7000e2511b32
 # Connect to MS Graph (with latest used tenant)
-Connect-MgGraph 
+Connect-MgGraph -NoWelcome
 
 
 
