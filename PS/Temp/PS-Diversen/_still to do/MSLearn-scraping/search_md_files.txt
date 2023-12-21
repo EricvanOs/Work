@@ -1,0 +1,9 @@
+get-content -raw
+
+regex 'module: 'Module(\d{1,2}): ([a-zA-Z\s]+)'
+
+matches[1]  
+matches[2]
+
+
+regex \[interactive lab simulation\]\((\w+)\)

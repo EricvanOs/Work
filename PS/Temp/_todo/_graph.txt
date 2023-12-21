@@ -1,0 +1,7 @@
+ci/cd azure pipeline with github actions
+
+eventgrid icm ms graph
+
+https://learn.microsoft.com/en-us/azure/event-grid/partner-events-graph-api
+
+https://learn.microsoft.com/en-us/azure/event-grid/subscribe-to-graph-api-events?tabs=powershell

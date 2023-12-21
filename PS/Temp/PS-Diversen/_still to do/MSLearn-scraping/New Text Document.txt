@@ -1,0 +1,14 @@
+https://4sysops.com/archives/powershell-invoke-webrequest-parse-and-scrape-a-web-page/
+
+
+https://www.google.nl/search?q=power+automate+scrape+web+page&sxsrf=ALiCzsZkruwI934yyK2phnrC1YnXkLz-5Q%3A1667803508128&source=hp&ei=dKloY_DeBMPXkwXOyJDQCA&iflsig=AJiK0e8AAAAAY2i3hNyMoYJR8E-4LNzcHaIMmOAd4s2Y&oq=power+automate+scrap&gs_lcp=Cgdnd3Mtd2l6EAMYADIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIICAAQgAQQywEyBggAEBYQHjIGCAAQFhAeMgYIABAWEB46BwgjEOoCECc6BAgjECc6CwguEMcBENEDEJECOgUIABCRAjoLCC4QgAQQxwEQ0QM6BQguEIAEOggILhCABBDUAjoOCC4QgAQQxwEQrwEQywE6CwguEIAEENQCEMsBOgcIIxCxAhAnOgcIABCABBAKUKEIWItEYMRbaAJwAHgAgAFFiAGnCJIBAjIxmAEAoAEBsAEK&sclient=gws-wiz
+
+
+https://devblogs.microsoft.com/dotnet/winforms-enhancements-in-dotnet-7/
+
+https://devblogs.microsoft.com/dotnet/announcing-dotnet-7/
+
+
+https://www.youtube.com/channel/UCpsilPn-2qFlrYYuvyFkpPQ
+
+

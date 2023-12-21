@@ -1,0 +1,4 @@
+lon-dc1,london,IT
+lon-cl1,london,Sales
+lon-srv1,london,Marketing
+NY-dc1,NY,IT
