@@ -1,4 +1,5 @@
 # using AzureADRiskDetection Application in Azure
+# change secret Set-Secret -Name "AzureADRiskDetection-Secret" -Secret 'xN_*********' -Vault $vault
 
 # get information from Vault
 Open-HeliosVault
@@ -37,3 +38,6 @@ Connect-MgGraph -Scopes 'IdentityRiskyUser.Read.All','IdentityRiskEvent.Read.All
 
 Get-MgRiskyUser
 Get-MgRiskDetection
+
+
+Set-Secret -Name "AzureADRiskDetection-Secret" -Secret 'xN_8Q~WIvlFHUcSfL8KZ7anOjMXi8zg_ALXxPc9P' -Vault $vault
