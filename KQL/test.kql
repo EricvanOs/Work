@@ -1,6 +1,5 @@
 https://help.kusto.windows.net/Samples
 
-database('Samples')
 
 StormEvents 
 | where StartTime >= datetime(2007-11-01) and StartTime < datetime(2007-12-01)
