@@ -18,4 +18,4 @@ Get-Fibonacci (4)
 Get-Fibonacci (5)
 
 
-(Get-Fibonacci (21)) / (Get-Fibonacci (20))  # golden ratio    .5 + .5 * [math]::sqrt(5)
+(Get-Fibonacci (21)) / (Get-Fibonacci (20))  # golden ratio     (1+ [math]::sqrt(5))/2
