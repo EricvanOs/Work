@@ -16,7 +16,8 @@ Get-CorpCompSysInfo -ComputerName               # error
 Get-CorpCompSysInfo -ComputerName xyz           # error
 
 
-# infomation regarding function
-(Get-Command Get-CorpCompSysInfo).Parameters
+# information regarding function
+(Get-Command Get-CorpCompSysInfo).Parameters 
 (Get-Command Get-CorpCompSysInfo).CmdletBinding
 (Get-Command Get-CorpCompSysInfo).Definition
+

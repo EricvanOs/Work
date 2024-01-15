@@ -40,8 +40,6 @@ Get-CorpCompSysInfo
 
 ###########
 # Add an alias
-
-
 function Get-CorpCompSysInfo {
     [CmdletBinding()]
     param(

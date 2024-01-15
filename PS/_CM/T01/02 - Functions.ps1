@@ -1,4 +1,4 @@
-﻿# extend function with verbose option
+﻿# extend function with verbose option  --> use [CmdletBinding()]
 
 function Get-CorpCompSysInfo {
     [CmdletBinding()]
