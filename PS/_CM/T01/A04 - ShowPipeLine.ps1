@@ -26,9 +26,9 @@ function Invoke-Return {
     end {
         'All done'
     }
- }
-  
- 1..10 | Invoke-Return
+}
+
+1..10 | Invoke-Return
 
 function Invoke-Break {
     process {
