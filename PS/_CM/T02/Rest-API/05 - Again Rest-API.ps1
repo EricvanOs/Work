@@ -30,12 +30,12 @@ $Token = "123h1v23yt2egv1e1e1b2ei1ube2iu12be" | ConvertTo-SecureString -AsPlainT
 
 
 # Send a GET request including bearer authentication.
- $Params = @{
-     Uri = "https://jsonplaceholder.typicode.com/posts"
-     Authentication = "Bearer"
-     Token = $Token
- }
- Invoke-RestMethod @Params
+$Params = @{
+    Uri = "https://jsonplaceholder.typicode.com/posts"
+    Authentication = "Bearer"
+    Token = $Token
+}
+Invoke-RestMethod @Params
 
 
 #open browser
@@ -58,21 +58,21 @@ Invoke-RestMethod @Params
 
 
 $Body = @{
-     title = "foo"
-     body = "bar"
-     userId = 1
- }
+    title = "foo"
+    body = "bar"
+    userId = 1
+}
 $JsonBody = $Body | ConvertTo-Json
 
 # The ContentType will automatically be set to application/x-www-form-urlencoded for
 # all POST requests, unless specified otherwise.
- $Params = @{
-     Method = "Post"
-     Uri = "https://jsonplaceholder.typicode.com/posts"
-     Body = $JsonBody
-     ContentType = "application/json"
- }
- Invoke-RestMethod @Params
+$Params = @{
+    Method = "Post"
+    Uri = "https://jsonplaceholder.typicode.com/posts"
+    Body = $JsonBody
+    ContentType = "application/json"
+}
+Invoke-RestMethod @Params
 
 
 
@@ -99,26 +99,26 @@ Invoke-RestMethod -Uri "https://api.github.com/repos/powershell/powershell/issue
  $Headers
 
 
- $Params = @{
+$Params = @{
     Uri = "https://api.github.com/repos/powershell/powershell/issues"
-      FollowRelLink = $true
-      MaximumFollowRelLink = 3
-  }
-  Invoke-RestMethod @Params
+    FollowRelLink = $true
+    MaximumFollowRelLink = 3
+}
+Invoke-RestMethod @Params
 
 
 
-  $Params = @{
-    Uri = "https://api.github.com/repos/powershell/powershell/issues"
-      FollowRelLink = $true
-      MaximumFollowRelLink = 3
-  }
-  # Store the three pages of results in the $Results variable.
-  $Results = Invoke-RestMethod @Params
-  # Check that $Results contains three items (pages of issues from the GitHub issues API).
-  $Results.Count
-  # Check that the first item in the $Results array contains the first page of thirty issues.
-  $Results[0].Count
+$Params = @{
+Uri = "https://api.github.com/repos/powershell/powershell/issues"
+    FollowRelLink = $true
+    MaximumFollowRelLink = 3
+}
+# Store the three pages of results in the $Results variable.
+$Results = Invoke-RestMethod @Params
+# Check that $Results contains three items (pages of issues from the GitHub issues API).
+$Results.Count
+# Check that the first item in the $Results array contains the first page of thirty issues.
+$Results[0].Count
 
 
 # Invoke the request storing the session as MySession.

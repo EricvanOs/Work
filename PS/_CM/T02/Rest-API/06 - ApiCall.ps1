@@ -8,7 +8,7 @@
 $Params = @{
     "URI" = 'https://www.metaweather.com/api/location/44418/'
 }
- 
+
 Invoke-WebRequest @Params
 
 
@@ -16,7 +16,7 @@ $Params = @{
 "URI"    = 'https://www.metaweather.com/api/location/44418/'
 "Method" = 'GET'
 }
- 
+
 Invoke-RestMethod @Params
 
 
@@ -57,11 +57,11 @@ client_secret="1234567890123456789";
 username="bob@aol.com";
 password="PasswordAndTokenNoSpaces";
 }
- 
+
 $access_token=(Invoke-RestMethod -Uri $tokenurl -Method POST -Body $postParams).access_token
- 
+
 $url = "https://InstanceName-dev-ed.my.salesforce.com/services/data/v37.0/sobjects/Account"
 Invoke-RestMethod -Uri $url -Headers @{Authorization = "Bearer " + $access_token}
 
 
-letop salesforce gebruikt SOQL (niet sql)
+#letop salesforce gebruikt SOQL (niet sql)

@@ -1,4 +1,8 @@
 # Difference betwween Invoke-WebRequest and Invoke-RestMethod
+<#
+Invoke-RestMethod is perfect for quick APIs that have no special response information such as Headers or Status Codes, 
+whereas Invoke-WebRequest gives you full access to the Response object and all the details it provides.
+#>
 
 Invoke-WebRequest 'https://jsonplaceholder.typicode.com/todos/1'
 
