@@ -39,4 +39,5 @@ Function Get-DiskCheck {
 }
 
 
-
+Get-DiskCheck -Computername Hydra -Threshhold 30 -Test 
+Get-DiskCheck -Path 'C:\work\MyTranscript.txt' -Threshhold 30
