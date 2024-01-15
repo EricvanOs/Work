@@ -1,7 +1,10 @@
 # by value
 Function Test($data)
 {
+    Write-Host "`$var is $var and `$data is $data"
     $data = 3
+    $var = 7
+    Write-Host "`$var is $var and `$data is $data"
 }
 
 $var = 10
