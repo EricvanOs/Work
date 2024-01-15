@@ -14,7 +14,7 @@ MyFunction -param { Test }
 
 
 
-# Passing a Function with Parameters
+# Passing a Function with parameters/arguments
 function MyFunction {
     Param($param)
     Write-Host "I'm calling: $(& $param @args)"
