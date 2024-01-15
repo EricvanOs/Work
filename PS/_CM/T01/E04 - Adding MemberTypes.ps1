@@ -76,9 +76,9 @@ Function Get-TMComputerStatus {
     END {
         Write-Verbose "Starting $($myinvocation.mycommand)"
     }
- } #Get-TMComputerStatus
+} #Get-TMComputerStatus
     
-  
+
 #test
 
 Get-TMComputerStatus $env:computername | Select-Object -Property *
@@ -86,4 +86,3 @@ Get-TMComputerStatus $env:computername | Select-Object -Property *
 (Get-TMComputerStatus $env:computername).ping()
 (Get-TMComputerStatus $env:computername).LastInstalledHotFixes  
 
-  
