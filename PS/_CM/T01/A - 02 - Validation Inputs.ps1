@@ -33,6 +33,9 @@ function Test-ValidateCount {
     )
 }
 
+Test-ValidateCount 'one'
+Test-ValidateCount 'one','two'
+
 <#
 ValidateCount may also be applied to parameters that accept more advanced array types,
 such as [System.Collections.ArrayList] or [System.Collections.Generic.List[String]]
@@ -48,11 +51,12 @@ such as [System.Collections.ArrayList] or [System.Collections.Generic.List[Strin
 function Test-ValidateDrive {
     [CmdletBinding()]
     param (
-        [ValidateDrive('C')]
+        [ValidateDrive('D')]
         [String]$Parameter1
     )
 }
 
+Test-ValidateDrive -Parameter1 'C:'
 
 # ValidateLength can be applied to a String parameter or a parameter that contains an 
 # array of strings. Each string will be tested against the minimum and maximum length:
@@ -64,27 +68,26 @@ function Test-ValidateLength {
     )
 }
 
+Test-ValidateLength -Parameter1 'test'
+Test-ValidateLength -Parameter1 'testing'
+Test-ValidateLength -Parameter1 't'
 
 # ValidatePattern is used to test that a string, or the elements in an array of strings,
 # matches the supplied pattern:
-function Test-ValidatePattern {
-    [CmdletBinding()]
+Function Format-PhoneNumber {
+    [OutputType([string])]
     param (
-        [ValidatePattern('^Hello')]
-        [String]$Parameter1
+        [ValidatePattern('\(?(?<areaCode>\d{3})\)?(-| )?(?<first>\d{3})(-| )?(?<second>\d{4})')]
+        [string]$PhoneNumber
     )
+    $regex = '\(?(?<areaCode>\d{3})\)?(-| )?(?<first>\d{3})(-| )?(?<second>\d{4})'
+    $phoneNumber -match $regex | Out-Null
+    Write-Output "($($Matches.areaCode))-$($Matches.first)-$($Matches.second)"
 }
 
-Test-ValidatePattern -Parameter1 'One'
+Format-PhoneNumber -PhoneNumber 123-456-6789
+Format-PhoneNumber -PhoneNumber 123
 
-# In addition to the pattern argument, ValidatePattern accepts RegexOptions using the Options named parameter.
-function Test-ValidatePattern {
-    [CmdletBinding()]
-    param (
-        [ValidatePattern('^Hello', Options = 'Multiline')]
-        [String]$Parameter1
-    )
-}
 
 # see : https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regexoptions?view=netframework-4.7.2
 # Multiple options may be included as a comma-separated list, for example:
