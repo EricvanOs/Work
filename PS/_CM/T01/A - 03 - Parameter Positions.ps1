@@ -7,11 +7,11 @@ function test {
         [switch]$three
     )
 }
-  
+
 test 'A' 7 $true 
 Get-Help test -Full
 
- ### if I want other parameter positions
+### if I want other parameter positions
 
 function test {
     param(
@@ -21,12 +21,12 @@ function test {
         [Parameter(Position=0)]
         [int]$two,
         
-        [Parameter(Position=3)]
+        [Parameter(Position=2)]
         [switch]$three
     )
- }
- 
- test 'A' 7 $true  # error
- test  7  'A' $true
- Get-Help test -Full 
+}
+
+test 'A' 7 $true  # error
+test  7  'A' $true
+Get-Help test  -ShowWindow
     
