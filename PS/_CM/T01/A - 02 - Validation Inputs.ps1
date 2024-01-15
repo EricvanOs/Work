@@ -156,6 +156,8 @@ function Test-ValidateScript {
     )
 }
 
+Test-ValidateScript -Path 'c:\work'
+Test-ValidateScript -Path 'C:\work\MyTranscript.txt'
 
 # In Windows PowerShell, throw may be used within the script 
 function Test-ValidateScript {
@@ -172,6 +174,7 @@ function Test-ValidateScript {
     )
 }
 
+Test-ValidateScript -Path 'c:\work'
 
 # ValidateSet tests whether the specified argument, or each of an array of arguments, exists in a set of possible values:
 function Test-ValidateSet {
@@ -182,6 +185,10 @@ function Test-ValidateSet {
     )
 }
 
+Test-ValidateSet -Value One
+Test-ValidateSet -Value Four
+
+
 # The set of values must be hardcoded in the attribute, it cannot be derived from a variable or another command. B
 function Test-ValidateSet {
     [CmdletBInding()]
@@ -190,7 +197,8 @@ function Test-ValidateSet {
         [String]$Value
     )
 }
-
+Test-ValidateSet -Value One
+Test-ValidateSet -Value one
 
 # AllowNull is used to permit explicit use of $null as a value for a Mandatory parameter:
 function Test-AllowNull {
@@ -201,6 +209,7 @@ function Test-AllowNull {
         [Object]$Parameter1
     )
 }
+Test-AllowNull -Parameter1 $null
 
 function Test-AllowEmptyString {
     [CmdletBinding()]
@@ -210,7 +219,7 @@ function Test-AllowEmptyString {
         [String]$Parameter1
     )
 }
-
+Test-AllowEmptyString -Parameter1 ''
 
 # AllowEmptyCollection, as the name suggests, allows an empty array to be assigned to a mandatory parameter:
 function Test-AllowEmptyCollection {
