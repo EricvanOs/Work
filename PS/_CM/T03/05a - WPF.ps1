@@ -2,10 +2,10 @@ Function Show-MachineInfo {
     [cmdletbinding()]
     [alias("smi")]
     Param(
-    [Parameter(Position = 0)]
-    [Alias("cn")]
-    [ValidateNotNullorEmpty()]
-    [string]$Computername = $env:COMPUTERNAME
+        [Parameter(Position = 0)]
+        [Alias("cn")]
+        [ValidateNotNullorEmpty()]
+        [string]$Computername = $env:COMPUTERNAME
     )
     $form = New-Object System.Windows.Window
     $form.Title = "TMMachine Info"
@@ -47,4 +47,4 @@ Function Show-MachineInfo {
     }
     
     
-    Show-MachineInfo -Computername Mnemosyne
+    Show-MachineInfo -Computername hydra

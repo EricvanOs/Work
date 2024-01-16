@@ -44,16 +44,16 @@ Set-Location -Path C:\work\ps\_cm\T03
 
 # Produce HTML fragments
 
-$fragment1 = Get-CorpCompSysInfo -ComputerName Morpheus |
-             ConvertTo-HTML -Fragment -PreContent "<h2>Computer System</h2>" -As List |
-             Out-String
+$fragment1= Get-CorpCompSysInfo -ComputerName Morpheus |
+            ConvertTo-HTML -Fragment -PreContent "<h2>Computer System</h2>" -As List |
+            Out-String
 
 # ConvertTo-HTML produces an array of strings. What we will need later is a single string.
 # So we use Out-String to process the array into a single string.
 
-$fragment2 = Get-HotFix -ComputerName Morpheus | Sort-Object InstalledOn -Descending |  Select-Object -First 10 | 
-             ConvertTo-HTML -Fragment -Property Description,HotFixID,InstalledOn -PreContent "<h2>HotFixes</h2>" -As Table |
-             Out-String
+$fragment2= Get-HotFix -ComputerName Morpheus | Sort-Object InstalledOn -Descending |  Select-Object -First 10 | 
+            ConvertTo-HTML -Fragment -Property Description,HotFixID,InstalledOn -PreContent "<h2>HotFixes</h2>" -As Table |
+            Out-String
 
 
 # Now we combine the fragments
