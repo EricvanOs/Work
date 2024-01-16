@@ -19,3 +19,6 @@ $tree2.Color = "Green"
 $tree1
 $tree2
 
+$tree1 | Get-Member
+$tree1 | Get-Member -Static
+

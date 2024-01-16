@@ -31,4 +31,4 @@ class AppleTree : Tree {
 $tree = [AppleTree]::new()
 $tree
 
-
+$tree | Get-Member
