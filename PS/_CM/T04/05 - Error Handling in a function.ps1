@@ -32,18 +32,18 @@ Get-CorpCompSystemInfo -ComputerName LON-DC1,LON-CL1
     [CmdletBinding()]
     param(
         [Parameter(Mandatory=$True,
-                   HelpMessage='Computer name to query',
-                   ValueFromPipeline=$True,
-                   ValueFromPipelineByPropertyName=$True)]
+                    HelpMessage='Computer name to query',
+                    ValueFromPipeline=$True,
+                    ValueFromPipelineByPropertyName=$True)]
         [Alias('hostname')]
         [ValidatePattern('LON-\w{2,3}\d{1,2}')]
         [string[]]$ComputerName,
 
-        [string]$ErrorFilePath = $CorpErrorLogPath          # this is new
+        [string]$ErrorFilePath = $CorpErrorLogPath          
     )
-    BEGIN {                                                 #
-        Remove-Item -Path $ErrorFilePath                    # these lines are new
-    }                                                       #
+    BEGIN {                                                 
+        Remove-Item -Path $ErrorFilePath                    
+    }                                                       
     PROCESS {
         foreach ($computer in $computername) {
             Write-Verbose "Now connecting to $computer"
@@ -57,7 +57,7 @@ Get-CorpCompSystemInfo -ComputerName LON-DC1,LON-CL1
                 $output = New-Object -TypeName PSObject -Property $properties
                 Write-Output $output
             } catch {
-                $computer | Out-File $ErrorFilePath -append  # Notice the change here
+                $computer | Out-File $ErrorFilePath -append  
             }
         }
     }
@@ -66,3 +66,5 @@ Get-CorpCompSystemInfo -ComputerName LON-DC1,LON-CL1
 
 # test 
 Get-CorpCompSysInfo -ComputerName lon-dc1
+
+Get-Content -Path $CorpErrorLogPath
