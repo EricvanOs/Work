@@ -8,7 +8,7 @@ Convert string value passed by pipeline into script block value.
 .DESCRIPTION
 Convert string value passed by pipeline into script block value.
 
-I have used this CmdLet in Get-FileProperties from 03 Common module.
+I have used this CmdLet in Get-FileProperties from Common module.
 
 It can be also used for calls to Invoke-Command cmdlet which accepts script block value in the parameter ScriptBlock.
 

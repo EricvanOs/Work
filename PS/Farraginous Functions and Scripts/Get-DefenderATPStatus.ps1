@@ -87,7 +87,7 @@ function Get-DefenderATPStatus
         Author:           Alex Verboon
         Creation Date:    22.02.2019
         Purpose/Change:   Initial script development
-     #>
+    #>
 
     [CmdletBinding()]
     [Alias()]
