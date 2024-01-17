@@ -13,8 +13,8 @@ enum Colors{
     Red
     Green
     Blue
- }
- 
+}
+
 # see resuls
 [Colors].GetEnumNames()
 

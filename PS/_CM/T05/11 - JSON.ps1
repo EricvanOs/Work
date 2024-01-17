@@ -1,37 +1,25 @@
-﻿$json=@"
- {
-    "SiteType":  {
-                       "External":  "Http://External.PowerShellDistrict.com" ,
-                       "Internal":  "Http://Internal.PowerShellDistrict.com" 
-                   },
-	"Author": [{
-				Name:"Stephane van Gulick",
-				Age:"Can't remember..",
-				City:"Basel",
-				Country:"Switzerland",
-				FavoriteColor:"Orange"
-			},
-			{
-				Name:"Wappi",
-				Age:"69",
-				City:"Strasbourg",
-				Country:"France",
-				FavoriteColor:"Transparent"
-			}
-			]
-	
-}
-"@
+﻿$json=@'
+[
+  {
+    "Handles": 140,
+    "ProcessName": "winpty-agent",
+    "Id": 8920
+  },
+  {
+    "Handles": 150,
+    "ProcessName": "winpty-bgent",
+    "Id": 14608
+  }
+]
+'@
 
 #test 
 Test-Json $json
 
 $aa =  ConvertFrom-JSON -InputObject $json  # or  $json | ConvertFrom-JSON
 $aa | Get-Member
-$aa.Author 
-$aa.Author.City
-$aa.Author[0]
-$aa.Author[0].City
+$aa.Handles 
+$aa.Handles[0]
 
 
 ## convert to JSON
