@@ -35,7 +35,7 @@ code .\Show-AzCmAgent.crescendo.json
 # creating a Module
 Export-CrescendoModule -ConfigurationFile Show-AzCmAgent.Crescendo.json -ModuleName AzCmAgent.psm1 -force
 
-# copy folder AZCMAgent (and psd1, psm1) to 'PSModulePath' eaccessible by Morpheus 
+# copy folder AZCMAgent (and psd1, psm1) to 'PSModulePath' accessible by Morpheus 
 
 # test on Morpheus
 
