@@ -1,23 +1,23 @@
-﻿param($ComputerName=”.”)
+﻿param($ComputerName='.')
 
-Get-WmiObject -computername “$computername” Win32_Volume -filter “DriveType=3” | foreach {
+Get-CIMInstance -computername $computername Win32_Volume -filter "DriveType=3" | ForEach-Object {
 
-new-object PSObject -property @{
+    new-object PSObject -property @{
 
-UsageDate = $((Get-Date).ToString(“yyyy-MM-dd”))
+    UsageDate = $((Get-Date).ToString(“yyyy-MM-dd”))
 
-SystemName = $_.SystemName
+    SystemName = $_.SystemName
 
-Label = $_.Label
+    Label = $_.Label
 
-VolumeName = $_.Name
+    VolumeName = $_.Name
 
-Size = $([math]::round(($_.Capacity/1GB),2))
+    Size = $([math]::round(($_.Capacity/1GB),2))
 
-Free = $([math]::round(($_.FreeSpace/1GB),2))
+    Free = $([math]::round(($_.FreeSpace/1GB),2))
 
-PercentFree = $([math]::round((([float]$_.FreeSpace/[float]$_.Capacity) * 100),2))
+    PercentFree = $([math]::round((([float]$_.FreeSpace/[float]$_.Capacity) * 100),2))
 
 }
 
-} | Select UsageDate, SystemName, Label, VolumeName, Size, Free, PercentFree
+} | Select-Object UsageDate, SystemName, Label, VolumeName, Size, Free, PercentFree
