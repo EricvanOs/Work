@@ -18,7 +18,7 @@ The * Stream
     >, sends a specified stream to a file
     >>, appends a specified stream to a file
     >&1, redirects the specified stream to the success stream
-   2>&1, redirects also errors to success stream
+    2>&1, redirects also errors to success stream
 #>
 
 ​# Retrieve both the C:\ directory and then a Fakepath relative to the current directory
@@ -44,7 +44,7 @@ Get-Content -Path .\log.txt
 Remove-Item -Path .\log.txt
 
 # Only redirects output stream data
- Get-ChildItem > $null
+Get-ChildItem > $null
 # Truly redirect all output to $null
 Get-Childitem *> $null
 
