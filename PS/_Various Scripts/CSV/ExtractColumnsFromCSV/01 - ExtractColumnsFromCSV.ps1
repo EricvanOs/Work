@@ -1,4 +1,4 @@
-﻿$path = 'K:\_Various Scripts\CSV\ExtractColumnsFromCSV'
+﻿$path = 'C:\Work\PS\_Various Scripts\CSV\ExtractColumnsFromCSV'
 Set-Location -Path $path
 
 
