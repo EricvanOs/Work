@@ -2,9 +2,9 @@ function Get-MyComputerDate {
     [CmdletBinding()]
     param(
         [Parameter(Mandatory=$True,
-                   HelpMessage='Computer name to set state for',
-                   ValueFromPipeline=$True,
-                   ValueFromPipelineByPropertyName=$True)]
+                    HelpMessage='Computer name to set state for',
+                    ValueFromPipeline=$True,
+                    ValueFromPipelineByPropertyName=$True)]
         [Alias('hostname')]
         [string[]]$ComputerName
     )
