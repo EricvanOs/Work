@@ -61,7 +61,7 @@ function Get-CorpCompSysInfo {
             Write-Verbose "Now connecting to $computer"
             $compsys = Get-CimInstance -ClassName Win32_ComputerSystem -ComputerName $computer
             $bios = Get-CimInstance -ClassName Win32_BIOS -ComputerName $computer
-            $properties = @{'ComputerName'=$Computer;
+            $properties = [ordered]@{'ComputerName'=$Computer;
                             'BIOSSerial'=$bios.serialnumber;
                             'Manufacturer'=$compsys.Manufacturer;  
                             'Model'=$compsys.Model}
