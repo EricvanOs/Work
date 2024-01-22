@@ -6,8 +6,9 @@ The module must be stored in the locations specified in the $env:PSModulePathenv
 Modules in other locations must be imported using the Import-Module cmdlet.
 #>
 
-Get-Help  New-ModuleManifest  -online
+# create module manifest : https://learn.microsoft.com/en-us/powershell/scripting/developer/module/how-to-write-a-powershell-module-manifest?view=powershell-7.4
 
+Get-Help  New-ModuleManifest  -online
 
 $env:PSModulePath
 
