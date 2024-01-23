@@ -1,3 +1,6 @@
+
+# https://moiaune.dev/2022/07/05/web-requests-with-basic-authentication-in-powershell/
+
 # see: https://adamtheautomator.com/invoke-restmethod/
 
 
@@ -23,7 +26,7 @@ $Params = @{
 	Credential = $Cred
 }
 
-Invoke-RestMethod @Params
+Invoke-RestMethod @Params -verbose
 
 
 $Token = "123h1v23yt2egv1e1e1b2ei1ube2iu12be" | ConvertTo-SecureString -AsPlainText -Force
