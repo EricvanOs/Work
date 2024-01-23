@@ -9,3 +9,8 @@
 [Calculator] | Get-Member -Static 
 
 [Calculator]::Multiply(10, 2)
+
+
+$MathInstance = New-Object Calculator
+
+$MathInstance::Add(10, 2)
