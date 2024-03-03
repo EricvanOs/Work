@@ -1,5 +1,8 @@
 import pandas as pd
 from decimal import Decimal
+import io 
+
+
 
 """
 Apply a function to each row of a DataFrame to create a new column
@@ -19,7 +22,8 @@ grape,5.356
 apple,4.99
 """
 
-df = pd.read_csv(pd.compat.StringIO(fruit_price))
+df = pd.read_csv(io.StringIO(fruit_price))
 df['label'] = df.apply(create_price_label, axis=1)
 
 print(df)
+

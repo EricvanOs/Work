@@ -1,6 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import io
 
 str_data = r"""
 date,open,sales,store
@@ -13,7 +14,7 @@ date,open,sales,store
 2018-01-03,Y,32,2
 """
 df = pd.read_csv(
-    pd.compat.StringIO(str_data),
+    io.StringIO(str_data),
     parse_dates=True,
     index_col='date',
     date_parser=lambda x: pd.datetime.strptime(x, '%Y-%m-%d')
@@ -22,3 +23,5 @@ df = pd.read_csv(
 ax = sns.barplot(x=df.index, y="sales", hue="store", data=df)
 ax.set_xticklabels([x.strftime('%Y-%m-%d') for x in df.index])
 plt.show()
+
+

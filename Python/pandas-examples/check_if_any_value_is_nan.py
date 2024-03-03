@@ -1,4 +1,5 @@
 import pandas as pd
+import io
 
 str_data = r"""
 date,weather,city
@@ -6,7 +7,7 @@ date,weather,city
 2018-03-05,nan,melbourne
 2018-03-06,rain,perth
 """
-df = pd.read_csv(pd.compat.StringIO(str_data))
+df = pd.read_csv(io.StringIO(str_data))
 
 print(df.isnull().any())
 print(df['weather'].isnull().any())
