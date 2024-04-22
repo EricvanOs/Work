@@ -9,6 +9,8 @@ $fileName = 'C:\Temp\ResultsFromPassThrough.csv'
 Invoke-Sqlcmd -Query $query -ServerInstance $instanceName -Database $dbName |
 Export-Csv -LiteralPath $fileName -NoTypeInformation
 
-# cleanup
+# test file
+Get-Content -Path $fileName
 
+# cleanup
 Get-Item -Path $fileName | Remove-Item
