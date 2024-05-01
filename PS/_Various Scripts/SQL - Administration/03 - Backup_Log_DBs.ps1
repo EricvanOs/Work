@@ -1,7 +1,5 @@
-﻿$Computer = 'echo.pantheon.somewhere'
+﻿$Computer = 'echo'
 
-# import module if needed
-If ( ! (Get-module sqlserver )) { Import-Module sqlserver | Out-Null}
 
 Set-Location C:\
 

@@ -1,5 +1,6 @@
 # install-module -name dbatools
 
+#Import-Module dbatools
 Get-Command -Module dbatools
 
 #eg
