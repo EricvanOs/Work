@@ -4,7 +4,8 @@
 1. install latest pnp.powershell module
 2. Register-PnPEntraIDApp -ApplicationName "PnP PowerShell" -Tenant xhelios.onmicrosoft.com -Interactive
 This creates the app and grants necessary permissions, creates a PFX and CER files and gives you the Client ID and Thumbprint values
-3. import pfx file on clients (to use connect-)
+    Save PFX-file in a vault or use password (as it contains the private-key)
+3. import pfx file on clients (to use connect-PnPOnline)
 
 
 Define the App ID (once)
