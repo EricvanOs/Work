@@ -23,11 +23,15 @@ certificate-thumbprint = 'A29126B563E8E36C3429DEA74A9ADC69D904421B'
 #>
 
 # Variables
-$SiteURL = "https://xhelios.sharepoint.com"
+$SiteURL = "https://xhelios.sharepoint.com/sites/Legal"
 $ClientID = $env:ENTRAID_CLIENT_ID
 
 # Connect to SharePoint Online site (interactively; a login is needed)
 Connect-PnPOnline -Url $SiteURL -Interactive -ClientId $ClientID
+
+# Test AccessToken
+Import-Module -name JWTDetails
+Get-PnPAppAuthAccessToken | Get-JWTDetails
 
 #Get All Lists
 Get-PnPList
@@ -35,14 +39,25 @@ Get-PnPList
 # disconnect
 Disconnect-PnPOnline
 
-# thumbprint
+# Connect to SharePoint Online site with certificate via registered application
 $Thumbprint = 'A29126B563E8E36C3429DEA74A9ADC69D904421B'
 $TenantID = 'c395f110-ab2e-44ab-b096-7000e2511b32'
 
-Connect-PnPOnline -Url $SiteURL -Thumbprint $Thumbprint  -Tenant  $TenantID  -Clientid $ClientID
+$Connection = Connect-PnPOnline -Url $SiteURL -Thumbprint $Thumbprint  -Tenant  $TenantID  -Clientid $ClientID
+
+# Test AccessToken
+Import-Module -name JWTDetails
+Get-PnPAppAuthAccessToken | Get-JWTDetails
 
 #Get All Lists
 Get-PnPList
+Get-PnPSite -Connection $Connection
+
+# upload file to sharepoint
+$RelativeUrl = '/sites/Legal/Shared Documents'
+$file = 'C:\Work\PS\_Various Scripts\Sharepoint Online - PnPPowerShell\myfile.txt'
+
+Add-PnPFile  -Path $file -Folder $RelativeUrl
 
 # disconnect
 Disconnect-PnPOnline
