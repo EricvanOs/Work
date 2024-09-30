@@ -18,10 +18,13 @@ Close-HeliosVault
 
 $thumbprint = (Get-ChildItem -Path Cert:\CurrentUser\My |Where-Object{$_.Subject -eq 'CN=SentinelManagement'}).Thumbprint
 
-Connect-AzAccount -ServicePrincipal -CertificateThumbprint $Thumbprint -ApplicationId $ApplicationId  -TenantId $TenantId
+Connect-AzAccount -ServicePrincipal -CertificateThumbprint $Thumbprint -ApplicationId $ApplicationId  -TenantId $TenantId 
 
-Get-AzAccessToken
-$apitoken = (Get-AzAccessToken).Token
+# let's have a look at the access token
+$apitoken = (Get-AzAccessToken).Token 
+
+import-module JWTDetails
+$apitoken | Get-JWTDetails
 
 # e2574477-8ce4-4f31-9bf2-080cb60cff52 - Service Principal (MicrosoftSentinel) has been placed in Microsoft Sentinel Responder role @ loganalytics2li workspace
 
@@ -53,7 +56,7 @@ $response.value
 
 
 # may also use powershell module Az.SecurityInsights - not as extensive as API-calls e.g. watchlists
-Get-AzSentinelIncident -ResourceGroupName loganalytics -WorkspaceName loganalytics2li
+Get-AzSentinelIncident -ResourceGroupName loganalytics -WorkspaceName loganalytics2li | Select-Object -First 1 -Property *
 Get-AzSentinelDataConnector -ResourceGroupName loganalytics -WorkspaceName loganalytics2li
 
 # list all watchlists
