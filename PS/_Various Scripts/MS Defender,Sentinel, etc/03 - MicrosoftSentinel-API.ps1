@@ -1,7 +1,7 @@
 <#  Already done
     # once save pfx-password in vault, applicationid also : get-secret -Vault 'ScriptingVault' -name MicrosoftSentinel-PFXPassword -AsPlainText
     
-    # create selfsigned cert : New-SelfSignedCertificate -Subject "SentinelManagement" -CertStoreLocation Cert:\CurrentUser\My
+    # create selfsigned cert : New-SelfSignedCertificate -Subject "SentinelManagement" -CertStoreLocation Cert:\CurrentUser\My -NotAfter (Get-Date).AddMonths(100)
     # export to cer,pfx-file 
 
     #import cer-file in azure
