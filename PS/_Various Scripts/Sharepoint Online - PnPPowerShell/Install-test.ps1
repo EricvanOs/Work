@@ -3,7 +3,7 @@
 <#
 1. install latest pnp.powershell module
 2. Register-PnPEntraIDApp -ApplicationName "PnP PowerShell" -Tenant xhelios.onmicrosoft.com -Interactive
-This creates the app and grants necessary permissions, creates a PFX and CER files and gives you the Client ID and Thumbprint values
+    This creates the app and grants necessary permissions, creates a PFX and CER files and gives you the Client ID and Thumbprint values
     Save PFX-file in a vault or use password (as it contains the private-key)
 3. import pfx file on clients (to use connect-PnPOnline)
 
@@ -49,6 +49,9 @@ $Connection = Connect-PnPOnline -Url $SiteURL -Thumbprint $Thumbprint  -Tenant  
 Import-Module -name JWTDetails
 Get-PnPAppAuthAccessToken | Get-JWTDetails
 
+## Office 365 SharePoint Online -- Audiance 00000003-0000-0ff1-ce00-000000000000
+## See https://learn.microsoft.com/en-us/troubleshoot/azure/entra/entra-id/governance/verify-first-party-apps-sign-in
+
 #Get All Lists
 Get-PnPList
 Get-PnPSite -Connection $Connection
@@ -57,7 +60,7 @@ Get-PnPSite -Connection $Connection
 $RelativeUrl = '/sites/Legal/Shared Documents'
 $file = 'C:\Work\PS\_Various Scripts\Sharepoint Online - PnPPowerShell\myfile.txt'
 
-Add-PnPFile  -Path $file -Folder $RelativeUrl
+Add-PnPFile -Path $file -Folder $RelativeUrl
 
 # disconnect
 Disconnect-PnPOnline
