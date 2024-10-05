@@ -64,3 +64,8 @@ Add-PnPFile -Path $file -Folder $RelativeUrl
 
 # disconnect
 Disconnect-PnPOnline
+
+# via arc-enbled server --> ManagedIdentity 
+# oid : 4b04c20b-9402-438a-83ce-be9ed8b40c34   oid=ObjectID
+
+Connect-PnPOnline $SiteURL -ManagedIdentity 
