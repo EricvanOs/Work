@@ -1,4 +1,5 @@
 import pandas as pd
+import io
 
 """
 https://www.kaggle.com/crawford/python-merge-tutorial/notebook
@@ -23,8 +24,8 @@ parking = r"""placeID,parking_lot
 7,public
 """
 
-df_ratings = pd.read_csv(pd.compat.StringIO(ratings))
-df_parking = pd.read_csv(pd.compat.StringIO(parking))
+df_ratings = pd.read_csv(io.StringIO(ratings))
+df_parking = pd.read_csv(io.StringIO(parking))
 
 print("inner:")
 df = pd.merge(left=df_ratings, right=df_parking, on="placeID", how="inner")

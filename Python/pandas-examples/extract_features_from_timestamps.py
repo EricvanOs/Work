@@ -1,4 +1,5 @@
 import pandas as pd
+import io
 
 str_data = r"""
 date,weather
@@ -11,10 +12,10 @@ date,weather
 2018-01-07,sunny
 2018-01-08,sunny
 """
-df = pd.read_csv(pd.compat.StringIO(str_data),
+df = pd.read_csv(io.StringIO(str_data),
                  parse_dates=True,
                  index_col='date',
-                 date_parser=lambda x: pd.datetime.strptime(x, '%Y-%m-%d')
+                 date_format=lambda x: pd.datetime.strptime(x, '%Y-%m-%d')
                  )
 
 df['year'] = df.index.year

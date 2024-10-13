@@ -1,4 +1,5 @@
 import pandas as pd
+import io
 
 """
 datetime format:
@@ -12,7 +13,7 @@ date,weather
 20180306,rain
 """
 
-df = pd.read_csv(pd.compat.StringIO(str_data))
+df = pd.read_csv(io.StringIO(str_data))
 print(df)
 print(df.dtypes)
 

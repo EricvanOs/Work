@@ -1,6 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.ticker as mtick
+import io
 
 """
 https://pandas.pydata.org/pandas-docs/version/0.22.0/missing_data.html
@@ -21,7 +22,7 @@ data = r"""date,col_1,unwanted_1,unwanted_2
 """
 
 df = pd.read_csv(
-    pd.compat.StringIO(data),
+    io.StringIO(data),
     usecols=['date', 'col_1'],
     index_col=['date'],
     parse_dates=True,

@@ -1,4 +1,5 @@
 import pandas as pd
+import io
 
 # data
 data = r"""
@@ -18,7 +19,7 @@ date,variable,value
 2000-01-03,D,-2.104569
 2000-01-05,D,1.071804
 """
-df = pd.read_csv(pd.compat.StringIO(data))
+df = pd.read_csv(io.StringIO(data))
 
 # delete some rows
 cond = df['variable'] != 'A'

@@ -1,4 +1,5 @@
 import pandas as pd
+import io
 
 str_data = r"""
 date, weather
@@ -7,7 +8,7 @@ date, weather
 2018-03-06, rain
 """
 
-df = pd.read_csv(pd.compat.StringIO(str_data))
+df = pd.read_csv(io.StringIO(str_data))
 print(df)
 
 df['date'] = pd.to_datetime(df['date'])

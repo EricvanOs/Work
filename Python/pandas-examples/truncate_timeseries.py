@@ -1,4 +1,5 @@
 import pandas as pd
+import io
 
 """
     https://pandas.pydata.org/pandas-docs/stable/timeseries.html
@@ -12,7 +13,7 @@ rain
 rain
 """
 
-df = pd.read_csv(pd.compat.StringIO(str_data))
+df = pd.read_csv(io.StringIO(str_data))
 rng = pd.date_range('2018-04-22', '2018-04-24', freq='D')
 df.set_index(rng, inplace=True)
 

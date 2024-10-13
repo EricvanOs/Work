@@ -17,7 +17,7 @@ df = pd.read_csv(
     io.StringIO(str_data),
     parse_dates=True,
     index_col='date',
-    date_parser=lambda x: pd.datetime.strptime(x, '%Y-%m-%d')
+    date_format=lambda x: pd.datetime.strptime(x, '%Y-%m-%d')
 )
 
 ax = sns.barplot(x=df.index, y="sales", hue="store", data=df)

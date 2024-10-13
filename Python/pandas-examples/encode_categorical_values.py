@@ -1,5 +1,6 @@
 import pandas as pd
 from sklearn import preprocessing
+import io
 
 str_data = r"""match,result
 1,win
@@ -9,7 +10,7 @@ str_data = r"""match,result
 5,lose
 6,win
 """
-df = pd.read_csv(pd.compat.StringIO(str_data))
+df = pd.read_csv(io.StringIO(str_data))
 df_copy = df.copy()
 print(df)
 

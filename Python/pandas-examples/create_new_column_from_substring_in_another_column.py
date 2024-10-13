@@ -1,4 +1,5 @@
 import pandas as pd
+import io
 
 fruit_price = r"""product,price
 au-apple-1,2.5
@@ -8,7 +9,7 @@ au-peach-2,3.99
 au-grape-2,3.99
 """
 
-df = pd.read_csv(pd.compat.StringIO(fruit_price))
+df = pd.read_csv(io.StringIO(fruit_price))
 df['Is Apple'] = df['product'].apply(lambda x: 'Y' if 'apple' in x else 'N')
 
 print(df)

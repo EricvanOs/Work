@@ -1,4 +1,5 @@
 import pandas as pd
+import io
 
 """
 https://stackoverflow.com/questions/42192323/convert-pandas-dataframe-to-float-with-commas-and-negative-numbers
@@ -13,6 +14,6 @@ date,sale
 2018-01-04,""
 """
 
-df = pd.read_csv(pd.compat.StringIO(str_data), thousands=r',')
+df = pd.read_csv(io.StringIO(str_data), thousands=r',')
 
 print(df)

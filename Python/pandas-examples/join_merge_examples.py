@@ -1,4 +1,5 @@
 import pandas as pd
+import io
 
 weather = r"""city,weather
 sydney,rain
@@ -12,8 +13,8 @@ brisbane,qld
 perth,sa
 """
 
-df_1 = pd.read_csv(pd.compat.StringIO(weather))
-df_2 = pd.read_csv(pd.compat.StringIO(city))
+df_1 = pd.read_csv(io.StringIO(weather))
+df_2 = pd.read_csv(io.StringIO(city))
 
 print("> {join}:".format(join="inner join"))
 df = pd.merge(left=df_1, right=df_2, on='city', how='inner')

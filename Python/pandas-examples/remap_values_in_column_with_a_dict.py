@@ -1,4 +1,5 @@
 import pandas as pd
+import io
 
 """
 https://stackoverflow.com/questions/20250771/remap-values-in-pandas-column-with-a-dict
@@ -13,7 +14,7 @@ grape,33,2
 peach,10,1
 """
 
-df = pd.read_csv(pd.compat.StringIO(fruit_price))
+df = pd.read_csv(io.StringIO(fruit_price))
 print(df)
 
 dict_product_code = {

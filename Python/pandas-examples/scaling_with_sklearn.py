@@ -1,5 +1,6 @@
 import pandas as pd
 from sklearn import preprocessing
+import io
 
 # data
 str_data = r"""date,language,ex_complete,test_complete
@@ -15,7 +16,7 @@ str_data = r"""date,language,ex_complete,test_complete
 2018-06-10,r,9,6
 2018-06-11,r,10,6
 """
-df = pd.read_csv(pd.compat.StringIO(str_data))
+df = pd.read_csv(io.StringIO(str_data))
 df.set_index(['date', 'language'], inplace=True)
 df.sort_index(inplace=True)
 

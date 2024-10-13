@@ -1,4 +1,5 @@
 import pandas as pd
+import io
 
 str_data = r"""
 date,open,sales,store
@@ -15,7 +16,7 @@ date,open,sales,store
 2018-01-03,Y,125,3
 """
 df = pd.read_csv(
-    pd.compat.StringIO(str_data),
+    io.StringIO(str_data),
     parse_dates=True,
     index_col='date',
     date_parser=lambda x: pd.datetime.strptime(x, '%Y-%m-%d')
@@ -23,3 +24,7 @@ df = pd.read_csv(
 
 print(df.isnull())
 print(df.isnull().sum())
+
+
+
+

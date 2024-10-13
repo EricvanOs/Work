@@ -1,4 +1,5 @@
 import pandas as pd
+import io
 
 data = r"""date,col_a,col_b,col_c
 2018-05-20,1,2,3
@@ -7,7 +8,7 @@ data = r"""date,col_a,col_b,col_c
 """
 
 df = pd.read_csv(
-    pd.compat.StringIO(data),
+    io.StringIO(data),
     index_col=['date'],
     parse_dates=True,
     date_parser=lambda x: pd.datetime.strptime(x, '%Y-%m-%d')
